@@ -76,6 +76,13 @@
         display: flex;
         justify-content: center;
 
+        align-items: center;
+
+        padding: 8px 0px;
+
+        > * {
+            margin: 4px 0px;
+        }
         img {
             max-width: 100px;
         }
