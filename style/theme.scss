@@ -2,8 +2,50 @@
 
 :root {
     font-family: 'Montserrat', sans-serif;
-    font-size: 8px;
+    font-size: 12px;
     font-weight: 300;
     color: #eee;
     background-color: #212529;
+}
+
+h1 {
+    font-size: 8rem;
+}
+
+h2 {
+    font-size: 7rem;
+}
+
+h3 {
+    font-size: 6rem;
+}
+
+h4 {
+    font-size: 5rem;
+}
+
+h5 {
+    font-size: 4rem
+}
+
+h6 {
+    font-size: 3rem;
+}
+
+p {
+    font-size: 1.5rem;
+}
+
+a {
+    color: #70b9f9;
+
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+        color: #58a4e8;
+    }
+
+    &:focus {
+        transition: none;
+    }
 }
