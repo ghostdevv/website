@@ -4,7 +4,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
-import { copySync, removeSync } from 'fs-extra';
+import { copySync, removeSync, rename } from 'fs-extra';
 import { spassr } from 'spassr';
 import getConfig from '@roxi/routify/lib/utils/config';
 import autoPreprocess from 'svelte-preprocess';
@@ -42,6 +42,10 @@ const serve = () => ({
 const copyToDist = () => ({
     writeBundle() {
         copySync(assetsDir, distDir);
+        rename(
+            path.join(distDir, '__app.html'),
+            path.join(distDir, 'index.html'),
+        );
     },
 });
 
