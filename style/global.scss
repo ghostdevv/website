@@ -13,3 +13,12 @@
         font-size: 5px;
     }
 }
+
+#particles {
+    height: 100vh;
+    width: 100vw;
+
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
