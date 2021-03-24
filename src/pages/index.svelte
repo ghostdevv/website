@@ -92,6 +92,8 @@
         justify-content: center;
         align-items: center;
 
+        text-align: center;
+
         padding: 8px 0px;
 
         > * {
