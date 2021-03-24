@@ -32,8 +32,8 @@
                 a server for developers to talk and get help with their code. I
                 also spend a lot of time in
                 <a href="https://discord.gg/PGjpCxnTMs">The Routify Discord</a>
-                which is a great place for people to get help and talk about
-                Routify amoungst other things.
+                which is a great place for people to get help and talk about Routify
+                amoungst other things.
             </p>
             <a
                 href="https://discord.gg/2Vd4wAjJnm"
@@ -60,10 +60,6 @@
     }
 
     main {
-        height: 100%;
-        width: 100%;
-        overflow: auto;
-
         padding: 32px 0px;
 
         display: flex;
