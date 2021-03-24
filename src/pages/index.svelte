@@ -19,10 +19,12 @@
                 contribute to others projects too, the main being
                 <a href="https://github.com/roxiness/routify">Routify</a>.
             </p>
-            <a
-                href="https://github.com/ghostdevv"
-                target="_blank"
-                class="button mt">Visit my github page</a>
+            <div class="grow">
+                <a
+                    href="https://github.com/ghostdevv"
+                    target="_blank"
+                    class="button">Visit my github page</a>
+            </div>
         </card>
         <card>
             <h6>Discord</h6>
@@ -36,10 +38,12 @@
                 which is a great place for people to get help and talk about Routify
                 amoungst other things.
             </p>
-            <a
-                href="https://discord.gg/2Vd4wAjJnm"
-                target="_blank"
-                class="button mt">Join my Discord</a>
+            <div class="grow">
+                <a
+                    href="https://discord.gg/2Vd4wAjJnm"
+                    target="_blank"
+                    class="button">Join my Discord</a>
+            </div>
         </card>
         <card>
             <h6>Lorem</h6>
@@ -51,13 +55,24 @@
                 sit amet porta feugiat, turpis neque facilisis dui, quis dictum
                 urna odio sed orci.
             </p>
+            <div class="grow">
+                <a
+                    href="https://discord.gg/2Vd4wAjJnm"
+                    target="_blank"
+                    class="button">e</a>
+            </div>
         </card>
     </div>
 </main>
 
 <style lang="scss">
-    .mt {
-        margin-top: 16px;
+    .grow {
+        flex-grow: 1;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
     }
 
     main {
@@ -75,8 +90,8 @@
 
     .logo {
         display: flex;
+        flex-flow: column nowrap;
         justify-content: center;
-
         align-items: center;
 
         padding: 8px 0px;
@@ -84,6 +99,7 @@
         > * {
             margin: 4px 0px;
         }
+
         img {
             max-width: 100px;
         }
@@ -114,7 +130,7 @@
             align-self: stretch;
 
             > * {
-                padding: 6px 0px;
+                margin: 8px 0px;
             }
 
             transition: 0.2s ease-in-out;
