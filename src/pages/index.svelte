@@ -61,9 +61,17 @@
             </div>
         </card>
     </div>
+
+    <div class="cards row contact">
+        <card>
+            <a href="/contact" class="button">Contact Me</a>
+        </card>
+    </div>
 </main>
 
 <style lang="scss">
+    @import 'style/helpers/media';
+
     .grow {
         flex-grow: 1;
 
@@ -111,6 +119,23 @@
         flex-flow: row wrap;
         align-items: center;
         justify-content: center;
+
+        &.contact card {
+            min-width: 750px;
+            transition: 0.2s ease-in-out;
+
+            @include media('<750px') {
+                min-width: 600px;
+            }
+
+            @include media('<600px') {
+                min-width: 500px;
+            }
+
+            @include media('<500px') {
+                min-width: calc(100% - 16px);
+            }
+        }
 
         card {
             box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.1);
