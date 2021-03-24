@@ -46,20 +46,18 @@
             </div>
         </card>
         <card>
-            <h6>Lorem</h6>
+            <h6>Development</h6>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-                feugiat nibh quis lectus iaculis, sed viverra erat eleifend.
-                Etiam in felis luctus, elementum lacus et, commodo sapien.
-                Aenean varius eget justo id vehicula. Mauris condimentum, ligula
-                sit amet porta feugiat, turpis neque facilisis dui, quis dictum
-                urna odio sed orci.
+                I work as a freelance full stack web developer, and do open
+                source projects part time. I mainly CMS or SaaS platforms for
+                clients but also create static websites. I use <a
+                    href="https://svelte.dev">Svelte</a>
+                to create amazing web apps, I write all custom css, and use
+                <a href="https://routify.dev">Routify</a> as a router. I also own
+                a web development business that is close to public release!
             </p>
             <div class="grow">
-                <a
-                    href="https://discord.gg/2Vd4wAjJnm"
-                    target="_blank"
-                    class="button">e</a>
+                <a href="/contact" target="_blank" class="button">Hire me!</a>
             </div>
         </card>
     </div>
