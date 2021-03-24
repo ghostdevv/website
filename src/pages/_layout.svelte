@@ -22,7 +22,9 @@
         <h1>GHOST</h1>
     </div>
 {:then}
-    <slot />
+    <div class="content-wrapper">
+        <slot />
+    </div>
 {/await}
 
 <style lang="scss">
@@ -33,5 +35,10 @@
         transform: translate(-50%, -50%);
 
         z-index: 100;
+    }
+
+    .content-wrapper {
+        width: 100%;
+        height: 100%;
     }
 </style>
