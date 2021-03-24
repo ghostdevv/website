@@ -49,3 +49,27 @@ a {
         transition: none;
     }
 }
+
+button,
+.button {
+    padding: 12px 24px !important;
+
+    background-color: #2160ec;
+    border: 1px solid #2160ec;
+    border-radius: 8px;
+
+    color: #eee;
+    font-size: 1.5rem;
+
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+        background-color: #3b73ed;
+        border-color: #3b73ed;
+        color: #eee;
+    }
+
+    &:focus {
+        transition: none;
+    }
+}
