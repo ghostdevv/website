@@ -57,7 +57,7 @@
                 a web development business that is close to public release!
             </p>
             <div class="grow">
-                <a href="/contact" target="_blank" class="button">Hire me!</a>
+                <a href="/contact" class="button">Hire me!</a>
             </div>
         </card>
     </div>
