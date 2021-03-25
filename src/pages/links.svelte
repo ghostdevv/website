@@ -3,14 +3,15 @@
     <p>All relevant and interesting links</p>
 
     <div class="row contact">
-        <card>
-            <h6>Contact</h6>
-            <a href="/contact">Contact Page</a>
-        </card>
-        <card>
-            <h6>Github</h6>
-            <a href="https://github.com/ghostdevv">Github</a>
-        </card>
+        <a href="/contact"
+            ><card>
+                <h6>Contact</h6>
+            </card></a>
+
+        <a href="https://github.com/ghostdevv"
+            ><card>
+                <h6>Github</h6>
+            </card></a>
     </div>
 </main>
 
@@ -33,6 +34,7 @@
     a,
     p {
         font-size: 1.7rem;
+        color: #eee;
     }
 
     .contact {
