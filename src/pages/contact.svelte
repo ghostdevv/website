@@ -100,6 +100,10 @@
             align-items: center;
             justify-content: center;
             align-self: stretch;
+
+            &:hover {
+                transform: translateY(-5px);
+            }
         }
     }
 </style>
