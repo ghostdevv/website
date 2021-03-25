@@ -76,6 +76,11 @@
             align-items: center;
             justify-content: center;
             align-self: stretch;
+
+            &:hover {
+                transform: translateY(-5px);
+                border: 2px solid #3d5cf1;
+            }
         }
     }
 </style>

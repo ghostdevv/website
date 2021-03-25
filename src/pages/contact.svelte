@@ -103,6 +103,7 @@
 
             &:hover {
                 transform: translateY(-5px);
+                border: 2px solid #3d5cf1;
             }
         }
     }
