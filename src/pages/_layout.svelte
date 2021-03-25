@@ -22,7 +22,7 @@
         <h1>GHOST</h1>
     </div>
 {:then}
-    <div class="content-wrapper">
+    <div class="content-wrapper" transition:fade>
         <slot />
     </div>
 {/await}
