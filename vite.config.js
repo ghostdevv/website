@@ -6,7 +6,7 @@ import path from 'path';
 export default ({ mode }) =>
     defineConfig({
         server: {
-            port: 5001,
+            port: 5000,
         },
         build: {
             cssCodeSplit: false,
