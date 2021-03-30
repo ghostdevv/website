@@ -2,7 +2,7 @@
     <h3>Links</h3>
     <p>All relevant and interesting links</p>
 
-    <div class="row contact">
+    <div class="row fl">
         <a href="/contact"
             ><card>
                 <h6>Contact</h6>
@@ -37,7 +37,7 @@
         color: #eee;
     }
 
-    .contact {
+    .fl {
         display: flex;
         justify-content: center;
         flex-flow: row wrap;
