@@ -63,8 +63,9 @@
     </div>
 
     <div class="cards row contact">
-        <card>
+        <card class="fc">
             <a href="/contact" class="button">Contact Me</a>
+            <a href="/donate" class="button">Donate</a>
         </card>
     </div>
 </main>
@@ -207,6 +208,16 @@
             &:hover {
                 transform: translateY(-5px);
                 border: 2px solid #3d5cf1;
+            }
+
+            &.fc {
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+
+                > * {
+                    margin: 0px 8px;
+                }
             }
         }
     }
