@@ -1,3 +1,12 @@
+<script>
+    const patrons = [
+        {
+            name: 'Alfie',
+            image: 'alfie.png',
+        },
+    ];
+</script>
+
 <main>
     <h3>Donate</h3>
     <p>
@@ -20,10 +29,67 @@
             <p><a href="/contact">Contact me</a> to donate this way</p>
         </card>
     </div>
+
+    <div class="spacer" />
+
+    <h3>Patrons</h3>
+
+    <div class="row patrons">
+        <ul>
+            {#each patrons as { name, image }}
+                <li>
+                    <img src="/images/patrons/{image}" alt="{name}'s pfp" />
+                    {name}
+                </li>
+            {/each}
+        </ul>
+    </div>
 </main>
 
 <style lang="scss">
     @import 'style/helpers/media';
+
+    .spacer {
+        padding: 16px 0px;
+    }
+
+    .patrons {
+        ul {
+            display: flex;
+            flex-flow: column nowrap;
+        }
+
+        li {
+            font-size: 2.5rem;
+
+            display: flex;
+            align-items: center;
+
+            > * {
+                padding: 0px 12px;
+
+                &:first-child {
+                    padding-left: 0px;
+                }
+            }
+
+            img {
+                width: 50px;
+                border-radius: 100%;
+            }
+
+            &::before {
+                display: inline-block;
+                content: '';
+
+                border-radius: 100%;
+                height: 6px;
+                width: 6px;
+                margin-right: 12px;
+                background-color: #eee;
+            }
+        }
+    }
 
     main {
         padding: 32px 8px;
@@ -35,6 +101,11 @@
         .row {
             width: 100%;
             padding: 8px 0px;
+
+            display: flex;
+            justify-content: center;
+            flex-flow: row wrap;
+            align-items: center;
         }
     }
 
@@ -45,11 +116,6 @@
     }
 
     .fl {
-        display: flex;
-        justify-content: center;
-        flex-flow: row wrap;
-        align-items: center;
-
         card {
             box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.1);
             background-color: #2b2d30;
