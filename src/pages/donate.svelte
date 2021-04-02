@@ -65,17 +65,11 @@
             display: flex;
             align-items: center;
 
-            > * {
-                padding: 0px 12px;
-
-                &:first-child {
-                    padding-left: 0px;
-                }
-            }
-
             img {
                 width: 50px;
                 border-radius: 100%;
+
+                margin-right: 12px;
             }
 
             &::before {
