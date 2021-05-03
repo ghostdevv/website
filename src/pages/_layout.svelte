@@ -7,14 +7,15 @@
     import NavButton from '@/components/NavButton.svelte';
 
     const time = 1800;
-    const loading = new Promise((resolve) =>
-        $animationShown
-            ? resolve()
-            : setTimeout(() => {
-                  $animationShown = true;
-                  resolve();
-              }, time),
-    );
+    const loading = new Promise((resolve) => {
+        if (import.meta.env.MODE == 'development' || $animationShown)
+            return resolve();
+        else
+            setTimeout(() => {
+                $animationShown = true;
+                resolve();
+            }, time);
+    });
 </script>
 
 <Particles id="particles" options={config} />
