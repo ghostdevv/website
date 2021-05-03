@@ -23,7 +23,7 @@ h4 {
 }
 
 h5 {
-    font-size: 4rem
+    font-size: 4rem;
 }
 
 h6 {
@@ -70,4 +70,21 @@ button,
     &:focus {
         transition: none;
     }
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #222529;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #57595c;
+    border-radius: 16px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #76787c;
 }
