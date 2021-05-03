@@ -70,24 +70,6 @@
     </div>
 </main>
 
-<nav>
-    <a href="/links"
-        ><svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20px"
-            height="20px"
-            viewBox="0 0 48 48  "
-            class="nav-button"
-            ><path
-                d="M41,14H7a2,2,0,0,1,0-4H41A2,2,0,0,1,41,14Z"
-                fill="#6f7380" /><path
-                d="M41,26H7a2,2,0,0,1,0-4H41A2,2,0,0,1,41,26Z"
-                fill="#6f7380" /><path
-                d="M41,38H7a2,2,0,0,1,0-4H41A2,2,0,0,1,41,38Z"
-                fill="#6f7380" /></svg
-        ></a>
-</nav>
-
 <style lang="scss">
     @import 'style/helpers/media';
 
@@ -98,31 +80,6 @@
         flex-direction: column;
         align-items: center;
         justify-content: flex-end;
-    }
-
-    nav {
-        position: fixed;
-        top: 0;
-        right: 0;
-        padding: 12px;
-
-        .nav-button {
-            opacity: 0.8;
-
-            transition: 0.2s ease-in-out;
-
-            &:hover {
-                opacity: 1;
-
-                path {
-                    fill: #3d5cf1;
-                }
-            }
-
-            &:focus {
-                transition: none;
-            }
-        }
     }
 
     main {

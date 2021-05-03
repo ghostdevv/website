@@ -4,6 +4,8 @@
     import { fly, fade } from 'svelte/transition';
     import { animationShown } from '@/stores.js';
 
+    import NavButton from '@/components/NavButton.svelte';
+
     const time = 1800;
     const loading = new Promise((resolve) =>
         $animationShown
@@ -29,6 +31,8 @@
     <div class="content-wrapper" transition:fade>
         <slot />
     </div>
+
+    <NavButton />
 {/await}
 
 <style lang="scss">
