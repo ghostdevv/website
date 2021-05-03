@@ -5,7 +5,7 @@
             items: [
                 {
                     name: 'Rejxcted',
-                    link: 'https://rejxcted.dev',
+                    link: 'https://rejxcted-site.vercel.app/',
                 },
                 {
                     name: 'Arrow Alerts',
@@ -19,6 +19,10 @@
                     name: 'Mesh QT',
                     link: 'https://meshmonitors.io/quicktasks',
                 },
+                {
+                    name: 'Robotic Node',
+                    link: 'https://archive.ghostdev.xyz/roboticnode/'
+                }
             ],
         },
         {
@@ -59,7 +63,7 @@
 
 <main>
     <h3>Projects</h3>
-    <p>Here are a collection of projects that I have made</p>
+    <p>Here are a collection of projects that I have made or worked on</p>
 
     <div class="spacer" />
 
