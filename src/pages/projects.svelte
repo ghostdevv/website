@@ -1,4 +1,10 @@
 <script>
+    import Main from '@/components/flow/Main.svelte';
+    import Row from '@/components/flow/Row.svelte';
+    import Col from '@/components/flow/Col.svelte';
+    import Spacer from '@/components/flow/Spacer.svelte';
+    import LinkCard from '@/components/cards/LinkCard.svelte';
+
     const projects = [
         {
             name: 'Websites',
@@ -21,8 +27,8 @@
                 },
                 {
                     name: 'Robotic Node',
-                    link: 'https://archive.ghostdev.xyz/roboticnode/'
-                }
+                    link: 'https://archive.ghostdev.xyz/roboticnode/',
+                },
             ],
         },
         {
@@ -61,42 +67,23 @@
     ];
 </script>
 
-<main>
+<Main>
     <h3>Projects</h3>
     <p>Here are a collection of projects that I have made or worked on</p>
 
-    <div class="spacer" />
+    <Spacer gap="8" />
 
     {#each projects as { name, items }}
-        <div class="project-row">
+        <Col>
             <h6>{name}</h6>
-            <div class="row fl">
+
+            <Row>
                 {#each items as { name, link }}
-                    <a href={link} target="_blank">
-                        <card>
-                            <h6>{name}</h6>
-                        </card>
-                    </a>
+                    <LinkCard url={link}>
+                        <h6>{name}</h6>
+                    </LinkCard>
                 {/each}
-            </div>
-        </div>
+            </Row>
+        </Col>
     {/each}
-</main>
-
-<style lang="scss">
-    @import 'style/ui/page';
-
-    .spacer {
-        padding: 8px;
-    }
-
-    .project-row {
-        display: flex;
-        flex-flow: column nowrap;
-        align-items: center;
-        text-align: center;
-
-        padding: 12px 0px;
-        gap: 8px;
-    }
-</style>
+</Main>
