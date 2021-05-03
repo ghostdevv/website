@@ -1,7 +1,4 @@
 <script>
-    import { metatags } from '@roxi/routify';
-    metatags.title = 'GHOST - Contact';
-
     function copy(e, value) {
         navigator.clipboard.writeText(value);
 
