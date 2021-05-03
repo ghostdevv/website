@@ -4,7 +4,7 @@
     import { fly, fade } from 'svelte/transition';
     import { animationShown } from '@/stores.js';
 
-    const time = 1500;
+    const time = 1800;
     const loading = new Promise((resolve) =>
         $animationShown
             ? resolve()
@@ -18,8 +18,12 @@
 <Particles id="particles" options={config} />
 
 {#await loading}
-    <div class="loader" in:fly={{ y: -200, duration: time - 500 }} out:fade>
-        <h1>GHOST</h1>
+    <div class="animation loader" out:fade>
+        {#each 'GHOST' as char, i (i)}
+            <h1 in:fly={{ y: -200, duration: time - 500, delay: i * 50 }}>
+                {char}
+            </h1>
+        {/each}
     </div>
 {:then}
     <div class="content-wrapper" transition:fade>
@@ -33,6 +37,10 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+
+        display: flex;
+        align-items: center;
+        text-align: center;
 
         z-index: 100;
     }
