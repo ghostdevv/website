@@ -65,6 +65,7 @@
     <div class="cards row contact">
         <card class="fc">
             <a href="/contact" class="button">Contact Me</a>
+            <a href="/projects">Projects</a>
             <a href="/donate" class="button">Donate</a>
         </card>
     </div>
