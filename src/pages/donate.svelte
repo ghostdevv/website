@@ -52,10 +52,6 @@
 <style lang="scss">
     @import 'style/helpers/media';
 
-    .spacer {
-        padding: 16px 0px;
-    }
-
     .patrons {
         ul {
             display: flex;
