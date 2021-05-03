@@ -13,6 +13,10 @@
             <h6>Contact</h6>
         </LinkCard>
 
+        <LinkCard url="/donate">
+            <h6>Donate</h6>
+        </LinkCard>
+
         <LinkCard url="https://github.com/ghostdevv">
             <h6>Github</h6>
         </LinkCard>
