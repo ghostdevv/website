@@ -9,19 +9,19 @@
     <p>All relevant and interesting links</p>
 
     <Row>
-        <LinkCard url="/contact">
+        <LinkCard url="/contact" external={false}>
             <h6>Contact</h6>
         </LinkCard>
 
-        <LinkCard url="/donate">
+        <LinkCard url="/donate" external={false}>
             <h6>Donate</h6>
         </LinkCard>
 
-        <LinkCard url="https://github.com/ghostdevv">
+        <LinkCard url="https://github.com/ghostdevv" external={false}>
             <h6>Github</h6>
         </LinkCard>
 
-        <LinkCard url="/projects">
+        <LinkCard url="/projects" external={false}>
             <h6>Projects</h6>
         </LinkCard>
     </Row>
