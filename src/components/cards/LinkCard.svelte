@@ -1,9 +1,10 @@
 <script>
     import Card from './Card.svelte';
     export let url;
+    export let external = true;
 </script>
 
-<a href={url} target="_blank">
+<a href={url} target={external ? '_blank' : ''}>
     <Card>
         <slot />
     </Card>
