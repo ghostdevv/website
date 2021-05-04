@@ -47,6 +47,10 @@
                     link: 'https://github.com/ghoststools/sourcebin',
                 },
                 {
+                    name: 'MyKV',
+                    link: 'https://github.com/ghostdevv/mykv'
+                },
+                {
                     name: 'djs-ticketsystem',
                     link: 'https://github.com/ghoststools/djs-ticketsystem',
                 },
