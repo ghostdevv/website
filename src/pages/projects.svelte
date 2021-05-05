@@ -39,6 +39,10 @@
                     link: 'https://routify.dev/',
                 },
                 {
+                    name: 'Svelte Hamburgers',
+                    link: 'https://github.com/ghostdevv/svelte-hamburgers'
+                },
+                {
                     name: 'DashArgs',
                     link: 'https://github.com/ghoststools/dashargs',
                 },
