@@ -29,7 +29,7 @@
         {/each}
     </div>
 {:then}
-    <div class="content-wrapper" transition:fade>
+    <div transition:fade>
         <slot />
     </div>
 
@@ -48,13 +48,5 @@
         text-align: center;
 
         z-index: 100;
-    }
-
-    .content-wrapper {
-        width: 100%;
-        height: 100%;
-
-        max-height: 100vh;
-        overflow: auto;
     }
 </style>
