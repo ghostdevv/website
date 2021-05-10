@@ -20,8 +20,6 @@
         "postcss": "^8.2.8",
         "postcss-import": "^14.0.0",
         "sass": "^1.32.8",
-        "spank": "^1.5.0",
-        "spassr": "^2.4.1-0",
         "svelte": "^3.35.0",
         "svelte-hmr": "^0.12.5",
         "svelte-preprocess": "^4.7.0",
