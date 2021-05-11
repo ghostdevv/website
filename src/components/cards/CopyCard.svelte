@@ -7,7 +7,7 @@
         const target = e.path.find((p) => p.localName == 'card');
 
         target.style.borderColor = '#67c157';
-        setTimeout(() => (target.style.borderColor = '#2b2d30'), 700);
+        setTimeout(() => (target.style.borderColor = ''), 700);
     }
 </script>
 
