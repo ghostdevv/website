@@ -67,6 +67,7 @@
 
             display: flex;
             align-items: center;
+            padding: 6px 0px;
 
             img {
                 width: 50px;
