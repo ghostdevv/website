@@ -11,6 +11,10 @@
             name: 'Alfie',
             image: 'alfie.png',
         },
+        {
+            name: 'Cain',
+            image: 'cain.png',
+        },
     ];
 </script>
 
