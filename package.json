@@ -1,6 +1,7 @@
 {
     "name": "project-name",
     "private": true,
+    "license": "GNU Affero General Public License v3.0",
     "scripts": {
         "dev": "run-p dev:*",
         "dev:routify": "routify",
