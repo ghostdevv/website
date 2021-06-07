@@ -29,6 +29,10 @@
                     name: 'Robotic Node',
                     link: 'https://archive.ghostdev.xyz/roboticnode/',
                 },
+                {
+                    name: 'Eris ghost.org theme',
+                    link: 'https://eris.gg',
+                },
             ],
         },
         {
