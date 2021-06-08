@@ -74,6 +74,10 @@
                     name: 'linode-object-upload',
                     link: 'https://github.com/ghostdevv/linode-object-upload',
                 },
+                {
+                    name: 'linode-bucket-delete',
+                    link: 'https://github.com/ghostdevv/linode-bucket-delete',
+                },
             ],
         },
     ];
