@@ -6,16 +6,7 @@
     import LinkCard from '@/components/cards/LinkCard.svelte';
     import Card from '@/components/cards/Card.svelte';
 
-    const patrons = [
-        {
-            name: 'Alfie',
-            image: 'alfie.png',
-        },
-        {
-            name: 'Cain',
-            image: 'cain.png',
-        },
-    ];
+    const patrons = [];
 </script>
 
 <Main>
