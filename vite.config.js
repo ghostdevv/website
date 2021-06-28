@@ -1,4 +1,4 @@
-import svelte from '@sveltejs/vite-plugin-svelte';
+import { svelte } from '@sveltejs/vite-plugin-svelte';
 import autoPreprocess from 'svelte-preprocess';
 import { defineConfig } from 'vite';
 import path from 'path';
