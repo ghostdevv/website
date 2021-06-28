@@ -44,19 +44,27 @@
                 },
                 {
                     name: 'Svelte Hamburgers',
-                    link: 'https://github.com/ghostdevv/svelte-hamburgers'
-                },
-                {
-                    name: 'DashArgs',
-                    link: 'https://github.com/ghoststools/dashargs',
+                    link: 'https://github.com/ghostdevv/svelte-hamburgers',
                 },
                 {
                     name: 'SourceBin',
                     link: 'https://github.com/ghoststools/sourcebin',
                 },
                 {
+                    name: 'JellyCommands',
+                    link: 'https://github.com/ghostdevv/jellycommands',
+                },
+                {
+                    name: 'DashArgs',
+                    link: 'https://github.com/ghoststools/dashargs',
+                },
+                {
                     name: 'MyKV',
-                    link: 'https://github.com/ghostdevv/mykv'
+                    link: 'https://github.com/ghostdevv/mykv',
+                },
+                {
+                    name: 'GHOSTs Tools',
+                    link: 'https://github.com/ghostdevv/ghoststools',
                 },
                 {
                     name: 'djs-ticketsystem',
