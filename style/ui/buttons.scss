@@ -6,6 +6,8 @@ button,
     border: 1px solid var(--button);
     border-radius: 8px;
 
+    display: inline-block;
+
     color: var(--text);
 
     transition: 0.2s ease-in-out;
