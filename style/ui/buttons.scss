@@ -1,0 +1,22 @@
+button,
+.button {
+    padding: 12px 24px !important;
+
+    background-color: var(--button);
+    border: 1px solid var(--button);
+    border-radius: 8px;
+
+    color: var(--text);
+
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+        background-color: var(--button-highlight);
+        border-color: var(--button-highlight);
+        color: var(--text);
+    }
+
+    &:focus {
+        transition: none;
+    }
+}
