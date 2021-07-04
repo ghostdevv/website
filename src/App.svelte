@@ -4,7 +4,3 @@
 </script>
 
 <Router {routes} />
-
-<style global lang="scss">
-    @import '../style/global.scss';
-</style>
