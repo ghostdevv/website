@@ -12,7 +12,7 @@
 
 <style lang="scss">
     a {
-        font-size: 1.7rem;
+        font-size: 1.2rem;
         color: #eee;
     }
 </style>

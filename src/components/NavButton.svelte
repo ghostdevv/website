@@ -19,7 +19,7 @@
 
         span {
             color: #61636f;
-            font-size: 1.5rem;
+            font-size: 1rem;
             opacity: 0.8;
 
             transition: 0.2s ease-in-out;

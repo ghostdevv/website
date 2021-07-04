@@ -92,19 +92,19 @@
 </script>
 
 <Main>
-    <h3>Projects</h3>
+    <h1>Projects</h1>
     <p>Here are a collection of projects that I have made or worked on</p>
 
     <Spacer gap="8" />
 
     {#each projects as { name, items }}
         <Col>
-            <h6>{name}</h6>
+            <h1>{name}</h1>
 
             <Row>
                 {#each items as { name, link }}
                     <LinkCard url={link}>
-                        <h6>{name}</h6>
+                        <h4>{name}</h4>
                     </LinkCard>
                 {/each}
             </Row>

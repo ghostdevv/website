@@ -10,7 +10,7 @@
 </script>
 
 <Main>
-    <h3>Donate</h3>
+    <h1>Donate</h1>
     <p>
         Here are all the places you can donate, thank you so much for helping
         out 💕
@@ -18,19 +18,19 @@
 
     <Row>
         <LinkCard url="https://patreon.com/onlyspaceghost">
-            <h6>Patreon</h6>
+            <h4>Patreon</h4>
             <p>Click to go to my patreon</p>
         </LinkCard>
 
         <Card>
-            <h6>PayPal</h6>
+            <h4>PayPal</h4>
             <p><a href="/contact">Contact me</a> to donate this way</p>
         </Card>
     </Row>
 
     <Spacer />
 
-    <h3>Patrons</h3>
+    <h1>Patrons</h1>
 
     <div class="row patrons">
         <ul>
@@ -54,7 +54,7 @@
         }
 
         li {
-            font-size: 2.5rem;
+            font-size: 1.6rem;
 
             display: flex;
             align-items: center;
@@ -81,7 +81,7 @@
     }
 
     p {
-        font-size: 1.7rem;
+        font-size: 1.2rem;
         color: #eee;
     }
 </style>

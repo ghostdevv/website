@@ -7,7 +7,7 @@
     </div>
     <div class="cards row">
         <card>
-            <h6>Github</h6>
+            <h4>Github</h4>
             <p>
                 Most of what I do is on github, including
                 <a href="https://github.com/ghostdevv/website">this website</a>!
@@ -27,7 +27,7 @@
             </div>
         </card>
         <card>
-            <h6>Discord</h6>
+            <h4>Discord</h4>
             <p>
                 Everything I do is somehow involved with Discord 😅. My main
                 public server is called
@@ -46,7 +46,7 @@
             </div>
         </card>
         <card>
-            <h6>Development</h6>
+            <h4>Development</h4>
             <p>
                 I work as a freelance full stack web developer, and do open
                 source projects part time. I mainly CMS or SaaS platforms for
