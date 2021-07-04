@@ -27,7 +27,7 @@
             &:hover {
                 opacity: 1;
 
-                color: #3d5cf1;
+                color: var(--theme-hover);
             }
 
             &:focus {

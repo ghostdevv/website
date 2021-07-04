@@ -141,8 +141,8 @@
 
         card {
             box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.1);
-            background-color: #2b2d30;
-            border: 2px solid #2b2d30;
+            background-color: var(--background-light);
+            border: 2px solid var(--background-light);
             padding: 32px;
             margin: 8px;
             border-radius: 16px;
@@ -165,7 +165,7 @@
 
             &:hover {
                 transform: translateY(-5px);
-                border: 2px solid #3d5cf1;
+                border: 2px solid var(--theme-hover);
             }
 
             &.fc {

@@ -75,13 +75,13 @@
                 height: 6px;
                 width: 6px;
                 margin-right: 12px;
-                background-color: #eee;
+                background-color: var(--text);
             }
         }
     }
 
     p {
         font-size: 1.2rem;
-        color: #eee;
+        color: var(--text);
     }
 </style>

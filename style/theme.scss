@@ -3,20 +3,33 @@
     font-size: 20px;
     font-weight: 300;
 
-    color: #eee;
-    background-color: #212529;
+    background-color: var(--background);
+    color: var(--text);
 
     --text: #eee;
+
     --background: #212529;
+    --background-light: #2b2d30;
+
+    --text-blue: #70b9f9;
+    --text-blue-highlight: #58a4e8;
+
+    --button: #2160ec;
+    --button-highlight: #3b73ed;
+
+    --theme: #2885d6;
+    --theme-hover: #3d5cf1;
+
+    --green: #67c157;
 }
 
 a {
-    color: #70b9f9;
+    color: var(--text-blue);
 
     transition: color 0.2s ease-in-out;
 
     &:hover {
-        color: #58a4e8;
+        color: var(--text-blue-highlight);
     }
 
     &:focus {
@@ -28,18 +41,18 @@ button,
 .button {
     padding: 12px 24px !important;
 
-    background-color: #2160ec;
-    border: 1px solid #2160ec;
+    background-color: var(--button);
+    border: 1px solid var(--button);
     border-radius: 8px;
 
-    color: #eee;
+    color: var(--text);
 
     transition: 0.2s ease-in-out;
 
     &:hover {
-        background-color: #3b73ed;
-        border-color: #3b73ed;
-        color: #eee;
+        background-color: var(--button-highlight);
+        border-color: var(--button-highlight);
+        color: var(--text);
     }
 
     &:focus {

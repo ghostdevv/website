@@ -13,6 +13,6 @@
 <style lang="scss">
     a {
         font-size: 1.2rem;
-        color: #eee;
+        color: var(--text);
     }
 </style>
