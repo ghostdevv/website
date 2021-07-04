@@ -1,8 +1,8 @@
 <script>
-    import Particles from 'svelte-particles';
     import { config } from '@/particles.config.js';
     import { fly, fade } from 'svelte/transition';
     import { animationShown } from '@/stores.js';
+    import Particles from 'svelte-particles';
 
     import NavButton from '@/components/NavButton.svelte';
 
