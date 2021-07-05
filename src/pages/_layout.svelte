@@ -8,9 +8,15 @@
     <slot />
 </div>
 
-<style>
+<style lang="scss">
+    @use 'style/flow/general';
+
     .wrapper {
         max-width: 1400px;
         margin: 0px auto;
+
+        @include general.column;
+
+        gap: 16px;
     }
 </style>

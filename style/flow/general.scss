@@ -1,0 +1,16 @@
+$gap: 8px;
+
+@mixin column {
+    display: flex;
+    flex-direction: column;
+
+    gap: $gap;
+
+    &.center {
+        align-items: center;
+    }
+}
+
+.column {
+    @include column;
+}
