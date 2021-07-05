@@ -1,5 +1,11 @@
-<nav>
-    <a href="/"> <img src="/logo.png" alt="GHOSTs Logo" /> </a>
+<script>
+    import { fade } from 'svelte/transition';
+</script>
+
+<nav transition:fade>
+    <a href="/">
+        <img src="/logo.png" alt="GHOSTs Logo" />
+    </a>
 
     <div class="links">
         <a href="/" class="active">Home</a>
