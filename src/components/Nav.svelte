@@ -1,5 +1,5 @@
 <nav>
-    <img src="/logo.png" alt="GHOSTs Logo" />
+    <a href="/"> <img src="/logo.png" alt="GHOSTs Logo" /> </a>
 
     <div class="links">
         <a href="/" class="active">Home</a>
