@@ -4,6 +4,8 @@
 
 <div class="wrapper">
     <Nav />
+
+    <slot />
 </div>
 
 <style>
