@@ -10,7 +10,7 @@
     padding: 32px;
     border-radius: 16px;
 
-    transition: border 0.2s ease-in-out, transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
     
     @include general.column;
     
@@ -26,9 +26,10 @@
 
 @mixin blue {
     background-color: var(--button);
-    border-color: var(--button-highlight);
+    border: 4px solid var(--button);
 
     &:hover {
+        border-color: var(--button-highlight);
         background-color: var(--button-highlight)
     }
 }
