@@ -42,3 +42,8 @@ card,
         @include blue;
     }
 }
+
+a.card {
+    cursor: pointer;
+    color: var(--text);
+}
