@@ -1,28 +1,37 @@
 <script>
+    import { fade, fly } from 'svelte/transition';
     import { os } from '@/projects.config.js';
 
     const starred = os.filter((x) => x.star);
     const rest = os.filter((x) => !x.star);
 </script>
 
-<div class="column center g32">
+<div class="column center g32" in:fade|local>
     <h3>⭐ Starred Projects</h3>
 
     <div class="row wrap center g16">
-        {#each starred as project}
-            <a href={project.url} target="_blank" class="card blue">
+        {#each starred as project, i}
+            <a
+                href={project.url}
+                target="_blank"
+                class="card blue"
+                in:fly={{ y: -40, delay: i * 80, duration: 800 }}>
                 <h5>{project.name}</h5>
             </a>
         {/each}
     </div>
 </div>
 
-<div class="column center g32">
+<div class="column center g32" in:fade|local>
     <h3>OS Projects</h3>
 
     <div class="row wrap center g16">
-        {#each rest as project}
-            <a href={project.url} target="_blank" class="card">
+        {#each rest as project, i}
+            <a
+                href={project.url}
+                target="_blank"
+                class="card"
+                in:fly={{ y: -40, delay: i * 80, duration: 800 }}>
                 <h5>{project.name}</h5>
             </a>
         {/each}
