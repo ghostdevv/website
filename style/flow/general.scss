@@ -12,6 +12,38 @@ $gap: 8px;
     }
 }
 
+@mixin row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    gap: $gap;
+
+    &.center {
+        justify-content: center
+    }
+}
+
+@mixin subs {
+    &.g16 {
+        gap: 16px;
+    }
+    
+    &.g32 {
+        gap: 32px;
+    }
+
+    &.wrap {
+        flex-wrap: wrap
+    }
+}
+
 .column {
     @include column;
+    @include subs;
+}
+
+.row {
+    @include row;
+    @include subs;
 }
