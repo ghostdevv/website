@@ -51,3 +51,30 @@ export const os = [
         url: 'https://github.com/ghostdevv/linode-bucket-delete',
     },
 ];
+
+export const work = [
+    {
+        name: 'Rejxcted',
+        link: 'https://rejxcted-site.vercel.app/',
+    },
+    {
+        name: 'Arrow Alerts',
+        link: 'https://arrowalerts.co',
+    },
+    {
+        name: 'Mesh Monitors',
+        link: 'https://meshmonitors.io',
+    },
+    {
+        name: 'Mesh QT',
+        link: 'https://meshmonitors.io/quicktasks',
+    },
+    {
+        name: 'Robotic Node',
+        link: 'https://archive.ghostdev.xyz/roboticnode/',
+    },
+    {
+        name: 'Eris ghost.org theme',
+        link: 'https://eris.gg',
+    },
+];

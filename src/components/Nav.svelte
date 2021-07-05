@@ -11,6 +11,7 @@
     <div class="links">
         <a href="/" class:active={$isActive('/index')}>Home</a>
         <a href="/projects" class:active={$isActive('/projects')}>Projects</a>
+        <a href="/work" class:active={$isActive('/work')}>Work</a>
         <a href="/">Contact</a>
     </div>
 
