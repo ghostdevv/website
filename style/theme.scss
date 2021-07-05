@@ -1,4 +1,9 @@
+// UI
 @import 'style/ui/buttons';
+@import 'style/ui/links';
+
+// Flow
+@import 'style/flow/general';
 
 :root {
     font-family: 'Quicksand', sans-serif;
@@ -20,20 +25,6 @@
     --button-highlight: #174bbb;
 
     --green: #67c157;
-}
-
-a {
-    color: var(--text-blue);
-
-    transition: color 0.2s ease-in-out;
-
-    &:hover {
-        color: var(--text-blue-highlight);
-    }
-
-    &:focus {
-        transition: none;
-    }
 }
 
 ::-webkit-scrollbar {

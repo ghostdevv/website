@@ -1,0 +1,13 @@
+a {
+    color: var(--text-blue);
+
+    transition: color 0.2s ease-in-out;
+
+    &:hover {
+        color: var(--text-blue-highlight);
+    }
+
+    &:focus {
+        transition: none;
+    }
+}
