@@ -1,5 +1,6 @@
 <script>
     import { fade } from 'svelte/transition';
+    import { isActive } from '@roxi/routify';
 </script>
 
 <nav transition:fade>
@@ -8,8 +9,8 @@
     </a>
 
     <div class="links">
-        <a href="/" class="active">Home</a>
-        <a href="/">Projects</a>
+        <a href="/" class:active={$isActive('/index')}>Home</a>
+        <a href="/projects" class:active={$isActive('/projects')}>Projects</a>
         <a href="/">Contact</a>
     </div>
 
