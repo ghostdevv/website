@@ -7,7 +7,7 @@
 </script>
 
 <div class="column center g32" in:fade|local>
-    <h3>⭐ Starred Projects</h3>
+    <h2>⭐ Starred Projects</h2>
 
     <div class="row wrap center g16">
         {#each starred as project, i}
@@ -23,7 +23,7 @@
 </div>
 
 <div class="column center g32" in:fade|local>
-    <h3>OS Projects</h3>
+    <h2>OS Projects</h2>
 
     <div class="row wrap center g16">
         {#each rest as project, i}
