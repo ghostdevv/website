@@ -33,10 +33,12 @@
                 font-weight: 600;
                 padding: 8px 0px;
 
+                border-bottom: 4px solid rgba(0, 0, 0, 0);
+
                 transition: border 0.2s ease-in-out, color 0.2s ease-in-out;
 
                 &.active {
-                    border-bottom: 4px solid var(--text-blue);
+                    border-color: var(--text-blue);
                 }
 
                 &:hover {
