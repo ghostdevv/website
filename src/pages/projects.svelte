@@ -15,7 +15,7 @@
                 href={project.url}
                 target="_blank"
                 class="card blue"
-                in:fly={{ y: -40, delay: i * 80, duration: 800 }}>
+                in:fly={{ y: -40, delay: i * 80, duration: 600 }}>
                 <h5>{project.name}</h5>
             </a>
         {/each}
@@ -31,7 +31,7 @@
                 href={project.url}
                 target="_blank"
                 class="card"
-                in:fly={{ y: -40, delay: i * 80, duration: 800 }}>
+                in:fly={{ y: -40, delay: i * 80, duration: 600 }}>
                 <h5>{project.name}</h5>
             </a>
         {/each}
