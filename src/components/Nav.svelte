@@ -44,11 +44,15 @@
 
                 transition: border 0.2s ease-in-out, color 0.2s ease-in-out;
 
+                color: var(--text);
+
                 &.active {
+                    color: var(--text-blue);
                     border-color: var(--text-blue);
                 }
 
                 &:hover {
+                    color: var(--text-blue-highlight);
                     border-color: var(--text-blue-highlight);
                 }
             }
