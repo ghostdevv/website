@@ -9,7 +9,7 @@
 
     <div class="links">
         <a href="/" class="active">Home</a>
-        <a href="/">Blog</a>
+        <a href="/">Projects</a>
         <a href="/">Contact</a>
     </div>
 
