@@ -236,8 +236,14 @@ button {
     font-size: 1rem;
 }
 
-@media (max-width:800px){
+@media (max-width:1200px){
     :root {
         font-size: 14px !important;   
+    }
+}
+
+@media (max-width:900px){
+    :root {
+        font-size: 12px !important;   
     }
 }
