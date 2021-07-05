@@ -2,21 +2,17 @@
     import Nav from '@/components/Nav.svelte';
 </script>
 
-<div class="wrapper">
+<div class="wrapper column g16">
     <Nav />
 
-    <slot />
+    <div class="column g32">
+        <slot />
+    </div>
 </div>
 
 <style lang="scss">
-    @use 'style/flow/general';
-
     .wrapper {
         max-width: 1400px;
         margin: 0px auto;
-
-        @include general.column;
-
-        gap: 16px;
     }
 </style>
