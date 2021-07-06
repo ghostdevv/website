@@ -168,6 +168,7 @@
 
     .buffer {
         height: 0;
+
         &.mobile {
             height: 175px;
         }
