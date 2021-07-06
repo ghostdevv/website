@@ -70,7 +70,7 @@
         }
 
         &.mobile {
-            position: fixed;
+            position: absolute;
             inset: 0;
 
             width: 100vw;
