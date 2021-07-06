@@ -1,12 +1,13 @@
 <script>
     import { fade, slide } from 'svelte/transition';
     import Hamburger from 'svelte-hamburgers';
-    import { isActive } from '@roxi/routify';
+    import { isActive, isChangingPage } from '@roxi/routify';
 
     let width;
     let open;
 
     $: mobile = width < 900;
+    $: if (!mobile || $isChangingPage) open = false;
 </script>
 
 <svelte:window bind:innerWidth={width} />
@@ -23,18 +24,21 @@
     {/if}
 
     {#if open || !mobile}
-        <div class="links" in:slide|local>
+        <div class="links" class:mobile transition:slide|local>
             <a href="/" class:active={$isActive('/index')}>Home</a>
-            <a href="/projects" class:active={$isActive('/projects')}>
-                Projects
-            </a>
-            <a href="/work" class:active={$isActive('/work')}>Work</a>
-            <a href="/">Contact</a>
-        </div>
 
-        <a href="/" class="button">Donate</a>
+            {#each ['projects', 'work', 'contact'] as link}
+                <a href="/{link}" class:active={$isActive(`/${link}`)}>
+                    {link}
+                </a>
+            {/each}
+        </div>
     {/if}
+
+    <a class:hide={mobile && !open} href="/" class="button">Donate</a>
 </nav>
+
+<div class="buffer" class:mobile />
 
 <style lang="scss">
     @import 'style/helpers/media';
@@ -53,20 +57,32 @@
         padding: 32px 24px;
 
         &.open {
-            position: fixed;
             z-index: 10000;
             top: 0;
             left: 0;
 
             height: 100vh;
 
-            padding: 32px 64px;
+            padding: 32px 24px;
             margin: 0px auto;
 
             background-color: var(--background);
         }
 
         &.mobile {
+            position: fixed;
+            inset: 0;
+
+            width: 100vw;
+
+            transition: background-color 0.5s;
+            transition-delay: 0.1s;
+
+            &.open {
+                background-color: var(--background);
+                transition: background-color 0.25s;
+            }
+
             grid-template-columns: 1fr 1fr;
             grid-template-rows: min-content min-content min-content;
 
@@ -115,6 +131,7 @@
             gap: 24px;
 
             a {
+                text-transform: capitalize;
                 font-weight: 600;
                 padding: 8px 0px;
 
@@ -138,6 +155,21 @@
 
         > .button {
             grid-area: button;
+
+            pointer-events: auto;
+            transition: opacity 0.3s;
+
+            &.hide {
+                opacity: 0;
+                pointer-events: none;
+            }
+        }
+    }
+
+    .buffer {
+        height: 0;
+        &.mobile {
+            height: 175px;
         }
     }
 </style>
