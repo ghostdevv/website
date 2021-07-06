@@ -170,7 +170,7 @@
         height: 0;
 
         &.mobile {
-            height: 175px;
+            height: 128px;
         }
     }
 </style>
