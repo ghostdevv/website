@@ -6,7 +6,7 @@
 <div class="column center g32" in:fade|local>
     <div>
         <h2>Work</h2>
-        <p>Essentially a mini portfolio</p>
+        <p>Essentially a mini portfolio of public sites I have worked on.</p>
     </div>
 
     <div class="row wrap center g16">
