@@ -1,17 +1,22 @@
 <script>
-    import { slide, fade } from 'svelte/transition';
+    import { isActive, isChangingPage } from '@roxi/routify';
     import Hamburger from 'svelte-hamburgers';
-    import { isActive } from '@roxi/routify';
+    import { slide } from 'svelte/transition';
 
     let width;
-    let open;
+    let scrollY;
+
+    let open = false;
 
     $: mobile = width < 900;
+    $: scroll = scrollY > 0;
+
+    $: if (!mobile || $isChangingPage) open = false;
 </script>
 
-<svelte:window bind:innerWidth={width} />
+<svelte:window bind:innerWidth={width} bind:scrollY />
 
-<nav class:mobile class:open>
+<nav class:mobile class:open class:scroll>
     <div class="nav-fh">
         <a href="/">
             <img class="logo" src="/logo.png" alt="GHOSTs Logo" />
@@ -24,10 +29,10 @@
         {/if}
     </div>
 
-    {#if open}
-        <div class="nav-sh" transition:slide>
+    {#if !$isChangingPage && (open || !mobile)}
+        <div class="nav-sh" transition:slide|local>
             <div class="links">
-                <a href="/" class:active={$isActive('/index')}>Home</a>
+                <a href="/" class:active={$isActive('/index')}> Home </a>
 
                 {#each ['projects', 'work', 'contact'] as link, i (i)}
                     <a href="/{link}" class:active={$isActive(`/${link}`)}>
@@ -46,7 +51,7 @@
         width: 100%;
         padding: 32px 24px;
 
-        position: sticky;
+        position: fixed;
         z-index: 10000;
         top: 0;
 
@@ -58,19 +63,22 @@
             display: contents;
         }
 
-        &.open {
-            transition: background-color 0.2s ease-in-out;
-            background-color: var(--background);
+        background-color: var(--background);
+        border-bottom: 2px solid var(--background);
+
+        transition: border-color 0.2s ease-in-out;
+
+        &.scroll,
+        &.open.mobile {
+            box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2),
+                0 4px 20px 0 rgba(0, 0, 0, 0.19);
+
+            border-color: var(--button);
         }
 
         &.mobile {
             flex-direction: column;
             justify-content: start;
-
-            height: 100vh;
-            width: 100vw;
-            left: 0;
-            position: fixed;
 
             .nav-fh {
                 width: 100%;
@@ -84,6 +92,8 @@
                 display: flex;
                 flex-direction: column;
                 gap: 22px;
+
+                height: 100%;
 
                 .links {
                     margin: 0px auto;
@@ -112,7 +122,7 @@
 
             border-bottom: 4px solid rgba(0, 0, 0, 0);
 
-            transition: border 0.2s ease-in-out, color 0.2s ease-in-out;
+            transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
 
             color: var(--text);
 

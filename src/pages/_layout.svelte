@@ -2,10 +2,10 @@
     import Nav from '@/components/Nav.svelte';
 </script>
 
-<div class="wrapper column g16">
-    <Nav />
+<Nav />
 
-    <div class="column g32">
+<div class="wrapper column g16">
+    <div class="column g32 main">
         <slot />
     </div>
 </div>
@@ -16,5 +16,9 @@
         margin: 0px auto;
 
         padding: 0px 32px;
+
+        .main {
+            padding-top: 156px;
+        }
     }
 </style>
