@@ -1,7 +1,7 @@
 {
     "name": "ghosts-website",
     "private": true,
-    "license": "GNU Affero General Public License v3.0",
+    "license": "CC BY-NC-ND 4.0",
     "scripts": {
         "dev": "run-p dev:*",
         "dev:routify": "routify",
