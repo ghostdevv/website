@@ -49,11 +49,15 @@
 <style lang="scss">
     nav {
         width: 100%;
+        max-width: 1600px;
+
         padding: 32px 24px;
 
         position: fixed;
         z-index: 10000;
         top: 0;
+        left: 50%;
+        transform: translateX(-50%);
 
         display: flex;
         align-items: center;
