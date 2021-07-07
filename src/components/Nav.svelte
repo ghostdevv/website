@@ -1,176 +1,134 @@
 <script>
-    import { fade, slide } from 'svelte/transition';
+    import { slide, fade } from 'svelte/transition';
     import Hamburger from 'svelte-hamburgers';
-    import { isActive, isChangingPage } from '@roxi/routify';
+    import { isActive } from '@roxi/routify';
 
     let width;
     let open;
 
     $: mobile = width < 900;
-    $: if (!mobile || $isChangingPage) open = false;
 </script>
 
 <svelte:window bind:innerWidth={width} />
 
-<nav transition:fade class:mobile class:open>
-    <a href="/">
-        <img src="/logo.png" alt="GHOSTs Logo" />
-    </a>
+<nav class:mobile class:open>
+    <div class="nav-fh">
+        <a href="/">
+            <img class="logo" src="/logo.png" alt="GHOSTs Logo" />
+        </a>
 
-    {#if mobile}
-        <div class="hamburger" in:fade|local>
-            <Hamburger color="var(--text)" type="squeeze" bind:open />
+        {#if mobile}
+            <div class="hamburger">
+                <Hamburger color="var(--text)" type="squeeze" bind:open />
+            </div>
+        {/if}
+    </div>
+
+    {#if open}
+        <div class="nav-sh" transition:slide>
+            <div class="links">
+                <a href="/" class:active={$isActive('/index')}>Home</a>
+
+                {#each ['projects', 'work', 'contact'] as link, i (i)}
+                    <a href="/{link}" class:active={$isActive(`/${link}`)}>
+                        {link}
+                    </a>
+                {/each}
+            </div>
+
+            <a href="/" class="button donate-button">Donate</a>
         </div>
     {/if}
-
-    {#if open || !mobile}
-        <div class="links" class:mobile transition:slide|local>
-            <a href="/" class:active={$isActive('/index')}>Home</a>
-
-            {#each ['projects', 'work', 'contact'] as link}
-                <a href="/{link}" class:active={$isActive(`/${link}`)}>
-                    {link}
-                </a>
-            {/each}
-        </div>
-    {/if}
-
-    <a class:hide={mobile && !open} href="/" class="button">Donate</a>
 </nav>
 
-<div class="buffer" class:mobile />
-
 <style lang="scss">
-    @import 'style/helpers/media';
-
     nav {
         width: 100%;
+        padding: 32px 24px;
 
-        display: grid;
-        grid-template-columns: min-content min-content min-content;
-        grid-template-areas: 'logo links button';
-        grid-template-rows: min-content;
+        position: sticky;
+        z-index: 10000;
+        top: 0;
 
+        display: flex;
         align-items: center;
         justify-content: space-between;
 
-        padding: 32px 24px;
+        .nav-sh {
+            display: contents;
+        }
 
         &.open {
-            z-index: 10000;
-            top: 0;
-            left: 0;
-
-            height: 100vh;
-
-            padding: 32px 24px;
-            margin: 0px auto;
-
+            transition: background-color 0.2s ease-in-out;
             background-color: var(--background);
         }
 
         &.mobile {
-            position: absolute;
-            inset: 0;
+            flex-direction: column;
+            justify-content: start;
 
+            height: 100vh;
             width: 100vw;
+            left: 0;
+            position: fixed;
 
-            transition: background-color 0.5s;
-            transition-delay: 0.1s;
+            .nav-fh {
+                width: 100%;
 
-            &.open {
-                background-color: var(--background);
-                transition: background-color 0.25s;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
             }
 
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: min-content min-content min-content;
-
-            gap: 32px 0px;
-
-            grid-template-areas:
-                'logo hamburger'
-                'links links'
-                'button button';
-
-            .hamburger {
-                justify-self: end;
-            }
-
-            .links {
-                margin: 0px auto;
+            .nav-sh {
+                display: flex;
                 flex-direction: column;
-                gap: 8px;
+                gap: 22px;
 
-                a {
-                    font-size: 1.5rem;
-                    border-width: 2px;
+                .links {
+                    margin: 0px auto;
+                    flex-direction: column;
+                    gap: 8px;
+
+                    a {
+                        font-size: 1.5rem;
+                        border-width: 2px;
+                        border: none;
+                    }
                 }
-            }
-
-            .button {
-                width: fit-content;
-                margin: 0 auto;
-            }
-        }
-
-        .hamburger {
-            grid-area: hamburger;
-        }
-
-        img {
-            grid-area: logo;
-            max-width: 75px;
-        }
-
-        .links {
-            grid-area: links;
-
-            display: flex;
-            align-items: center;
-            gap: 24px;
-
-            a {
-                text-transform: capitalize;
-                font-weight: 600;
-                padding: 8px 0px;
-
-                border-bottom: 4px solid rgba(0, 0, 0, 0);
-
-                transition: border 0.2s ease-in-out, color 0.2s ease-in-out;
-
-                color: var(--text);
-
-                &.active {
-                    color: var(--text-blue);
-                    border-color: var(--text-blue);
-                }
-
-                &:hover {
-                    color: var(--text-blue-highlight);
-                    border-color: var(--text-blue-highlight);
-                }
-            }
-        }
-
-        > .button {
-            grid-area: button;
-
-            pointer-events: auto;
-            transition: opacity 0.3s;
-
-            &.hide {
-                opacity: 0;
-                pointer-events: none;
             }
         }
     }
 
-    .buffer {
-        height: 0;
+    .links {
+        display: flex;
+        align-items: center;
+        gap: 24px;
 
-        &.mobile {
-            height: 128px;
+        a {
+            text-transform: capitalize;
+            font-weight: 600;
+            padding: 8px 0px;
+
+            border-bottom: 4px solid rgba(0, 0, 0, 0);
+
+            transition: border 0.2s ease-in-out, color 0.2s ease-in-out;
+
+            color: var(--text);
+
+            &.active {
+                color: var(--text-blue);
+                border-color: var(--text-blue);
+            }
+
+            &:hover {
+                color: var(--text-blue-highlight);
+                border-color: var(--text-blue-highlight);
+            }
         }
+    }
+
+    .logo {
+        max-width: 75px;
     }
 </style>
