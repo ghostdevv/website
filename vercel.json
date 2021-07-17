@@ -1,7 +1,7 @@
 {
     "version": 2,
     "functions": {
-        "vercel.js": {
+        "vercel": {
             "includeFiles": "dist/**"
         }
     },
@@ -11,7 +11,7 @@
         },
         {
             "src": "/.*",
-            "dest": "/vercel.js"
+            "dest": "/vercel"
         }
     ]
 }
