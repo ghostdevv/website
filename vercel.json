@@ -1,12 +1,17 @@
 {
     "version": 2,
+    "functions": {
+        "vercel.js": {
+            "includeFiles": "dist/**"
+        }
+    },
     "routes": [
         {
             "handle": "filesystem"
         },
         {
             "src": "/.*",
-            "dest": "index.html"
+            "dest": "/vercel.js"
         }
     ]
 }
