@@ -8,7 +8,16 @@
         "dev:vite": "vite",
         "build": "cross-env NODE_ENV=production run-s build:*",
         "build:routify": "routify -b",
-        "build:vite": "vite build"
+        "build:vite": "vite build",
+        "ssr": "spassr --ssr"
+    },
+    "appConfig": {
+        "port": 5000,
+        "assetsDir": "public",
+        "template": "dist/index.html",
+        "distDir": "dist",
+        "buildDir": "dist/assets",
+        "script": "dist/main.js"
     },
     "devDependencies": {
         "@roxi/routify": "^2.18.0",
@@ -20,10 +29,13 @@
         "postcss": "^8.2.8",
         "postcss-import": "^14.0.0",
         "sass": "^1.32.8",
+        "spassr": "^2.6.0",
         "svelte": "^3.35.0",
         "svelte-hamburgers": "^2.0.6",
         "svelte-hmr": "^0.14.3",
         "svelte-preprocess": "^4.7.0",
-        "vite": "^2.0.5"
+        "tossr": "^1.4.2",
+        "vite": "^2.0.5",
+        "vite-main-js": "^0.0.1"
     }
 }

@@ -1,6 +1,7 @@
 import { svelte } from '@sveltejs/vite-plugin-svelte';
 import autoPreprocess from 'svelte-preprocess';
 import { defineConfig } from 'vite';
+import main from 'vite-main-js';
 import path from 'path';
 
 export default ({ mode }) =>
@@ -24,6 +25,7 @@ export default ({ mode }) =>
             ],
         },
         plugins: [
+            main(),
             svelte({
                 preprocess: [
                     autoPreprocess({
