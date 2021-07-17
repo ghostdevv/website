@@ -1,7 +1,7 @@
 {
     "version": 2,
     "functions": {
-        "api/vercel.s": {
+        "api/vercel.js": {
             "includeFiles": "dist/**"
         }
     },
