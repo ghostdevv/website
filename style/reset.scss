@@ -193,9 +193,57 @@ body {
     height: 100%;
     scroll-behavior: smooth;
 }
-input:focus {
-    outline: none;
-}
+
 a {
     text-decoration: none;
+    color: var(--text)
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+h4 {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+h5 {
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+h6 {
+    font-size: 0.8rem;
+    font-weight: 300;
+}
+
+a,
+p,
+span,
+button {
+    font-size: 1rem;
+}
+
+@media (max-width:1200px){
+    :root {
+        font-size: 14px !important;   
+    }
+}
+
+@media (max-width:900px){
+    :root {
+        font-size: 12px !important;   
+    }
 }

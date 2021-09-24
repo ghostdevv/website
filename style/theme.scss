@@ -1,75 +1,31 @@
+// UI
+@import 'style/ui/buttons';
+@import 'style/ui/links';
+
+// Flow
+@import 'style/flow/general';
+@import 'style/flow/cards';
+
 :root {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
     font-weight: 300;
-    color: #eee;
-    background-color: #212529;
-}
 
-h1 {
-    font-size: 8rem;
-}
+    background-color: var(--background);
+    color: var(--text);
 
-h2 {
-    font-size: 7rem;
-}
+    --text: #eee;
 
-h3 {
-    font-size: 6rem;
-}
+    --background: #1e1e1e;
+    --background-light: #2b2d30;
 
-h4 {
-    font-size: 5rem;
-}
+    --text-blue: #437af1;
+    --text-blue-highlight: #2160ec;
 
-h5 {
-    font-size: 4rem;
-}
+    --button: #2160ec;
+    --button-highlight: #174bbb;
 
-h6 {
-    font-size: 3rem;
-}
-
-p {
-    font-size: 1.5rem;
-}
-
-a {
-    color: #70b9f9;
-
-    transition: 0.2s ease-in-out;
-
-    &:hover {
-        color: #58a4e8;
-    }
-
-    &:focus {
-        transition: none;
-    }
-}
-
-button,
-.button {
-    padding: 12px 24px !important;
-
-    background-color: #2160ec;
-    border: 1px solid #2160ec;
-    border-radius: 8px;
-
-    color: #eee;
-    font-size: 1.5rem;
-
-    transition: 0.2s ease-in-out;
-
-    &:hover {
-        background-color: #3b73ed;
-        border-color: #3b73ed;
-        color: #eee;
-    }
-
-    &:focus {
-        transition: none;
-    }
+    --green: #67c157;
 }
 
 ::-webkit-scrollbar {

@@ -1,113 +1,39 @@
 <script>
-    import Main from '@/components/flow/Main.svelte';
-    import Row from '@/components/flow/Row.svelte';
-    import Col from '@/components/flow/Col.svelte';
-    import Spacer from '@/components/flow/Spacer.svelte';
-    import LinkCard from '@/components/cards/LinkCard.svelte';
+    import { fade, fly } from 'svelte/transition';
+    import { os } from '@/projects.config.js';
 
-    const projects = [
-        {
-            name: 'Websites',
-            items: [
-                {
-                    name: 'Rejxcted',
-                    link: 'https://rejxcted-site.vercel.app/',
-                },
-                {
-                    name: 'Arrow Alerts',
-                    link: 'https://arrowalerts.co',
-                },
-                {
-                    name: 'Mesh Monitors',
-                    link: 'https://meshmonitors.io',
-                },
-                {
-                    name: 'Mesh QT',
-                    link: 'https://meshmonitors.io/quicktasks',
-                },
-                {
-                    name: 'Robotic Node',
-                    link: 'https://archive.ghostdev.xyz/roboticnode/',
-                },
-                {
-                    name: 'Eris ghost.org theme',
-                    link: 'https://eris.gg',
-                },
-            ],
-        },
-        {
-            name: 'Open Source',
-            items: [
-                {
-                    name: 'Routify',
-                    link: 'https://routify.dev/',
-                },
-                {
-                    name: 'Svelte Hamburgers',
-                    link: 'https://github.com/ghostdevv/svelte-hamburgers',
-                },
-                {
-                    name: 'SourceBin',
-                    link: 'https://github.com/ghoststools/sourcebin',
-                },
-                {
-                    name: 'JellyCommands',
-                    link: 'https://github.com/ghostdevv/jellycommands',
-                },
-                {
-                    name: 'DashArgs',
-                    link: 'https://github.com/ghoststools/dashargs',
-                },
-                {
-                    name: 'MyKV',
-                    link: 'https://github.com/ghostdevv/mykv',
-                },
-                {
-                    name: 'GHOSTs Tools',
-                    link: 'https://github.com/ghostdevv/ghoststools',
-                },
-                {
-                    name: 'djs-ticketsystem',
-                    link: 'https://github.com/ghoststools/djs-ticketsystem',
-                },
-                {
-                    name: 'Github 1s Button',
-                    link: 'https://github.com/ghostdevv/github1s-button',
-                },
-                {
-                    name: 'rollup-obfuscator',
-                    link: 'https://github.com/ghoststools/rollup-obfuscator',
-                },
-                {
-                    name: 'linode-object-upload',
-                    link: 'https://github.com/ghostdevv/linode-object-upload',
-                },
-                {
-                    name: 'linode-bucket-delete',
-                    link: 'https://github.com/ghostdevv/linode-bucket-delete',
-                },
-            ],
-        },
-    ];
+    const starred = os.filter((x) => x.star);
+    const rest = os.filter((x) => !x.star);
 </script>
 
-<Main>
-    <h3>Projects</h3>
-    <p>Here are a collection of projects that I have made or worked on</p>
+<div class="column center g32" in:fade|local>
+    <h2>⭐ Starred Projects</h2>
 
-    <Spacer gap="8" />
+    <div class="row wrap center g16">
+        {#each starred as project, i}
+            <a
+                href={project.url}
+                target="_blank"
+                class="card blue"
+                in:fly={{ y: -40, delay: i * 80, duration: 600 }}>
+                <h5>{project.name}</h5>
+            </a>
+        {/each}
+    </div>
+</div>
 
-    {#each projects as { name, items }}
-        <Col>
-            <h6>{name}</h6>
+<div class="column center g32" in:fade|local>
+    <h2>OS Projects</h2>
 
-            <Row>
-                {#each items as { name, link }}
-                    <LinkCard url={link}>
-                        <h6>{name}</h6>
-                    </LinkCard>
-                {/each}
-            </Row>
-        </Col>
-    {/each}
-</Main>
+    <div class="row wrap center g16">
+        {#each rest as project, i}
+            <a
+                href={project.url}
+                target="_blank"
+                class="card"
+                in:fly={{ y: -40, delay: i * 80, duration: 600 }}>
+                <h5>{project.name}</h5>
+            </a>
+        {/each}
+    </div>
+</div>

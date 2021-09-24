@@ -1,52 +1,24 @@
 <script>
-    import Particles from 'svelte-particles';
-    import { config } from '@/particles.config.js';
-    import { fly, fade } from 'svelte/transition';
-    import { animationShown } from '@/stores.js';
-
-    import NavButton from '@/components/NavButton.svelte';
-
-    const time = 1800;
-    const loading = new Promise((resolve) => {
-        if (import.meta.env.MODE == 'development' || $animationShown)
-            return resolve();
-        else
-            setTimeout(() => {
-                $animationShown = true;
-                resolve();
-            }, time);
-    });
+    import Nav from '@/components/Nav.svelte';
 </script>
 
-<Particles id="particles" options={config} />
+<Nav />
 
-{#await loading}
-    <div class="animation loader" out:fade>
-        {#each 'GHOST' as char, i (i)}
-            <h1 in:fly={{ y: -200, duration: time - 500, delay: i * 50 }}>
-                {char}
-            </h1>
-        {/each}
-    </div>
-{:then}
-    <div transition:fade>
+<div class="wrapper column g16">
+    <div class="column g32 main">
         <slot />
     </div>
-
-    <NavButton />
-{/await}
+</div>
 
 <style lang="scss">
-    .loader {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+    .wrapper {
+        max-width: 1400px;
+        margin: 0px auto;
 
-        display: flex;
-        align-items: center;
-        text-align: center;
+        padding: 0px 32px;
 
-        z-index: 100;
+        .main {
+            padding-top: 156px;
+        }
     }
 </style>
