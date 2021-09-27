@@ -42,7 +42,7 @@
                 {/each}
             </div>
 
-            <a href="/" class="button donate-button">Donate</a>
+            <a href="/" role="button" class="donate-button">Donate</a>
         </div>
     {/if}
 </nav>
@@ -123,7 +123,7 @@
         a {
             text-transform: capitalize;
             font-weight: 600;
-            padding: 8px 0px;
+            padding: 12px 8px;
 
             border-bottom: 4px solid rgba(0, 0, 0, 0);
 
@@ -131,14 +131,18 @@
 
             color: var(--text);
 
+            text-decoration: none;
+
             &.active {
-                color: var(--text-blue);
-                border-color: var(--text-blue);
+                color: var(--secondary);
+                border-color: var(--secondary);
             }
 
-            &:hover {
-                color: var(--text-blue-highlight);
-                border-color: var(--text-blue-highlight);
+            &:hover,
+            &:focus {
+                color: var(--secondary-hover);
+                background-color: inherit;
+                border-color: var(--secondary-hover);
             }
         }
     }
