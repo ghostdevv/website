@@ -11,6 +11,10 @@
 </div>
 
 <style lang="scss">
+    div {
+        width: 100%;
+    }
+
     .wrapper {
         max-width: 1400px;
         margin: 0px auto;
