@@ -33,7 +33,7 @@
     {#if open || !mobile}
         <div class="nav-sh" transition:slide|local>
             <div class="links">
-                <a href="/" class:active={$isActive('/index')}> Home </a>
+                <a href="/" class:active={$isActive('/')}> Home </a>
 
                 {#each ['projects', 'work', 'contact'] as link, i (i)}
                     <a href="/{link}" class:active={$isActive(`/${link}`)}>
