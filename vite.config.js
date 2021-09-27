@@ -1,4 +1,5 @@
 import { svelte } from '@sveltejs/vite-plugin-svelte';
+import routify from '@roxi/routify/vite-plugin';
 import autoPreprocess from 'svelte-preprocess';
 import { defineConfig } from 'vite';
 import path from 'path';
@@ -8,29 +9,20 @@ export default ({ mode }) =>
         server: {
             port: 5000,
         },
-        build: {
-            cssCodeSplit: false,
-            target: ['es2015'],
-        },
-        optimizeDeps: {
-            exclude: ['@roxi/routify'],
-        },
+
         resolve: {
             alias: [
                 {
                     find: '@',
-                    replacement: path.resolve(__dirname, './src'),
+                    replacement: path.resolve('./src'),
                 },
             ],
         },
+
         plugins: [
+            routify(),
             svelte({
-                preprocess: [
-                    autoPreprocess({
-                        postcss: require('./postcss.config.js'),
-                        defaults: { style: 'postcss' },
-                    }),
-                ],
+                preprocess: [autoPreprocess()],
                 emitCss: true,
                 hot: !mode == 'production',
             }),
