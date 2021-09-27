@@ -12,7 +12,7 @@
 
     <div class="row center g16">
         {#each links as [href, text], i}
-            <a {href} class="button" in:fly={{ y: -40, delay: 150 * (i + 1) }}>
+            <a {href} role="button" in:fly={{ y: -40, delay: 150 * (i + 1) }}>
                 {text}
             </a>
         {/each}
@@ -31,5 +31,6 @@
     div {
         text-align: center;
         padding: 24px 0px;
+        width: 100%;
     }
 </style>

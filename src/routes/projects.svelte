@@ -6,7 +6,7 @@
     const rest = os.filter((x) => !x.star);
 </script>
 
-<div class="column center g32" in:fade|local>
+<div class="column center g32 full" in:fade|local>
     <h2>⭐ Starred Projects</h2>
 
     <div class="row wrap center g16">
@@ -14,7 +14,7 @@
             <a
                 href={project.url}
                 target="_blank"
-                class="card blue"
+                class="card center blue"
                 in:fly={{ y: -40, delay: i * 80, duration: 600 }}>
                 <h5>{project.name}</h5>
             </a>
@@ -22,7 +22,7 @@
     </div>
 </div>
 
-<div class="column center g32" in:fade|local>
+<div class="column center g32 full" in:fade|local>
     <h2>OS Projects</h2>
 
     <div class="row wrap center g16">
@@ -30,7 +30,7 @@
             <a
                 href={project.url}
                 target="_blank"
-                class="card"
+                class="card center"
                 in:fly={{ y: -40, delay: i * 80, duration: 600 }}>
                 <h5>{project.name}</h5>
             </a>
