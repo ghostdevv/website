@@ -1,4 +1,4 @@
-import '../style/global.scss';
+import 'ghostsui/css/ghostsui.css';
 import App from './App.svelte';
 
 const app = new App({ target: document.body });
