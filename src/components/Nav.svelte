@@ -69,7 +69,7 @@
         }
 
         background-color: var(--background-primary);
-        border-bottom: 2px solid var(--background-primary);
+        border-bottom: 4px solid var(--background-primary);
 
         transition: border-color 0.2s ease-in-out;
 
