@@ -23,8 +23,8 @@
         </a>
 
         {#if mobile}
-            <div class="hamburger">
-                <Hamburger color="var(--text)" type="squeeze" bind:open />
+            <div>
+                <Hamburger --color="var(--text)" type="squeeze" bind:open />
             </div>
         {/if}
     </div>

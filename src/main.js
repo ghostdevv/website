@@ -1,3 +1,5 @@
+import 'svelte-hamburgers/dist/css/types/squeeze.css';
+import 'svelte-hamburgers/dist/css/base.css';
 import 'ghostsui/css/ghostsui.css';
 import App from './App.svelte';
 
