@@ -68,8 +68,8 @@
             display: contents;
         }
 
-        background-color: var(--background);
-        border-bottom: 2px solid var(--background);
+        background-color: var(--background-primary);
+        border-bottom: 2px solid var(--background-primary);
 
         transition: border-color 0.2s ease-in-out;
 
@@ -78,7 +78,7 @@
             box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2),
                 0 4px 20px 0 rgba(0, 0, 0, 0.19);
 
-            border-color: var(--button);
+            border-color: var(--primary);
         }
 
         &.mobile {
