@@ -5,7 +5,7 @@
 
 <div class="column center g32 full" in:fade|local>
     <div>
-        <h2>Work</h2>
+        <h1>Work</h1>
         <p>Essentially a mini portfolio of public sites I have worked on.</p>
     </div>
 
