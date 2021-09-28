@@ -1,4 +1,4 @@
-export const links = [
-    ['https://discord.gg/2Vd4wAjJnm', 'Discord'],
-    ['https://github.com/ghostdevv', 'Github'],
-];
+export const links = {
+    discord: 'https://discord.gg/2Vd4wAjJnm',
+    github: 'https://github.com/ghostdevv',
+};
