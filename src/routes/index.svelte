@@ -1,6 +1,6 @@
 <script>
     import { fly } from 'svelte/transition';
-    import { links } from '@/home.config';
+    import { featured } from '@/data/links';
 </script>
 
 <div>
@@ -11,7 +11,7 @@
     </div>
 
     <div class="row center g16">
-        {#each links as [href, text], i}
+        {#each featured as [text, href], i}
             <a {href} role="button" in:fly={{ y: -40, delay: 150 * (i + 1) }}>
                 {text}
             </a>
