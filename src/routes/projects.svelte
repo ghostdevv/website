@@ -1,6 +1,6 @@
 <script>
     import { fade, fly } from 'svelte/transition';
-    import { os } from '@/projects.config.js';
+    import { os } from '@/data/projects.js';
 
     const starred = os.filter((x) => x.star);
     const rest = os.filter((x) => !x.star);

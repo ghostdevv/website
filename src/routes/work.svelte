@@ -1,6 +1,6 @@
 <script>
     import { fade, fly } from 'svelte/transition';
-    import { work } from '@/projects.config.js';
+    import { work } from '@/data/projects.js';
 </script>
 
 <div class="column center g32 full" in:fade|local>

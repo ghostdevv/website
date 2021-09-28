@@ -50,6 +50,19 @@ export const os = [
         name: 'linode-bucket-delete',
         url: 'https://github.com/ghostdevv/linode-bucket-delete',
     },
+    {
+        name: 'remark-slug-anchor',
+        url: 'https://www.npmjs.com/package/remark-slug-anchor',
+    },
+    {
+        name: 'Svelte Body',
+        url: 'https://www.npmjs.com/package/svelte-body',
+        star: true,
+    },
+    {
+        name: 'greset',
+        url: 'https://www.npmjs.com/package/greset',
+    },
 ];
 
 export const work = [
