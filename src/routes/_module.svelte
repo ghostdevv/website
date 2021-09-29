@@ -19,10 +19,10 @@
         max-width: 1400px;
         margin: 0px auto;
 
-        padding: 0px 32px;
+        padding: 16px 32px;
 
         .main {
-            padding-top: 156px;
+            padding-top: 140px;
         }
     }
 </style>
