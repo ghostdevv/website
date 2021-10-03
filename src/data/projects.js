@@ -63,6 +63,10 @@ export const os = [
         name: 'greset',
         url: 'https://www.npmjs.com/package/greset',
     },
+    {
+        name: 'sass-hex-rgb',
+        url: 'https://github.com/ghostdevv/sass-hex-rgb'
+    }
 ];
 
 export const work = [
