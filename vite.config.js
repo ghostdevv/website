@@ -16,6 +16,10 @@ export default ({ mode }) =>
                     find: '@',
                     replacement: path.resolve('./src'),
                 },
+                {
+                    find: '$sanity',
+                    replacement: path.resolve('./src/sanity.js'),
+                },
             ],
         },
 
