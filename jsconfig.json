@@ -3,7 +3,11 @@
         "checkJs": true,
         "baseUrl": ".",
         "paths": {
-            "@/*": ["./src/*"] 
-        }
+            "@/*": [
+                "./src/*"
+            ]
+        },
+        "module": "ESNext",
+        "moduleResolution": "node"
     }
 }
