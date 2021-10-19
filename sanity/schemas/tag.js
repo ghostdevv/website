@@ -12,6 +12,9 @@ export default {
             name: 'colour',
             title: 'Colour',
             type: 'color',
+            options: {
+                disableAlpha: true,
+            },
         },
     ],
 };
