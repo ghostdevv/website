@@ -22,5 +22,8 @@
         "svelte-hamburgers": "^3.0.1",
         "svelte-preprocess": "^4.7.0",
         "vite": "^2.0.5"
+    },
+    "dependencies": {
+        "@sanity/client": "^2.21.3"
     }
 }
