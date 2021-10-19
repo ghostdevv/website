@@ -6,6 +6,7 @@
   },
   "dependencies": {
     "@sanity/base": "^2.21.5",
+    "@sanity/color-input": "^2.21.5",
     "@sanity/core": "^2.21.5",
     "@sanity/default-layout": "^2.21.5",
     "@sanity/default-login": "^2.21.4",
