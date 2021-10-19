@@ -22,6 +22,7 @@
         gap: 0px;
 
         width: 325px;
+        max-width: 520px;
 
         background-color: var(--background-secondary);
         border-radius: $borderRadius;
