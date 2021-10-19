@@ -1,15 +1,13 @@
 <script>
     import PostCard from './PostCard.svelte';
+
+    export let posts;
 </script>
 
 <div class="blog-posts">
-    <PostCard />
-    <PostCard />
-    <PostCard />
-    <PostCard />
-    <PostCard />
-    <PostCard />
-    <PostCard />
+    {#each posts as post, i}
+        <PostCard {...post} delay={200 * i} />
+    {/each}
 </div>
 
 <style lang="scss">

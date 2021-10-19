@@ -1,10 +1,25 @@
-<article>
-    <img class="image" src="https://via.placeholder.com/1920x1080" alt="Pog" />
+<script>
+    import { fly } from 'svelte/transition';
+
+    export let image;
+    export let slug;
+    export let tag;
+    export let title;
+
+    export let delay = 0;
+</script>
+
+<article in:fly={{ y: -20, delay }}>
+    <img class="image" src={image} alt="Pog" />
 
     <div class="details">
-        <span class="tag"> BLOG </span>
+        <span
+            class="tag"
+            style="--tag-colour: {tag.rgb.r}, {tag.rgb.g}, {tag.rgb.b}">
+            {tag.name}
+        </span>
 
-        <h4 class="title">How to do x in y</h4>
+        <h4 class="title">{title}</h4>
 
         <p class="description">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint iure
@@ -48,8 +63,8 @@
             padding: 18px;
 
             .tag {
-                background-color: rgba(33, 96, 236, 0.5);
-                color: rgba(33, 96, 236);
+                background-color: rgba(var(--tag-colour), 0.5);
+                color: rgba(var(--tag-colour));
 
                 border-radius: 16px;
 

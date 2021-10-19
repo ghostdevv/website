@@ -9,8 +9,16 @@ export const sanity = client({
 
 export const getPosts = () =>
     sanity.fetch(groq`
-        *[_type == 'post'][0...20]{
+        *[_type == 'post'][0...15]{
             title,
-            slug,
+
+            "slug": slug.current,
+
+            "image": image.asset -> url,
+
+            "tag": *[_type == 'tag' && _id == ^.tag._ref][0]{
+                "name": upper(name),
+                "rgb": colour.rgb { r, g, b}
+            }
         }
     `);
