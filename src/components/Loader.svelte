@@ -1,20 +1,8 @@
 <div class="loader">
-    <svg xmlns="http://www.w3.org/2000/svg" width="110" height="33">
-        <ellipse cx="16.805" cy="16.5" rx="12.732" ry="12.5" />
-
-        <ellipse
-            cx="55"
-            cy="16.5"
-            rx="12.732"
-            ry="12.5"
-            style="--delay: 0.2s" />
-
-        <ellipse
-            cx="93.194"
-            cy="16.5"
-            rx="12.732"
-            ry="12.5"
-            style="--delay: 0.4s" />
+    <svg fill="none" width="216" height="66" viewBox="0 0 216 66">
+        <circle cx="33" cy="33" r="25" />
+        <circle cx="108" cy="33" r="25" style="--delay: 0.2s" />
+        <circle cx="183" cy="33" r="25" style="--delay: 0.4s" />
     </svg>
 </div>
 
@@ -22,7 +10,7 @@
     .loader {
         padding: 16px;
 
-        ellipse {
+        circle {
             animation: dot 1.5s infinite ease-in-out forwards;
             animation-delay: var(--delay, 0s);
 
