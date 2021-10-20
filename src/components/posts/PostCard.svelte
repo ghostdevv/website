@@ -22,8 +22,7 @@
         <h4 class="title">{title}</h4>
 
         <p class="description">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint iure
-            nesciunt dolore nulla, consectetur placeat rerum esse iusto laborum
+            {excerpt}
         </p>
     </div>
 </article>

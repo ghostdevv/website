@@ -11,6 +11,7 @@ export const getPosts = () =>
     sanity.fetch(groq`
         *[_type == 'post'][0...15]{
             title,
+            excerpt,
 
             "slug": slug.current,
 
