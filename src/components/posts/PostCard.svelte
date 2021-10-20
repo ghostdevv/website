@@ -1,16 +1,20 @@
 <script>
     import { fly } from 'svelte/transition';
 
+    export let postType;
     export let excerpt;
     export let title;
     export let image;
+    export let link;
     export let slug;
     export let tag;
 
     export let delay = 0;
+
+    $: href = postType == 'text' ? `/posts/${slug}` : link;
 </script>
 
-<a href="/posts/{slug}" class="postcard" in:fly={{ y: -20, delay }}>
+<a {href} class="postcard" in:fly={{ y: -20, delay }}>
     <img class="image" src={image} alt="Pog" />
 
     <div class="details">

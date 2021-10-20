@@ -12,8 +12,10 @@ export const getPosts = () =>
         *[_type == 'post'][0...15]{
             title,
             excerpt,
+            postType,
+            link,
             timestamp,
-
+            
             "slug": slug.current,
 
             "image": image.asset -> url,
