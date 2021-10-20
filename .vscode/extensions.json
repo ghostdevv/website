@@ -4,6 +4,7 @@
         "formulahendry.auto-rename-tag",
         "svelte.svelte-vscode",
         "christian-kohler.npm-intellisense",
-        "zignd.html-css-class-completion"
+        "zignd.html-css-class-completion",
+        "sanity-io.vscode-sanity"
     ]
 }
