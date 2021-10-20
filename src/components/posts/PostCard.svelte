@@ -55,8 +55,11 @@
         }
 
         .image {
-            width: 100%;
-            height: auto;
+            min-width: 100%;
+            width: auto;
+            height: 200px;
+
+            object-fit: cover;
 
             border-radius: $borderRadius $borderRadius 0px 0px;
         }
