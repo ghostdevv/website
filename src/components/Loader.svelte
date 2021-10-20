@@ -10,13 +10,18 @@
     .loader {
         padding: 16px;
 
-        circle {
-            animation: dot 1.5s infinite ease-in-out forwards;
-            animation-delay: var(--delay, 0s);
+        svg {
+            height: auto;
+            width: 100px;
 
-            opacity: 0.8;
-            transform: translateY(-4px);
-            fill: var(--primary);
+            circle {
+                animation: dot 1.5s infinite ease-in-out forwards;
+                animation-delay: var(--delay, 0s);
+
+                opacity: 0.8;
+                transform: translateY(-4px);
+                fill: var(--primary);
+            }
         }
     }
 
