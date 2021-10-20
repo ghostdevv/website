@@ -12,6 +12,7 @@ export const getPosts = () =>
         *[_type == 'post'][0...15]{
             title,
             excerpt,
+            timestamp,
 
             "slug": slug.current,
 
@@ -21,5 +22,5 @@ export const getPosts = () =>
                 "name": upper(name),
                 "rgb": colour.rgb { r, g, b}
             }
-        }
+        } | order(timestamp desc)
     `);

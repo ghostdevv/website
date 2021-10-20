@@ -32,28 +32,28 @@ export default {
             },
         },
         {
-            name: 'publishedAt',
-            title: 'Published at',
+            name: 'timestamp',
+            title: 'Published Timestamp',
             type: 'datetime',
         },
-        // {
-        //     name: 'body',
-        //     title: 'Body',
-        //     type: 'blockContent',
-        // },
+        {
+            name: 'excerpt',
+            title: 'Excerpt',
+            type: 'text',
+            rows: 2,
+        },
+        {
+            name: 'body',
+            title: 'Post Body',
+            type: 'markdown',
+        },
     ],
 
-    // preview: {
-    //   select: {
-    //     title: 'title',
-    //     author: 'author.name',
-    //     media: 'mainImage',
-    //   },
-    //   prepare(selection) {
-    //     const {author} = selection
-    //     return Object.assign({}, selection, {
-    //       subtitle: author && `by ${author}`,
-    //     })
-    //   },
-    // },
+    orderings: [
+        {
+            title: 'Timestamp',
+            name: 'timestamp',
+            by: [{ field: 'timestamp', direction: 'desc' }],
+        },
+    ],
 };
