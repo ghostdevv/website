@@ -1,8 +1,6 @@
 <main>
     <div class="logo row">
-        <img
-            src="https://resources.ghbox.io/ghost/avatar.png"
-            alt="GHOSTs pfp" />
+        <img src="/logo.png" alt="GHOSTs pfp" />
         <p>Fullstack Web Developer, Open Source enthusiast, and Code lover.</p>
     </div>
     <div class="cards row">
