@@ -1,7 +1,7 @@
 <script>
     import { isActive /*, isChangingPage */ } from '@roxi/routify';
     import Hamburger from 'svelte-hamburgers';
-    import { slide } from 'svelte/transition';
+    import { slide, fade } from 'svelte/transition';
 
     let width;
     let scrollY;
@@ -17,7 +17,7 @@
 <svelte:window bind:innerWidth={width} bind:scrollY />
 
 <div class="wrapper" class:mobile class:open class:scroll>
-    <nav class:mobile>
+    <nav class:mobile in:fade>
         <div class="nav-fh">
             <a href="/">
                 <img class="logo" src="/logo.png" alt="GHOSTs Logo" />
@@ -32,7 +32,9 @@
 
         <!-- Should be !$isChangingPage && (open || !mobile)-->
         {#if open || !mobile}
-            <div class="nav-sh" transition:slide|local>
+            <div
+                class="nav-sh"
+                transition:slide|local={{ duration: mobile ? 200 : 0 }}>
                 <div class="links">
                     <a href="/" class:active={$isActive('/')}> Home </a>
 
