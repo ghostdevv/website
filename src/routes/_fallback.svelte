@@ -14,6 +14,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        text-align: center;
         gap: 12px;
     }
 </style>
