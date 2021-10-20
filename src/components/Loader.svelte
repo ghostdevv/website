@@ -10,6 +10,8 @@
     .loader {
         padding: 16px;
 
+        margin: 0 auto;
+
         svg {
             height: auto;
             width: 100px;
