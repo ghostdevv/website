@@ -60,7 +60,7 @@
         width: 100%;
 
         background-color: var(--background-primary);
-        border-bottom: 4px solid var(--background-primary);
+        border-bottom: 4px solid rgba(0, 0, 0, 0);
 
         transition: border-color 0.2s ease-in-out;
 
