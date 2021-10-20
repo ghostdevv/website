@@ -15,7 +15,7 @@
         display: flex;
         flex-wrap: wrap;
 
-        align-items: center;
+        align-items: stretch;
         justify-content: center;
 
         gap: 22px;
