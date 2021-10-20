@@ -8,10 +8,7 @@ export default ({ mode }) =>
         server: {
             port: 5000,
         },
-        build: {
-            cssCodeSplit: false,
-            target: ['es2015'],
-        },
+
         resolve: {
             alias: [
                 {
@@ -20,6 +17,7 @@ export default ({ mode }) =>
                 },
             ],
         },
+
         plugins: [
             svelte({
                 preprocess: [
