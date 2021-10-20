@@ -67,7 +67,7 @@
         .details {
             display: flex;
             flex-direction: column;
-            gap: 4px;
+            gap: 6px;
 
             .tag {
                 margin-bottom: 4px;
@@ -90,7 +90,7 @@
             }
 
             .description {
-                color: rgba(var(--text-rgb), 0.6);
+                color: rgba(var(--text-rgb), 0.5);
             }
         }
     }
