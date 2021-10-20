@@ -1,5 +1,5 @@
 <script>
-    import { isActive /*, isChangingPage */ } from '@roxi/routify';
+    import { isActive, pendingRoute } from '@roxi/routify';
     import Hamburger from 'svelte-hamburgers';
     import { slide, fade } from 'svelte/transition';
 
@@ -11,7 +11,7 @@
     $: mobile = width < 900;
     $: scroll = scrollY > 0;
 
-    $: if (!mobile /* || $isChangingPage */) open = false;
+    $: if (!mobile || $pendingRoute) open = false;
 </script>
 
 <svelte:window bind:innerWidth={width} bind:scrollY />
@@ -31,7 +31,7 @@
         </div>
 
         <!-- Should be !$isChangingPage && (open || !mobile)-->
-        {#if open || !mobile}
+        {#if !$pendingRoute && (open || !mobile)}
             <div class="nav-sh" transition:slide>
                 <div class="links">
                     <a href="/" class:active={$isActive('/')}> Home </a>
