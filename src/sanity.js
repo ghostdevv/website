@@ -21,7 +21,7 @@ export const getPosts = () =>
             "image": image.asset -> url,
 
             "tag": tag -> {
-                "name": upper(name),
+                name,
                 "rgb": colour.rgb { r, g, b}
             }
         } | order(timestamp desc)
