@@ -32,13 +32,11 @@
 
         <!-- Should be !$isChangingPage && (open || !mobile)-->
         {#if open || !mobile}
-            <div
-                class="nav-sh"
-                transition:slide|local={{ duration: mobile ? 200 : 0 }}>
+            <div class="nav-sh" transition:slide>
                 <div class="links">
                     <a href="/" class:active={$isActive('/')}> Home </a>
 
-                    {#each ['blog', 'projects', 'contact'] as link, i (i)}
+                    {#each ['posts', 'projects', 'contact'] as link, i (i)}
                         <a href="/{link}" class:active={$isActive(`/${link}`)}>
                             {link}
                         </a>
