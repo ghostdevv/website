@@ -1,15 +1,16 @@
 <script>
     import { fly } from 'svelte/transition';
 
+    export let excerpt;
+    export let title;
     export let image;
     export let slug;
     export let tag;
-    export let title;
 
     export let delay = 0;
 </script>
 
-<article in:fly={{ y: -20, delay }}>
+<a href="/posts/{slug}" class="postcard" in:fly={{ y: -20, delay }}>
     <img class="image" src={image} alt="Pog" />
 
     <div class="details">
@@ -25,10 +26,10 @@
             {excerpt}
         </p>
     </div>
-</article>
+</a>
 
 <style lang="scss">
-    article {
+    .postcard {
         $borderRadius: 12px;
 
         display: flex;
@@ -38,10 +39,20 @@
         width: 325px;
         max-width: 520px;
 
+        color: var(--text);
         background-color: var(--background-secondary);
         border-radius: $borderRadius;
 
         flex-grow: 1;
+
+        transition: box-shadow 0.2s ease-in-out;
+
+        &:hover,
+        &:active,
+        &:focus {
+            text-decoration: none;
+            box-shadow: 0 0 0 transparent, 0 0 0 5px var(--primary);
+        }
 
         .image {
             width: 100%;
