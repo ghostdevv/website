@@ -16,7 +16,7 @@ export const getPosts = () =>
 
             "image": image.asset -> url,
 
-            "tag": *[_type == 'tag' && _id == ^.tag._ref][0]{
+            "tag": tag -> {
                 "name": upper(name),
                 "rgb": colour.rgb { r, g, b}
             }
