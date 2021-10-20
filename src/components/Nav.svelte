@@ -16,57 +16,48 @@
 
 <svelte:window bind:innerWidth={width} bind:scrollY />
 
-<nav class:mobile class:open class:scroll>
-    <div class="nav-fh">
-        <a href="/">
-            <img class="logo" src="/logo.png" alt="GHOSTs Logo" />
-        </a>
+<div class="wrapper" class:mobile class:open class:scroll>
+    <nav class:mobile>
+        <div class="nav-fh">
+            <a href="/">
+                <img class="logo" src="/logo.png" alt="GHOSTs Logo" />
+            </a>
 
-        {#if mobile}
-            <div>
-                <Hamburger --color="var(--text)" type="squeeze" bind:open />
+            {#if mobile}
+                <div>
+                    <Hamburger --color="var(--text)" type="squeeze" bind:open />
+                </div>
+            {/if}
+        </div>
+
+        <!-- Should be !$isChangingPage && (open || !mobile)-->
+        {#if open || !mobile}
+            <div class="nav-sh" transition:slide|local>
+                <div class="links">
+                    <a href="/" class:active={$isActive('/')}> Home </a>
+
+                    {#each ['blog', 'projects', 'contact'] as link, i (i)}
+                        <a href="/{link}" class:active={$isActive(`/${link}`)}>
+                            {link}
+                        </a>
+                    {/each}
+                </div>
+
+                <a href="/" role="button" class="donate-button">Donate</a>
             </div>
         {/if}
-    </div>
-
-    <!-- Should be !$isChangingPage && (open || !mobile)-->
-    {#if open || !mobile}
-        <div class="nav-sh" transition:slide|local>
-            <div class="links">
-                <a href="/" class:active={$isActive('/')}> Home </a>
-
-                {#each ['blog', 'projects', 'contact'] as link, i (i)}
-                    <a href="/{link}" class:active={$isActive(`/${link}`)}>
-                        {link}
-                    </a>
-                {/each}
-            </div>
-
-            <a href="/" role="button" class="donate-button">Donate</a>
-        </div>
-    {/if}
-</nav>
+    </nav>
+</div>
 
 <style lang="scss">
-    nav {
-        width: 100%;
-        max-width: 1600px;
-
-        padding: 32px 24px;
-
+    .wrapper {
         position: fixed;
         z-index: 10000;
         top: 0;
         left: 50%;
         transform: translateX(-50%);
 
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        .nav-sh {
-            display: contents;
-        }
+        width: 100%;
 
         background-color: var(--background-primary);
         border-bottom: 4px solid var(--background-primary);
@@ -75,10 +66,26 @@
 
         &.scroll,
         &.open.mobile {
-            box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2),
+            box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.2),
                 0 4px 20px 0 rgba(0, 0, 0, 0.19);
 
             border-color: var(--primary);
+        }
+    }
+
+    nav {
+        width: 100%;
+        max-width: 1600px;
+        margin: 0 auto;
+
+        padding: 32px 24px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .nav-sh {
+            display: contents;
         }
 
         &.mobile {
