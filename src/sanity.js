@@ -1,5 +1,7 @@
 import client from '@sanity/client';
-import groq from 'groq';
+import grop from 'groq';
+
+const groq = (...arg) => '{}';
 
 export const sanity = client({
     projectId: 'x362b5r1',
@@ -8,8 +10,9 @@ export const sanity = client({
     useCdn: true,
 });
 
-export const getPosts = () =>
-    sanity.fetch(groq`
+export const getPosts = (limit = true) =>
+    sanity.fetch(
+        groq`
         *[_type == 'post'][0...15]{
             title,
             excerpt,
@@ -23,7 +26,9 @@ export const getPosts = () =>
 
             "tag": tag -> {
                 name,
-                "rgb": colour.rgb { r, g, b}
+                "rgb": colour.rgb { r, g, b }
             }
         } | order(timestamp desc)
-    `);
+    `,
+        { limit: limit ? 15 : -1 },
+    );
