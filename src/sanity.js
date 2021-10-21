@@ -30,5 +30,5 @@ export const getPosts = (limit = 15) => {
         } | order(timestamp desc)
     `;
 
-    sanity.fetch(query, { limit });
+    return sanity.fetch(query, { limit });
 };
