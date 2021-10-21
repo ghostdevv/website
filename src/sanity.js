@@ -1,7 +1,5 @@
 import client from '@sanity/client';
-import grop from 'groq';
-
-const groq = (...arg) => '{}';
+import groq from 'groq';
 
 export const sanity = client({
     projectId: 'x362b5r1',
