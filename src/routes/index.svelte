@@ -15,9 +15,19 @@
 {#await postsPromise}
     <Loader />
 {:then posts}
+    <h4 class="tcenter">
+        <u>Latest Posts</u>
+    </h4>
+
     <PostGroup {posts} />
 {:catch}
-    <p style="margin: 0 auto;">
+    <p class="tcenter">
         There was an error loading posts! Contact <mark>GHOST#7524</mark> on discord
     </p>
 {/await}
+
+<style>
+    .tcenter {
+        margin: 0 auto;
+    }
+</style>
