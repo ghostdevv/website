@@ -12,7 +12,7 @@ export const sanity = client({
 
 export const getPosts = (limit = 15) => {
     const query = groq`
-        *[_type == 'post'][0...15]{
+        *[_type == 'post'][0...$limit]{
             title,
             excerpt,
             postType,
