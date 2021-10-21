@@ -10,9 +10,8 @@ export const sanity = client({
     useCdn: true,
 });
 
-export const getPosts = (limit = true) =>
-    sanity.fetch(
-        groq`
+export const getPosts = (limit = 15) => {
+    const query = groq`
         *[_type == 'post'][0...15]{
             title,
             excerpt,
@@ -29,6 +28,7 @@ export const getPosts = (limit = true) =>
                 "rgb": colour.rgb { r, g, b }
             }
         } | order(timestamp desc)
-    `,
-        { limit: limit ? 15 : -1 },
-    );
+    `;
+
+    sanity.fetch(query, { limit });
+};
