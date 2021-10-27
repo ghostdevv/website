@@ -6,7 +6,7 @@
 <section class="column g32 center">
     <div class="letter-row">
         {#each 'GHOST' as c, i}
-            <h1 in:fly={{ y: -40, delay: 150 * i }}>{c}</h1>
+            <h1 in:fly={{ y: -20, delay: 150 * i }}>{c}</h1>
         {/each}
     </div>
 
