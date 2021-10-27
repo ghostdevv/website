@@ -1,7 +1,7 @@
 <script>
     import { isActive, pendingRoute } from '@roxi/routify';
-    import Hamburger from 'svelte-hamburgers';
     import { slide, fade } from 'svelte/transition';
+    import Hamburger from 'svelte-hamburgers';
 
     let width;
     let scrollY;
