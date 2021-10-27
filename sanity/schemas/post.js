@@ -46,6 +46,7 @@ export default {
             name: 'link',
             title: 'Link',
             type: 'url',
+            hidden: ({ document }) => document.postType != 'link',
         },
         {
             name: 'slug',
