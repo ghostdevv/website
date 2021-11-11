@@ -8,9 +8,12 @@ export const sanity = client({
     useCdn: true,
 });
 
-export const getPosts = (limit = 15) => {
+export const getPosts = (limit = 15, filter = null) => {
+    const filterConditional = filter ? '&& references($filter)' : '';
+    const limitConditional = limit ? '[0...$limit]' : '';
+
     const query = groq`
-        *[_type == 'post'][0...$limit]{
+        *[_type == 'post' ${filterConditional}]${limitConditional}{
             title,
             excerpt,
             postType,
@@ -28,5 +31,10 @@ export const getPosts = (limit = 15) => {
         } | order(timestamp desc)
     `;
 
-    return sanity.fetch(query, { limit });
+    console.log(query, { limit, filter });
+
+    return sanity.fetch(query, { limit, filter });
 };
+
+export const getTags = () =>
+    sanity.fetch(groq`*[_type == 'tag']{ "id": _id, name }`);
