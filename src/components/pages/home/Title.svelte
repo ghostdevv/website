@@ -32,12 +32,8 @@
                     {href}
                     role="button"
                     in:fly={{
-                        // y: -20,
-                        // delay: 150 * (i + 1),
-                        x: (i - 2) * 18,
-                        duration: 1500,
-                        delay: 250,
-                        easing: quintOut,
+                        y: -20,
+                        delay: 150 * (i + 1),
                     }}>
                     {text}
                 </a>
