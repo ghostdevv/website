@@ -1,6 +1,6 @@
 <script>
     import { isActive, pendingRoute } from '@roxi/routify';
-    import { slide, fade } from 'svelte/transition';
+    import { slide, fade, fly } from 'svelte/transition';
     import Hamburger from 'svelte-hamburgers';
 
     let width;
@@ -20,7 +20,11 @@
     <nav class:mobile in:fade>
         <div class="nav-fh">
             <a href="/">
-                <img class="logo" src="/logo.png" alt="GHOSTs Logo" />
+                <img
+                    class="logo"
+                    src="/logo.png"
+                    alt="GHOSTs Logo"
+                    in:fly={{ y: -20, duration: 750, delay: 100 }} />
             </a>
 
             {#if mobile}
@@ -34,16 +38,32 @@
         {#if !$pendingRoute && (open || !mobile)}
             <div class="nav-sh" transition:slide>
                 <div class="links">
-                    <a href="/" class:active={$isActive('/')}> Home </a>
+                    <a
+                        href="/"
+                        class:active={$isActive('/')}
+                        in:fly={{ y: -20, duration: 750 }}>
+                        Home
+                    </a>
 
                     {#each ['posts', 'projects', 'contact'] as link, i (i)}
-                        <a href="/{link}" class:active={$isActive(`/${link}`)}>
+                        <a
+                            href="/{link}"
+                            class:active={$isActive(`/${link}`)}
+                            in:fly={{
+                                y: -20,
+                                duration: 750,
+                                delay: (i + 1) * (mobile ? 100 : 200),
+                            }}>
                             {link}
                         </a>
                     {/each}
                 </div>
 
-                <a href="/" role="button" class="donate-button">Donate</a>
+                <a
+                    href="/"
+                    role="button"
+                    class="donate-button"
+                    in:fly={{ y: -20, duration: 750, delay: 100 }}>Donate</a>
             </div>
         {/if}
     </nav>
