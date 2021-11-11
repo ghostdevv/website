@@ -1,7 +1,9 @@
 <script>
     import PostGroup from '@/components/posts/PostGroup.svelte';
-    import Title from '@/components/pages/home/Title.svelte';
     import Loader from '@/components/Loader.svelte';
+    import { quintOut } from 'svelte/easing';
+    import { featured } from '@/data/links';
+    import { fly } from 'svelte/transition';
     import { onMount } from 'svelte';
 
     import { getPosts } from '$sanity';
@@ -13,7 +15,39 @@
     onMount(() => (mounted = true));
 </script>
 
-<Title />
+<section class="column g32 center">
+    <div class="letter-row">
+        {#if mounted}
+            {#each 'GHOST' as c, i}
+                <h1
+                    in:fly={{
+                        x: (i - 2) * 18,
+                        duration: 1500,
+                        easing: quintOut,
+                        delay: 250,
+                    }}>
+                    {c}
+                </h1>
+            {/each}
+        {/if}
+    </div>
+
+    <div class="row center g16">
+        {#if mounted}
+            {#each featured as [text, href], i}
+                <a
+                    {href}
+                    role="button"
+                    in:fly={{
+                        y: -20,
+                        delay: 150 * (i + 1),
+                    }}>
+                    {text}
+                </a>
+            {/each}
+        {/if}
+    </div>
+</section>
 
 {#await postsPromise}
     <Loader />
@@ -34,5 +68,19 @@
 <style>
     .tcenter {
         margin: 0 auto;
+    }
+
+    .letter-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        line-height: 0.6;
+    }
+
+    section {
+        text-align: center;
+        padding: 22px 0px;
+        width: 100%;
     }
 </style>
