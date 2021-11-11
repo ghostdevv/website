@@ -26,11 +26,23 @@
     </div>
 
     <div class="row center g16">
-        {#each featured as [text, href], i}
-            <a {href} role="button" in:fly={{ y: -40, delay: 150 * (i + 1) }}>
-                {text}
-            </a>
-        {/each}
+        {#if mounted}
+            {#each featured as [text, href], i}
+                <a
+                    {href}
+                    role="button"
+                    in:fly={{
+                        // y: -20,
+                        // delay: 150 * (i + 1),
+                        x: (i - 2) * 18,
+                        duration: 1500,
+                        delay: 250,
+                        easing: quintOut,
+                    }}>
+                    {text}
+                </a>
+            {/each}
+        {/if}
     </div>
 </section>
 

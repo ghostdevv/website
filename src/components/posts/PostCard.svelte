@@ -14,7 +14,10 @@
     $: href = postType == 'text' ? `/posts/${slug}` : link;
 </script>
 
-<a {href} class="postcard" in:fly={{ y: -20, delay }}>
+<a
+    {href}
+    class="postcard"
+    in:fly={{ y: -30, delay, duration: 750, opacity: 0 }}>
     <img class="image" src={image} alt="Pog" />
 
     <div class="details">
