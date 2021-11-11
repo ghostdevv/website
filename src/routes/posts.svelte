@@ -1,10 +1,8 @@
 <script>
     import PostGroup from '@/components/posts/PostGroup.svelte';
     import Loader from '@/components/Loader.svelte';
-    import { fly, slide } from 'svelte/transition';
-    import { onMount } from 'svelte';
-
     import { getPosts, getTags } from '$sanity';
+    import { onMount } from 'svelte';
 
     let filter;
 
