@@ -2,6 +2,7 @@
     import PostGroup from '@/components/posts/PostGroup.svelte';
     import Loader from '@/components/Loader.svelte';
     import { getPosts, getTags } from '$sanity';
+    import { fly } from 'svelte/transition';
     import { onMount } from 'svelte';
 
     let filter;
@@ -14,9 +15,12 @@
 </script>
 
 <div class="filter">
-    <label for="filter">Filter Posts</label>
+    <label for="filter" in:fly={{ y: -20, duration: 750 }}>Filter Posts</label>
 
-    <select id="filter" bind:value={filter}>
+    <select
+        id="filter"
+        bind:value={filter}
+        in:fly={{ y: -20, duration: 750, delay: 200 }}>
         {#await tagsPromise}
             <option selected value={undefined}>LOADING...</option>
         {:then tags}
