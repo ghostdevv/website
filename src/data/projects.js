@@ -65,8 +65,8 @@ export const os = [
     },
     {
         name: 'sass-hex-rgb',
-        url: 'https://github.com/ghostdevv/sass-hex-rgb'
-    }
+        url: 'https://github.com/ghostdevv/sass-hex-rgb',
+    },
 ];
 
 export const work = [
