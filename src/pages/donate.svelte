@@ -40,10 +40,10 @@
 
     <div class="row patrons">
         <ul>
-            {#each patrons as { name, image }}
+            {#each patrons as { name, image, link }}
                 <li>
                     <img src="/images/patrons/{image}" alt="{name}'s pfp" />
-                    {name}
+                    <a href={link} target="_blank">{name}</a>
                 </li>
             {/each}
         </ul>
