@@ -31,8 +31,6 @@ export const getPosts = (limit = 15, filter = null) => {
         } | order(timestamp desc)
     `;
 
-    console.log(query, { limit, filter });
-
     return sanity.fetch(query, { limit, filter });
 };
 
