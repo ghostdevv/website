@@ -1,9 +1,5 @@
-export const links = {
-    discord: 'https://discord.gg/2Vd4wAjJnm',
-    github: 'https://github.com/ghostdevv',
-};
-
 export const featured = [
-    ['Discord', links.discord],
-    ['Github', links.github],
+    ['Discord', 'https://discord.gg/2Vd4wAjJnm'],
+    ['Github', 'https://github.com/ghostdevv'],
+    ['Twitter', 'https://twitter.com/onlyspaceghost'],
 ];
