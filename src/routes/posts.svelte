@@ -3,15 +3,12 @@
     import Loader from '@/components/Loader.svelte';
     import { getPosts, getTags } from '$sanity';
     import { fly } from 'svelte/transition';
-    import { onMount } from 'svelte';
+    import { mounted } from 'svelte-mount';
 
     let filter;
 
     $: postsPromise = getPosts(null, filter);
     const tagsPromise = getTags();
-
-    let mounted;
-    onMount(() => (mounted = true));
 </script>
 
 <div class="filter">
@@ -38,7 +35,7 @@
 {#await postsPromise}
     <Loader />
 {:then posts}
-    {#if mounted}
+    {#if $mounted}
         <PostGroup {posts} />
     {/if}
 {:catch}

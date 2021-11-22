@@ -4,15 +4,12 @@
     import { quintOut } from 'svelte/easing';
     import { featured } from '@/data/links';
     import { fly } from 'svelte/transition';
-    import { onMount } from 'svelte';
+    import { mounted } from 'svelte-mount';
 
     import { getPosts } from '$sanity';
 
     const postsPromise = getPosts();
     postsPromise.catch(console.error);
-
-    let mounted;
-    onMount(() => (mounted = true));
 </script>
 
 <section class="column g32 center">
@@ -56,7 +53,7 @@
         <u>Latest Posts</u>
     </h4>
 
-    {#if mounted}
+    {#if $mounted}
         <PostGroup {posts} />
     {/if}
 {:catch}
