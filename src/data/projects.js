@@ -16,7 +16,6 @@ export const os = [
     {
         name: 'JellyCommands',
         url: 'https://github.com/ghostdevv/jellycommands',
-        star: true,
     },
     {
         name: 'DashArgs',
@@ -66,6 +65,11 @@ export const os = [
     {
         name: 'sass-hex-rgb',
         url: 'https://github.com/ghostdevv/sass-hex-rgb',
+    },
+    {
+        name: 'Svelte Mount',
+        url: 'https://github.com/ghostdevv/svelte-mount',
+        star: true,
     },
 ];
 
