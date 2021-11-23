@@ -16,7 +16,7 @@
         "autoprefixer": "^10.2.5",
         "date-fns": "^2.26.0",
         "dompurify": "^2.3.3",
-        "ghostsui": "^1.0.0-39",
+        "ghostsui": "^1.0.0-40",
         "groq": "^2.15.0",
         "include-media": "^1.4.9",
         "marked": "^4.0.4",
