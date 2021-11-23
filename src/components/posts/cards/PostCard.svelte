@@ -1,5 +1,7 @@
 <script>
+    import App from '@/App.svelte';
     import { fly } from 'svelte/transition';
+    import Tag from '../Tag.svelte';
 
     export let postType;
     export let excerpt;
@@ -21,11 +23,7 @@
     <img class="image" src={image} alt="Pog" />
 
     <div class="details">
-        <span
-            class="tag"
-            style="--tag-colour: {tag.rgb.r}, {tag.rgb.g}, {tag.rgb.b}">
-            {tag.name}
-        </span>
+        <Tag {...tag} />
 
         <h4 class="title">{title}</h4>
 
@@ -76,25 +74,7 @@
             flex-direction: column;
             gap: 6px;
 
-            .tag {
-                margin-bottom: 4px;
-            }
-
             padding: 18px;
-
-            .tag {
-                background-color: rgba(var(--tag-colour), 0.5);
-                color: rgba(var(--tag-colour));
-
-                border-radius: 16px;
-
-                padding: 4px 16px;
-                font-size: 11px;
-                font-weight: 800;
-
-                height: fit-content;
-                width: fit-content;
-            }
 
             .description {
                 color: rgba(var(--text-rgb), 0.5);
