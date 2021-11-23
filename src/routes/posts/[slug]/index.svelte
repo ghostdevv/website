@@ -41,7 +41,9 @@
         .image-banner {
             width: 100%;
             height: 400px;
-            max-height: 30vh;
+            max-height: 40vh;
+
+            aspect-ratio: auto;
 
             padding: 6px 0px;
             border-radius: 22px;
