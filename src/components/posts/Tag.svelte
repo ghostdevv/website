@@ -20,7 +20,5 @@
 
         height: fit-content;
         width: fit-content;
-
-        margin-bottom: 4px;
     }
 </style>
