@@ -34,5 +34,23 @@ export const getPosts = (limit = 15, filter = null) => {
     return sanity.fetch(query, { limit, filter });
 };
 
+export const getTextPost = (slug) => {
+    const query = groq`
+        *[_type == 'post' && slug.current == $slug][0] {
+            title,
+            timestamp,
+            
+            "image": image.asset -> url,
+
+            "tag": tag -> {
+                name,
+                "rgb": colour.rgb { r, g, b }
+            }
+        }
+    `;
+
+    return sanity.fetch(query, { slug });
+};
+
 export const getTags = () =>
     sanity.fetch(groq`*[_type == 'tag']{ "id": _id, name }`);
