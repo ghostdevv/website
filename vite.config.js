@@ -28,7 +28,6 @@ export default ({ mode }) =>
             svelte({
                 preprocess: [autoPreprocess()],
                 emitCss: true,
-                hot: !mode == 'production',
             }),
         ],
     });
