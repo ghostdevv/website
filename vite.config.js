@@ -1,6 +1,7 @@
 import { svelte } from '@sveltejs/vite-plugin-svelte';
 import routify from '@roxi/routify/vite-plugin';
 import autoPreprocess from 'svelte-preprocess';
+import { VitePWA } from 'vite-plugin-pwa';
 import { defineConfig } from 'vite';
 import path from 'path';
 
@@ -28,6 +29,31 @@ export default ({ mode }) =>
             svelte({
                 preprocess: [autoPreprocess()],
                 emitCss: true,
+            }),
+            VitePWA({
+                registerType: 'autoUpdate',
+                manifest: {
+                    name: "GHOST's Website",
+                    short_name: 'GHOSTDev',
+                    start_url: '/',
+                    theme_color: '#2160ec',
+                    background_color: '#121214',
+                    display: 'standalone',
+                    icons: [
+                        {
+                            src: '/icons/manifest-icon-192.png',
+                            sizes: '192x192',
+                            type: 'image/png',
+                            purpose: 'maskable any',
+                        },
+                        {
+                            src: '/icons/manifest-icon-512.png',
+                            sizes: '512x512',
+                            type: 'image/png',
+                            purpose: 'maskable any',
+                        },
+                    ],
+                },
             }),
         ],
     });
