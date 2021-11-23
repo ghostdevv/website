@@ -1,5 +1,5 @@
 <script>
-    import PostGroup from '@/components/posts/PostGroup.svelte';
+    import PostGroup from '@/components/posts/cards/PostGroup.svelte';
     import Loader from '@/components/Loader.svelte';
     import { getPosts, getTags } from '$sanity';
     import { fly } from 'svelte/transition';
