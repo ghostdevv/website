@@ -42,16 +42,6 @@
         flex-direction: column;
         gap: 16px;
 
-        .image-banner {
-            width: 100%;
-            height: 400px;
-            max-height: 40vh;
-
-            aspect-ratio: 16 / 9;
-
-            object-fit: cover;
-        }
-
         .meta-wrapper {
             $border-radius: 22px;
 
