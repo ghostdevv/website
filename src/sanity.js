@@ -39,6 +39,7 @@ export const getTextPost = (slug) => {
         *[_type == 'post' && slug.current == $slug][0] {
             title,
             timestamp,
+            body,
             
             "image": image.asset -> url,
 
