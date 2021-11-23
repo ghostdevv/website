@@ -23,7 +23,11 @@
 
     <h1 class="title">{title}</h1>
 
-    {@html bodyHTML}
+    <hr />
+
+    <div class="body">
+        {@html bodyHTML}
+    </div>
 </article>
 
 <style lang="scss">
@@ -49,6 +53,16 @@
             display: flex;
             align-items: center;
             gap: 12px;
+        }
+
+        .body {
+            max-width: 100%;
+
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            font-size: 18px;
         }
     }
 </style>
