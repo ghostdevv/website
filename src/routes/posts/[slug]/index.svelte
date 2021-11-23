@@ -27,7 +27,9 @@
 
             <h1 class="title">{title}</h1>
 
-            <SettingsModal />
+            <div class="settings">
+                <SettingsModal />
+            </div>
         </div>
     </div>
 
