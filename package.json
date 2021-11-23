@@ -1,7 +1,7 @@
 {
     "name": "ghosts-website",
     "private": true,
-    "license": "CC BY-NC-ND 4.0",
+    "license": "GNU AFFERO GENERAL PUBLIC LICENSE",
     "type": "module",
     "scripts": {
         "dev": "vite",
