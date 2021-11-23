@@ -40,6 +40,8 @@ export const getTextPost = (slug) => {
             title,
             timestamp,
             body,
+            postType,
+            link,
             
             "image": image.asset -> url,
 
