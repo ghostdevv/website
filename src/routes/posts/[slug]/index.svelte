@@ -1,4 +1,6 @@
 <script>
+    import SettingsModal from '@/components/posts/post/SettingsModal.svelte';
+    import { fontSize } from '@/components/posts/post/settings';
     import Tag from '@/components/posts/Tag.svelte';
     import { format } from 'date-fns';
     import { marked } from 'marked';
@@ -24,12 +26,14 @@
             </div>
 
             <h1 class="title">{title}</h1>
+
+            <SettingsModal />
         </div>
     </div>
 
     <hr />
 
-    <div class="body">
+    <div class="body" style="--font-size: {$fontSize}px">
         {@html bodyHTML}
     </div>
 </article>
@@ -64,12 +68,16 @@
             background-size: cover;
 
             .meta {
-                display: flex;
-                flex-direction: column;
-                gap: 16px;
-
                 width: 100%;
                 padding: 22px;
+
+                display: grid;
+                grid-template-columns: 1fr max-content;
+                grid-template-rows: max-content 1fr;
+                gap: 16px 0px;
+                grid-template-areas:
+                    'data data'
+                    'title settings';
 
                 background-color: rgba(var(--background-tertiary-rgb), 0.5);
                 border-radius: 0 0 $border-radius $border-radius;
@@ -80,6 +88,16 @@
                     display: flex;
                     align-items: center;
                     gap: 12px;
+
+                    grid-area: data;
+                }
+
+                .title {
+                    grid-area: title;
+                }
+
+                .settings {
+                    grid-area: settings;
                 }
             }
         }
@@ -91,7 +109,7 @@
             flex-direction: column;
             gap: 16px;
 
-            font-size: 18px;
+            font-size: var(--font-size, 16px);
         }
     }
 </style>
