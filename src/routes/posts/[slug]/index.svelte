@@ -16,8 +16,6 @@
 </script>
 
 <article>
-    <!-- <img class="image-banner" src={image} alt="Post Banner" /> -->
-
     <div class="meta-wrapper" style="--image: url({image})">
         <div class="meta">
             <div class="data">
