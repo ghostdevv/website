@@ -2,6 +2,7 @@
     import SettingsModal from '@/components/posts/post/SettingsModal.svelte';
     import { fontSize } from '@/components/posts/post/settings';
     import Tag from '@/components/posts/Tag.svelte';
+    import { fly } from 'svelte/transition';
     import { format } from 'date-fns';
     import { marked } from 'marked';
     import purify from 'dompurify';
@@ -36,6 +37,10 @@
     <div class="body" style="--font-size: {$fontSize}px">
         {@html bodyHTML}
     </div>
+
+    <hr />
+
+    <footer>asd</footer>
 </article>
 
 <style lang="scss">
@@ -88,7 +93,8 @@
                 background-color: rgba(var(--background-tertiary-rgb), 0.5);
                 border-radius: 0 0 $border-radius $border-radius;
 
-                backdrop-filter: blur(8px);
+                // Re-enable this when/if it's fixed
+                // backdrop-filter: blur(8px);
 
                 @include media($cp) {
                     grid-template-areas:
