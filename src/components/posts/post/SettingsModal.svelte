@@ -26,7 +26,9 @@
     </card>
 </Modal>
 
-<style>
+<style lang="scss">
+    @import 'src/helpers/media';
+
     .input-group {
         width: 100%;
     }
@@ -35,5 +37,10 @@
         display: flex;
         flex-direction: column;
         gap: 16px;
+
+        @include media('<900px') {
+            align-items: center;
+            text-align: center;
+        }
     }
 </style>
