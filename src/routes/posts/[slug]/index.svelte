@@ -2,6 +2,7 @@
     import SettingsModal from '@/components/posts/post/SettingsModal.svelte';
     import { fontSize } from '@/components/posts/post/settings';
     import Tag from '@/components/posts/Tag.svelte';
+    import { fly } from 'svelte/transition';
     import { format } from 'date-fns';
     import { marked } from 'marked';
     import purify from 'dompurify';
@@ -16,8 +17,6 @@
 </script>
 
 <article>
-    <!-- <img class="image-banner" src={image} alt="Post Banner" /> -->
-
     <div class="meta-wrapper" style="--image: url({image})">
         <div class="meta">
             <div class="data">
@@ -38,9 +37,15 @@
     <div class="body" style="--font-size: {$fontSize}px">
         {@html bodyHTML}
     </div>
+
+    <hr />
+
+    <footer>asd</footer>
 </article>
 
 <style lang="scss">
+    @import 'src/helpers/media';
+
     article {
         width: 100%;
 
@@ -70,8 +75,12 @@
             background-size: cover;
 
             .meta {
+                $cp: '<900px';
+
                 width: 100%;
                 padding: 22px;
+
+                position: relative;
 
                 display: grid;
                 grid-template-columns: 1fr max-content;
@@ -84,7 +93,23 @@
                 background-color: rgba(var(--background-tertiary-rgb), 0.5);
                 border-radius: 0 0 $border-radius $border-radius;
 
-                backdrop-filter: blur(8px);
+                // Re-enable this when/if it's fixed
+                // backdrop-filter: blur(8px);
+
+                @include media($cp) {
+                    grid-template-areas:
+                        'data'
+                        'title';
+
+                    grid-template-columns: 1fr;
+                    grid-template-rows: max-content max-content;
+
+                    justify-items: center;
+                    align-items: center;
+                    text-align: center;
+
+                    gap: 8px 0px;
+                }
 
                 .data {
                     display: flex;
@@ -92,6 +117,10 @@
                     gap: 12px;
 
                     grid-area: data;
+
+                    @include media($cp) {
+                        flex-direction: column;
+                    }
                 }
 
                 .title {
@@ -100,6 +129,15 @@
 
                 .settings {
                     grid-area: settings;
+
+                    @include media($cp) {
+                        position: absolute;
+
+                        top: -56px;
+                        right: 0;
+
+                        margin: 0px 12px;
+                    }
                 }
             }
         }
