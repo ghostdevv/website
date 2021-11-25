@@ -60,7 +60,7 @@
                 </div>
 
                 <a
-                    href="/"
+                    href="/donate"
                     role="button"
                     class="donate-button"
                     in:fly={{ y: -20, duration: 750, delay: 100 }}>Donate</a>
