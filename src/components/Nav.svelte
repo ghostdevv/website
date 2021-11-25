@@ -72,7 +72,7 @@
 <style lang="scss">
     .wrapper {
         position: fixed;
-        z-index: 10000;
+        z-index: 300;
         top: 0;
         left: 50%;
         transform: translateX(-50%);
