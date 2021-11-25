@@ -37,7 +37,7 @@
     </div>
 
     <section class="supporters">
-        <h1>Supporters</h1>
+        <h1>🎉 Supporters</h1>
 
         <p>
             Below you can view a list of my present and past supporters! To get
@@ -60,7 +60,7 @@
     </section>
 
     <section class="donators">
-        <h1>Donators</h1>
+        <h1>❤️ Donators</h1>
 
         <p>
             Below you can view a list of everyone who has donated to me! To get
