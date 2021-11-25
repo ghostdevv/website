@@ -1,6 +1,7 @@
 <script>
     import CryptoModal from '@/components/CryptoModal.svelte';
-    import {} from '@/data/donators';
+    import People from '@/components/donators/People.svelte';
+    import { supporters } from '@/data/donators';
 </script>
 
 <main>
@@ -46,6 +47,16 @@
                 Patreon
             </a>
         </p>
+
+        <section style="gap: 22px;">
+            <h3>Current Supporters</h3>
+
+            <People people={supporters.current} />
+
+            <h4>Previous Supporters</h4>
+
+            <People people={supporters.previous} slim />
+        </section>
     </section>
 
     <section class="donators">
