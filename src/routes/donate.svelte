@@ -86,7 +86,11 @@
 
         .buttons {
             display: flex;
+            flex-wrap: wrap;
             gap: 12px;
+
+            justify-content: center;
+            align-items: center;
         }
 
         section {
