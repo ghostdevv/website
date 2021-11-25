@@ -53,9 +53,9 @@
 
             <People people={supporters.current} />
 
-            <h4>Previous Supporters</h4>
+            <h4>Past Supporters</h4>
 
-            <People people={supporters.previous} slim />
+            <People people={supporters.past} slim />
         </section>
     </section>
 

@@ -12,7 +12,7 @@
  */
 
 /**
- * @type {{ current: Supporter[], previous: Supporter[] }}
+ * @type {{ current: Supporter[], past: Supporter[] }}
  */
 export const supporters = {
     current: [
@@ -22,7 +22,7 @@ export const supporters = {
         },
     ],
 
-    previous: [
+    past: [
         {
             name: 'Alfie',
             image: '/donators/alfie.png',
