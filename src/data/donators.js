@@ -1,7 +1,7 @@
 /**
  * @typedef Person
  * @prop {string} name
- * @prop {string} imagePath
+ * @prop {string} image
  */
 
 /**
@@ -18,18 +18,18 @@ export const supporters = {
     current: [
         {
             name: 'Scott Spence',
-            imagePath: '/donators/scott-spence.png',
+            image: '/donators/scott-spence.png',
         },
     ],
 
     previous: [
         {
             name: 'Alfie',
-            imagePath: '/donators/alfie.png',
+            image: '/donators/alfie.png',
         },
         {
             name: 'Cain',
-            imagePath: '/donators/cain.png',
+            image: '/donators/cain.png',
         },
     ],
 };
