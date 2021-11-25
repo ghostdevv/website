@@ -3,6 +3,7 @@
 
     export let name;
     export let image;
+    export let amount;
 </script>
 
 <card class="person" class:slim>
@@ -13,6 +14,10 @@
     {/if}
 
     <h4>{name}</h4>
+
+    {#if !slim}
+        <p>£{amount}/m</p>
+    {/if}
 </card>
 
 <style lang="scss">

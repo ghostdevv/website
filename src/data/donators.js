@@ -2,23 +2,18 @@
  * @typedef Person
  * @prop {string} name
  * @prop {string} image
+ * @prop {number=} amount
  */
 
 /**
- * @typedef SupporterType
- * @prop {string=} cheese
- *
- * @typedef { Person & SupporterType } Supporter
- */
-
-/**
- * @type {{ current: Supporter[], past: Supporter[] }}
+ * @type {{ current: Person[], past: Person[] }}
  */
 export const supporters = {
     current: [
         {
             name: 'Scott Spence',
             image: '/donators/scott-spence.png',
+            amount: 10,
         },
     ],
 
