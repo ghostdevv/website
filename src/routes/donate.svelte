@@ -36,6 +36,8 @@
         </CryptoModal>
     </div>
 
+    <hr />
+
     <section class="supporters">
         <h1>🎉 Supporters</h1>
 
@@ -58,6 +60,8 @@
             <People people={supporters.past} slim />
         </section>
     </section>
+
+    <hr />
 
     <section class="donators">
         <h1>❤️ Donators</h1>
