@@ -45,7 +45,7 @@
                         Home
                     </a>
 
-                    {#each ['posts', 'projects', 'contact'] as link, i (i)}
+                    {#each ['posts', 'projects', 'donate', 'contact'] as link, i (i)}
                         <a
                             href="/{link}"
                             class:active={$isActive(`/${link}`)}
