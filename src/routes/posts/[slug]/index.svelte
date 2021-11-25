@@ -51,7 +51,7 @@
     <footer in:fly={{ y: -20, duration: 750, delay: 200 }}>
         <a
             href={createTweetLink(
-                `Checkout this awesome post by @onlyspaceghost! https://ghostdevv.xyz/posts/${$params.slug}`,
+                `Checkout this awesome post by @onlyspaceghost! https://ghostdev.xyz/posts/${$params.slug}`,
             )}
             role="button"
             target="_blank">
