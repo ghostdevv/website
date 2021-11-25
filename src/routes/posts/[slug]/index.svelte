@@ -1,8 +1,10 @@
 <script>
     import SettingsModal from '@/components/posts/post/SettingsModal.svelte';
     import { fontSize } from '@/components/posts/post/settings';
+    import { createTweetLink } from '@/helpers/twitter';
     import Tag from '@/components/posts/Tag.svelte';
     import { fly } from 'svelte/transition';
+    import { params } from '@roxi/routify';
     import { format } from 'date-fns';
     import { marked } from 'marked';
     import purify from 'dompurify';
@@ -40,7 +42,19 @@
 
     <hr />
 
-    <footer>asd</footer>
+    <footer>
+        <a
+            href={createTweetLink(
+                `Checkout this awesome post by @onlyspaceghost! https://ghostdevv.xyz/posts/${$params.slug}`,
+            )}
+            role="button"
+            target="_blank">
+            <i class="fab fa-twitter" />
+            Share on twitter
+        </a>
+
+        <SettingsModal />
+    </footer>
 </article>
 
 <style lang="scss">
@@ -150,6 +164,15 @@
             gap: 16px;
 
             font-size: var(--font-size, 16px);
+        }
+
+        footer {
+            width: 100%;
+            padding-bottom: 16px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
     }
 </style>
