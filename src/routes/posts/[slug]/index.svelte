@@ -19,7 +19,10 @@
 </script>
 
 <article>
-    <div class="meta-wrapper" style="--image: url({image})">
+    <div
+        class="meta-wrapper"
+        style="--image: url({image})"
+        in:fly={{ y: -20, duration: 750 }}>
         <div class="meta">
             <div class="data">
                 <Tag {...tag} large />
@@ -36,13 +39,16 @@
 
     <hr />
 
-    <div class="body" style="--font-size: {$fontSize}px">
+    <div
+        class="body"
+        style="--font-size: {$fontSize}px"
+        in:fly={{ y: -20, duration: 750, delay: 100 }}>
         {@html bodyHTML}
     </div>
 
     <hr />
 
-    <footer>
+    <footer in:fly={{ y: -20, duration: 750, delay: 200 }}>
         <a
             href={createTweetLink(
                 `Checkout this awesome post by @onlyspaceghost! https://ghostdevv.xyz/posts/${$params.slug}`,
