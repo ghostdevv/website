@@ -48,7 +48,7 @@
 </script>
 
 <Modal let:close>
-    <div slot="activator">
+    <div slot="activator" style="display: contents;">
         <slot name="activator" />
     </div>
 
