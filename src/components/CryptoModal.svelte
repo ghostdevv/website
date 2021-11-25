@@ -55,7 +55,7 @@
 
         <p>
             Thank you for sending me some BTC! If you want your name to be on
-            the donations page please <a href="/contact">contact</a> me on discord
+            the donations page please <a href="/contact">contact me</a> on discord
             and I will add you
         </p>
 
