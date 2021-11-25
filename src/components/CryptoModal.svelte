@@ -1,4 +1,5 @@
 <script>
+    import { onDestroy } from 'svelte';
     import { Modal } from 'polykit';
     import kjua from 'kjua';
 
@@ -7,18 +8,28 @@
     let addressFieldValue = btc;
 
     const clickToCopy = (node) => {
-        node.addEventListener('click', () => {
-            const value = node.value;
+        let timeout;
 
+        node.addEventListener('click', () => {
             node.focus();
-            node.setSelectionRange(0, value.length + 1);
+            node.setSelectionRange(0, btc + 1);
 
             try {
-                navigator.clipboard.writeText(value);
+                navigator.clipboard.writeText(btc);
+
+                if (timeout) clearTimeout(timeout);
+
+                addressFieldValue = 'Copied!';
+
+                timeout = setTimeout(() => {
+                    addressFieldValue = btc;
+                }, 1500);
             } catch {
                 alert('Failed to copy, please manually copy the BTC address');
             }
         });
+
+        onDestroy(() => clearTimeout(timeout));
     };
 
     const qr = (node) => {
