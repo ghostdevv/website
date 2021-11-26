@@ -12,6 +12,11 @@
             image: 'scott-spence.png',
             link: 'https://scottspence.com',
         },
+        {
+            name: 'Fractal',
+            image: 'fractal.png',
+            link: 'https://github.com/fractalHQ',
+        },
     ];
 </script>
 
