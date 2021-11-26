@@ -21,18 +21,20 @@
             href="https://www.patreon.com/onlyspaceghost"
             target="_blank"
             role="button">
-            Patreon
+            <i class="fab fa-patreon" /> Patreon
         </a>
 
         <a
             href="https://paypal.me/ghostdevpayment"
             target="_blank"
             role="button">
-            PayPal
+            <i class="fab fa-paypal" /> PayPal
         </a>
 
         <CryptoModal>
-            <button slot="activator"> Bitcoin </button>
+            <button slot="activator">
+                <i class="fab fa-bitcoin" /> Bitcoin
+            </button>
         </CryptoModal>
     </div>
 
