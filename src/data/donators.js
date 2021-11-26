@@ -15,6 +15,11 @@ export const supporters = {
             image: '/donators/scott-spence.png',
             amount: 10,
         },
+        {
+            name: 'Fractal',
+            image: '/donators/fractal.png',
+            amount: 5,
+        },
     ],
 
     past: [
