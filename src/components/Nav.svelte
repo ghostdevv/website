@@ -45,7 +45,7 @@
                         Home
                     </a>
 
-                    {#each ['posts', 'projects', 'contact'] as link, i (i)}
+                    {#each ['posts', 'projects', 'donate', 'contact'] as link, i (i)}
                         <a
                             href="/{link}"
                             class:active={$isActive(`/${link}`)}
@@ -60,7 +60,7 @@
                 </div>
 
                 <a
-                    href="/"
+                    href="/donate"
                     role="button"
                     class="donate-button"
                     in:fly={{ y: -20, duration: 750, delay: 100 }}>Donate</a>
@@ -72,7 +72,7 @@
 <style lang="scss">
     .wrapper {
         position: fixed;
-        z-index: 10000;
+        z-index: 300;
         top: 0;
         left: 50%;
         transform: translateX(-50%);
