@@ -38,6 +38,7 @@ export const supporters = {
 export const donators = [
     {
         name: 'Kevin Åberg Kultalahti',
-        image: '/donators/kevin.png',
+        image: '/donators/kevin.jpg',
+        amount: 11,
     },
 ];
