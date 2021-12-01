@@ -1,25 +1,31 @@
 <script>
+    import { fly } from 'svelte/transition';
+    import { mounted } from 'svelte-mount';
+
     export let slim;
     export let monthly;
+    export let delay = 0;
 
     export let name;
     export let image;
     export let amount;
 </script>
 
-<card class="person" class:slim>
-    <img src={image} alt="{name}'s pfp" />
+{#if mounted}
+    <card class="person" class:slim in:fly={{ y: -20, duration: 750, delay }}>
+        <img src={image} alt="{name}'s pfp" />
 
-    {#if !slim}
-        <hr />
-    {/if}
+        {#if !slim}
+            <hr />
+        {/if}
 
-    <h4>{name}</h4>
+        <h4>{name}</h4>
 
-    {#if !slim}
-        <p>£{amount}{monthly ? '/m' : ''}</p>
-    {/if}
-</card>
+        {#if !slim}
+            <p>£{amount}{monthly ? '/m' : ''}</p>
+        {/if}
+    </card>
+{/if}
 
 <style lang="scss">
     .person {

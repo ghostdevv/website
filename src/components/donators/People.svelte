@@ -8,8 +8,8 @@
 </script>
 
 <div class="people">
-    {#each people as person}
-        <Person {...person} {slim} {monthly} />
+    {#each people as person, i (i)}
+        <Person {...person} {slim} {monthly} delay={i * 150} />
     {/each}
 </div>
 
