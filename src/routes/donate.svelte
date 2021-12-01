@@ -1,7 +1,7 @@
 <script>
     import CryptoModal from '@/components/CryptoModal.svelte';
     import People from '@/components/donators/People.svelte';
-    import { supporters } from '@/data/donators';
+    import { supporters, donators } from '@/data/donators';
 </script>
 
 <main>
@@ -55,17 +55,17 @@
         <section style="gap: 22px;">
             <h3>Current Supporters</h3>
 
-            <People people={supporters.current} />
+            <People people={supporters.current} monthly />
 
             <h4>Past Supporters</h4>
 
-            <People people={supporters.past} slim />
+            <People people={supporters.past} slim monthly />
         </section>
     </section>
 
     <hr />
 
-    <section class="donators">
+    <section class="donators" style="gap: 22px;">
         <h1>❤️ Donators</h1>
 
         <p>
@@ -82,6 +82,8 @@
                 <a href="#" slot="activator"> Bitcoin </a>
             </CryptoModal>
         </p>
+
+        <People people={donators} />
     </section>
 </main>
 
@@ -91,6 +93,8 @@
 
         display: flex;
         flex-direction: column;
+
+        padding: 0 0 32px 0;
 
         gap: 32px;
 

@@ -35,4 +35,10 @@ export const supporters = {
 };
 
 /** @type {Person[]} */
-export const donators = [];
+export const donators = [
+    {
+        name: 'Kevin Åberg Kultalahti',
+        image: '/donators/kevin.jpg',
+        amount: 11,
+    },
+];

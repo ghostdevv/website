@@ -1,5 +1,6 @@
 <script>
     export let slim;
+    export let monthly;
 
     export let name;
     export let image;
@@ -16,7 +17,7 @@
     <h4>{name}</h4>
 
     {#if !slim}
-        <p>£{amount}/m</p>
+        <p>£{amount}{monthly ? '/m' : ''}</p>
     {/if}
 </card>
 
