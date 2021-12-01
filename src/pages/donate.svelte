@@ -6,7 +6,18 @@
     import LinkCard from '@/components/cards/LinkCard.svelte';
     import Card from '@/components/cards/Card.svelte';
 
-    const patrons = [];
+    const patrons = [
+        {
+            name: 'Scott Spence',
+            image: 'scott-spence.png',
+            link: 'https://scottspence.com',
+        },
+        {
+            name: 'Fractal',
+            image: 'fractal.png',
+            link: 'https://github.com/fractalHQ',
+        },
+    ];
 </script>
 
 <Main>
@@ -34,10 +45,10 @@
 
     <div class="row patrons">
         <ul>
-            {#each patrons as { name, image }}
+            {#each patrons as { name, image, link }}
                 <li>
                     <img src="/images/patrons/{image}" alt="{name}'s pfp" />
-                    {name}
+                    <a href={link} target="_blank">{name}</a>
                 </li>
             {/each}
         </ul>
