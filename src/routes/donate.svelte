@@ -36,6 +36,13 @@
                 <i class="fab fa-bitcoin" /> Bitcoin
             </button>
         </CryptoModal>
+
+        <a
+            href="https://tippin.me/@onlyspaceghost"
+            target="_blank"
+            role="button">
+            <i class="fas fa-bolt" /> BTC Lightning
+        </a>
     </div>
 
     <hr />
@@ -75,12 +82,17 @@
             <a href="https://paypal.me/ghostdevpayment" target="_blank">
                 PayPal
             </a>
-
-            or
+            ,
 
             <CryptoModal>
                 <a href="#" slot="activator"> Bitcoin </a>
             </CryptoModal>
+
+            , or
+
+            <a href="https://tippin.me/@onlyspaceghost" target="_blank">
+                BTC Lightning
+            </a>
         </p>
 
         <People people={donators} />
