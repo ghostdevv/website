@@ -1,9 +1,9 @@
 <script>
     import PostGroup from '@/components/posts/cards/PostGroup.svelte';
     import Loader from '@/components/Loader.svelte';
+    import { fly, fade } from 'svelte/transition';
     import { quintOut } from 'svelte/easing';
     import { featured } from '@/data/links';
-    import { fly } from 'svelte/transition';
     import { mounted } from 'svelte-mount';
 
     import { getPosts } from '$sanity';
@@ -49,11 +49,11 @@
 {#await postsPromise}
     <Loader />
 {:then posts}
-    <h4 class="tcenter">
-        <u>Latest Posts</u>
-    </h4>
-
     {#if $mounted}
+        <h4 class="tcenter" in:fade={{ duration: 750 }}>
+            <u>Latest Posts</u>
+        </h4>
+
         <PostGroup {posts} />
     {/if}
 {:catch}
