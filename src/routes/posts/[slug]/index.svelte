@@ -15,13 +15,21 @@
     export let body;
     export let tag;
 
+    console.log({
+        timestamp,
+        title,
+        image,
+        body,
+        tag,
+    });
+
     const bodyHTML = purify.sanitize(marked(body));
 </script>
 
 <article>
     <div
         class="meta-wrapper"
-        style="--image: url({image})"
+        style="--image: url({image.url})"
         in:fly={{ y: -20, duration: 750 }}>
         <div class="meta">
             <div class="data">

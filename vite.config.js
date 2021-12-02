@@ -18,8 +18,8 @@ export default ({ mode }) =>
                     replacement: path.resolve('./src'),
                 },
                 {
-                    find: '$sanity',
-                    replacement: path.resolve('./src/sanity.js'),
+                    find: '$gql',
+                    replacement: path.resolve('./src/gql.js'),
                 },
             ],
         },

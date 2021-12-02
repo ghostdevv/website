@@ -1,7 +1,7 @@
 <script>
     import PostGroup from '@/components/posts/cards/PostGroup.svelte';
     import Loader from '@/components/Loader.svelte';
-    import { getPosts, getTags } from '$sanity';
+    import { getPosts, getTags } from '$gql';
     import { fly } from 'svelte/transition';
     import { mounted } from 'svelte-mount';
 
@@ -20,7 +20,7 @@
         in:fly={{ y: -20, duration: 750, delay: 200 }}>
         {#await tagsPromise}
             <option selected value={undefined}>LOADING...</option>
-        {:then tags}
+        {:then { tags }}
             <option selected value={undefined}>No Filter</option>
 
             {#each tags as { name, id }}
@@ -34,7 +34,7 @@
 
 {#await postsPromise}
     <Loader />
-{:then posts}
+{:then { posts }}
     {#if $mounted}
         <PostGroup {posts} />
     {/if}

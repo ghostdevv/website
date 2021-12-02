@@ -20,7 +20,7 @@
     {href}
     class="postcard"
     in:fly={{ y: -30, delay, duration: 750, opacity: 0 }}>
-    <img class="image" src={image} alt="Pog" />
+    <img class="image" src={image.url} alt="Pog" />
 
     <div class="details">
         <Tag {...tag} />

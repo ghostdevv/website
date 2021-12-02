@@ -1,7 +1,7 @@
 <script>
     import Loader from '@/components/Loader.svelte';
     import { params } from '@roxi/routify';
-    import { getTextPost } from '$sanity';
+    import { getTextPost } from '$gql';
 
     const { slug } = $params;
 
@@ -10,7 +10,7 @@
 
 {#await post}
     <Loader />
-{:then post}
+{:then { post }}
     {#if post && post?.postType == 'text'}
         <slot props={post} />
     {:else if post?.postType == 'link'}

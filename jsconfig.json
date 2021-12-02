@@ -6,8 +6,8 @@
             "@/*": [
                 "./src/*"
             ],
-            "$sanity": [
-                "./src/sanity.js"
+            "$gql": [
+                "./src/gql.js"
             ]
         },
         "module": "ESNext",

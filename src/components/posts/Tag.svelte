@@ -1,11 +1,14 @@
 <script>
     export let name;
-    export let rgb;
+    export let colour;
 
     export let large = false;
 </script>
 
-<span class="tag" style="--tag-colour: {rgb.r}, {rgb.g}, {rgb.b}" class:large>
+<span
+    class="tag"
+    style="--tag-colour: {colour.rgba.r}, {colour.rgba.g}, {colour.rgba.b}"
+    class:large>
     {name}
 </span>
 

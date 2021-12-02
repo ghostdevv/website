@@ -6,7 +6,7 @@
     import { fly } from 'svelte/transition';
     import { mounted } from 'svelte-mount';
 
-    import { getPosts } from '$sanity';
+    import { getPosts } from '$gql';
 
     const postsPromise = getPosts();
     postsPromise.catch(console.error);
@@ -48,7 +48,7 @@
 
 {#await postsPromise}
     <Loader />
-{:then posts}
+{:then { posts }}
     <h4 class="tcenter">
         <u>Latest Posts</u>
     </h4>
