@@ -29,6 +29,7 @@
         "pwa-asset-generator": "^6.0.2",
         "sass": "^1.32.8",
         "svelte": "^3.35.0",
+        "svelte-copy": "^1.0.1",
         "svelte-hamburgers": "^3.0.1",
         "svelte-local-storage-store": "^0.2.6",
         "svelte-mount": "^1.0.2",
