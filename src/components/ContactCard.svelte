@@ -1,0 +1,44 @@
+<script>
+    export let title;
+
+    export let href = null;
+    export let value;
+
+    const copyColourChange = (node) => {
+        let timeout;
+
+        const click = () => {
+            node.style.borderColor = 'var(--green)';
+
+            if (timeout) clearTimeout(timeout);
+            timeout = setTimeout(() => (node.style.borderColor = ''), 750);
+        };
+
+        node.addEventListener('click', click, true);
+
+        return {
+            destroy: () => {
+                node.removeEventListener('click', click);
+                clearTimeout(timeout);
+            },
+        };
+    };
+</script>
+
+{#if href}
+    <a {href} target="_blank" class="card center g4">
+        <h3>{title}</h3>
+        <p>{value}</p>
+    </a>
+{:else}
+    <card class="center copy g4" use:copyColourChange>
+        <h3>{title}</h3>
+        <p>{value}</p>
+    </card>
+{/if}
+
+<style>
+    .copy {
+        cursor: pointer;
+    }
+</style>

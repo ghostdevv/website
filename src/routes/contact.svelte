@@ -1,49 +1,59 @@
 <script>
-    // const links = [
-    //     ['Discord', 'https://discord.gg/2Vd4wAjJnm'],
-    //     ['Github', 'https://github.com/ghostdevv'],
-    //     ['Twitter', 'https://twitter.com/onlyspaceghost'],
-    // ];
+    import ContactCard from '@/components/ContactCard.svelte';
 
-    const displayName = (str) =>
-        str
-            .split('-')
-            .map((x) => x[0].toUpperCase() + x.slice(1))
-            .join(' ');
-
-    const links = {
-        'the-dev-lounge': {
-            href: 'https://discord.gg/2Vd4wAjJnm',
+    const contactLinks = {
+        Discord: {
+            value: 'GHOST#7524',
         },
-        github: {
-            href: 'https://github.com/ghostdevv',
+        Email: {
+            href: 'mailto:ghostdevbusiness@gmail.com',
+            value: 'ghostdevbusiness@gmail.com',
         },
-        twitter: {
+        Twitter: {
             href: 'https://twitter.com/onlyspaceghost',
+            value: 'onlyspaceghost',
+        },
+    };
+
+    const socialLinks = {
+        Github: {
+            href: 'https://github.com/ghostdevv',
+            value: 'ghostdevv',
+        },
+        Twitter: {
+            href: 'https://twitter.com/onlyspaceghost',
+            value: 'onlyspaceghost',
+        },
+        Discord: {
+            value: 'GHOST#7524',
+        },
+        'The Dev Lounge': {
+            href: 'https://discord.gg/2Vd4wAjJnm',
+            value: 'https://discord.gg/2Vd4wAjJnm',
         },
     };
 </script>
 
 <main class="column center g32 full">
-    <h1>Contact Links</h1>
-
-    <div class="row wrap center g16">
-        <card class="center"> Discord: GHOST#7524 </card>
-
-        <a href="mailto:ghostdevbusiness@gmail.com" class="card center">
-            Email
-        </a>
-
-        <a href="https://twitter.com/onlyspaceghost" class="card center">
-            Twitter
-        </a>
+    <div>
+        <h1>Contact Links</h1>
+        <p>Click to visit or copy the contact info!</p>
     </div>
 
-    <!-- <div class="row wrap center g16">
-        {#each Object.entries(links) as [link, { href, value }]}
-            <a {href} class="card center">
-                {link}
-            </a>
+    <div class="row wrap center g16">
+        {#each Object.entries(contactLinks) as [title, data]}
+            <ContactCard {title} {...data} />
         {/each}
-    </div> -->
+    </div>
+
+    <div>
+        <h1>Social Links</h1>
+        <p>Click to visit or copy the contact info!</p>
+    </div>
+
+    <div class="row wrap center g16">
+        {#each Object.entries(socialLinks) as [title, data]}
+            <ContactCard {title} {...data} />
+        {/each}
+    </div>
 </main>
