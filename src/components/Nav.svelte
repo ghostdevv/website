@@ -2,6 +2,7 @@
     import { isActive, pendingRoute } from '@roxi/routify';
     import { slide, fade, fly } from 'svelte/transition';
     import Hamburger from 'svelte-hamburgers';
+    import TRainbow from './TRainbow.svelte';
 
     let width;
     let scrollY;
@@ -20,11 +21,11 @@
     <nav class:mobile in:fade>
         <div class="nav-fh">
             <a href="/">
-                <img
+                <div
                     class="logo"
-                    src="/logo.png"
-                    alt="GHOSTs Logo"
-                    in:fly={{ y: -20, duration: 750, delay: 100 }} />
+                    in:fly={{ y: -20, duration: 750, delay: 100 }}>
+                    <TRainbow />
+                </div>
             </a>
 
             {#if mobile}
@@ -175,6 +176,9 @@
     }
 
     .logo {
-        max-width: 75px;
+        width: 75px;
+
+        display: grid;
+        place-items: center;
     }
 </style>
