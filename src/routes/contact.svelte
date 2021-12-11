@@ -1,5 +1,6 @@
 <script>
     import ContactCard from '@/components/ContactCard.svelte';
+    import { fade } from 'svelte/transition';
 
     const contactLinks = {
         Discord: {
@@ -34,7 +35,7 @@
     };
 </script>
 
-<main class="column center g32 full">
+<main class="column center g32 full" in:fade={{ duration: 750 }}>
     <div>
         <h1>Contact Links</h1>
         <p>Click to visit or copy the contact info!</p>

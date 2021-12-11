@@ -53,7 +53,7 @@
                             in:fly={{
                                 y: -20,
                                 duration: 750,
-                                delay: (i + 1) * (mobile ? 100 : 200),
+                                delay: (i + 1) * 100,
                             }}>
                             {link}
                         </a>

@@ -6,7 +6,7 @@
     const rest = os.filter((x) => !x.star);
 </script>
 
-<div class="column center g32 full" in:fade|local>
+<div class="column center g32 full">
     <h1>⭐ Starred Projects</h1>
 
     <div class="row wrap center g16">
@@ -22,7 +22,7 @@
     </div>
 </div>
 
-<div class="column center g32 full" in:fade|local>
+<div class="column center g32 full">
     <h1>OS Projects</h1>
 
     <div class="row wrap center g16">

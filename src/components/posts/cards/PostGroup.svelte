@@ -6,7 +6,7 @@
 
 <div class="blog-posts">
     {#each posts as post, i}
-        <PostCard {...post} delay={200 * i} />
+        <PostCard {...post} delay={100 * i} />
     {/each}
 </div>
 
