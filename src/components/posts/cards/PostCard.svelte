@@ -14,10 +14,12 @@
     export let delay = 0;
 
     $: href = postType == 'text' ? `/posts/${slug}` : link;
+    $: target = postType == 'text' ? undefined : '_blank';
 </script>
 
 <a
     {href}
+    {target}
     class="postcard"
     in:fly={{ y: -30, delay, duration: 750, opacity: 0 }}>
     <img class="image" src={image} alt="Pog" />
