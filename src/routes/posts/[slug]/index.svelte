@@ -170,6 +170,11 @@
             gap: 16px;
 
             font-size: var(--font-size, 16px);
+
+            :global(pre) {
+                width: 100%;
+                overflow-x: auto;
+            }
         }
 
         footer {
