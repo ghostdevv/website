@@ -107,8 +107,6 @@
         display: flex;
         flex-direction: column;
 
-        padding: 0 0 32px 0;
-
         gap: 32px;
 
         align-items: center;
