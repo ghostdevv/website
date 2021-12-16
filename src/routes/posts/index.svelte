@@ -2,7 +2,7 @@
     import PostGroup from '@/components/posts/cards/PostGroup.svelte';
     import Loader from '@/components/Loader.svelte';
     import { getPosts, getTags } from '$sanity';
-    import { fly } from 'svelte/transition';
+    import { fade } from 'svelte/transition';
     import { mounted } from 'svelte-mount';
 
     let filter;
@@ -11,26 +11,25 @@
     const tagsPromise = getTags();
 </script>
 
-<div class="filter">
-    <label for="filter" in:fly={{ y: -20, duration: 750 }}>Filter Posts</label>
+{#if mounted}
+    <div class="filter" in:fade={{ duration: 750 }}>
+        <label for="filter">Filter Posts</label>
 
-    <select
-        id="filter"
-        bind:value={filter}
-        in:fly={{ y: -20, duration: 750, delay: 200 }}>
-        {#await tagsPromise}
-            <option selected value={undefined}>LOADING...</option>
-        {:then tags}
-            <option selected value={undefined}>No Filter</option>
+        <select id="filter" bind:value={filter}>
+            {#await tagsPromise}
+                <option selected value={undefined}>LOADING...</option>
+            {:then tags}
+                <option selected value={undefined}>No Filter</option>
 
-            {#each tags as { name, id }}
-                <option value={id}>
-                    {name}
-                </option>
-            {/each}
-        {/await}
-    </select>
-</div>
+                {#each tags as { name, id }}
+                    <option value={id}>
+                        {name}
+                    </option>
+                {/each}
+            {/await}
+        </select>
+    </div>
+{/if}
 
 {#await postsPromise}
     <Loader />
