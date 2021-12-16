@@ -2,11 +2,12 @@
     import PostCard from './PostCard.svelte';
 
     export let posts;
+    export let delay;
 </script>
 
 <div class="blog-posts">
     {#each posts as post, i}
-        <PostCard {...post} delay={100 * i} />
+        <PostCard {...post} delay={delay || 100 * i} />
     {/each}
 </div>
 

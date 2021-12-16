@@ -4,7 +4,6 @@
 
     export let slim;
     export let monthly;
-    export let delay = 0;
 
     export let name;
     export let image;
@@ -12,7 +11,7 @@
 </script>
 
 {#if mounted}
-    <card class="person" class:slim in:fly={{ y: -20, duration: 750, delay }}>
+    <card class="person" class:slim in:fly={{ y: -5, duration: 400 }}>
         <img src={image} alt="{name}'s pfp" />
 
         {#if !slim}

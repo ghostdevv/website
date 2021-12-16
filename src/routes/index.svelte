@@ -10,6 +10,17 @@
 
     const postsPromise = getPosts();
     postsPromise.catch(console.error);
+
+    const getDirection = (i) => {
+        switch (i) {
+            case 0:
+                return -50;
+            case 1:
+                return 0;
+            default:
+                return 50;
+        }
+    };
 </script>
 
 <section class="column g32 center">
@@ -36,8 +47,9 @@
                     {href}
                     role="button"
                     in:fly={{
-                        y: -20,
-                        delay: 150 * (i + 1),
+                        x: getDirection(i),
+                        delay: 200,
+                        duration: 1000,
                     }}>
                     {text}
                 </a>
@@ -50,11 +62,11 @@
     <Loader />
 {:then posts}
     {#if $mounted}
-        <h4 class="tcenter" in:fade={{ duration: 750 }}>
+        <h4 class="tcenter" in:fade={{ duration: 750, delay: 300 }}>
             <u>Latest Posts</u>
         </h4>
 
-        <PostGroup {posts} />
+        <PostGroup delay={500} {posts} />
     {/if}
 {:catch}
     <p class="tcenter">
