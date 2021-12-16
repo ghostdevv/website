@@ -12,7 +12,7 @@
 </script>
 
 {#if mounted}
-    <div class="filter" in:fade={{ duration: 750 }}>
+    <div class="filter" in:fade>
         <label for="filter">Filter Posts</label>
 
         <select id="filter" bind:value={filter}>
@@ -54,5 +54,8 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 8px;
+    }
+    #filter {
+        min-width: 183px;
     }
 </style>

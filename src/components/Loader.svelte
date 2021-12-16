@@ -1,4 +1,8 @@
-<div class="loader">
+<script>
+    import { fade } from 'svelte/transition';
+</script>
+
+<div class="loader" in:fade>
     <svg fill="none" width="216" height="66" viewBox="0 0 216 66">
         <circle cx="33" cy="33" r="25" />
         <circle cx="108" cy="33" r="25" style="--delay: 0.2s" />

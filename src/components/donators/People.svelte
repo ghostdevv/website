@@ -9,7 +9,7 @@
 
 <div class="people">
     {#each people as person, i (i)}
-        <Person {...person} {slim} {monthly} delay={i * 150} />
+        <Person {...person} {slim} {monthly} />
     {/each}
 </div>
 

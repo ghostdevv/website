@@ -1,5 +1,5 @@
 <script>
-    import App from '@/App.svelte';
+    import { cubicOut } from 'svelte/easing';
     import { fly } from 'svelte/transition';
     import Tag from '../Tag.svelte';
 
@@ -21,7 +21,7 @@
     {href}
     {target}
     class="postcard"
-    in:fly={{ y: -30, delay, duration: 750, opacity: 0 }}>
+    in:fly={{ y: -5, delay, duration: 500, opacity: 0, easing: cubicOut }}>
     <img class="image" src={image} alt="Pog" />
 
     <div class="details">

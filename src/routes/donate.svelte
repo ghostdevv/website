@@ -2,10 +2,9 @@
     import CryptoModal from '@/components/CryptoModal.svelte';
     import People from '@/components/donators/People.svelte';
     import { supporters, donators } from '@/data/donators';
-    import { fade } from 'svelte/transition';
 </script>
 
-<main in:fade={{ duration: 750 }}>
+<main>
     <section class="title">
         <h1>🥳 Donate & Support my work</h1>
 

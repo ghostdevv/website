@@ -1,6 +1,7 @@
 <script>
-    import { fade, fly } from 'svelte/transition';
+    import { fly } from 'svelte/transition';
     import { os } from '@/data/projects.js';
+    import { cubicOut } from 'svelte/easing';
 
     const starred = os.filter((x) => x.star);
     const rest = os.filter((x) => !x.star);
@@ -15,7 +16,12 @@
                 href={project.url}
                 target="_blank"
                 class="card center blue"
-                in:fly={{ y: -40, delay: i * 80, duration: 600 }}>
+                in:fly={{
+                    y: -25,
+                    delay: i * 20,
+                    duration: 500,
+                    easing: cubicOut,
+                }}>
                 <h5>{project.name}</h5>
             </a>
         {/each}
@@ -31,7 +37,7 @@
                 href={project.url}
                 target="_blank"
                 class="card center"
-                in:fly={{ y: -40, delay: i * 80, duration: 600 }}>
+                in:fly={{ y: -40, delay: i * 30, duration: 400 }}>
                 <h5>{project.name}</h5>
             </a>
         {/each}
