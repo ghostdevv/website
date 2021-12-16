@@ -42,6 +42,7 @@
         margin: 0px auto;
 
         padding: 16px 32px;
+        padding-bottom: 64px;
 
         .main {
             padding-top: 140px;
