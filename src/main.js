@@ -1,6 +1,13 @@
-import HMR from '@roxi/routify/hmr'
+import 'svelte-hamburgers/dist/css/types/squeeze.css';
+import 'svelte-hamburgers/dist/css/base.css';
+import 'ghostsui/css/ghostsui.css';
+
+import { registerSW } from 'virtual:pwa-register';
 import App from './App.svelte';
 
-const app = HMR(App, { target: document.body }, 'oxova-app')
+// Update/register service worker
+registerSW()();
+
+const app = new App({ target: document.body });
 
 export default app;

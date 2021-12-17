@@ -1,0 +1,21 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "sanity start",
+    "build": "sanity build"
+  },
+  "dependencies": {
+    "@sanity/base": "^2.21.6",
+    "@sanity/color-input": "^2.21.6",
+    "@sanity/core": "^2.21.6",
+    "@sanity/default-layout": "^2.21.6",
+    "@sanity/default-login": "^2.21.6",
+    "@sanity/desk-tool": "^2.21.6",
+    "@sanity/vision": "^2.21.6",
+    "prop-types": "^15.7",
+    "react": "^17.0",
+    "react-dom": "^17.0",
+    "sanity-plugin-markdown": "^2.0.3",
+    "styled-components": "^5.2.0"
+  }
+}

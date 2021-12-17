@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "checkJs": true,
+        "baseUrl": ".",
+        "paths": {
+            "@/*": [
+                "./src/*"
+            ],
+            "$sanity": [
+                "./src/sanity.js"
+            ]
+        },
+        "module": "ESNext",
+        "moduleResolution": "node"
+    }
+}
