@@ -69,7 +69,23 @@ export const os = [
     {
         name: 'Svelte Mount',
         url: 'https://github.com/ghostdevv/svelte-mount',
+    },
+    {
+        name: 'Svelte Copy',
+        url: 'https://github.com/ghostdevv/svelte-copy',
         star: true,
+    },
+    {
+        name: 'Create Routify',
+        url: 'https://github.com/roxiness/create-routify',
+    },
+    {
+        name: 'Neru',
+        url: 'https://github.com/NeruJS/neru',
+    },
+    {
+        name: 'Methods',
+        url: 'https://www.npmjs.com/package/@nerujs/methods',
     },
 ];
 
