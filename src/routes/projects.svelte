@@ -1,3 +1,7 @@
+<script context="module">
+    export const prerender = true;
+</script>
+
 <script>
     import { fly } from 'svelte/transition';
     import { os } from '$lib/data/projects.js';

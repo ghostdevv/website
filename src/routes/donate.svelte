@@ -1,3 +1,7 @@
+<script context="module">
+    export const prerender = true;
+</script>
+
 <script>
     import CryptoModal from '$lib/components/CryptoModal.svelte';
     import People from '$lib/components/donators/People.svelte';
