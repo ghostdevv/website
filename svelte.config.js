@@ -1,3 +1,4 @@
+import { visualizer } from 'rollup-plugin-visualizer';
 import vercel from '@sveltejs/adapter-vercel';
 import preprocess from 'svelte-preprocess';
 import path from 'path';
@@ -22,6 +23,8 @@ export default {
                     },
                 ],
             },
+
+            plugins: [visualizer()],
         },
     },
 
