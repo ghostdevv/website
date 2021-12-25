@@ -1,16 +1,11 @@
 {
-    "compilerOptions": {
-        "checkJs": true,
-        "baseUrl": ".",
-        "paths": {
-            "@/*": [
-                "./src/*"
-            ],
-            "$sanity": [
-                "./src/sanity.js"
-            ]
-        },
-        "module": "ESNext",
-        "moduleResolution": "node"
-    }
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"$lib": ["src/lib"],
+			"$lib/*": ["src/lib/*"],
+			"$sanity": ["./src/sanity.js"]
+		}
+	},
+	"include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.svelte"]
 }
