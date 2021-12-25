@@ -1,9 +1,9 @@
 <script>
     import Loader from '$lib/components/Loader.svelte';
-    import { params } from '@roxi/routify';
+    import { page } from '$app/stores';
     import { getTextPost } from '$sanity';
 
-    const { slug } = $params;
+    const { slug } = $page.params;
 
     const post = getTextPost(slug);
 </script>

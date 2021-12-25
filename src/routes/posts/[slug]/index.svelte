@@ -4,7 +4,7 @@
     import { createTweetLink } from '$lib/helpers/twitter';
     import Tag from '$lib/components/posts/Tag.svelte';
     import { fly } from 'svelte/transition';
-    import { params } from '@roxi/routify';
+    import { page } from '$app/stores';
     import { format } from 'date-fns';
     import { marked } from 'marked';
     import purify from 'dompurify';
@@ -51,7 +51,7 @@
     <footer in:fly={{ y: -20, duration: 750, delay: 200 }}>
         <a
             href={createTweetLink(
-                `Checkout this awesome post by @onlyspaceghost! https://ghostdev.xyz/posts/${$params.slug}`,
+                `Checkout this awesome post by @onlyspaceghost! https://ghostdev.xyz/posts/${$page.params.slug}`,
             )}
             role="button"
             target="_blank">

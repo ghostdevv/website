@@ -1,8 +1,9 @@
 <script>
-    import { isActive, pendingRoute } from '@roxi/routify';
+    // import { isActive, pendingRoute } from '@roxi/routify';
     import { slide, fade, fly } from 'svelte/transition';
     import Hamburger from 'svelte-hamburgers';
     import TRainbow from './TRainbow.svelte';
+    import { page } from '$app/stores';
 
     let width;
     let scrollY;
@@ -12,7 +13,9 @@
     $: mobile = width < 900;
     $: scroll = scrollY > 0;
 
-    $: if (!mobile || $pendingRoute) open = false;
+    $: if (!mobile /* || $pendingRoute */) open = false;
+
+    const isActive = (url) => $page.path.startsWith(url);
 </script>
 
 <svelte:window bind:innerWidth={width} bind:scrollY />
@@ -35,13 +38,13 @@
             {/if}
         </div>
 
-        <!-- Should be !$isChangingPage && (open || !mobile)-->
-        {#if !$pendingRoute && (open || !mobile)}
+        <!-- !$pendingRoute && (open || !mobile) -->
+        {#if open || !mobile}
             <div class="nav-sh" transition:slide>
                 <div class="links">
                     <a
                         href="/"
-                        class:active={$isActive('/')}
+                        class:active={isActive('/')}
                         in:fly={{ y: -20, duration: 750 }}>
                         Home
                     </a>
@@ -49,7 +52,7 @@
                     {#each ['posts', 'projects', 'donate', 'contact'] as link, i (i)}
                         <a
                             href="/{link}"
-                            class:active={$isActive(`/${link}`)}
+                            class:active={isActive(`/${link}`)}
                             in:fly={{
                                 y: -20,
                                 duration: 750,
