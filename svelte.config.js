@@ -9,5 +9,5 @@ export default {
         target: '#svelte',
     },
 
-    preprocess,
+    preprocess: preprocess(),
 };
