@@ -1,3 +1,4 @@
+import { visualizer } from 'rollup-plugin-visualizer';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
 import routify from '@roxi/routify/vite-plugin';
 import autoPreprocess from 'svelte-preprocess';
@@ -67,5 +68,6 @@ export default ({ mode }) =>
                     ],
                 },
             }),
+            visualizer(),
         ],
     });
