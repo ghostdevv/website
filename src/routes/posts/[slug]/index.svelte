@@ -1,4 +1,22 @@
+<script context="module">
+    import { getTextPost } from '$sanity';
+    import { marked } from 'marked';
+
+    /** @type {import('@sveltejs/kit').Load}*/
+    export const load = async ({ page }) => {
+        const post = await getTextPost(page.params.slug);
+
+        return {
+            props: {
+                ...post,
+                body: marked(post.body),
+            },
+        };
+    };
+</script>
+
 <script>
+    import TextPostValidator from '$lib/components/posts/TextPostValidator.svelte';
     import SettingsModal from '$lib/components/posts/post/SettingsModal.svelte';
     import { fontSize } from '$lib/components/posts/post/settings';
     import { createTweetLink } from '$lib/helpers/twitter';
@@ -6,62 +24,62 @@
     import { fly } from 'svelte/transition';
     import { page } from '$app/stores';
     import { format } from 'date-fns';
-    import { marked } from 'marked';
-    import purify from 'dompurify';
 
     export let timestamp;
+    export let postType;
     export let title;
     export let image;
+    export let link;
     export let body;
     export let tag;
-
-    const bodyHTML = purify.sanitize(marked(body));
 </script>
 
-<article>
-    <div
-        class="meta-wrapper"
-        style="--image: url({image})"
-        in:fly={{ y: -20, duration: 750 }}>
-        <div class="meta">
-            <div class="data">
-                <Tag {...tag} large />
-                <p>{format(new Date(timestamp), 'do LLLL yyyy')}</p>
-            </div>
+<TextPostValidator {link} {postType}>
+    <article>
+        <div
+            class="meta-wrapper"
+            style="--image: url({image})"
+            in:fly={{ y: -20, duration: 750 }}>
+            <div class="meta">
+                <div class="data">
+                    <Tag {...tag} large />
+                    <p>{format(new Date(timestamp), 'do LLLL yyyy')}</p>
+                </div>
 
-            <h1 class="title">{title}</h1>
+                <h1 class="title">{title}</h1>
 
-            <div class="settings">
-                <SettingsModal />
+                <div class="settings">
+                    <SettingsModal />
+                </div>
             </div>
         </div>
-    </div>
 
-    <hr />
+        <hr />
 
-    <div
-        class="body"
-        style="--font-size: {$fontSize}px"
-        in:fly={{ y: -20, duration: 750, delay: 100 }}>
-        {@html bodyHTML}
-    </div>
+        <div
+            class="body"
+            style="--font-size: {$fontSize}px"
+            in:fly={{ y: -20, duration: 750, delay: 100 }}>
+            {@html body}
+        </div>
 
-    <hr />
+        <hr />
 
-    <footer in:fly={{ y: -20, duration: 750, delay: 200 }}>
-        <a
-            href={createTweetLink(
-                `Checkout this awesome post by @onlyspaceghost! https://ghostdev.xyz/posts/${$page.params.slug}`,
-            )}
-            role="button"
-            target="_blank">
-            <i class="fab fa-twitter" />
-            Share on twitter
-        </a>
+        <footer in:fly={{ y: -20, duration: 750, delay: 200 }}>
+            <a
+                href={createTweetLink(
+                    `Checkout this awesome post by @onlyspaceghost! https://ghostdev.xyz/posts/${$page.params.slug}`,
+                )}
+                role="button"
+                target="_blank">
+                <i class="fab fa-twitter" />
+                Share on twitter
+            </a>
 
-        <SettingsModal />
-    </footer>
-</article>
+            <SettingsModal />
+        </footer>
+    </article>
+</TextPostValidator>
 
 <style lang="scss">
     @import 'src/lib/helpers/media';
