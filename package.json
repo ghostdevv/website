@@ -10,9 +10,8 @@
         "assets": "pwa-asset-generator public/logo.png public/icons --background \"#121214\""
     },
     "devDependencies": {
-        "@roxi/routify": "^3.0.0-next.59",
+        "@sveltejs/kit": "next",
         "@sanity/client": "^2.21.3",
-        "@sveltejs/vite-plugin-svelte": "^1.0.0-next.5",
         "@types/dompurify": "^2.3.1",
         "@types/marked": "^4.0.1",
         "autoprefixer": "^10.2.5",
@@ -36,7 +35,6 @@
         "svelte-preprocess": "^4.7.0",
         "typescript": "^4.4.4",
         "vite": "^2.0.5",
-        "vite-plugin-pwa": "^0.11.7",
         "rollup-plugin-visualizer": "^5.5.2"
     }
 }
