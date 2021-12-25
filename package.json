@@ -6,12 +6,13 @@
     "scripts": {
         "dev": "svelte-kit dev",
         "build": "svelte-kit build",
-        "preview": "svelte-kit preview",
+        "preview": "svelte-kit preview --port 5000",
         "assets": "pwa-asset-generator public/logo.png public/icons --background \"#121214\""
     },
     "devDependencies": {
         "@sveltejs/kit": "next",
         "@sveltejs/adapter-vercel": "next",
+        "@sveltejs/adapter-auto": "next",
         "@sanity/client": "^2.21.3",
         "@types/dompurify": "^2.3.1",
         "@types/marked": "^4.0.1",
