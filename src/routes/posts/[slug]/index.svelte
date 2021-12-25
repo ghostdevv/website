@@ -1,8 +1,8 @@
 <script>
-    import SettingsModal from '@/components/posts/post/SettingsModal.svelte';
-    import { fontSize } from '@/components/posts/post/settings';
-    import { createTweetLink } from '@/helpers/twitter';
-    import Tag from '@/components/posts/Tag.svelte';
+    import SettingsModal from '$lib/components/posts/post/SettingsModal.svelte';
+    import { fontSize } from '$lib/components/posts/post/settings';
+    import { createTweetLink } from '$lib/helpers/twitter';
+    import Tag from '$lib/components/posts/Tag.svelte';
     import { fly } from 'svelte/transition';
     import { params } from '@roxi/routify';
     import { format } from 'date-fns';

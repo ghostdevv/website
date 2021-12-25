@@ -1,5 +1,5 @@
 <script>
-    import Loader from '@/components/Loader.svelte';
+    import Loader from '$lib/components/Loader.svelte';
     import { params } from '@roxi/routify';
     import { getTextPost } from '$sanity';
 

@@ -1,5 +1,5 @@
 <script>
-    import Nav from '@/components/Nav.svelte';
+    import Nav from '$lib/components/Nav.svelte';
     import { fade } from 'svelte/transition';
 
     let online;

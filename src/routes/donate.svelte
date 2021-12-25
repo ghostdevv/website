@@ -1,7 +1,7 @@
 <script>
-    import CryptoModal from '@/components/CryptoModal.svelte';
-    import People from '@/components/donators/People.svelte';
-    import { supporters, donators } from '@/data/donators';
+    import CryptoModal from '$lib/components/CryptoModal.svelte';
+    import People from '$lib/components/donators/People.svelte';
+    import { supporters, donators } from '$lib/data/donators';
 </script>
 
 <main>

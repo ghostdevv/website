@@ -1,6 +1,6 @@
 <script>
-    import PostGroup from '@/components/posts/cards/PostGroup.svelte';
-    import Loader from '@/components/Loader.svelte';
+    import PostGroup from '$lib/components/posts/cards/PostGroup.svelte';
+    import Loader from '$lib/components/Loader.svelte';
     import { getPosts, getTags } from '$sanity';
     import { fade } from 'svelte/transition';
     import { mounted } from 'svelte-mount';
