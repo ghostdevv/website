@@ -64,7 +64,7 @@
 </article>
 
 <style lang="scss">
-    @import 'src/helpers/media';
+    @import 'src/lib/helpers/media';
 
     article {
         width: 100%;

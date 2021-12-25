@@ -27,7 +27,7 @@
 </Modal>
 
 <style lang="scss">
-    @import 'src/helpers/media';
+    @import 'src/lib/helpers/media';
 
     .input-group {
         width: 100%;
