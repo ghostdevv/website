@@ -36,9 +36,7 @@
         "svelte-preprocess": "^4.7.0",
         "typescript": "^4.4.4",
         "vite": "^2.0.5",
-        "vite-plugin-pwa": "^0.11.7"
-    },
-    "dependencies": {
+        "vite-plugin-pwa": "^0.11.7",
         "rollup-plugin-visualizer": "^5.5.2"
     }
 }
