@@ -4,6 +4,12 @@ export default {
     type: 'document',
     fields: [
         {
+            name: 'preview',
+            title: 'Preview Mode',
+            type: 'boolean',
+            initialValue: false,
+        },
+        {
             name: 'title',
             title: 'Title',
             type: 'string',
