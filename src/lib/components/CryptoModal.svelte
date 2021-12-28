@@ -1,7 +1,6 @@
 <script>
     import { onDestroy } from 'svelte';
     import { Modal } from 'polykit';
-    import kjua from 'kjua';
 
     const btc = '19htGt434Q4EyhZrbNCRtkobmSqL7j6kuX';
 
@@ -33,6 +32,8 @@
     };
 
     const qr = (node) => {
+        const kjua = await import('kjua');
+        
         node.appendChild(
             kjua({
                 crisp: true,
