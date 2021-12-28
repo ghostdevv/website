@@ -1,11 +1,11 @@
 import { visualizer } from 'rollup-plugin-visualizer';
 import preprocess from 'svelte-preprocess';
-import auto from '@sveltejs/adapter-auto';
+import vercel from '@sveltejs/adapter-vercel';
 import path from 'path';
 
 export default {
     kit: {
-        adapter: auto(),
+        adapter: vercel(),
 
         // hydrate the <div id="svelte"> element in src/app.html
         target: '#svelte',
