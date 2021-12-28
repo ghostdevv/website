@@ -15,7 +15,7 @@
 
     $: if (!mobile /* || $pendingRoute */) open = false;
 
-    const isActive = (url) => $page.path.startsWith(url);
+    $: isActive = (url) => $page.path.endsWith(url);
 </script>
 
 <svelte:window bind:innerWidth={width} bind:scrollY />
