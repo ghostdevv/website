@@ -17,6 +17,10 @@
   ],
   "env": {
     "development": {
+      "api": {
+        "dataset": "testing"
+      },
+
       "plugins": [
         "@sanity/vision"
       ]
