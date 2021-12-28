@@ -15,7 +15,7 @@
 
     $: if (!mobile /* || $pendingRoute */) open = false;
 
-    $: isActive = (url) => $page.path.endsWith(url);
+    $: isActive = (url) => $page.path.includes(url);
 </script>
 
 <svelte:window bind:innerWidth={width} bind:scrollY />
@@ -44,7 +44,7 @@
                 <div class="links">
                     <a
                         href="/"
-                        class:active={isActive('/')}
+                        class:active={$page.path == '/'}
                         in:fly={{ y: -20, duration: 750 }}>
                         Home
                     </a>
