@@ -1,5 +1,4 @@
 import { visualizer } from 'rollup-plugin-visualizer';
-import vercel from '@sveltejs/adapter-vercel';
 import preprocess from 'svelte-preprocess';
 import auto from '@sveltejs/adapter-auto';
 import path from 'path';
