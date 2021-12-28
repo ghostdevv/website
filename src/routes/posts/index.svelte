@@ -1,14 +1,22 @@
 <script>
     import PostGroup from '$lib/components/posts/cards/PostGroup.svelte';
     import Loader from '$lib/components/Loader.svelte';
-    import { getPosts, getTags } from '$sanity';
     import { fade } from 'svelte/transition';
     import { mounted } from 'svelte-mount';
 
-    let filter;
+    let filter = null;
 
-    $: postsPromise = getPosts(null, filter);
-    const tagsPromise = getTags();
+    const getPosts = async (filter) => {
+        const res = await fetch(
+            `/posts.json${filter ? `?filter=${filter}` : ''}`,
+        );
+
+        return await res.json();
+    };
+
+    $: postsPromise = getPosts(filter);
+
+    const tagsPromise = fetch('/posts/tags.json').then((res) => res.json());
 </script>
 
 {#if mounted}

@@ -1,16 +1,10 @@
 <script context="module">
-    import { getTextPost } from '$sanity';
-    import { marked } from 'marked';
-
     /** @type {import('@sveltejs/kit').Load}*/
-    export const load = async ({ page }) => {
-        const post = await getTextPost(page.params.slug);
+    export const load = async ({ page, fetch }) => {
+        const post = await fetch(`/posts/${page.params.slug}.json`);
 
         return {
-            props: {
-                ...post,
-                body: marked(post.body),
-            },
+            props: await post.json(),
         };
     };
 </script>

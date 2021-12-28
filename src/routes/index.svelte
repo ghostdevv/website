@@ -6,10 +6,7 @@
     import { featured } from '$lib/data/links';
     import { mounted } from 'svelte-mount';
 
-    import { getPosts } from '$sanity';
-
-    const postsPromise = getPosts();
-    postsPromise.catch(console.error);
+    const postsPromise = fetch('/posts.json').then((res) => res.json());
 
     const getDirection = (i) => {
         switch (i) {
