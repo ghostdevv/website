@@ -6,6 +6,7 @@
 
     import Nav from '$lib/components/Nav.svelte';
     import { fade } from 'svelte/transition';
+    import { browser } from '$app/env';
 
     let online;
     let ignoreOfflineWarning = false;
@@ -23,7 +24,7 @@
     </div>
 </div>
 
-{#if !online && !ignoreOfflineWarning}
+{#if !online && !ignoreOfflineWarning && browser}
     <banner class="offline red" in:fade>
         <p>You are offline</p>
 
