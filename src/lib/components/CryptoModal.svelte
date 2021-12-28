@@ -31,9 +31,9 @@
         onDestroy(() => clearTimeout(timeout));
     };
 
-    const qr = (node) => {
+    const qr = async (node) => {
         const kjua = await import('kjua');
-        
+
         node.appendChild(
             kjua({
                 crisp: true,
