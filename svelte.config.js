@@ -7,9 +7,6 @@ export default {
     kit: {
         adapter: vercel(),
 
-        // hydrate the <div id="svelte"> element in src/app.html
-        target: '#svelte',
-
         vite: {
             server: {
                 port: 5000,
