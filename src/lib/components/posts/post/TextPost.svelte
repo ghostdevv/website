@@ -181,6 +181,9 @@
             :global(pre) {
                 width: 100%;
                 overflow-x: auto;
+
+                padding: 22px;
+                border-radius: 16px;
             }
         }
 
