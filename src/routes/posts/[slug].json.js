@@ -1,6 +1,14 @@
+import taskList from 'markdown-it-task-lists';
+import Shiki from 'markdown-it-shiki';
+import MarkdownIt from 'markdown-it';
 import sanity from '$sanity';
-import { marked } from 'marked';
 import groq from 'groq';
+
+const md = MarkdownIt()
+    .use(Shiki, {
+        theme: 'material-darker',
+    })
+    .use(taskList);
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
 export const get = async ({ params }) => {
@@ -30,7 +38,9 @@ export const get = async ({ params }) => {
             status: '404',
         };
 
-    if (post.body && post.postType == 'text') post.body = marked(post.body);
+    if (post.body && post.postType == 'text') {
+        post.body = md.render(post.body);
+    }
 
     return {
         body: post,

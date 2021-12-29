@@ -11,6 +11,7 @@
 
 <script>
     import SettingsModal from '$lib/components/posts/post/SettingsModal.svelte';
+    import { codeTheme } from '$lib/components/posts/post/settings';
     import { fontSize } from '$lib/components/posts/post/settings';
     import { createTweetLink } from '$lib/helpers/twitter';
     import Tag from '$lib/components/posts/Tag.svelte';
