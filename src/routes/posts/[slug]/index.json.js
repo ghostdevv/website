@@ -4,17 +4,12 @@ import MarkdownIt from 'markdown-it';
 import sanity from '$sanity';
 import groq from 'groq';
 
-const md = MarkdownIt()
-    .use(Shiki, {
-        theme: 'material-darker',
-    })
-    .use(taskList);
-
 /** @type {import('@sveltejs/kit').RequestHandler} */
-export const get = async ({ params }) => {
+export const get = async ({ params, query }) => {
     const { slug } = params;
+    const { theme } = query;
 
-    const query = groq`
+    const sanityQuery = groq`
         *[_type == 'post' && slug.current == $slug][0] {
             title,
             timestamp,
@@ -31,12 +26,18 @@ export const get = async ({ params }) => {
         }
     `;
 
-    const post = await sanity.fetch(query, { slug });
+    const post = await sanity.fetch(sanityQuery, { slug });
 
     if (!post)
         return {
             status: '404',
         };
+
+    const md = MarkdownIt()
+        .use(Shiki, {
+            theme: theme || 'material-darker',
+        })
+        .use(taskList);
 
     if (post.body && post.postType == 'text') {
         post.body = md.render(post.body);

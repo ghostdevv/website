@@ -1,5 +1,5 @@
 <script>
-    import { fontSize } from './settings';
+    import { fontSize, codeTheme } from './settings';
     import { Modal } from 'polykit';
 </script>
 
@@ -22,6 +22,41 @@
                 bind:value={$fontSize} />
         </div>
 
+        <div class="input-group">
+            <label for="code-block-theme"> Code Block Theme</label>
+
+            <select
+                style="background-color: var(--background-secondary)"
+                id="code-block-theme"
+                bind:value={$codeTheme}>
+                <option value="css-variables">CSS Variables</option>
+                <option value="dark-plus">Dark Plus</option>
+                <option value="dracula-soft">Dracula Soft</option>
+                <option value="dracula">Dracula</option>
+                <option value="github-dark-dimmed"> Github Dark Dimmed </option>
+                <option value="github-dark">Github Dark</option>
+                <option value="github-light">Github Light</option>
+                <option value="light-plus">Light Plus</option>
+                <option value="material-darker">Material Darker</option>
+                <option value="material-default">Material Default</option>
+                <option value="material-lighter">Material Lighter</option>
+                <option value="material-ocean">Material Ocean</option>
+                <option value="material-palenight"> Material Palenight </option>
+                <option value="min-dark">Min Dark</option>
+                <option value="min-light">Min Light</option>
+                <option value="monokai">Monokai</option>
+                <option value="nord">Nord</option>
+                <option value="one-dark-pro">One Dark Pro</option>
+                <option value="poimandres">Poimandres</option>
+                <option value="slack-dark">Slack Dark</option>
+                <option value="slack-ochin">Slack Ochin</option>
+                <option value="solarized-dark">Solarized Dark</option>
+                <option value="solarized-light">Solarized Light</option>
+                <option value="vitesse-dark">Vitesse Dark</option>
+                <option value="vitesse-light">Vitesse Light</option>
+            </select>
+        </div>
+
         <button on:click={close}>Close</button>
     </card>
 </Modal>
@@ -31,6 +66,11 @@
 
     .input-group {
         width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
     }
 
     .modal {

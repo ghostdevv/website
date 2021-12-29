@@ -1,5 +1,5 @@
 <script>
-    import TextPost from '$lib/components/posts/post/TextPost.svelte';
+    import TextPost from '$lib/components/posts/post/text/TextPost.svelte';
     import Loader from '$lib/components/Loader.svelte';
     import { page } from '$app/stores';
 
