@@ -27,10 +27,16 @@
             <a href="/posts" class="button">View posts</a>
         </h4>
     {/if}
-{:catch}
+{:catch error}
     <h4>
         The post failed to load, Contact <mark>GHOST#7524</mark> on discord
     </h4>
+
+    <pre>
+        <code>
+            {JSON.stringify(error, null, 4)}
+        </code>
+    </pre>
 {/await}
 
 <style>
