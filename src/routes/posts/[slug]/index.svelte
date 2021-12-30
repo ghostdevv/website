@@ -1,11 +1,12 @@
 <script>
     import TextPost from '$lib/components/posts/post/text/TextPost.svelte';
+    import { codeTheme } from '$lib/components/posts/post/settings.js';
     import Loader from '$lib/components/Loader.svelte';
     import { page } from '$app/stores';
 
-    const post = fetch(`/posts/${$page.params.slug}.json`).then((res) =>
-        res.json(),
-    );
+    $: post = fetch(
+        `/posts/${$page.params.slug}.json?theme=${$codeTheme}`,
+    ).then((res) => res.json());
 </script>
 
 {#await post}
