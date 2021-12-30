@@ -34,11 +34,12 @@ export const get = async ({ params, query }) => {
             status: '404',
         };
 
-    // const md = MarkdownIt().use(Shiki, { theme }).use(taskList);
+    const md = MarkdownIt() /*.use(Shiki, { theme })*/
+        .use(taskList);
 
-    // if (post.body && post.postType == 'text') {
-    //     post.body = md.render(post.body);
-    // }
+    if (post.body && post.postType == 'text') {
+        post.body = md.render(post.body);
+    }
 
     return {
         body: {
