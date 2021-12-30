@@ -1,5 +1,5 @@
 import taskList from 'markdown-it-task-lists';
-import Shiki from 'markdown-it-shiki';
+import { getHighlighter } from 'shiki';
 import MarkdownIt from 'markdown-it';
 import { format } from 'date-fns';
 import sanity from '$sanity';
@@ -34,8 +34,13 @@ export const get = async ({ params, query }) => {
             status: '404',
         };
 
-    const md = MarkdownIt() /*.use(Shiki, { theme })*/
-        .use(taskList);
+    const shiki = await getHighlighter({ theme });
+
+    const md = MarkdownIt({
+        highlight: (code, lang) => shiki.codeToHtml(code, { lang }),
+    });
+
+    md.use(taskList);
 
     if (post.body && post.postType == 'text') {
         post.body = md.render(post.body);
