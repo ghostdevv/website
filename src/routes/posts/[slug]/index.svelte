@@ -5,7 +5,9 @@
     import { page } from '$app/stores';
 
     $: post = fetch(
-        `/posts/${$page.params.slug}.json?theme=${$codeTheme}`,
+        `/posts/${$page.params.slug}.json${
+            $codeTheme ? `?theme=${$codeTheme}` : ''
+        }`,
     ).then((res) => res.json());
 </script>
 
