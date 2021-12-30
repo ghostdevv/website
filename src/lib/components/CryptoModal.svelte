@@ -32,7 +32,7 @@
     };
 
     const qr = async (node) => {
-        const kjua = await import('kjua');
+        const { default: kjua } = await import('kjua');
 
         node.appendChild(
             kjua({
