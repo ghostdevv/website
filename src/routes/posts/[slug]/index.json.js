@@ -6,8 +6,8 @@ import groq from 'groq';
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
 export const get = async ({ params, query }) => {
+    const theme = query.get('theme') || 'material-darker';
     const { slug } = params;
-    const { theme } = query;
 
     const sanityQuery = groq`
         *[_type == 'post' && slug.current == $slug][0] {
@@ -33,11 +33,7 @@ export const get = async ({ params, query }) => {
             status: '404',
         };
 
-    const md = MarkdownIt()
-        .use(Shiki, {
-            theme: theme || 'material-darker',
-        })
-        .use(taskList);
+    const md = MarkdownIt().use(Shiki, { theme }).use(taskList);
 
     if (post.body && post.postType == 'text') {
         post.body = md.render(post.body);
