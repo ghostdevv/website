@@ -1,6 +1,7 @@
 import taskList from 'markdown-it-task-lists';
 import Shiki from 'markdown-it-shiki';
 import MarkdownIt from 'markdown-it';
+import { format } from 'date-fns';
 import sanity from '$sanity';
 import groq from 'groq';
 
@@ -40,6 +41,9 @@ export const get = async ({ params, query }) => {
     }
 
     return {
-        body: post,
+        body: {
+            ...post,
+            timestamp: format(new Date(post.timestamp), 'do LLLL yyyy'),
+        },
     };
 };

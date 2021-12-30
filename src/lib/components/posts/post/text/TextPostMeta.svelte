@@ -2,7 +2,6 @@
     import SettingsModal from '$lib/components/posts/post/SettingsModal.svelte';
     import Tag from '$lib/components/posts/Tag.svelte';
     import { fly } from 'svelte/transition';
-    import { format } from 'date-fns';
 
     export let timestamp;
     export let title;
@@ -17,7 +16,7 @@
     <div class="meta">
         <div class="data">
             <Tag {...tag} large />
-            <p>{format(new Date(timestamp), 'do LLLL yyyy')}</p>
+            <p>{timestamp}</p>
         </div>
 
         <h1 class="title">{title}</h1>
