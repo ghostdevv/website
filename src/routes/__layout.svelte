@@ -1,10 +1,7 @@
 <script>
     import { faTimes } from '@fortawesome/free-solid-svg-icons';
-    import Loader from '$lib/components/Loader.svelte';
     import Nav from '$lib/components/Nav.svelte';
-    import { navigating } from '$app/stores';
     import { fade } from 'svelte/transition';
-    import { mounted } from 'svelte-mount';
     import { browser } from '$app/env';
     import Fa from 'svelte-fa';
 
@@ -18,17 +15,11 @@
 
 <Nav />
 
-<!-- {#if $navigating || !$mounted}
-    <div class="loader">
-        <Loader />
-    </div>
-{:else} -->
 <div class="wrapper column g16">
     <div class="column g32 main">
         <slot />
     </div>
 </div>
-<!-- {/if} -->
 
 {#if !online && !ignoreOfflineWarning && browser}
     <banner class="offline red" in:fade>
@@ -47,22 +38,6 @@
 <style lang="scss">
     div {
         width: 100%;
-    }
-
-    .loader {
-        position: absolute;
-        top: 0;
-        left: 0;
-
-        z-index: 100000;
-
-        width: 100%;
-        height: 100%;
-
-        display: grid;
-        place-items: center;
-
-        background-color: var(--background-primary);
     }
 
     .wrapper {
