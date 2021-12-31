@@ -1,9 +1,4 @@
 <script>
-    // We have to import the styles here :/
-    import 'svelte-hamburgers/dist/css/types/squeeze.css';
-    import 'svelte-hamburgers/dist/css/base.css';
-    import 'ghostsui/css/ghostsui.css';
-
     import Nav from '$lib/components/Nav.svelte';
     import { fade } from 'svelte/transition';
     import { browser } from '$app/env';
