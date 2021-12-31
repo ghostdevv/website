@@ -3,14 +3,11 @@ import groq from 'groq';
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
 export const get = async ({ url }) => {
-    const limit = url.searchParams.get('limit') || 15;
     const filter = url.searchParams.get('filter') || null;
-
     const filterConditional = filter ? '&& references($filter)' : '';
-    const limitConditional = limit ? '[0...$limit]' : '';
 
     const $ = groq`
-        *[_type == 'post' ${filterConditional}]${limitConditional}{
+        *[_type == 'post' ${filterConditional}][0..15]{
             title,
             excerpt,
             postType,
@@ -28,7 +25,7 @@ export const get = async ({ url }) => {
         } | order(timestamp desc)
     `;
 
-    const posts = await sanity.fetch($, { limit, filter });
+    const posts = await sanity.fetch($, { filter });
 
     return {
         body: posts,
