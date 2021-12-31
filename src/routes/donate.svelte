@@ -41,7 +41,7 @@
 
         <CryptoModal>
             <button slot="activator">
-                <Fa icon={faBitcoin} />> Bitcoin
+                <Fa icon={faBitcoin} /> Bitcoin
             </button>
         </CryptoModal>
 
