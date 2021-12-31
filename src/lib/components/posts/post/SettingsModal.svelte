@@ -1,11 +1,13 @@
 <script>
+    import { faCog } from '@fortawesome/free-solid-svg-icons';
     import { fontSize } from './settings';
     import { Modal } from 'polykit';
+    import Fa from 'svelte-fa';
 </script>
 
 <Modal let:close>
     <button slot="activator">
-        <i class="fas fa-cog" />
+        <Fa icon={faCog} />
     </button>
 
     <card class="no-hover modal">

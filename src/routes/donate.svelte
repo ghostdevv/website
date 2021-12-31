@@ -3,9 +3,13 @@
 </script>
 
 <script>
+    import { faPatreon, faPaypal } from '@fortawesome/free-brands-svg-icons';
+    import { faBitcoin } from '@fortawesome/free-brands-svg-icons';
     import CryptoModal from '$lib/components/CryptoModal.svelte';
     import People from '$lib/components/donators/People.svelte';
     import { supporters, donators } from '$lib/data/donators';
+    import { faBolt } from '@fortawesome/free-solid-svg-icons';
+    import Fa from 'svelte-fa';
 </script>
 
 <main>
@@ -25,19 +29,19 @@
             href="https://www.patreon.com/onlyspaceghost"
             target="_blank"
             role="button">
-            <i class="fab fa-patreon" /> Patreon
+            <Fa icon={faPatreon} /> Patreon
         </a>
 
         <a
             href="https://paypal.me/ghostdevpayment"
             target="_blank"
             role="button">
-            <i class="fab fa-paypal" /> PayPal
+            <Fa icon={faPaypal} /> PayPal
         </a>
 
         <CryptoModal>
             <button slot="activator">
-                <i class="fab fa-bitcoin" /> Bitcoin
+                <Fa icon={faBitcoin} />> Bitcoin
             </button>
         </CryptoModal>
 
@@ -45,7 +49,7 @@
             href="https://tippin.me/@onlyspaceghost"
             target="_blank"
             role="button">
-            <i class="fas fa-bolt" /> BTC Lightning
+            <Fa icon={faBolt} /> BTC Lightning
         </a>
     </div>
 

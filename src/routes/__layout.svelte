@@ -1,7 +1,9 @@
 <script>
+    import { faTimes } from '@fortawesome/free-solid-svg-icons';
     import Nav from '$lib/components/Nav.svelte';
     import { fade } from 'svelte/transition';
     import { browser } from '$app/env';
+    import Fa from 'svelte-fa';
 
     let online;
     let ignoreOfflineWarning = false;
@@ -28,7 +30,7 @@
             class="close"
             style="cursor: pointer"
             on:click={() => (ignoreOfflineWarning = true)}>
-            <i class="fas fa-times" />
+            <Fa icon={faTimes} />
         </div>
     </banner>
 {/if}

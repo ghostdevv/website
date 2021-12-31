@@ -10,6 +10,8 @@
         "assets": "pwa-asset-generator public/logo.png public/icons --background \"#121214\""
     },
     "devDependencies": {
+        "@fortawesome/free-brands-svg-icons": "^5.15.4",
+        "@fortawesome/free-solid-svg-icons": "^5.15.4",
         "@sanity/client": "^2.21.3",
         "@sveltejs/adapter-vercel": "next",
         "@sveltejs/kit": "next",
@@ -29,6 +31,7 @@
         "rollup-plugin-visualizer": "^5.5.2",
         "sass": "^1.32.8",
         "svelte": "^3.35.0",
+        "svelte-fa": "^2.4.0",
         "svelte-hamburgers": "^3.0.1",
         "svelte-local-storage-store": "^0.2.6",
         "svelte-mount": "^1.0.2",

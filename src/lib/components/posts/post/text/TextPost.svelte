@@ -1,10 +1,12 @@
 <script>
     import SettingsModal from '$lib/components/posts/post/SettingsModal.svelte';
+    import { faTwitter } from '@fortawesome/free-brands-svg-icons';
     import { createTweetLink } from '$lib/helpers/twitter';
     import TextPostMeta from './TextPostMeta.svelte';
     import TextPostBody from './TextPostBody.svelte';
     import { fly } from 'svelte/transition';
     import { page } from '$app/stores';
+    import Fa from 'svelte-fa';
 
     export let timestamp;
     export let title;
@@ -29,7 +31,7 @@
             )}
             role="button"
             target="_blank">
-            <i class="fab fa-twitter" />
+            <Fa icon={faTwitter} />
             Share on twitter
         </a>
 
