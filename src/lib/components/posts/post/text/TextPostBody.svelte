@@ -28,6 +28,8 @@
 
             padding: 22px;
             border-radius: 16px;
+
+            background-color: var(--background-secondary);
         }
     }
 </style>
