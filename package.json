@@ -41,6 +41,9 @@
         "vite": "^2.0.5"
     },
     "dependencies": {
-        "prism-svelte": "^0.4.7"
+        "prism-svelte": "^0.4.7",
+        "workbox-core": "^6.4.2",
+        "workbox-precaching": "^6.4.2",
+        "workbox-routing": "^6.4.2"
     }
 }
