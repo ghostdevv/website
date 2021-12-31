@@ -4,7 +4,7 @@
     import { navigating, page } from '$app/stores';
     import Hamburger from 'svelte-hamburgers';
     import TRainbow from './TRainbow.svelte';
-    import { browser } from '$app/env';
+    import { mounted } from 'svelte-mount';
 
     let width;
     let scrollY;
@@ -22,55 +22,61 @@
 <svelte:window bind:innerWidth={width} bind:scrollY />
 
 <div class="wrapper" class:mobile class:open class:scroll>
-    <nav class:mobile in:fade>
-        <div class="nav-fh">
-            <a href="/">
-                <div
-                    class="logo"
-                    in:fly={{ y: -20, duration: 750, delay: 100 }}>
-                    <TRainbow />
-                </div>
-            </a>
+    {#if $mounted}
+        <nav class:mobile in:fade>
+            <div class="nav-fh">
+                <a href="/">
+                    <div
+                        class="logo"
+                        in:fly={{ y: -20, duration: 750, delay: 100 }}>
+                        <TRainbow />
+                    </div>
+                </a>
 
-            {#if mobile}
-                <div>
-                    <Hamburger --color="var(--text)" type="squeeze" bind:open />
+                {#if mobile}
+                    <div>
+                        <Hamburger
+                            --color="var(--text)"
+                            type="squeeze"
+                            bind:open />
+                    </div>
+                {/if}
+            </div>
+
+            {#if !$navigating && (open || !mobile)}
+                <div class="nav-sh" transition:slide>
+                    <div class="links">
+                        <a
+                            href="/"
+                            class:active={$page.url.pathname == '/'}
+                            in:fly={{ y: -20, duration: 750 }}>
+                            Home
+                        </a>
+
+                        {#each ['posts', 'projects', 'donate', 'contact'] as link, i (i)}
+                            <a
+                                href="/{link}"
+                                class:active={isActive(`/${link}`)}
+                                in:fly={{
+                                    y: -20,
+                                    duration: 750,
+                                    delay: (i + 1) * 100,
+                                }}>
+                                {link}
+                            </a>
+                        {/each}
+                    </div>
+
+                    <a
+                        href="/donate"
+                        role="button"
+                        class="donate-button"
+                        in:fly={{ y: -20, duration: 750, delay: 100 }}
+                        >Donate</a>
                 </div>
             {/if}
-        </div>
-
-        {#if !$navigating && (open || !mobile)}
-            <div class="nav-sh" transition:slide>
-                <div class="links">
-                    <a
-                        href="/"
-                        class:active={$page.url.pathname == '/'}
-                        in:fly={{ y: -20, duration: 750 }}>
-                        Home
-                    </a>
-
-                    {#each ['posts', 'projects', 'donate', 'contact'] as link, i (i)}
-                        <a
-                            href="/{link}"
-                            class:active={isActive(`/${link}`)}
-                            in:fly={{
-                                y: -20,
-                                duration: 750,
-                                delay: (i + 1) * 100,
-                            }}>
-                            {link}
-                        </a>
-                    {/each}
-                </div>
-
-                <a
-                    href="/donate"
-                    role="button"
-                    class="donate-button"
-                    in:fly={{ y: -20, duration: 750, delay: 100 }}>Donate</a>
-            </div>
-        {/if}
-    </nav>
+        </nav>
+    {/if}
 </div>
 
 <style lang="scss">
