@@ -23,7 +23,7 @@
         "include-media": "^1.4.9",
         "kjua": "^0.9.0",
         "marked": "^4.0.8",
-        "polykit": "^0.0.1-7",
+        "polykit": "^0.0.1-8",
         "postcss": "^8.3.8",
         "postcss-import": "^14.0.0",
         "prismjs": "^1.25.0",
