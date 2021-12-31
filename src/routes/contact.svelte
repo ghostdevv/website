@@ -1,5 +1,9 @@
+<script context="module">
+    export const prerender = true;
+</script>
+
 <script>
-    import ContactCard from '@/components/ContactCard.svelte';
+    import ContactCard from '$lib/components/ContactCard.svelte';
     import { quintOut } from 'svelte/easing';
     import { fade } from 'svelte/transition';
 

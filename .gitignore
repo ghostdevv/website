@@ -1,6 +1,7 @@
 node_modules
-.routify
 dist
-public/build
-src/tmp
 stats.html
+build
+.svelte-kit
+package
+.vercel_build_output

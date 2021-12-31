@@ -1,6 +1,10 @@
+<script context="module">
+    export const prerender = true;
+</script>
+
 <script>
     import { fly } from 'svelte/transition';
-    import { os } from '@/data/projects.js';
+    import { os } from '$lib/data/projects.js';
     import { cubicOut } from 'svelte/easing';
 
     const starred = os.filter((x) => x.star);

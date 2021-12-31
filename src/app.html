@@ -5,12 +5,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
-        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
-
     <link rel="icon" href="/favicon.png" />
+    <link rel="manifest" href="/manifest.json"></head>
 
     <title>GHOST</title>
+
+    <link href="https://cdn.jsdelivr.net/gh/PrismJS/prism-themes/themes/prism-one-dark.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/svelte-hamburgers@3/dist/css/types/squeeze.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/svelte-hamburgers@3/dist/css/base.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ghostsui/css/ghostsui.css" />
 
     <!-- Meta -->
     <title>GHOST - Developer</title>
@@ -69,11 +72,12 @@
     <link rel="apple-touch-startup-image" href="/icons/apple-splash-1334-750.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
     <link rel="apple-touch-startup-image" href="/icons/apple-splash-640-1136.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
     <link rel="apple-touch-startup-image" href="/icons/apple-splash-1136-640.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+
+    %svelte.head%
 </head>
 
 <body>
-    <noscript>Please enable Javascript for this site to function.</noscript>
-    <script type="module" src="/src/main.js"></script>
+    %svelte.body%
 </body>
 
 </html>

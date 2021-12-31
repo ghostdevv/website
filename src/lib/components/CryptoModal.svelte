@@ -1,7 +1,6 @@
 <script>
     import { onDestroy } from 'svelte';
     import { Modal } from 'polykit';
-    import kjua from 'kjua';
 
     const btc = '19htGt434Q4EyhZrbNCRtkobmSqL7j6kuX';
 
@@ -32,7 +31,9 @@
         onDestroy(() => clearTimeout(timeout));
     };
 
-    const qr = (node) => {
+    const qr = async (node) => {
+        const { default: kjua } = await import('kjua');
+
         node.appendChild(
             kjua({
                 crisp: true,

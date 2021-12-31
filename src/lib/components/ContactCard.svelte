@@ -1,7 +1,8 @@
 <script>
     import { cubicOut } from 'svelte/easing';
-
     import { fly } from 'svelte/transition';
+    import { copy } from 'svelte-copy';
+
     export let title;
 
     export let href = null;
@@ -42,6 +43,7 @@
     <card
         class="center copy g4"
         use:copyColourChange
+        use:copy={value}
         in:fly={{ y: -5, delay: 100 * i, easing: cubicOut, duration: 500 }}>
         <h3>{title}</h3>
         <p>{value}</p>

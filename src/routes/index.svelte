@@ -1,15 +1,12 @@
 <script>
-    import PostGroup from '@/components/posts/cards/PostGroup.svelte';
-    import Loader from '@/components/Loader.svelte';
+    import PostGroup from '$lib/components/posts/cards/PostGroup.svelte';
+    import Loader from '$lib/components/Loader.svelte';
     import { fly, fade } from 'svelte/transition';
     import { quintOut } from 'svelte/easing';
-    import { featured } from '@/data/links';
+    import { featured } from '$lib/data/links';
     import { mounted } from 'svelte-mount';
 
-    import { getPosts } from '$sanity';
-
-    const postsPromise = getPosts();
-    postsPromise.catch(console.error);
+    const postsPromise = fetch('/posts.json').then((res) => res.json());
 
     const getDirection = (i) => {
         switch (i) {
@@ -40,7 +37,7 @@
         {/if}
     </div>
 
-    <div class="row center g16">
+    <div class="row center g16 wrap">
         {#if mounted}
             {#each featured as [text, href], i}
                 <a

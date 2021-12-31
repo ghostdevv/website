@@ -1,14 +1,34 @@
+<script context="module">
+    export const load = async ({ fetch }) => {
+        const tags = await fetch('/posts/tags.json');
+        const posts = await fetch('/posts.json');
+
+        return {
+            props: {
+                tags: await tags.json(),
+                posts: await posts.json(),
+            },
+        };
+    };
+</script>
+
 <script>
-    import PostGroup from '@/components/posts/cards/PostGroup.svelte';
-    import Loader from '@/components/Loader.svelte';
-    import { getPosts, getTags } from '$sanity';
+    import PostGroup from '$lib/components/posts/cards/PostGroup.svelte';
+    import Loader from '$lib/components/Loader.svelte';
     import { fade } from 'svelte/transition';
     import { mounted } from 'svelte-mount';
 
-    let filter;
+    export let posts;
+    export let tags;
 
-    $: postsPromise = getPosts(null, filter);
-    const tagsPromise = getTags();
+    let filter = null;
+
+    const getPosts = async (filter) => {
+        const res = await fetch(`/posts.json?filter=${filter}`);
+        return await res.json();
+    };
+
+    $: postsPromise = filter ? getPosts(filter) : Promise.resolve(posts);
 </script>
 
 {#if mounted}
@@ -16,17 +36,13 @@
         <label for="filter">Filter Posts</label>
 
         <select id="filter" bind:value={filter}>
-            {#await tagsPromise}
-                <option selected value={undefined}>LOADING...</option>
-            {:then tags}
-                <option selected value={undefined}>No Filter</option>
+            <option selected value={null}>No Filter</option>
 
-                {#each tags as { name, id }}
-                    <option value={id}>
-                        {name}
-                    </option>
-                {/each}
-            {/await}
+            {#each tags as { name, id }}
+                <option value={id}>
+                    {name}
+                </option>
+            {/each}
         </select>
     </div>
 {/if}
