@@ -1,9 +1,10 @@
 import { build, files, timestamp } from '$service-worker';
-import { skipWaiting, clientsClaim } from 'workbox-core';
 import { precacheAndRoute } from 'workbox-precaching';
+import { clientsClaim } from 'workbox-core';
 
 clientsClaim();
-skipWaiting();
+
+self.skipWaiting();
 
 precacheAndRoute([
     ...build.map((url) => ({ url, revision: null })),
