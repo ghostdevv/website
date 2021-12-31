@@ -1,9 +1,10 @@
 <script>
     // import { isActive, pendingRoute } from '@roxi/routify';
     import { slide, fade, fly } from 'svelte/transition';
+    import { navigating, page } from '$app/stores';
     import Hamburger from 'svelte-hamburgers';
     import TRainbow from './TRainbow.svelte';
-    import { page } from '$app/stores';
+    import { browser } from '$app/env';
 
     let width;
     let scrollY;
@@ -13,7 +14,7 @@
     $: mobile = width < 900;
     $: scroll = scrollY > 0;
 
-    $: if (!mobile /* || $pendingRoute */) open = false;
+    $: if (!mobile || $navigating) open = false;
 
     $: isActive = (url) => $page.url.pathname.includes(url);
 </script>
@@ -38,8 +39,7 @@
             {/if}
         </div>
 
-        <!-- !$pendingRoute && (open || !mobile) -->
-        {#if open || !mobile}
+        {#if !$navigating && (open || !mobile)}
             <div class="nav-sh" transition:slide>
                 <div class="links">
                     <a
