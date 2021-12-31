@@ -31,5 +31,9 @@
 
             background-color: var(--background-secondary);
         }
+
+        :global(code) {
+            background-color: inherit;
+        }
     }
 </style>
