@@ -11,8 +11,7 @@ marked.setOptions({
 });
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
-export const get = async ({ url, params }) => {
-    const theme = url.searchParams.get('theme') || 'material-darker';
+export const get = async ({ params }) => {
     const { slug } = params;
 
     const sanityQuery = groq`
