@@ -1,40 +1,35 @@
-<script>
-    import TextPost from '$lib/components/posts/post/TextPost.svelte';
-    import Loader from '$lib/components/Loader.svelte';
-    import { page } from '$app/stores';
+<script context="module">
+    /** @type {import('@sveltejs/kit').Load}*/
+    export const load = async ({ params, fetch }) => {
+        const post = await fetch(`/posts/${params.slug}.json`);
 
-    const post = fetch(`/posts/${$page.params.slug}.json`).then((res) =>
-        res.json(),
-    );
+        return {
+            props: {
+                post: await post.json(),
+            },
+        };
+    };
 </script>
 
-{#await post}
-    <Loader />
-{:then post}
-    {#if post && post?.postType == 'text'}
-        <TextPost {...post} />
-    {:else if post?.postType == 'link'}
-        <h4>
-            This post is actually a link,
-            <a href={post.link} class="button">take me there</a>
-        </h4>
-    {:else}
-        <h4>
-            I couldn't find that post!
-            <a href="/posts" class="button">View posts</a>
-        </h4>
-    {/if}
-{:catch error}
-    <h4>
-        The post failed to load, Contact <mark>GHOST#7524</mark> on discord
-    </h4>
+<script>
+    import TextPost from '$lib/components/posts/post/TextPost.svelte';
 
-    <pre>
-        <code>
-            {JSON.stringify(error, null, 4)}
-        </code>
-    </pre>
-{/await}
+    export let post;
+</script>
+
+{#if post && post?.postType == 'text'}
+    <TextPost {...post} />
+{:else if post?.postType == 'link'}
+    <h4>
+        This post is actually a link,
+        <a href={post.link} class="button">take me there</a>
+    </h4>
+{:else}
+    <h4>
+        I couldn't find that post!
+        <a href="/posts" class="button">View posts</a>
+    </h4>
+{/if}
 
 <style>
     h4 {
