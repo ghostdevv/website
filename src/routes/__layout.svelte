@@ -4,6 +4,7 @@
     import Nav from '$lib/components/Nav.svelte';
     import { navigating } from '$app/stores';
     import { fade } from 'svelte/transition';
+    import { mounted } from 'svelte-mount';
     import { browser } from '$app/env';
     import Fa from 'svelte-fa';
 
@@ -17,7 +18,7 @@
 
 <Nav />
 
-{#if $navigating}
+{#if $navigating || !$mounted}
     <div class="loader">
         <Loader />
     </div>
