@@ -1,9 +1,14 @@
-import taskList from 'markdown-it-task-lists';
-import { getHighlighter } from 'shiki';
-import MarkdownIt from 'markdown-it';
 import { format } from 'date-fns';
+import { marked } from 'marked';
 import sanity from '$sanity';
+import Prism from 'prismjs';
 import groq from 'groq';
+import 'prism-svelte';
+
+marked.setOptions({
+    highlight: (code, lang) =>
+        Prism.highlight(code, Prism.languages[lang], lang),
+});
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
 export const get = async ({ url, params }) => {
@@ -34,16 +39,8 @@ export const get = async ({ url, params }) => {
             status: '404',
         };
 
-    const shiki = await getHighlighter({ theme });
-
-    const md = MarkdownIt({
-        highlight: (code, lang) => shiki.codeToHtml(code, { lang }),
-    });
-
-    md.use(taskList);
-
     if (post.body && post.postType == 'text') {
-        post.body = md.render(post.body);
+        post.body = marked(post.body);
     }
 
     return {
