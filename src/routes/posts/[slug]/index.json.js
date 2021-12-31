@@ -6,8 +6,8 @@ import sanity from '$sanity';
 import groq from 'groq';
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
-export const get = async ({ params, query }) => {
-    const theme = query.get('theme') || 'material-darker';
+export const get = async ({ url, params }) => {
+    const theme = url.searchParams.get('theme') || 'material-darker';
     const { slug } = params;
 
     const sanityQuery = groq`

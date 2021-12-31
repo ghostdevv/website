@@ -2,12 +2,12 @@ import sanity from '$sanity';
 import groq from 'groq';
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
-export const get = async ({ query, path }) => {
-    const limit = query.get('limit') || 15;
-    const filter = query.get('filter') || null;
+export const get = async ({ url }) => {
+    const limit = url.searchParams.get('limit') || 15;
+    const filter = url.searchParams.get('filter') || null;
 
     const filterConditional = filter ? '&& references($filter)' : '';
-    const limitConditional = query ? '[0...$limit]' : '';
+    const limitConditional = limit ? '[0...$limit]' : '';
 
     const $ = groq`
         *[_type == 'post' ${filterConditional}]${limitConditional}{
