@@ -37,7 +37,7 @@
         {/if}
     </div>
 
-    <div class="row center g16">
+    <div class="row center g16 wrap">
         {#if mounted}
             {#each featured as [text, href], i}
                 <a
