@@ -18,17 +18,17 @@
 
 <Nav />
 
-{#if $navigating || !$mounted}
+<!-- {#if $navigating || !$mounted}
     <div class="loader">
         <Loader />
     </div>
-{:else}
-    <div class="wrapper column g16">
-        <div class="column g32 main">
-            <slot />
-        </div>
+{:else} -->
+<div class="wrapper column g16">
+    <div class="column g32 main">
+        <slot />
     </div>
-{/if}
+</div>
+<!-- {/if} -->
 
 {#if !online && !ignoreOfflineWarning && browser}
     <banner class="offline red" in:fade>
