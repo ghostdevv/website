@@ -14,7 +14,7 @@
 
 <main>
     <section class="title">
-        <h1>🥳 Donate & Support my work</h1>
+        <h1>🥳 Donate & Support my workASD</h1>
 
         <p>
             Thanks for taking an interest in my work! I currently work part time

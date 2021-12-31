@@ -23,7 +23,7 @@
 <section class="column g32 center">
     <div class="letter-row">
         {#if mounted}
-            {#each 'GHOSTA' as c, i}
+            {#each 'GHOST' as c, i}
                 <h1
                     in:fly={{
                         x: (i - 2) * 18,
