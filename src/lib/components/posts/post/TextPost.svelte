@@ -50,7 +50,7 @@
             href={createTweetLink(
                 `Checkout this awesome post by @onlyspaceghost! https://ghostdev.xyz/posts/${$page.params.slug}`,
             )}
-            role="button"
+            class="button"
             target="_blank">
             <Fa icon={faTwitter} />
             Share on twitter

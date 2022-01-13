@@ -28,14 +28,14 @@
         <a
             href="https://www.patreon.com/onlyspaceghost"
             target="_blank"
-            role="button">
+            class="button">
             <Fa icon={faPatreon} /> Patreon
         </a>
 
         <a
             href="https://paypal.me/ghostdevpayment"
             target="_blank"
-            role="button">
+            class="button">
             <Fa icon={faPaypal} /> PayPal
         </a>
 
@@ -48,7 +48,7 @@
         <a
             href="https://tippin.me/@onlyspaceghost"
             target="_blank"
-            role="button">
+            class="button">
             <Fa icon={faBolt} /> BTC Lightning
         </a>
     </div>

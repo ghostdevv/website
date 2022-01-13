@@ -42,7 +42,7 @@
             {#each featured as [text, href], i}
                 <a
                     {href}
-                    role="button"
+                    class="button"
                     in:fly={{
                         x: getDirection(i),
                         delay: 200,

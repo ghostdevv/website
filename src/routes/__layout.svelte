@@ -25,7 +25,7 @@
     <banner class="offline red" in:fade>
         <p>You are offline</p>
 
-        <!-- Ideally should be a button or have role=button but can't since it adds styling - will make a exception class in ghostsui -->
+        <!-- Ideally should be a button or have .button but can't since it adds styling - will make a exception class in ghostsui -->
         <div
             class="close"
             style="cursor: pointer"
