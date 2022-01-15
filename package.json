@@ -18,7 +18,7 @@
         "autoprefixer": "^10.2.5",
         "date-fns": "^2.26.0",
         "dompurify": "^2.3.3",
-        "ghostsui": "^1.0.0",
+        "ghostsui": "^1.2.0",
         "groq": "^2.15.0",
         "include-media": "^1.4.9",
         "kjua": "^0.9.0",
@@ -26,6 +26,7 @@
         "polykit": "^0.0.1-8",
         "postcss": "^8.3.8",
         "postcss-import": "^14.0.0",
+        "prism-svelte": "^0.4.7",
         "prismjs": "^1.25.0",
         "pwa-asset-generator": "^6.0.2",
         "rollup-plugin-visualizer": "^5.5.2",
@@ -39,7 +40,6 @@
         "svelte-preprocess": "^4.7.0",
         "typescript": "^4.4.4",
         "vite": "^2.0.5",
-        "prism-svelte": "^0.4.7",
         "workbox-core": "^6.4.2",
         "workbox-precaching": "^6.4.2"
     }
