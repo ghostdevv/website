@@ -25,6 +25,11 @@ export const supporters = {
             image: '/donators/fractal.png',
             amount: 5,
         },
+        {
+            name: 'Stefan Bogdanović',
+            image: '/donators/stefan.png',
+            amount: 5,
+        },
     ],
 
     past: [
