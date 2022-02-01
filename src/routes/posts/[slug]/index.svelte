@@ -22,12 +22,12 @@
 {:else if post?.postType == 'link'}
     <h4>
         This post is actually a link,
-        <a href={post.link} class="button">take me there</a>
+        <a href={post.link}>take me there</a>
     </h4>
 {:else}
     <h4>
         I couldn't find that post!
-        <a href="/posts" class="button">View posts</a>
+        <a href="/posts">View posts</a>
     </h4>
 {/if}
 
