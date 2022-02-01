@@ -30,6 +30,11 @@ export const supporters = {
             image: '/donators/stefan.png',
             amount: 5,
         },
+        {
+            name: 'Dusan Malusev',
+            image: '/donators/dusan.png',
+            amount: 5,
+        },
     ],
 
     past: [
