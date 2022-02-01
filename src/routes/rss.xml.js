@@ -19,8 +19,12 @@ const query = groq`
 export async function get() {
     const feed = new RSS({
         title: 'GHOSTDev blog',
+        description: 'Welcome to the blog of GHOST!',
         site_url: 'https://ghostdev.xyz',
         feed_url: 'https://ghostdev.xyz/rss.xml',
+        copyright: 'Willow (GHOST) Smith',
+        language: 'English',
+        image_url: 'https://ghostdev.xyz/favicon.png',
     });
 
     const posts = await sanity.fetch(query);
