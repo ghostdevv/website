@@ -1,6 +1,7 @@
 <script>
     import SettingsModal from '$lib/components/posts/post/SettingsModal.svelte';
     import { faTwitter } from '@fortawesome/free-brands-svg-icons';
+    import { faRss } from '@fortawesome/free-solid-svg-icons';
     import { createTweetLink } from '$lib/helpers/twitter';
     import Tag from '$lib/components/posts/Tag.svelte';
     import { fly } from 'svelte/transition';
@@ -46,15 +47,22 @@
     <hr />
 
     <footer in:fly={{ y: -20, duration: 750, delay: 200 }}>
-        <a
-            href={createTweetLink(
-                `Checkout this awesome post by @onlyspaceghost! https://ghostdev.xyz/posts/${$page.params.slug}`,
-            )}
-            class="button"
-            target="_blank">
-            <Fa icon={faTwitter} />
-            Share on twitter
-        </a>
+        <div class="row">
+            <a
+                href={createTweetLink(
+                    `Checkout this awesome post by @onlyspaceghost! https://ghostdev.xyz/posts/${$page.params.slug}`,
+                )}
+                class="button"
+                target="_blank">
+                <Fa icon={faTwitter} />
+                Share on twitter
+            </a>
+
+            <a href="/rss.xml" target="_blank" class="button">
+                <Fa icon={faRss} />
+                RSS
+            </a>
+        </div>
 
         <SettingsModal />
     </footer>

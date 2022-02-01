@@ -1,10 +1,12 @@
 <script>
     import PostGroup from '$lib/components/posts/cards/PostGroup.svelte';
+    import { faRss } from '@fortawesome/free-solid-svg-icons';
     import Loader from '$lib/components/Loader.svelte';
     import { fly, fade } from 'svelte/transition';
-    import { quintOut } from 'svelte/easing';
     import { featured } from '$lib/data/links';
+    import { quintOut } from 'svelte/easing';
     import { mounted } from 'svelte-mount';
+    import Fa from 'svelte-fa';
 
     const postsPromise = fetch('/posts.json').then((res) => res.json());
 
@@ -62,6 +64,13 @@
         <h4 class="tcenter" in:fade={{ duration: 750, delay: 300 }}>
             <u>Latest Posts</u>
         </h4>
+
+        <div class="row" style="justify-content: center;">
+            <a href="/rss.xml" target="_blank" class="buttoan">
+                <Fa icon={faRss} />
+                RSS
+            </a>
+        </div>
 
         <PostGroup delay={500} {posts} />
     {/if}
