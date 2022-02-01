@@ -32,7 +32,7 @@ export async function get() {
     for (const post of posts)
         feed.item({
             url:
-                post.type == 'link'
+                post.postType == 'link'
                     ? post.link
                     : `https://ghostdev.xyz/posts/${post.slug}`,
 
