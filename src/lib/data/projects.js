@@ -16,6 +16,7 @@ export const os = [
     {
         name: 'JellyCommands',
         url: 'https://github.com/ghostdevv/jellycommands',
+        star: true,
     },
     {
         name: 'DashArgs',
@@ -86,6 +87,10 @@ export const os = [
     {
         name: 'Methods',
         url: 'https://www.npmjs.com/package/@nerujs/methods',
+    },
+    {
+        name: 'Tasks',
+        url: 'https://github.com/ghostdevv/tasks',
     },
 ];
 
