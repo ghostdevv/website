@@ -18,7 +18,7 @@
     export let post;
 
     $metaData = {
-        title: post.title,
+        title: `${post.title} - GHOST`,
         description: post.description,
         image: post.image,
     };
