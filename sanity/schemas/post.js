@@ -7,17 +7,20 @@ export default {
             name: 'title',
             title: 'Title',
             type: 'string',
+            validation: (Rule) => Rule.required(),
         },
         {
             name: 'excerpt',
             title: 'Excerpt',
             type: 'text',
             rows: 2,
+            validation: (Rule) => Rule.required(),
         },
         {
             name: 'image',
             title: 'Image',
             type: 'image',
+            validation: (Rule) => Rule.required(),
             options: {
                 hotspot: true,
             },
@@ -27,11 +30,13 @@ export default {
             title: 'Tag',
             type: 'reference',
             to: { type: 'tag' },
+            validation: (Rule) => Rule.required(),
         },
         {
             name: 'timestamp',
             title: 'Published Timestamp',
             type: 'datetime',
+            validation: (Rule) => Rule.required(),
         },
         {
             name: 'postType',
