@@ -107,7 +107,13 @@
             }
 
             :global(code) {
-                background-color: inherit;
+                background-color: var(--background-secondary);
+            }
+
+            :global(h1) {
+                margin-top: 22px;
+                padding: 8px 0px;
+                border-bottom: 4px solid var(--background-secondary);
             }
         }
 
