@@ -2,6 +2,7 @@
     import { faTimes } from '@fortawesome/free-solid-svg-icons';
     import Nav from '$lib/components/Nav.svelte';
     import { fade } from 'svelte/transition';
+    import { metaData } from '$lib/data/meta';
     import { browser } from '$app/env';
     import Fa from 'svelte-fa';
 
@@ -12,6 +13,19 @@
 </script>
 
 <svelte:window bind:online />
+
+<svelte:head>
+    <title>{$metaData.title}</title>
+
+    <meta name="title" content={$metaData.title} />
+    <meta property="og:title" content={$metaData.title} />
+
+    <meta name="description" content={$metaData.description} />
+    <meta property="og:description" content={$metaData.description} />
+
+    <meta name="image" content={$metaData.image} />
+    <meta property="og:image" content={$metaData.image} />
+</svelte:head>
 
 <Nav />
 

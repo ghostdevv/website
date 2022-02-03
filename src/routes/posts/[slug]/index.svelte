@@ -1,7 +1,15 @@
 <script context="module">
+    import { meta } from '$lib/data/meta.js';
+
     /** @type {import('@sveltejs/kit').Load}*/
     export const load = async ({ params, fetch }) => {
         const post = await fetch(`/posts/${params.slug}.json`);
+
+        meta.set({
+            title: post.title,
+            description: post.description,
+            image: post.image,
+        });
 
         return {
             props: {
@@ -16,15 +24,6 @@
 
     export let post;
 </script>
-
-<svelte:head>
-    {#if post.postType == 'text'}
-        <title>{post.title} - GHOST</title>
-        <meta property="og:title" content="{post.title} - GHOST" />
-        <meta property="og:description" content={post.excerpt} />
-        <meta property="og:image" content={post.image} />
-    {/if}
-</svelte:head>
 
 {#if post && post?.postType == 'text'}
     <TextPost {...post} />
