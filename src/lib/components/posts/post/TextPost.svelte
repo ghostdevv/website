@@ -148,7 +148,7 @@
                     'data data'
                     'title settings';
 
-                background-color: rgba(var(--background-tertiary-rgb), 0.5);
+                background-color: rgba(var(--background-tertiary-rgb), 0.95);
                 border-radius: 0 0 $border-radius $border-radius;
 
                 // Re-enable this when/if it's fixed
