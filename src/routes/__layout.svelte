@@ -1,15 +1,20 @@
 <script>
     import { faTimes } from '@fortawesome/free-solid-svg-icons';
     import Nav from '$lib/components/Nav.svelte';
-    import { fade } from 'svelte/transition';
     import { metaData } from '$lib/data/meta';
+    import { fade } from 'svelte/transition';
     import { browser } from '$app/env';
+    import { beforeNavigate } from '$app/navigation';
     import Fa from 'svelte-fa';
 
     let online;
     let ignoreOfflineWarning = false;
 
     $: if (!online) ignoreOfflineWarning = false;
+
+    beforeNavigate(() => {
+        metaData.reset();
+    });
 </script>
 
 <svelte:window bind:online />
