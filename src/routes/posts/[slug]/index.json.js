@@ -6,8 +6,16 @@ import groq from 'groq';
 import 'prism-svelte';
 
 marked.setOptions({
-    highlight: (code, lang) =>
-        Prism.highlight(code, Prism.languages[lang], lang),
+    highlight: (code, lang) => {
+        try {
+            const result = Prism.highlight(code, Prism.languages[lang], lang);
+            return result;
+        } catch {
+            console.error(`Unable to highlight lang: ${lang} code: ${code}`);
+        }
+
+        return code;
+    },
 });
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
