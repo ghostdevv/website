@@ -21,6 +21,7 @@ export const get = async ({ params }) => {
             body,
             postType,
             link,
+            excerpt,
             
             "image": image.asset -> url,
 
