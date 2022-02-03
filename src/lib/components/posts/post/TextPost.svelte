@@ -4,8 +4,8 @@
     import { faRss } from '@fortawesome/free-solid-svg-icons';
     import { createTweetLink } from '$lib/helpers/twitter';
     import Tag from '$lib/components/posts/Tag.svelte';
+    import { fontSize, lineHeight } from './settings';
     import { fly } from 'svelte/transition';
-    import { fontSize } from './settings';
     import { page } from '$app/stores';
     import Fa from 'svelte-fa';
 
@@ -39,7 +39,8 @@
 
     <div
         class="body"
-        style="--font-size: {$fontSize}px"
+        style="--font-size: {$fontSize}px;"
+        style:line-height={$lineHeight}
         in:fly={{ y: -20, duration: 750, delay: 100 }}>
         {@html body}
     </div>
@@ -95,6 +96,8 @@
             gap: 16px;
 
             font-size: var(--font-size, 16px);
+
+            line-height: 1.5;
 
             :global(pre) {
                 width: 100%;

@@ -1,6 +1,6 @@
 <script>
     import { faCog } from '@fortawesome/free-solid-svg-icons';
-    import { fontSize } from './settings';
+    import { fontSize, lineHeight } from './settings';
     import { Modal } from 'polykit';
     import Fa from 'svelte-fa';
 </script>
@@ -22,6 +22,18 @@
                 min="14"
                 max="28"
                 bind:value={$fontSize} />
+        </div>
+
+        <div class="input-group">
+            <label for="lineHeight">Post Line Height: {$lineHeight}</label>
+
+            <input
+                id="lineHeight"
+                type="range"
+                min="0.5"
+                max="2.5"
+                step="0.1"
+                bind:value={$lineHeight} />
         </div>
 
         <button on:click={close}>Close</button>
