@@ -65,7 +65,10 @@
             <u>Latest Posts</u>
         </h4>
 
-        <div class="row" style="justify-content: center;">
+        <div
+            class="row"
+            style="justify-content: center;"
+            in:fade={{ duration: 750, delay: 300 }}>
             <a href="/rss.xml" target="_blank" class="buttoan">
                 <Fa icon={faRss} />
                 RSS
