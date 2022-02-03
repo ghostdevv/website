@@ -19,7 +19,7 @@
 
     $metaData = {
         title: `${post.title} - GHOST`,
-        description: post.description,
+        description: post.excerpt,
         image: post.image,
     };
 </script>
