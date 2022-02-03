@@ -1,11 +1,11 @@
 <script context="module">
-    import { meta } from '$lib/data/meta.js';
+    import { metaData } from '$lib/data/meta.js';
 
     /** @type {import('@sveltejs/kit').Load}*/
     export const load = async ({ params, fetch }) => {
         const post = await fetch(`/posts/${params.slug}.json`);
 
-        meta.set({
+        metaData.set({
             title: post.title,
             description: post.description,
             image: post.image,
