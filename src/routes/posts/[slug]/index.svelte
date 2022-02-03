@@ -1,15 +1,7 @@
 <script context="module">
-    import { metaData } from '$lib/data/meta.js';
-
     /** @type {import('@sveltejs/kit').Load}*/
     export const load = async ({ params, fetch }) => {
         const post = await fetch(`/posts/${params.slug}.json`);
-
-        metaData.set({
-            title: post.title,
-            description: post.description,
-            image: post.image,
-        });
 
         return {
             props: {
@@ -21,8 +13,15 @@
 
 <script>
     import TextPost from '$lib/components/posts/post/TextPost.svelte';
+    import { metaData } from '$lib/data/meta.js';
 
     export let post;
+
+    $metaData = {
+        title: post.title,
+        description: post.description,
+        image: post.image,
+    };
 </script>
 
 {#if post && post?.postType == 'text'}
