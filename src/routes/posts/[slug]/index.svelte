@@ -17,6 +17,15 @@
     export let post;
 </script>
 
+<svelte:head>
+    {#if post.postType == 'text'}
+        <title>{post.title} - GHOST</title>
+        <meta property="og:title" content="{post.title} - GHOST" />
+        <meta property="og:description" content={post.excerpt} />
+        <meta property="og:image" content={post.image} />
+    {/if}
+</svelte:head>
+
 {#if post && post?.postType == 'text'}
     <TextPost {...post} />
 {:else if post?.postType == 'link'}
