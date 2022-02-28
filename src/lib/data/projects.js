@@ -92,6 +92,10 @@ export const os = [
         name: 'Tasks',
         url: 'https://github.com/ghostdevv/tasks',
     },
+    {
+        name: 'BackBlaze CLI',
+        url: 'https://github.com/ghostdevv/backblaze-cli'
+    }
 ];
 
 export const work = [
