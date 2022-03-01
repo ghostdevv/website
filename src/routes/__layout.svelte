@@ -24,12 +24,19 @@
 
     <meta name="title" content={$metaData.title} />
     <meta property="og:title" content={$metaData.title} />
+    <meta name="twitter:title" content={$metaData.title} />
 
     <meta name="description" content={$metaData.description} />
     <meta property="og:description" content={$metaData.description} />
+    <meta name="twitter:description" content={$metaData.description} />
 
     <meta name="image" content={$metaData.image} />
     <meta property="og:image" content={$metaData.image} />
+    <meta name="twitter:image:src" content={$metaData.image} />
+
+    <meta name="twitter:site" content="@onlyspaceghost" />
+    <meta name="twitter:creator" content="@onlyspaceghost" />
+    <meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
 
 <Nav />
