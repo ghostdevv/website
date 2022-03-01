@@ -30,7 +30,7 @@ specifiers:
   svelte-local-storage-store: ^0.2.6
   svelte-mount: ^1.0.2
   svelte-preprocess: ^4.10.4
-  typescript: ^4.5.5
+  typescript: ^4.6.2
   vite: ^2.8.5
   workbox-core: ^6.5.0
   workbox-precaching: ^6.5.0
@@ -64,8 +64,8 @@ devDependencies:
   svelte-hamburgers: 3.0.1
   svelte-local-storage-store: 0.2.6_svelte@3.46.4
   svelte-mount: 1.0.2
-  svelte-preprocess: 4.10.4_ec89ba02fdec1f0dce753a01f35d6599
-  typescript: 4.5.5
+  svelte-preprocess: 4.10.4_4ea1dfc8321f2b07103d3385969bbe01
+  typescript: 4.6.2
   vite: 2.8.5_sass@1.49.9
   workbox-core: 6.5.0
   workbox-precaching: 6.5.0
@@ -471,7 +471,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001312
-      electron-to-chromium: 1.4.74
+      electron-to-chromium: 1.4.75
       escalade: 3.1.1
       node-releases: 2.0.2
       picocolors: 1.0.0
@@ -808,8 +808,8 @@ packages:
       sigmund: 1.0.1
     dev: true
 
-  /electron-to-chromium/1.4.74:
-    resolution: {integrity: sha512-DvQ20M0I4dIH8KcAo7n7E4OEeNafZ1N8z6g6ck+ALCM0ZoV6mpjaX6ekjs31zKlqPzacU3lmjG9PZEa1mQhEpQ==}
+  /electron-to-chromium/1.4.75:
+    resolution: {integrity: sha512-LxgUNeu3BVU7sXaKjUDD9xivocQLxFtq6wgERrutdY/yIOps3ODOZExK1jg8DTEg4U8TUCb5MLGeWFOYuxjF3Q==}
     dev: true
 
   /emoji-regex/8.0.0:
@@ -2334,7 +2334,7 @@ packages:
     resolution: {integrity: sha512-hXWc9UX3i0vm5V09siW7a4ZUl2TjEJkeLCWGizXGC+6jISJjdO3GIzdfifYCQm7ePbCAvNfchgbIMEQVEUUtfg==}
     dev: true
 
-  /svelte-preprocess/4.10.4_ec89ba02fdec1f0dce753a01f35d6599:
+  /svelte-preprocess/4.10.4_4ea1dfc8321f2b07103d3385969bbe01:
     resolution: {integrity: sha512-fuwol0N4UoHsNQolLFbMqWivqcJ9N0vfWO9IuPAiX/5okfoGXURyJ6nECbuEIv0nU3M8Xe2I1ONNje2buk7l6A==}
     engines: {node: '>= 9.11.2'}
     requiresBuild: true
@@ -2384,7 +2384,7 @@ packages:
       sorcery: 0.10.0
       strip-indent: 3.0.0
       svelte: 3.46.4
-      typescript: 4.5.5
+      typescript: 4.6.2
     dev: true
 
   /svelte/3.46.4:
@@ -2473,8 +2473,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /typescript/4.5.5:
-    resolution: {integrity: sha512-TCTIul70LyWe6IJWT8QSYeA54WQe8EjQFU4wY52Fasj5UKx88LNYKCgBEHcOMOrFF1rKGbD8v/xcNWVUq9SymA==}
+  /typescript/4.6.2:
+    resolution: {integrity: sha512-HM/hFigTBHZhLXshn9sN37H085+hQGeJHJ/X7LpBWLID/fbc2acUMfU+lGD98X81sKP+pFa9f0DZmCwB9GnbAg==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
