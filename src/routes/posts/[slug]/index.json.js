@@ -44,7 +44,7 @@ export const get = async ({ params }) => {
 
     if (!post)
         return {
-            status: '404',
+            status: 404,
         };
 
     if (post.body && post.postType == 'text') {
