@@ -113,6 +113,11 @@
                 background-color: var(--background-secondary);
             }
 
+            :global(ul),
+            :global(ol) {
+                list-style-position: outside;
+            }
+
             :global(h1) {
                 margin-top: 22px;
                 padding: 8px 0px;
