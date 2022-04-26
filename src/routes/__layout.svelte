@@ -42,9 +42,7 @@
 <Nav />
 
 <div class="wrapper column g16">
-    <div class="column g32 main">
-        <slot />
-    </div>
+    <slot />
 </div>
 
 {#if !online && !ignoreOfflineWarning && browser}
@@ -62,20 +60,15 @@
 {/if}
 
 <style lang="scss">
-    div {
-        width: 100%;
-    }
-
     .wrapper {
         max-width: 1400px;
         margin: 0px auto;
 
         padding: 16px 32px;
         padding-bottom: 64px;
+        padding-top: 140px;
 
-        .main {
-            padding-top: 140px;
-        }
+        width: 100%;
     }
 
     .offline {
