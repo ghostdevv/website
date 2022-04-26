@@ -1,5 +1,5 @@
 <script>
-    import { fly } from 'svelte/transition';
+    import { fly } from 'svelte-reduced-motion/transition';
     import { mounted } from 'svelte-mount';
 
     export let slim;

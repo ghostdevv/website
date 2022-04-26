@@ -3,7 +3,7 @@
 </script>
 
 <script>
-    import { fly } from 'svelte/transition';
+    import { fly } from 'svelte-reduced-motion/transition';
     import { os } from '$lib/data/projects.js';
     import { cubicOut } from 'svelte/easing';
 
