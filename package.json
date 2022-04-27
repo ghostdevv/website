@@ -13,6 +13,7 @@
         "@fortawesome/free-brands-svg-icons": "^5.15.4",
         "@fortawesome/free-solid-svg-icons": "^5.15.4",
         "@sanity/client": "^2.23.2",
+        "@sveltejs/adapter-auto": "^1.0.0-next.39",
         "@sveltejs/adapter-vercel": "next",
         "@sveltejs/kit": "next",
         "autoprefixer": "^10.4.5",
