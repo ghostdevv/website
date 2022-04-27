@@ -30,7 +30,7 @@ specifiers:
   svelte-local-storage-store: ^0.2.6
   svelte-mount: ^1.0.2
   svelte-preprocess: ^4.10.6
-  svelte-reduced-motion: ^1.0.2
+  svelte-reduced-motion: ^1.0.5
   typescript: ^4.6.3
   vite: ^2.9.6
   workbox-core: ^6.5.3
@@ -66,7 +66,7 @@ devDependencies:
   svelte-local-storage-store: 0.2.6_svelte@3.47.0
   svelte-mount: 1.0.2
   svelte-preprocess: 4.10.6_73b77ea437254d066ff251b6afe1b9c3
-  svelte-reduced-motion: 1.0.2
+  svelte-reduced-motion: 1.0.5
   typescript: 4.6.3
   vite: 2.9.6_sass@1.51.0
   workbox-core: 6.5.3
@@ -2432,8 +2432,8 @@ packages:
       typescript: 4.6.3
     dev: true
 
-  /svelte-reduced-motion/1.0.2:
-    resolution: {integrity: sha512-XS09gJDqrM4j96Q6ZDQkUOMhaXRnClWFSengfqUaGZMIKG60/qkus1mxcEWqm/W6pEeqAw9GI+x8AGX/xSgELg==}
+  /svelte-reduced-motion/1.0.5:
+    resolution: {integrity: sha512-7wt6x3rbtvv6j3uNVsDID6bBazuu6H3JMlqiyHFezxuShWdpyhAdqq1Od0KBJvwr33rjANNWa8n3vd11+dCzOg==}
     dev: true
 
   /svelte/3.47.0:
