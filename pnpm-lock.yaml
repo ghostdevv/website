@@ -1,4 +1,4 @@
-lockfileVersion: 5.3
+lockfileVersion: 5.4
 
 specifiers:
   '@fortawesome/free-brands-svg-icons': ^5.15.4
@@ -59,7 +59,7 @@ devDependencies:
   svelte-hamburgers: 3.0.1
   svelte-local-storage-store: 0.2.6_svelte@3.48.0
   svelte-mount: 1.0.2
-  svelte-preprocess: 4.10.6_09ec49fc21bdb28a0c6efcbfb5e07ed1
+  svelte-preprocess: 4.10.6_bhwet7bbxwziuddo7s73lyd62e
   svelte-reduced-motion: 1.0.5
   typescript: 4.6.4
   vite: 2.9.9_sass@1.51.0
@@ -251,6 +251,8 @@ packages:
       get-it: 5.2.1
       make-error: 1.3.6
       object-assign: 4.1.1
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@sanity/eventsource/2.23.0:
@@ -352,8 +354,8 @@ packages:
     resolution: {integrity: sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==}
     dev: true
 
-  /@types/node/17.0.32:
-    resolution: {integrity: sha512-eAIcfAvhf/BkHcf4pkLJ7ECpBAhh9kcxRBpip9cTiO+hf+aJrsxYxBeS6OXvOd9WqNAJmavXVpZvY1rBjNsXmw==}
+  /@types/node/17.0.33:
+    resolution: {integrity: sha512-miWq2m2FiQZmaHfdZNcbpp9PuXg34W5JZ5CrJ/BaS70VuhoJENBEQybeiYSaPBRNq6KQGnjfEnc/F3PN++D+XQ==}
     dev: true
 
   /@types/normalize-package-data/2.4.1:
@@ -371,14 +373,14 @@ packages:
   /@types/sass/1.43.1:
     resolution: {integrity: sha512-BPdoIt1lfJ6B7rw35ncdwBZrAssjcwzI5LByIrYs+tpXlj/CAkuVdRsgZDdP4lq5EjyWzwxZCqAoFyHKFwp32g==}
     dependencies:
-      '@types/node': 17.0.32
+      '@types/node': 17.0.33
     dev: true
 
   /@types/yauzl/2.10.0:
     resolution: {integrity: sha512-Cn6WYCm0tXv8p6k+A8PvbDG763EDpBoTzHdA+Q/MF6H3sapGjCm9NzoaJncJS9tUKSuCoDs9XHxYYsQDgxR6kw==}
     requiresBuild: true
     dependencies:
-      '@types/node': 17.0.32
+      '@types/node': 17.0.33
     dev: true
     optional: true
 
@@ -600,10 +602,12 @@ packages:
     engines: {node: '>=12.13.0'}
     hasBin: true
     dependencies:
-      '@types/node': 17.0.32
+      '@types/node': 17.0.33
       escape-string-regexp: 4.0.0
       is-wsl: 2.2.0
       lighthouse-logger: 1.3.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /color-convert/1.9.3:
@@ -718,6 +722,11 @@ packages:
 
   /debug/2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
     dependencies:
       ms: 2.0.0
     dev: true
@@ -1200,6 +1209,8 @@ packages:
       simple-concat: 1.0.1
       tunnel-agent: 0.6.0
       url-parse: 1.5.10
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /get-stream/5.2.0:
@@ -1486,6 +1497,8 @@ packages:
     dependencies:
       debug: 2.6.9
       marky: 1.2.4
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /lines-and-columns/1.2.4:
@@ -2280,7 +2293,7 @@ packages:
     resolution: {integrity: sha512-hXWc9UX3i0vm5V09siW7a4ZUl2TjEJkeLCWGizXGC+6jISJjdO3GIzdfifYCQm7ePbCAvNfchgbIMEQVEUUtfg==}
     dev: true
 
-  /svelte-preprocess/4.10.6_09ec49fc21bdb28a0c6efcbfb5e07ed1:
+  /svelte-preprocess/4.10.6_bhwet7bbxwziuddo7s73lyd62e:
     resolution: {integrity: sha512-I2SV1w/AveMvgIQlUF/ZOO3PYVnhxfcpNyGt8pxpUVhPfyfL/CZBkkw/KPfuFix5FJ9TnnNYMhACK3DtSaYVVQ==}
     engines: {node: '>= 9.11.2'}
     requiresBuild: true
