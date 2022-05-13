@@ -54,6 +54,9 @@ export const donators = [
     {
         name: 'Kevin Åberg Kultalahti',
         image: '/donators/kevin.jpg',
-        amount: 11,
+    },
+    {
+        name: 'ChristopherMC',
+        image: '/donators/christophermc.webp',
     },
 ];

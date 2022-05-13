@@ -20,7 +20,7 @@
 
         <h4>{name}</h4>
 
-        {#if !slim}
+        {#if !slim && amount}
             <p>£{amount}{monthly ? '/m' : ''}</p>
         {/if}
     </card>
