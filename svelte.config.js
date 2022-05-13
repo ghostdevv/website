@@ -10,15 +10,6 @@ export default {
             server: {
                 port: 5000,
             },
-
-            resolve: {
-                alias: [
-                    {
-                        find: '$sanity',
-                        replacement: path.resolve('./src/sanity.js'),
-                    },
-                ],
-            },
         },
     },
 

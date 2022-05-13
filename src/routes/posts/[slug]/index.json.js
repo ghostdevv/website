@@ -1,6 +1,6 @@
 import { format } from 'date-fns';
 import { marked } from 'marked';
-import sanity from '$sanity';
+import { sanity } from '$lib/sanity';
 import Prism from 'prismjs';
 import groq from 'groq';
 import 'prism-svelte';

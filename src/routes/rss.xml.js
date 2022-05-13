@@ -1,4 +1,4 @@
-import sanity from '$sanity';
+import { sanity } from '$lib/sanity';
 import groq from 'groq';
 
 const query = groq`
