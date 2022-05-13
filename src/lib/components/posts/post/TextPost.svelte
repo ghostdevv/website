@@ -5,7 +5,7 @@
     import { createTweetLink } from '$lib/helpers/twitter';
     import Tag from '$lib/components/posts/Tag.svelte';
     import { fontSize, lineHeight } from './settings';
-    import { fly } from 'svelte/transition';
+    import { fly } from 'svelte-reduced-motion/transition';
     import { page } from '$app/stores';
     import Fa from 'svelte-fa';
 
@@ -111,6 +111,11 @@
 
             :global(code) {
                 background-color: var(--background-secondary);
+            }
+
+            :global(ul),
+            :global(ol) {
+                list-style-position: outside;
             }
 
             :global(h1) {

@@ -11,11 +11,6 @@
 export const supporters = {
     current: [
         {
-            name: 'Gen Ashley',
-            image: '/donators/gen-ashley.jpeg',
-            amount: 15,
-        },
-        {
             name: 'Scott Spence',
             image: '/donators/scott-spence.png',
             amount: 10,
@@ -45,6 +40,10 @@ export const supporters = {
         {
             name: 'Cain',
             image: '/donators/cain.png',
+        },
+        {
+            name: 'Gen Ashley',
+            image: '/donators/gen-ashley.jpeg',
         },
     ],
 };

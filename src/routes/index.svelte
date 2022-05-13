@@ -2,7 +2,7 @@
     import PostGroup from '$lib/components/posts/cards/PostGroup.svelte';
     import { faRss } from '@fortawesome/free-solid-svg-icons';
     import Loader from '$lib/components/Loader.svelte';
-    import { fly, fade } from 'svelte/transition';
+    import { fly, fade } from 'svelte-reduced-motion/transition';
     import { featured } from '$lib/data/links';
     import { quintOut } from 'svelte/easing';
     import { mounted } from 'svelte-mount';

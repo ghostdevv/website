@@ -1,11 +1,10 @@
-import { visualizer } from 'rollup-plugin-visualizer';
 import preprocess from 'svelte-preprocess';
-import vercel from '@sveltejs/adapter-vercel';
+import auto from '@sveltejs/adapter-auto';
 import path from 'path';
 
 export default {
     kit: {
-        adapter: vercel(),
+        adapter: auto(),
 
         vite: {
             server: {
@@ -20,8 +19,6 @@ export default {
                     },
                 ],
             },
-
-            plugins: [visualizer()],
         },
     },
 

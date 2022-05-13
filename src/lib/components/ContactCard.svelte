@@ -1,6 +1,6 @@
 <script>
     import { cubicOut } from 'svelte/easing';
-    import { fly } from 'svelte/transition';
+    import { fly } from 'svelte-reduced-motion/transition';
     import { copy } from 'svelte-copy';
 
     export let title;

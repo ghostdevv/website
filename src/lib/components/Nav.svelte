@@ -1,6 +1,6 @@
 <script>
     // import { isActive, pendingRoute } from '@roxi/routify';
-    import { slide, fade, fly } from 'svelte/transition';
+    import { slide, fade, fly } from 'svelte-reduced-motion/transition';
     import { navigating, page } from '$app/stores';
     import Hamburger from 'svelte-hamburgers';
     import TRainbow from './TRainbow.svelte';
