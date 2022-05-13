@@ -1,9 +1,7 @@
 import { format } from 'date-fns';
 import { marked } from 'marked';
 import { sanity } from '$lib/sanity';
-import Prism from 'prismjs';
 import groq from 'groq';
-import 'prism-svelte';
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
 export const get = async ({ params }) => {
@@ -36,6 +34,7 @@ export const get = async ({ params }) => {
 
     if (post.body && post.postType == 'text') {
         const { default: Prism } = await import('prismjs');
+        await import('prism-svelte');
 
         post.body = marked(post.body, {
             highlight: (code, lang) => {
