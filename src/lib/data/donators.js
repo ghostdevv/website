@@ -55,7 +55,7 @@ export const donators = [
         image: '/donators/kevin.jpg',
     },
     {
-        name: 'ChristopherMC',
+        name: 'ChristopherMc',
         image: '/donators/christophermc.webp',
     },
 ];
