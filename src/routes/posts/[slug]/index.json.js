@@ -5,19 +5,6 @@ import Prism from 'prismjs';
 import groq from 'groq';
 import 'prism-svelte';
 
-marked.setOptions({
-    highlight: (code, lang) => {
-        try {
-            const result = Prism.highlight(code, Prism.languages[lang], lang);
-            return result;
-        } catch {
-            console.error(`Unable to highlight lang: ${lang} code: ${code}`);
-        }
-
-        return code;
-    },
-});
-
 /** @type {import('@sveltejs/kit').RequestHandler} */
 export const get = async ({ params }) => {
     const { slug } = params;
@@ -48,7 +35,21 @@ export const get = async ({ params }) => {
         };
 
     if (post.body && post.postType == 'text') {
-        post.body = marked(post.body);
+        const { default: Prism } = await import('prismjs');
+
+        post.body = marked(post.body, {
+            highlight: (code, lang) => {
+                try {
+                    return Prism.highlight(code, Prism.languages[lang], lang);
+                } catch {
+                    console.error(
+                        `Unable to highlight lang: ${lang} code: ${code}`,
+                    );
+                }
+
+                return code;
+            },
+        });
     }
 
     return {
