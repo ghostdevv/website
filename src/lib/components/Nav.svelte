@@ -1,6 +1,6 @@
 <script>
-    // import { isActive, pendingRoute } from '@roxi/routify';
     import { slide, fade, fly } from 'svelte-reduced-motion/transition';
+    import { beforeNavigate } from '$app/navigation';
     import { navigating, page } from '$app/stores';
     import Hamburger from 'svelte-hamburgers';
     import TRainbow from './TRainbow.svelte';
@@ -17,6 +17,10 @@
     $: if (!mobile || $navigating) open = false;
 
     $: isActive = (url) => $page.url.pathname.includes(url);
+
+    beforeNavigate(() => {
+        open = false;
+    });
 </script>
 
 <svelte:window bind:innerWidth={width} bind:scrollY />
@@ -37,7 +41,7 @@
             </div>
         </div>
 
-        {#if $mounted && !$navigating && (open || !mobile)}
+        {#if $mounted && (open || !mobile)}
             <div
                 class="nav-sh"
                 transition:slide
