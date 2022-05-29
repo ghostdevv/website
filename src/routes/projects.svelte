@@ -8,7 +8,6 @@
     import { cubicOut } from 'svelte/easing';
 
     const starred = os.filter((x) => x.star);
-    const rest = os.filter((x) => !x.star);
 </script>
 
 <div class="column center g32 full">
@@ -32,11 +31,11 @@
     </div>
 </div>
 
-<div class="column center g32 full">
-    <h1>OS Projects</h1>
+<section class="column center g32 full">
+    <h1>All Projects</h1>
 
     <div class="row wrap center g16">
-        {#each rest as project, i}
+        {#each os as project, i}
             <a
                 href={project.url}
                 target="_blank"
@@ -46,4 +45,4 @@
             </a>
         {/each}
     </div>
-</div>
+</section>
