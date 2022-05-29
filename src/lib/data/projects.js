@@ -2,7 +2,6 @@ export const os = [
     {
         name: 'Routify',
         url: 'https://routify.dev/',
-        star: true,
     },
     {
         name: 'Svelte Hamburgers',
@@ -57,11 +56,11 @@ export const os = [
     {
         name: 'Svelte Body',
         url: 'https://www.npmjs.com/package/svelte-body',
-        star: true,
     },
     {
         name: 'greset',
         url: 'https://www.npmjs.com/package/greset',
+        star: true,
     },
     {
         name: 'sass-hex-rgb',
@@ -74,7 +73,6 @@ export const os = [
     {
         name: 'Svelte Copy',
         url: 'https://github.com/ghostdevv/svelte-copy',
-        star: true,
     },
     {
         name: 'Create Routify',
@@ -83,6 +81,7 @@ export const os = [
     {
         name: 'Neru',
         url: 'https://github.com/NeruJS/neru',
+        star: true,
     },
     {
         name: 'Methods',
@@ -94,33 +93,22 @@ export const os = [
     },
     {
         name: 'BackBlaze CLI',
-        url: 'https://github.com/ghostdevv/backblaze-cli'
-    }
-];
-
-export const work = [
-    {
-        name: 'Rejxcted',
-        link: 'https://rejxcted-site.vercel.app/',
+        url: 'https://github.com/ghostdevv/backblaze-cli',
     },
     {
-        name: 'Arrow Alerts',
-        link: 'https://arrowalerts.co',
+        name: 'Svelte Reduced Motion',
+        url: 'https://github.com/ghostdevv/svelte-reduced-motion',
     },
     {
-        name: 'Mesh Monitors',
-        link: 'https://meshmonitors.io',
+        name: 'GWordle',
+        url: 'https://github.com/ghostdevv/gwordle',
     },
     {
-        name: 'Mesh QT',
-        link: 'https://meshmonitors.io/quicktasks',
+        name: 'TST',
+        url: 'https://github.com/ghostdevv/tst',
     },
     {
-        name: 'Robotic Node',
-        link: 'https://archive.ghostdev.xyz/roboticnode/',
-    },
-    {
-        name: 'Eris ghost.org theme',
-        link: 'https://eris.gg',
+        name: 'GHOSTSUi',
+        url: 'https://github.com/ghostdevv/ghostsui',
     },
 ];
