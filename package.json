@@ -7,6 +7,7 @@
         "dev": "vite dev",
         "build": "vite build",
         "preview": "vite preview --port 5000",
+        "prepare": "svelte-kit sync",
         "assets": "pwa-asset-generator public/logo.png public/icons --background \"#121214\""
     },
     "devDependencies": {
