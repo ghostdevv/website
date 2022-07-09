@@ -2,7 +2,7 @@
     import { slide, fade, fly } from 'svelte-reduced-motion/transition';
     import { beforeNavigate } from '$app/navigation';
     import { navigating, page } from '$app/stores';
-    import Hamburger from 'svelte-hamburgers';
+    import { Hamburger } from 'svelte-hamburgers';
     import TRainbow from './TRainbow.svelte';
     import { mounted } from 'svelte-mount';
 
