@@ -71,7 +71,7 @@ const create_item = (data) => `
         </item>
 `;
 
-export async function get() {
+export async function GET() {
     const posts = await sanity.fetch(query);
     const items = [];
 

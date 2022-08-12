@@ -2,7 +2,7 @@ import { sanity } from '$lib/sanity';
 import groq from 'groq';
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
-export const get = async ({ url }) => {
+export const GET = async ({ url }) => {
     const filter = url.searchParams.get('filter') || null;
     const filterConditional = filter ? '&& references($filter)' : '';
 
