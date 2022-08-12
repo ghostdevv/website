@@ -11,11 +11,6 @@
 export const supporters = {
     current: [
         {
-            name: 'Scott Spence',
-            image: '/donators/scott-spence.png',
-            amount: 10,
-        },
-        {
             name: 'Fractal',
             image: '/donators/fractal.png',
             amount: 5,
@@ -33,6 +28,10 @@ export const supporters = {
     ],
 
     past: [
+        {
+            name: 'Scott Spence',
+            image: '/donators/scott-spence.png',
+        },
         {
             name: 'Alfie',
             image: '/donators/alfie.png',
