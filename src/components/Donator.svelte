@@ -8,7 +8,7 @@
 </script>
 
 <card class="person" class:slim>
-    <img src={image} alt="{name}'s pfp" />
+    <img src={image} alt="{name}'s pfp" loading="lazy" />
 
     {#if !slim}
         <hr />
