@@ -47,10 +47,7 @@
                 transition:slide
                 class:open={!$navigating && (open || !mobile)}>
                 <div class="links">
-                    <a
-                        href="/"
-                        class:active={$page.url.pathname == '/'}
-                        in:fly={{ y: -20, duration: 750 }}>
+                    <a href="/" class:active={$page.url.pathname == '/'}>
                         Home
                     </a>
 
@@ -67,11 +64,6 @@
                         </a>
                     {/each}
                 </div>
-
-                <a
-                    href="/donate"
-                    class="button donate-button"
-                    in:fly={{ y: -20, duration: 750, delay: 100 }}>Donate</a>
             </div>
         {/if}
     </nav>
@@ -129,7 +121,7 @@
 
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        gap: 32px;
 
         .nav-sh {
             display: contents;
@@ -172,31 +164,32 @@
     .links {
         display: flex;
         align-items: center;
-        gap: 24px;
+        gap: 16px;
 
         a {
             text-transform: capitalize;
             font-weight: 600;
-            padding: 12px 8px;
+            padding: 12px 16px;
 
-            border-bottom: 4px solid rgba(0, 0, 0, 0);
+            border-radius: 8px;
+            border: 2px solid transparent;
 
-            transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+            transition: border-color 0.2s ease-in-out, opacity 0.2s ease-in-out;
 
             color: var(--text);
+            opacity: 0.6;
 
             text-decoration: none;
 
             &.active {
-                color: var(--secondary);
-                border-color: var(--secondary);
+                opacity: 1;
             }
 
             &:hover,
             &:focus {
-                color: var(--secondary-hover);
+                opacity: 1;
                 background-color: inherit;
-                border-color: var(--secondary-hover);
+                border-color: var(--primary);
             }
         }
     }

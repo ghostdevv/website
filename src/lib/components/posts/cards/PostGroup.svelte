@@ -17,7 +17,6 @@
         flex-wrap: wrap;
 
         align-items: stretch;
-        justify-content: center;
 
         gap: 22px;
         width: 100%;
