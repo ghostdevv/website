@@ -1,8 +1,5 @@
 ---
-import Nav from '$components/Nav.svelte'
 import 'ghostsui'
-
-const url = new URL(Astro.url)
 ---
 
 <!DOCTYPE html>
@@ -26,24 +23,7 @@ const url = new URL(Astro.url)
 </head>
 
 <body>
-    <Nav url={url} client:load />
-
-    <div class="wrapper column g32">
-        <slot />
-    </div>
+    <slot />
 </body>
 
 </html>
-
-<style lang="scss">
-    .wrapper {
-        max-width: 1400px;
-        margin: 0px auto;
-
-        padding: 16px 32px;
-        padding-bottom: 64px;
-        padding-top: 140px;
-
-        width: 100%;
-    }
-</style>
