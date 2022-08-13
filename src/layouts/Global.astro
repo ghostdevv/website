@@ -1,0 +1,49 @@
+---
+import Nav from '$components/Nav.svelte'
+import 'ghostsui'
+
+const url = new URL(Astro.url)
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="/favicon.png" />
+
+    <!-- Meta -->
+    <title>GHOST</title>
+    <meta name="theme-color" content="#2885d6" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ghostdev.xyz/" />
+
+    <!-- Privacy respecting analytics -->
+    <script data-goatcounter="https://ghost.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+
+<body>
+    <Nav url={url} client:load />
+
+    <div class="wrapper column g16">
+        <slot />
+    </div>
+</body>
+
+</html>
+
+<style lang="scss">
+    .wrapper {
+        max-width: 1400px;
+        margin: 0px auto;
+
+        padding: 16px 32px;
+        padding-bottom: 64px;
+        padding-top: 140px;
+
+        width: 100%;
+    }
+</style>
