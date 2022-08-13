@@ -1,6 +1,4 @@
 <script>
-    import { fly } from 'svelte-reduced-motion/transition';
-
     export let name;
     export let image;
 
