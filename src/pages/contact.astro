@@ -1,6 +1,7 @@
 ---
+import { faDiscord, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { faDiscord } from '@fortawesome/free-brands-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { Picture } from '@astrojs/image/components';
 import Page from '$layouts/Page.astro';
 import Fa from 'svelte-fa';
@@ -10,21 +11,33 @@ import Fa from 'svelte-fa';
     <section class="column g16">
         <h1>Contact</h1>
 
-        <p>
+        <p class="row">
             <Fa icon={faDiscord} />
-            You can add me on
-            <a href="https://discord.com/users/282839711834177537">Discord (GHOST#7524)</a>
+            <a target="_blank" href="https://discord.com/users/282839711834177537">Discord (GHOST#7524)</a>
         </p>
 
-        <p>
+        <p class="row">
             <Fa icon={faEnvelope} />
-            Otherwise you can email
-            <a href="mailto:ghostdevbusiness@gmail.com">ghostdevbusiness@gmail.com</a>
+            <a target="_blank" href="mailto:ghostdevbusiness@gmail.com">ghostdevbusiness@gmail.com</a>
+        </p>
+    </section>
+
+    <section class="column g16">
+        <h1>Links</h1>
+
+        <p class="row">
+            <Fa icon={faTwitter} />
+            <a target="_blank" href="https://twitter.com/onlyspaceghost">@onlyspaceghost</a>
+        </p>
+
+        <p class="row">
+            <Fa icon={faGithub} />
+            <a target="_blank" href="https://github.com/ghostdevv">ghostdevv</a>
         </p>
     </section>
 
     <section class="devlounge">
-        <a href="https://discord.gg/2Vd4wAjJnm" class="card">
+        <a href="https://discord.gg/2Vd4wAjJnm" target="_blank" class="card">
             <Picture widths={[75]} sizes="75px" aspectRatio={1}
                 src="https://cdn.discordapp.com/icons/755788441161302136/bc7d982c002e2786e34c17f58b848b06.webp?size=96"
                 alt="The Dev Lounge logo8" />
