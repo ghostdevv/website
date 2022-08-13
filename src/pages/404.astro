@@ -1,0 +1,31 @@
+---
+import Global from "$layouts/Global.astro";
+---
+
+<Global>
+    <main>
+        <img src="https://http.cat/404" alt="HTTP Cat of 404" />
+        <a href="/">&lt; Go Home</a>
+    </main>
+</Global>
+
+<style lang="scss">
+    main {
+        height: 100vh;
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+
+        width: 80%;
+        margin: 0 auto;
+
+        img {
+            width: 800px;
+            max-width: 100%;
+        }
+    }
+</style>
