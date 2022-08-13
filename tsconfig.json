@@ -39,6 +39,9 @@
       ],
       "$helpers/*": [
         "src/helpers/*"
+      ],
+      "$data/*": [
+        "src/data/*"
       ]
     }
   }
