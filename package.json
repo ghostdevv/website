@@ -1,46 +1,15 @@
 {
-    "name": "ghosts-website",
-    "private": true,
-    "license": "GNU Affero General Public License v3.0",
-    "type": "module",
-    "scripts": {
-        "dev": "vite dev",
-        "build": "vite build",
-        "preview": "vite preview --port 5000",
-        "prepare": "svelte-kit sync",
-        "assets": "pwa-asset-generator public/logo.png public/icons --background \"#121214\""
-    },
-    "devDependencies": {
-        "@fortawesome/free-brands-svg-icons": "^6.1.2",
-        "@fortawesome/free-solid-svg-icons": "^6.1.2",
-        "@sanity/client": "^3.3.3",
-        "@sveltejs/adapter-auto": "1.0.0-next.64",
-        "@sveltejs/kit": "1.0.0-next.405",
-        "autoprefixer": "^10.4.8",
-        "date-fns": "^2.29.1",
-        "dompurify": "^2.3.10",
-        "groq": "^2.29.3",
-        "include-media": "^1.4.10",
-        "kjua": "^0.9.0",
-        "marked": "^4.0.18",
-        "polykit": "^0.2.0",
-        "postcss": "^8.4.16",
-        "postcss-import": "^14.1.0",
-        "prism-svelte": "^0.5.0",
-        "prismjs": "^1.28.0",
-        "pwa-asset-generator": "^6.1.1",
-        "sass": "^1.54.4",
-        "svelte": "^3.49.0",
-        "svelte-copy": "^1.2.4",
-        "svelte-fa": "^3.0.3",
-        "svelte-hamburgers": "^4.0.1",
-        "svelte-local-storage-store": "^0.2.6",
-        "svelte-mount": "^1.0.2",
-        "svelte-preprocess": "^4.10.7",
-        "svelte-reduced-motion": "^1.0.5",
-        "typescript": "^4.7.4",
-        "vite": "^3.0.7",
-        "workbox-core": "^6.5.4",
-        "workbox-precaching": "^6.5.4"
-    }
+  "name": "@example/basics",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "devDependencies": {
+    "astro": "^1.0.5"
+  }
 }
