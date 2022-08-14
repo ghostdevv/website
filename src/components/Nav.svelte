@@ -1,5 +1,6 @@
 <script lang="ts">
     import { Hamburger } from 'svelte-hamburgers';
+    import { slide } from 'svelte/transition';
     import TRainbow from './TRainbow.svelte';
     import { mounted } from 'svelte-mount';
 
@@ -19,7 +20,7 @@
 <svelte:window bind:innerWidth={width} bind:scrollY />
 
 <div class="wrapper" class:open class:scroll>
-    <nav in:fade>
+    <nav>
         <div class="nav-fh">
             <a href="/">
                 <div class="logo">
