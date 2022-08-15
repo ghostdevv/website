@@ -14,7 +14,7 @@ const { frontmatter } = Astro.props;
 
 <Page>
     <article>
-        <div class="meta-image" style={`--image: url(${frontmatter?.image})`}>
+        <div class="meta-image" style={`--image: url(/post-images/${frontmatter?.image})`}>
             <div class="meta">
                 <div class="tag">
                     <Tag name={frontmatter.tag} large />
