@@ -40,7 +40,7 @@ const { frontmatter } = Astro.props;
         <hr />
 
         <footer>
-            <div class="row">
+            <div class="row wrap">
                 <a href={tweetLink(`Checkout this post by @onlyspaceghost!
                     https://ghostdev.xyz/posts/${frontmatter.slug}`)} class="button" target="_blank">
                     <Fa icon={faTwitter} />
@@ -75,7 +75,9 @@ const { frontmatter } = Astro.props;
 
             display: flex;
             align-items: center;
+            flex-flow: row wrap;
             justify-content: space-between;
+            gap: 12px;
         }
 
         .meta-image {
