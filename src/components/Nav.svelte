@@ -1,6 +1,6 @@
 <script lang="ts">
+    import { slide } from 'svelte-reduced-motion/transition';
     import { Hamburger } from 'svelte-hamburgers';
-    import { slide } from 'svelte/transition';
     import TRainbow from './TRainbow.svelte';
     import { mounted } from 'svelte-mount';
 
