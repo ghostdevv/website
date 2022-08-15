@@ -19,7 +19,9 @@
         border-color: var(--background-tertiary) !important;
         transition: border-color 0.2s ease-in-out !important;
 
-        &.star {
+        &.star,
+        &:focus,
+        &:hover {
             border-color: var(--primary) !important;
         }
     }
