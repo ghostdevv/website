@@ -33,7 +33,10 @@
         </div>
 
         {#if open || !mobile}
-            <div class="nav-sh" transition:slide class:open={open || !mobile}>
+            <div
+                class="nav-sh"
+                transition:slide|local
+                class:open={open || !mobile}>
                 <div class="links">
                     <a href="/" class:active={url.pathname == '/'}> Home </a>
 
