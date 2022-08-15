@@ -18,6 +18,7 @@
     "date-fns": "^2.29.1",
     "ghostsui": "^1.4.4",
     "include-media": "^1.4.10",
+    "polykit": "^0.2.0",
     "prettier": "^2.7.1",
     "prettier-plugin-astro": "^0.5.0",
     "prettier-plugin-svelte": "^2.7.0",
@@ -25,6 +26,7 @@
     "svelte": "^3.46.4",
     "svelte-fa": "^3.0.3",
     "svelte-hamburgers": "^4.0.1",
+    "svelte-local-storage-store": "^0.3.0",
     "svelte-mount": "^1.0.2",
     "svelte-reduced-motion": "^1.0.5",
     "typescript": "^4.7.4"

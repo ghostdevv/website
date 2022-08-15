@@ -1,6 +1,12 @@
 ---
+import SettingsModal from '$components/posts/SettingsModal.svelte';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faRss } from '@fortawesome/free-solid-svg-icons'
+import Tag from '$components/posts/Tag.svelte';
+import { tweetLink } from '$helpers/twitter';
 import { format } from 'date-fns';
 import Page from './Page.astro';
+import Fa from 'svelte-fa';
 import './post.scss';
 
 const { frontmatter } = Astro.props;
@@ -8,24 +14,25 @@ const { frontmatter } = Astro.props;
 
 <Page>
     <article>
-        <div class="meta-wrapper" style={`--image: url(${frontmatter?.image})`}>
+        <div class="meta-image" style={`--image: url(${frontmatter?.image})`}>
             <div class="meta">
-                <div class="data">
-                    <!-- <Tag {...tag} large /> -->
-                    <p>{format(frontmatter?.timestamp, 'do LLLL yyyy')}</p>
+                <div class="tag">
+                    <Tag name={frontmatter.tag} large />
                 </div>
+
+                <p class="timestamp">{format(frontmatter?.timestamp, 'do LLLL yyyy')}</p>
 
                 <h1 class="title">{frontmatter?.title}</h1>
 
                 <div class="settings">
-                    <!-- <SettingsModal /> -->
+                    <SettingsModal client:only />
                 </div>
             </div>
         </div>
 
         <hr />
 
-        <div class="markdown" style="--font-size: {$fontSize}px;">
+        <div class="markdown">
             <slot />
         </div>
 
@@ -34,18 +41,19 @@ const { frontmatter } = Astro.props;
 
         <footer>
             <div class="row">
-                <a class="button" target="_blank">
-                    <!-- <Fa icon={faTwitter} /> -->
+                <a href={tweetLink(`Checkout this post by @onlyspaceghost!
+                    https://ghostdev.xyz/posts/${frontmatter.slug}`)} class="button" target="_blank">
+                    <Fa icon={faTwitter} />
                     Share on twitter
                 </a>
 
                 <a href="/rss.xml" target="_blank" class="button">
-                    <!-- <Fa icon={faRss} /> -->
+                    <Fa icon={faRss} />
                     RSS
                 </a>
             </div>
 
-            <!-- <SettingsModal /> -->
+            <SettingsModal client:only />
         </footer>
     </article>
 </Page>
@@ -57,7 +65,7 @@ const { frontmatter } = Astro.props;
     article {
         width: 100%;
 
-        display: flex;
+        display: flex !important;
         flex-direction: column;
         gap: 16px;
 
@@ -70,7 +78,7 @@ const { frontmatter } = Astro.props;
             justify-content: space-between;
         }
 
-        .meta-wrapper {
+        .meta-image {
             $border-radius: 22px;
 
             display: flex;
@@ -100,12 +108,12 @@ const { frontmatter } = Astro.props;
                 position: relative;
 
                 display: grid;
-                grid-template-columns: 1fr max-content;
+                grid-template-columns: max-content 1fr max-content;
                 grid-template-rows: max-content 1fr;
-                gap: 16px 0px;
+                gap: 16px;
                 grid-template-areas:
-                    'data data'
-                    'title settings';
+                    'tag timestamp .'
+                    'title title settings';
 
                 background-color: rgba(var(--background-tertiary-rgb), 0.95);
                 border-radius: 0 0 $border-radius $border-radius;
@@ -115,11 +123,12 @@ const { frontmatter } = Astro.props;
 
                 @include media($cp) {
                     grid-template-areas:
-                        'data'
+                        'tag'
+                        'timestamp'
                         'title';
 
                     grid-template-columns: 1fr;
-                    grid-template-rows: max-content max-content;
+                    grid-template-rows: 1fr max-content 1fr;
 
                     justify-items: center;
                     align-items: center;
@@ -128,20 +137,18 @@ const { frontmatter } = Astro.props;
                     gap: 8px 0px;
                 }
 
-                .data {
-                    display: flex;
-                    align-items: center;
-                    gap: 12px;
-
-                    grid-area: data;
-
-                    @include media($cp) {
-                        flex-direction: column;
-                    }
-                }
-
                 .title {
                     grid-area: title;
+                }
+
+                .tag {
+                    grid-area: tag;
+                    min-height: fit-content;
+                    min-width: fit-content;
+                }
+
+                .timestamp {
+                    grid-area: timestamp;
                 }
 
                 .settings {
