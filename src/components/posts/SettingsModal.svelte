@@ -19,7 +19,7 @@
 </script>
 
 <Modal let:close>
-    <button slot="activator">
+    <button slot="activator" aria-label="Post Settings">
         <Fa icon={faCog} />
     </button>
 
