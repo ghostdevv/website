@@ -2,7 +2,6 @@
     import { slide } from 'svelte-reduced-motion/transition';
     import { Hamburger } from 'svelte-hamburgers';
     import TRainbow from './TRainbow.svelte';
-    import { mounted } from 'svelte-mount';
 
     export let url: URL;
 
@@ -33,7 +32,7 @@
             </div>
         </div>
 
-        {#if $mounted && (open || !mobile)}
+        {#if open || !mobile}
             <div class="nav-sh" transition:slide class:open={open || !mobile}>
                 <div class="links">
                     <a href="/" class:active={url.pathname == '/'}> Home </a>
