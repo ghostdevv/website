@@ -6,35 +6,35 @@ export interface Person {
 export const supporters: { current: Person[]; past: Person[] } = {
     current: [
         {
-            name: 'Fractal',
-            image: '/donators/fractal.png',
+            name: 'Braden Wiggins',
+            image: '/donators/bruhdy-fractal.webp',
         },
         {
             name: 'Stefan Bogdanović',
-            image: '/donators/stefan.png',
+            image: '/donators/stefan.webp',
         },
         {
             name: 'Dusan Malusev',
-            image: '/donators/dusan.png',
+            image: '/donators/dusan.webp',
         },
     ],
 
     past: [
         {
             name: 'Scott Spence',
-            image: '/donators/scott-spence.png',
+            image: '/donators/scott-spence.webp',
         },
         {
             name: 'Alfie',
-            image: '/donators/alfie.png',
+            image: '/donators/alfie.webp',
         },
         {
             name: 'Cain',
-            image: '/donators/cain.png',
+            image: '/donators/cain.webp',
         },
         {
             name: 'Gen Ashley',
-            image: '/donators/gen-ashley.jpeg',
+            image: '/donators/gen-ashley.webp',
         },
     ],
 };
@@ -42,7 +42,7 @@ export const supporters: { current: Person[]; past: Person[] } = {
 export const donators: Person[] = [
     {
         name: 'Kevin Åberg Kultalahti',
-        image: '/donators/kevin.jpg',
+        image: '/donators/kevin.webp',
     },
     {
         name: 'ChristopherMc',
