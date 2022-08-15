@@ -14,6 +14,10 @@
         background-color: var(--background-secondary) !important;
     }
 
+    code {
+        font-size: calc(var(--post-font-size, 16px) - 2px);
+    }
+
     ul,
     ol {
         list-style-position: outside;
