@@ -36,14 +36,14 @@ import Fa from 'svelte-fa';
             Supporters.
         </p>
 
-        <h4>Current Supporters</h4>
+        <h3 style="font-size: calc(1.275rem + .3vw);">Current Supporters</h3>
 
         <div class="row wrap">
             {supporters.current.map(p =>
             <Donator name={p.name} image={p.image} />)}
         </div>
 
-        <h4>Past Supporters</h4>
+        <h3 style="font-size: calc(1.275rem + .3vw);">Past Supporters</h3>
 
         <div class="row wrap">
             {supporters.past.map(p =>
