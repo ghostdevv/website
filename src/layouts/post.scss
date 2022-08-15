@@ -1,0 +1,39 @@
+.markdown {
+    max-width: 100%;
+
+    font-size: var(--post-font-size, 16px);
+    line-height: var(--post-line-height, 1.5);
+
+    pre {
+        width: 100%;
+        padding: 22px;
+        border-radius: 16px;
+
+        display: block;
+
+        background-color: var(--background-secondary) !important;
+    }
+
+    code {
+        font-size: calc(var(--post-font-size, 16px) - 2px);
+    }
+
+    ul,
+    ol {
+        list-style-position: outside;
+        padding-left: 2em;
+    }
+
+    p {
+        margin: 12px 0px;
+    }
+
+    h1 {
+        padding: 8px 0px;
+        border-bottom: 4px solid var(--background-secondary);
+
+        &:not(&:first-child) {
+            margin-top: 22px;
+        }
+    }
+}

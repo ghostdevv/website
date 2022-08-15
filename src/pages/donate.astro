@@ -1,0 +1,77 @@
+---
+import { faPaypal, faPatreon } from '@fortawesome/free-brands-svg-icons';
+import { supporters, donators } from '$data/donators';
+import Donator from '$components/Donator.svelte';
+import Page from '$layouts/Page.astro';
+import Fa from 'svelte-fa';
+---
+
+<Page>
+    <section class="column g16">
+        <h1>🥳 Donate & Support my work</h1>
+
+        <p style="max-width: 800px;">
+            Thank you for taking an interest in my work! I spend as much time doing open source work as I can, so any
+            donations I recieve are greatly appriciated as they help me be able to focus on more open source projects
+        </p>
+
+        <div class="row">
+            <a title="Patreon" aria-label="Patreon" href="https://www.patreon.com/onlyspaceghost" target="_blank"
+                class="icon-link">
+                <Fa icon={faPatreon} />
+            </a>
+
+            <a title="PayPal" aria-label="PayPal" href="https://paypal.me/ghostdevpayment" target="_blank"
+                class="icon-link">
+                <Fa icon={faPaypal} />
+            </a>
+        </div>
+    </section>
+
+    <hr>
+
+    <section class="column g16">
+        <h2>🎉 Supporters</h2>
+
+        <p>
+            This list features all my past and present <a href="https://www.patreon.com/onlyspaceghost">Patreon</a>
+            Supporters.
+        </p>
+
+        <h3 style="font-size: calc(1.275rem + .3vw);">Current Supporters</h3>
+
+        <div class="row wrap">
+            {supporters.current.map(p =>
+            <Donator name={p.name} image={p.image} />)}
+        </div>
+
+        <h3 style="font-size: calc(1.275rem + .3vw);">Past Supporters</h3>
+
+        <div class="row wrap">
+            {supporters.past.map(p =>
+            <Donator name={p.name} image={p.image} slim />)}
+        </div>
+    </section>
+
+    <hr>
+
+    <section class="column g16">
+        <h2>❤️ Donators</h2>
+
+        <p>
+            This list features everyone who has made one time donations
+        </p>
+
+        <div class="row wrap">
+            {donators.map(p =>
+            <Donator name={p.name} image={p.image} slim />)}
+        </div>
+    </section>
+</Page>
+
+<style lang="scss">
+    .icon-link {
+        color: rgba(var(--text-rgb), 0.6);
+        padding: 4px;
+    }
+</style>

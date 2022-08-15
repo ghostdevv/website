@@ -1,9 +1,7 @@
 {
     "recommendations": [
         "esbenp.prettier-vscode",
-        "formulahendry.auto-rename-tag",
-        "svelte.svelte-vscode",
         "christian-kohler.npm-intellisense",
-        "zignd.html-css-class-completion"
+        "astro-build.astro-vscode"
     ]
 }

@@ -1,0 +1,75 @@
+---
+import { Post, PostType } from '$data/posts/posts';
+import Tag from './Tag.svelte';
+
+const post = Astro.props.post as Post
+
+const href = post.type == PostType['Text'] ? `/posts/${post.slug}` : post.link;
+const target = post.type == PostType['Text'] ? undefined : '_blank'
+---
+
+<a href={href} target={target} class="postcard" aria-label={post.title}>
+    <!-- TODO use <Picture /> or <Image /> from astro -->
+    <img class="image" src={`/post-images/${post.image}`} alt="Post Cover Image" />
+
+    <div class="details">
+        <Tag name={post.tag} />
+
+        <h2 class="title">{post.title}</h2>
+
+        <p class="description">
+            {post.excerpt}
+        </p>
+    </div>
+</a>
+
+<style lang="scss">
+    .postcard {
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+
+        width: 325px;
+
+        color: var(--text) !important;
+        background-color: var(--background-secondary) !important;
+        border-radius: 12px;
+
+        flex: 1 1 30%;
+
+        transition: box-shadow 0.2s ease-in-out;
+
+        &:hover,
+        &:active,
+        &:focus {
+            text-decoration: none;
+            box-shadow: 0 0 0 transparent, 0 0 0 5px var(--primary);
+        }
+
+        .title {
+            font-size: calc(1.275rem + .3vw);
+            font-weight: 500;
+        }
+
+        .image {
+            min-width: 100%;
+            width: auto;
+            height: 200px;
+
+            object-fit: cover;
+            border-radius: 12px 12px 0 0;
+        }
+
+        .details {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+
+            padding: 18px;
+
+            .description {
+                color: rgba(var(--text-rgb), 0.5);
+            }
+        }
+    }
+</style>

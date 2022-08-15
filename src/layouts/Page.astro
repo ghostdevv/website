@@ -1,0 +1,27 @@
+---
+import Nav from '$components/Nav.svelte';
+import Global from './Global.astro';
+
+const url = new URL(Astro.url);
+---
+
+<Global frontmatter={Astro.props.frontmatter}>
+    <Nav url={url} client:load />
+
+    <div class="wrapper">
+        <slot />
+    </div>
+</Global>
+
+<style lang="scss">
+    .wrapper {
+        max-width: 1400px;
+        margin: 0px auto;
+
+        padding: 16px 32px;
+        padding-bottom: 64px;
+        padding-top: 140px;
+
+        width: 100%;
+    }
+</style>

@@ -1,0 +1,29 @@
+---
+import { Picture } from '@astrojs/image/components';
+import Global from '$layouts/Global.astro';
+---
+
+<Global>
+    <main>
+        <Picture widths={[400, 800]} sizes="(max-width: 800px) 100vw, 800px" aspectRatio={5/4}
+            src="https://http.cat/404" alt="HTTP Cat of 404" />
+
+        <a href="/">&lt; Go Home</a>
+    </main>
+</Global>
+
+<style lang="scss">
+    main {
+        height: 100vh;
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+
+        width: 80%;
+        margin: 0 auto;
+    }
+</style>

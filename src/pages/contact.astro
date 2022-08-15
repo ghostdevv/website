@@ -1,0 +1,87 @@
+---
+import { faDiscord, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { Picture } from '@astrojs/image/components';
+import Page from '$layouts/Page.astro';
+import Fa from 'svelte-fa';
+---
+
+<Page>
+    <section class="column g16">
+        <h1>Contact</h1>
+
+        <p class="row">
+            <Fa icon={faDiscord} />
+            <a target="_blank" href="https://discord.com/users/282839711834177537">Discord (GHOST#7524)</a>
+        </p>
+
+        <p class="row">
+            <Fa icon={faEnvelope} />
+            <a target="_blank" href="mailto:ghostdevbusiness@gmail.com">ghostdevbusiness@gmail.com</a>
+        </p>
+    </section>
+
+    <section class="column g16">
+        <h1>Links</h1>
+
+        <p class="row">
+            <Fa icon={faTwitter} />
+            <a target="_blank" href="https://twitter.com/onlyspaceghost">@onlyspaceghost</a>
+        </p>
+
+        <p class="row">
+            <Fa icon={faGithub} />
+            <a target="_blank" href="https://github.com/ghostdevv">ghostdevv</a>
+        </p>
+    </section>
+
+    <section class="devlounge">
+        <a aria-label="Join The Dev Lounge" href="https://discord.gg/2Vd4wAjJnm" target="_blank" class="card">
+            <Picture widths={[75]} sizes="75px" aspectRatio={1}
+                src="https://cdn.discordapp.com/icons/755788441161302136/bc7d982c002e2786e34c17f58b848b06.webp"
+                alt="The Dev Lounge logo" />
+
+            <div class="column meta">
+                <h4>The Dev Lounge</h4>
+                <p>You can join my Discord server to chat with fellow Developers, share projects, and get help with
+                    code!
+                </p>
+            </div>
+        </a>
+    </section>
+</Page>
+
+<style lang="scss">
+    @import 'src/helpers/media';
+
+    .devlounge {
+        .card {
+            border-color: #cf4a4a !important;
+
+            flex-direction: row !important;
+            align-items: center !important;
+
+            margin: 0 auto;
+
+            @include media('<500px') {
+                flex-direction: column !important;
+                text-align: center !important;
+
+                .meta {
+                    text-align: center;
+                    align-items: center;
+                }
+            }
+        }
+
+        position: fixed;
+        bottom: 32px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        width: calc(100% - 64px);
+        max-width: 1600px;
+        margin: 0 auto;
+    }
+</style>

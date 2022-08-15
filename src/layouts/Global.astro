@@ -1,0 +1,53 @@
+---
+import 'ghostsui'
+
+const frontmatter = Astro.props.frontmatter || {}
+
+const title = frontmatter.title ? `${frontmatter.title} - GHOST` : 'GHOST - Developer'
+const description = frontmatter.excerpt || 'Hi I am GHOST! Welcome to my site, here you can look at my posts, find out more about what I do, follow me on socials, and donate!'
+const image = `https://ghostdev.xyz/${frontmatter.image ? `post-images/${frontmatter.image}` : 'banner.png'}`
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="/favicon.png" />
+
+    <!-- Meta -->
+    <meta name="theme-color" content="#2885d6" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ghostdev.xyz/" />
+
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta property="og:title" content={title} />
+    <meta name="twitter:title" content={title} />
+
+    <meta name="description" content={description} />
+    <meta property="og:description" content={description} />
+    <meta name="twitter:description" content={description} />
+
+    <meta name="image" content={image} />
+    <meta property="og:image" content={image} />
+    <meta name="twitter:image:src" content={image} />
+
+    <meta name="twitter:site" content="@onlyspaceghost" />
+    <meta name="twitter:creator" content="@onlyspaceghost" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Privacy respecting analytics -->
+    <script data-goatcounter="https://ghost.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+
+    <!-- Build -->
+</head>
+
+<body>
+    <slot />
+</body>
+
+</html>

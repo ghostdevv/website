@@ -1,0 +1,44 @@
+---
+import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
+import Posts from '$components/posts/Posts.astro';
+import Page from '$layouts/Page.astro';
+import Fa from 'svelte-fa';
+---
+
+<Page>
+    <section class="column g16">
+        <h1>👋 Hey, I'm Willow <span class="aka">(aka GHOST)</span></h1>
+        <p>I am a fullstack web developer from the UK.</p>
+
+        <div class="row">
+            <a title="Twitter" aria-label="Twitter" href="https://twitter.com/onlyspaceghost" target="_blank"
+                class="icon-link">
+                <Fa size="md" icon={faTwitter} />
+            </a>
+
+            <a title="Discord" aria-label="Discord" href="https://discord.com/users/282839711834177537" target="_blank"
+                class="icon-link">
+                <Fa size="md" icon={faDiscord} />
+            </a>
+
+            <a title="GitHub" aria-label="GitHub" href="https://github.com/ghostdevv" target="_blank" class="icon-link">
+                <Fa size="md" icon={faGithub} />
+            </a>
+        </div>
+    </section>
+
+    <Posts />
+</Page>
+
+<style>
+    .aka {
+        opacity: 0.6;
+        font-size: 0.8rem;
+    }
+
+    .icon-link {
+        color: rgba(var(--text-rgb), 0.6);
+        padding: 4px;
+    }
+</style>
