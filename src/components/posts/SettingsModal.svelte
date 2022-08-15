@@ -6,8 +6,6 @@
     import Fa from 'svelte-fa';
 
     $: if ($mounted && ($fontSize || $lineHeight)) {
-        console.log('asd');
-
         document.documentElement.style.setProperty(
             '--post-font-size',
             `${$fontSize}px`,

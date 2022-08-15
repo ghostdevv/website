@@ -3,8 +3,6 @@ import 'ghostsui'
 
 const frontmatter = Astro.props.frontmatter || {}
 
-console.log(frontmatter, Astro.props)
-
 const title = frontmatter.title ? `${frontmatter.title} - GHOST` : 'GHOST - Developer'
 const description = frontmatter.excerpt || 'Hi I am GHOST! Welcome to my site, here you can look at my posts, find out more about what I do, follow me on socials, and donate!'
 const image = `https://ghostdev.xyz/${frontmatter.image ? `post-images/${frontmatter.image}` : 'banner.png'}`
