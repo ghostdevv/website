@@ -12,7 +12,7 @@ import './post.scss';
 const { frontmatter } = Astro.props;
 ---
 
-<Page>
+<Page frontmatter={frontmatter}>
     <article>
         <div class="meta-image" style={`--image: url(/post-images/${frontmatter?.image})`}>
             <div class="meta">
