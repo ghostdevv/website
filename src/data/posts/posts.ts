@@ -9,6 +9,16 @@ interface LinkPost {
     timestamp: number;
 }
 
+export interface Post {
+    title: string;
+    excerpt: string;
+    image: string;
+    tag: keyof typeof tags;
+    link?: string;
+    timestamp: number;
+    type: 'link' | 'text';
+}
+
 export const linkPosts: LinkPost[] = [
     {
         title: 'Exploring Routify in Svelte Kit',
