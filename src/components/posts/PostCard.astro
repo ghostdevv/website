@@ -15,7 +15,7 @@ const target = post.type == PostType['Text'] ? undefined : '_blank'
     <div class="details">
         <Tag name={post.tag} />
 
-        <h4 class="title">{post.title}</h4>
+        <h2 class="title">{post.title}</h2>
 
         <p class="description">
             {post.excerpt}
@@ -44,6 +44,11 @@ const target = post.type == PostType['Text'] ? undefined : '_blank'
         &:focus {
             text-decoration: none;
             box-shadow: 0 0 0 transparent, 0 0 0 5px var(--primary);
+        }
+
+        .title {
+            font-size: calc(1.275rem + .3vw);
+            font-weight: 500;
         }
 
         .image {
