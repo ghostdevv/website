@@ -11,7 +11,7 @@
 
 <style lang="scss">
     .tag {
-        background-color: rgba(var(--tag-colour), 0.5);
+        background-color: rgba(var(--tag-colour), 0.2);
         color: rgba(var(--tag-colour));
 
         border-radius: 16px;
