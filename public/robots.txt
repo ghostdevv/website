@@ -1,0 +1,3 @@
+Sitemap: https://ghostdev.xyz/sitemap.xml
+
+User-agent: *
