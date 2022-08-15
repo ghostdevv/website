@@ -9,14 +9,20 @@ interface LinkPost {
     timestamp: number;
 }
 
+export enum PostType {
+    Link,
+    Text,
+}
+
 export interface Post {
     title: string;
     excerpt: string;
     image: string;
     tag: keyof typeof tags;
     link?: string;
+    slug?: string;
     timestamp: number;
-    type: 'link' | 'text';
+    type: PostType;
 }
 
 export const linkPosts: LinkPost[] = [

@@ -1,6 +1,7 @@
 ---
 import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
+import Posts from '$components/posts/Posts.astro';
 import Page from '$layouts/Page.astro';
 import Fa from 'svelte-fa';
 ---
@@ -24,6 +25,8 @@ import Fa from 'svelte-fa';
             </a>
         </div>
     </section>
+
+    <Posts />
 </Page>
 
 <style>

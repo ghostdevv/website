@@ -1,0 +1,23 @@
+---
+import { mapPosts } from '$data/posts/utils';
+import PostCard from './PostCard.astro';
+
+const posts = mapPosts(await Astro.glob('../../pages/posts/**/*.md'));
+---
+
+<div class="posts">
+    {posts.map(post =>
+    <PostCard post={post} />)}
+</div>
+
+<style lang="scss">
+    .posts {
+        display: flex;
+        flex-wrap: wrap;
+
+        align-items: stretch;
+
+        gap: 22px;
+        width: 100%;
+    }
+</style>

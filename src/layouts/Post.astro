@@ -42,7 +42,8 @@ const { frontmatter } = Astro.props;
         <footer>
             <div class="row wrap">
                 <a href={tweetLink(`Checkout this post by @onlyspaceghost!
-                    https://ghostdev.xyz/posts/${frontmatter.slug}`)} class="button" target="_blank">
+                    https://ghostdev.xyz/posts/${Astro.url.pathname.split('/').at(-1)}`)} class="button"
+                    target="_blank">
                     <Fa icon={faTwitter} />
                     Share on twitter
                 </a>
