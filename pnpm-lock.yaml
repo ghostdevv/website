@@ -16,7 +16,7 @@ specifiers:
   prettier-plugin-astro: ^0.5.0
   prettier-plugin-svelte: ^2.7.0
   sass: ^1.54.4
-  svelte: ^3.46.4
+  svelte: ^3.49.0
   svelte-fa: ^3.0.3
   svelte-hamburgers: ^4.0.1
   svelte-local-storage-store: ^0.3.0
