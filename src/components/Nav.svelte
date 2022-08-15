@@ -22,7 +22,7 @@
 <div class="wrapper" class:open class:scroll>
     <nav>
         <div class="nav-fh">
-            <a href="/">
+            <a href="/" aria-label="Home">
                 <div class="logo">
                     <TRainbow />
                 </div>
