@@ -67,15 +67,17 @@
         width: 100%;
 
         background-color: var(--background-primary);
-        border-bottom: 4px solid rgba(0, 0, 0, 0);
 
-        transition: border-color 0.2s ease-in-out;
+        border: 0px !important;
+        border-bottom: 4px solid transparent !important;
+
+        transition: border-color 0.2s ease-in-out !important;
 
         &.scroll {
             box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.2),
                 0 4px 20px 0 rgba(0, 0, 0, 0.19);
 
-            border-color: var(--primary);
+            border-color: var(--primary) !important;
         }
 
         @include media($mobile) {
@@ -83,7 +85,7 @@
                 box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.2),
                     0 4px 20px 0 rgba(0, 0, 0, 0.19);
 
-                border-color: var(--primary);
+                border-color: var(--primary) !important;
             }
         }
     }

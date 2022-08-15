@@ -7,7 +7,7 @@
         <a
             href={project.url}
             target="_blank"
-            class="card center"
+            class="project card center"
             class:star={project.star}>
             <h5>{project.name}</h5>
         </a>
@@ -15,7 +15,12 @@
 </section>
 
 <style lang="scss">
-    .star {
-        border-color: var(--primary) !important;
+    .project {
+        border-color: var(--background-tertiary) !important;
+        transition: border-color 0.2s ease-in-out !important;
+
+        &.star {
+            border-color: var(--primary) !important;
+        }
     }
 </style>
