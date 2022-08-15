@@ -118,6 +118,8 @@
             justify-content: start;
             gap: 0px;
 
+            padding: 22px 24px;
+
             .nav-fh {
                 width: 100%;
 
@@ -187,5 +189,9 @@
 
         display: grid;
         place-items: center;
+
+        @include media('<900px') {
+            width: 60px;
+        }
     }
 </style>

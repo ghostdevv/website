@@ -14,6 +14,8 @@ const url = new URL(Astro.url);
 </Global>
 
 <style lang="scss">
+    @import 'src/helpers/media';
+
     .wrapper {
         max-width: 1400px;
         margin: 0px auto;
@@ -23,5 +25,9 @@ const url = new URL(Astro.url);
         padding-top: 140px;
 
         width: 100%;
+
+        @include media('<900px') {
+            padding-top: 120px;
+        }
     }
 </style>
