@@ -30,12 +30,21 @@ const target = post.type == PostType['Text'] ? undefined : '_blank';
 </a>
 
 <style lang="scss">
+    @import 'src/helpers/media';
+
     .postcard {
         display: flex;
         flex-direction: column;
         gap: 0px;
 
+        min-width: 325px;
         width: 325px;
+
+        @include media('<400px') {
+            min-width: 200px;
+            flex-shrink: 0;
+            width: 100%;
+        }
 
         color: var(--text) !important;
         background-color: var(--background-secondary) !important;
