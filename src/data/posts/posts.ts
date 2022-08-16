@@ -31,7 +31,7 @@ export const linkPosts: LinkPost[] = [
         excerpt:
             'GHOST does her first talk on Svelte Sirens about how awesome Routify in Svelte Kit can be!',
         image: 'routify-sveltekit-sirens.webp',
-        tag: 'twitter',
+        tag: 'youtube',
         link: 'https://www.youtube.com/watch?v=epVRgjhjI7M',
         timestamp: 1639764000000,
     },
