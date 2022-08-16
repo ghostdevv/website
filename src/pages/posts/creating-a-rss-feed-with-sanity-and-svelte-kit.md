@@ -10,7 +10,7 @@ timestamp: 1643897820000
 
 The other day [I decided that I wanted to start using an rss reader](https://twitter.com/onlyspaceghost/status/1487032568100839428). Since RSS is awesome I thought it only makes sense that I add it to my site. This post will go over how I did this, so you can add it to your blog! I will be using Sanity as my CMS but you can use any data source that you like.
 
-# Dependencies 
+# Dependencies
 
 The first step is to install the `rss` package to your Svelte Kit project. If you are not using Sanity don't install `groq` or `@sanity/client`
 
@@ -22,7 +22,7 @@ npm i rss @sanity/client groq -D
 
 We need a rss.xml endpoint that users can add to their RSS readers. In your routes folder create a file called `rss.xml.js`.
 
-Next we need to structure our endpoint, lets start by importing our dependencies and creating our GET function. 
+Next we need to structure our endpoint, lets start by importing our dependencies and creating our GET function.
 
 ```js
 // Only import these two if you are using Sanity
@@ -31,9 +31,7 @@ import groq from 'groq';
 
 import RSS from 'rss';
 
-export async function get() {
-
-};
+export async function get() {}
 ```
 
 # Creating your feed
@@ -91,8 +89,8 @@ We are just about done! The last step is returning the rss data from your endpoi
 
 ```js
 return {
-    body: feed.xml({ indent: true })
-}
+    body: feed.xml({ indent: true }),
+};
 ```
 
 # End Result
@@ -141,7 +139,7 @@ export async function get() {
         });
 
     return {
-        body: feed.xml({ indent: true })
-    }
-};
+        body: feed.xml({ indent: true }),
+    };
+}
 ```

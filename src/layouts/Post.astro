@@ -1,7 +1,7 @@
 ---
 import SettingsModal from '$components/posts/SettingsModal.svelte';
-import { faTwitter } from '@fortawesome/free-brands-svg-icons'
-import { faRss } from '@fortawesome/free-solid-svg-icons'
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faRss } from '@fortawesome/free-solid-svg-icons';
 import Tag from '$components/posts/Tag.svelte';
 import { tweetLink } from '$helpers/twitter';
 import { format } from 'date-fns';
@@ -14,13 +14,18 @@ const { frontmatter } = Astro.props;
 
 <Page frontmatter={frontmatter}>
     <article>
-        <div class="meta-image" style={`--image: url(/post-images/${frontmatter?.image})`}>
+        <div
+            class="meta-image"
+            style={`--image: url(/post-images/${frontmatter?.image})`}
+        >
             <div class="meta">
                 <div class="tag">
                     <Tag name={frontmatter.tag} large />
                 </div>
 
-                <p class="timestamp">{format(frontmatter?.timestamp, 'do LLLL yyyy')}</p>
+                <p class="timestamp">
+                    {format(frontmatter?.timestamp, 'do LLLL yyyy')}
+                </p>
 
                 <h1 class="title">{frontmatter?.title}</h1>
 
@@ -36,14 +41,18 @@ const { frontmatter } = Astro.props;
             <slot />
         </div>
 
-
         <hr />
 
         <footer>
             <div class="row wrap">
-                <a href={tweetLink(`Checkout this post by @onlyspaceghost!
-                    https://ghostdev.xyz/posts/${Astro.url.pathname.split('/').at(-1)}`)} class="button"
-                    target="_blank">
+                <a
+                    href={tweetLink(`Checkout this post by @onlyspaceghost!
+                    https://ghostdev.xyz/posts/${Astro.url.pathname
+                        .split('/')
+                        .at(-1)}`)}
+                    class="button"
+                    target="_blank"
+                >
                     <Fa icon={faTwitter} />
                     Share on twitter
                 </a>
@@ -58,7 +67,6 @@ const { frontmatter } = Astro.props;
         </footer>
     </article>
 </Page>
-
 
 <style lang="scss">
     @import 'src/helpers/media';
