@@ -11,7 +11,7 @@
 
     let open = false;
 
-    $: mobile = width < 900;
+    $: mobile = width < 750;
     $: scroll = scrollY > 0;
     $: if (!mobile) open = false;
 </script>
@@ -65,7 +65,7 @@
 <style lang="scss">
     @import 'src/helpers/media';
 
-    $mobile: '<900px';
+    $mobile: '<750px';
 
     .wrapper {
         position: fixed;
@@ -170,8 +170,8 @@
     }
 
     .logo {
-        width: 75px;
-        height: 75px;
+        width: 70px;
+        height: 70px;
 
         display: grid;
         place-items: center;
