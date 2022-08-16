@@ -2,6 +2,7 @@
     import { slide } from 'svelte-reduced-motion/transition';
     import { Hamburger } from 'svelte-hamburgers';
     import TRainbow from './TRainbow.svelte';
+    import { mounted } from 'svelte-mount';
 
     export let url: URL;
 
@@ -12,42 +13,50 @@
 
     $: mobile = width < 900;
     $: scroll = scrollY > 0;
-
     $: if (!mobile) open = false;
 </script>
 
 <svelte:window bind:innerWidth={width} bind:scrollY />
 
-<div class="wrapper" class:open class:scroll>
+<div class="wrapper" class:active={scroll || open}>
     <nav>
-        <div class="nav-fh">
-            <a href="/" aria-label="Home">
-                <div class="logo">
-                    <TRainbow />
-                </div>
-            </a>
+        <a href="/" class="logo" aria-label="Home">
+            <TRainbow />
+        </a>
 
-            <div class="hamburger">
-                <Hamburger --color="var(--text)" type="squeeze" bind:open />
-            </div>
+        <div class="hamburger">
+            <Hamburger --color="var(--text)" type="squeeze" bind:open />
         </div>
 
-        {#if open || !mobile}
-            <div
-                class="nav-sh"
-                transition:slide|local
-                class:open={open || !mobile}>
-                <div class="links">
-                    <a href="/" class:active={url.pathname == '/'}> Home </a>
+        <div class="links desktop">
+            <a href="/" class="link" class:active={url.pathname == '/'}>
+                Home
+            </a>
 
-                    {#each ['posts', 'projects', 'donate', 'contact'] as link, i (i)}
-                        <a
-                            href="/{link}"
-                            class:active={url.pathname.startsWith(`/${link}`)}>
-                            {link}
-                        </a>
-                    {/each}
-                </div>
+            {#each ['posts', 'projects', 'donate', 'contact'] as link, i (i)}
+                <a
+                    href="/{link}"
+                    class="link"
+                    class:active={url.pathname.startsWith(`/${link}`)}>
+                    {link}
+                </a>
+            {/each}
+        </div>
+
+        {#if $mounted && mobile && open}
+            <div class="links" transition:slide>
+                <a href="/" class="link" class:active={url.pathname == '/'}>
+                    Home
+                </a>
+
+                {#each ['posts', 'projects', 'donate', 'contact'] as link, i (i)}
+                    <a
+                        href="/{link}"
+                        class="link"
+                        class:active={url.pathname.startsWith(`/${link}`)}>
+                        {link}
+                    </a>
+                {/each}
             </div>
         {/if}
     </nav>
@@ -57,7 +66,6 @@
     @import 'src/helpers/media';
 
     $mobile: '<900px';
-    $desktop: '>900px';
 
     .wrapper {
         position: fixed;
@@ -75,26 +83,11 @@
 
         transition: border-color 0.2s ease-in-out !important;
 
-        &.scroll {
+        &.active {
             box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.2),
                 0 4px 20px 0 rgba(0, 0, 0, 0.19);
 
             border-color: var(--primary) !important;
-        }
-
-        @include media($mobile) {
-            &.open {
-                box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.2),
-                    0 4px 20px 0 rgba(0, 0, 0, 0.19);
-
-                border-color: var(--primary) !important;
-            }
-        }
-    }
-
-    @include media($desktop) {
-        .hamburger {
-            display: none;
         }
     }
 
@@ -107,91 +100,85 @@
 
         display: flex;
         align-items: center;
-        gap: 32px;
-
-        .nav-sh {
-            display: contents;
-        }
+        gap: 22px;
 
         @include media($mobile) {
-            flex-direction: column;
-            justify-content: start;
+            display: grid;
+            grid-template-columns: 1fr max-content;
+            grid-template-areas: max-content 1fr;
+            grid-template-areas: 'logo hamburger' 'links links';
             gap: 0px;
 
             padding: 22px 24px;
+        }
 
-            .nav-fh {
-                width: 100%;
+        .hamburger {
+            grid-area: hamburger;
+            display: none;
 
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
+            @include media($mobile) {
+                display: block;
             }
+        }
 
-            .nav-sh {
-                display: flex;
+        .logo {
+            grid-area: logo;
+        }
+
+        .links {
+            grid-area: links;
+
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            @include media($mobile) {
                 flex-direction: column;
-                gap: 22px;
 
-                margin-top: 16px;
-                height: 100%;
-
-                .links {
-                    margin: 0px auto;
-                    flex-direction: column;
-                    gap: 8px;
-
-                    a {
-                        font-size: 1.5rem;
-                        border-width: 2px;
-                        border: none;
-                    }
+                &.desktop {
+                    display: none;
                 }
             }
         }
     }
 
-    .links {
-        display: flex;
-        align-items: center;
-        gap: 16px;
+    .link {
+        text-transform: capitalize;
+        font-weight: 600;
+        padding: 12px 16px;
 
-        a {
-            text-transform: capitalize;
-            font-weight: 600;
-            padding: 12px 16px;
+        border-radius: 8px;
+        border: 2px solid transparent;
 
-            border-radius: 8px;
-            border: 2px solid transparent;
+        transition: border-color 0.2s ease-in-out, opacity 0.2s ease-in-out;
 
-            transition: border-color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+        color: var(--text);
+        opacity: 0.6;
 
-            color: var(--text);
-            opacity: 0.6;
+        text-decoration: none;
 
-            text-decoration: none;
+        &.active {
+            opacity: 1;
+        }
 
-            &.active {
-                opacity: 1;
-            }
-
-            &:hover,
-            &:focus {
-                opacity: 1;
-                background-color: inherit;
-                border-color: var(--primary);
-            }
+        &:hover,
+        &:focus {
+            opacity: 1;
+            background-color: inherit;
+            border-color: var(--primary);
         }
     }
 
     .logo {
         width: 75px;
+        height: 75px;
 
         display: grid;
         place-items: center;
 
-        @include media('<900px') {
+        @include media($mobile) {
             width: 60px;
+            height: 60px;
         }
     }
 </style>
