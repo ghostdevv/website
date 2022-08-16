@@ -1,6 +1,7 @@
 ---
 import { Post, PostType } from '$data/posts/posts';
-// import { Image } from '@astrojs/image/components';
+import { getImageData } from '$data/posts/images';
+import { Image } from '@astrojs/image/components';
 import Tag from './Tag.svelte';
 
 const post = Astro.props.post as Post;
@@ -10,13 +11,7 @@ const target = post.type == PostType['Text'] ? undefined : '_blank';
 ---
 
 <a href={href} target={target} class="postcard" aria-label={post.title}>
-    <!-- <Image width={500} src="" alt="Post Cover Image" /> -->
-    <img
-        src={`/post-images/${post.image}`}
-        alt="Post Cover Image"
-        width="500"
-        height="300"
-    />
+    <Image width={500} src={getImageData(post.image)!} alt="Post Cover Image" />
 
     <div class="details">
         <Tag name={post.tag} />

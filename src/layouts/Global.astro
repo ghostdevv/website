@@ -1,5 +1,6 @@
 ---
 import 'ghostsui';
+import { getImageSrc } from '$data/posts/images';
 
 const frontmatter = Astro.props.frontmatter || {};
 
@@ -12,10 +13,10 @@ const description =
     'Hi I am GHOST! Welcome to my site, here you can look at my posts, find out more about what I do, follow me on socials, and donate!';
 
 const image_path = frontmatter.image
-    ? `post-images/${frontmatter.image}`
-    : 'banner.png';
+    ? await getImageSrc(frontmatter.image)
+    : '/banner.png';
 
-const image = `https://ghostdev.xyz/${image_path}`;
+const image = `https://ghostdev.xyz${image_path}`;
 ---
 
 <!DOCTYPE html>
