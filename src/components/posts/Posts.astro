@@ -6,7 +6,7 @@ const posts = mapPosts(await Astro.glob('../../pages/posts/**/*.md'));
 ---
 
 <div class="posts">
-    {posts.map((post) => <PostCard post={post} />)}
+    {posts.map((post) => <PostCard {post} />)}
 </div>
 
 <style lang="scss">
