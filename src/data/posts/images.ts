@@ -14,6 +14,7 @@ export async function getImageSrc(name: string): Promise<string> {
     const image = await getImage({
         src: getImageData(name)!,
         aspectRatio: 16 / 9,
+        format: 'webp',
         width: 1000,
     });
 

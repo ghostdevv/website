@@ -11,7 +11,7 @@ const target = post.type == PostType['Text'] ? undefined : '_blank';
 ---
 
 <a href={href} target={target} class="postcard" aria-label={post.title}>
-    <Image width={500} src={getImageData(post.image)!} alt="Post Cover Image" />
+    <Image width={500} src={getImageData(post.image)!} alt="Post Cover Image" format="webp" />
 
     <div class="details">
         <Tag name={post.tag} />
