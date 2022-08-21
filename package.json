@@ -1,6 +1,6 @@
 {
-  "name": "@example/basics",
-  "version": "0.0.1",
+  "name": "website",
+  "version": "3.0.0",
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -16,7 +16,7 @@
     "@astrojs/svelte": "^1.0.0",
     "@fortawesome/free-brands-svg-icons": "^6.1.2",
     "@fortawesome/free-solid-svg-icons": "^6.1.2",
-    "astro": "^1.0.5",
+    "astro": "^1.0.6",
     "date-fns": "^2.29.1",
     "ghostsui": "^1.4.4",
     "include-media": "^1.4.10",

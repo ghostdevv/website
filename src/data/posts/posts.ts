@@ -31,7 +31,7 @@ export const linkPosts: LinkPost[] = [
         excerpt:
             'GHOST does her first talk on Svelte Sirens about how awesome Routify in Svelte Kit can be!',
         image: 'routify-sveltekit-sirens.webp',
-        tag: 'twitter',
+        tag: 'youtube',
         link: 'https://www.youtube.com/watch?v=epVRgjhjI7M',
         timestamp: 1639764000000,
     },
@@ -52,5 +52,14 @@ export const linkPosts: LinkPost[] = [
         tag: 'twitter',
         link: 'https://twitter.com/onlyspaceghost/status/1481610492057686016',
         timestamp: 1642078560000,
+    },
+    {
+        title: 'Astro & Svelte',
+        excerpt:
+            'Astro just hit 1.0! Fred K Schott joins us to answer questions on Astro and see how you can integrate Svelte.',
+        image: 'astro-svelte.png',
+        tag: 'youtube',
+        link: 'https://www.youtube.com/watch?v=iYKKg-50Gm4',
+        timestamp: 1660676400000,
     },
 ];

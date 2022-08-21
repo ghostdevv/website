@@ -2,6 +2,7 @@
 import SettingsModal from '$components/posts/SettingsModal.svelte';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faRss } from '@fortawesome/free-solid-svg-icons';
+import { getImageSrc } from '$data/posts/images';
 import Tag from '$components/posts/Tag.svelte';
 import { tweetLink } from '$helpers/twitter';
 import { format } from 'date-fns';
@@ -10,14 +11,13 @@ import Fa from 'svelte-fa';
 import './post.scss';
 
 const { frontmatter } = Astro.props;
+
+const imageUrl = await getImageSrc(frontmatter.image!);
 ---
 
 <Page frontmatter={frontmatter}>
     <article>
-        <div
-            class="meta-image"
-            style={`--image: url(/post-images/${frontmatter?.image})`}
-        >
+        <div class="meta-image" style={`--image: url(${imageUrl})`}>
             <div class="meta">
                 <div class="tag">
                     <Tag name={frontmatter.tag} large />
@@ -112,6 +112,7 @@ const { frontmatter } = Astro.props;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+            object-fit: cover;
 
             .meta {
                 $cp: '<900px';
