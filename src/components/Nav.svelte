@@ -19,13 +19,16 @@
 <svelte:window bind:innerWidth={width} bind:scrollY />
 
 <div class="wrapper" class:active={scroll || open}>
-    <nav>
-        <a href="/" class="logo" aria-label="Home">
+    <nav class:scroll>
+        <a class:scroll href="/" class="logo" aria-label="Home">
             <TRainbow />
         </a>
 
         <div class="hamburger">
-            <Hamburger --color="var(--text)" type="squeeze" bind:open />
+            <Hamburger
+                --color="var(--text)"
+                type="squeeze"
+                bind:open />
         </div>
 
         <div class="links desktop">
@@ -66,6 +69,7 @@
     @import 'src/helpers/media';
 
     $mobile: '<750px';
+    $desktop: '>750px';
 
     .wrapper {
         position: fixed;
@@ -79,14 +83,16 @@
         background-color: var(--background-primary);
 
         border: 0px !important;
-        border-bottom: 4px solid transparent !important;
+        border-bottom: 2px solid transparent !important;
 
-        transition: border-color 0.2s ease-in-out !important;
+        transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out !important;
 
         &.active {
-            box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.2),
-                0 4px 20px 0 rgba(0, 0, 0, 0.19);
+            box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.1),
+                0 4px 20px 0 rgba(0, 0, 0, 0.1);
 
+            background-color: rgba(var(--background-primary-rgb), 0.8);
+            backdrop-filter: blur(12px);
             border-color: var(--primary) !important;
         }
     }
@@ -109,7 +115,16 @@
             grid-template-areas: 'logo hamburger' 'links links';
             gap: 0px;
 
-            padding: 22px 24px;
+            padding: 12px 24px;
+        }
+
+        
+        @include media($desktop) {
+            transition: padding 0.2s ease-in-out;
+        
+            &.scroll {
+                padding: 20px 24px;
+            }
         }
 
         .hamburger {
@@ -170,15 +185,24 @@
     }
 
     .logo {
-        width: 70px;
-        height: 70px;
+        width: 60px;
+        height: 60px;
 
         display: grid;
         place-items: center;
 
+        transition: height 0.2s ease-in-out, width 0.2s ease-in-out; 
+        
+        @include media($desktop) {
+            &.scroll {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
         @include media($mobile) {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
         }
     }
 </style>
