@@ -2,7 +2,7 @@
 layout: $layouts/Post.astro
 
 tag: blog
-title: Build a cross platform app with Tauri and Svelte
+title: Build a cross platform app with Tauri
 excerpt: 
 image: placeholder.png
 timestamp: 
@@ -10,7 +10,7 @@ timestamp:
 
 [Tauri](https://tauri.studio/) proves that building fast, lightweight, and portable desktop applications doesn't have to come at a cost. Developers traditionally reach for tools like [Electron](https://www.electronjs.org/), which powers some of the most popular desktop apps around such as VSCode, Spotify, and Discord. However, newer tools such as [Tauri](https://tauri.studio/) are changing how we think about bringing the Web to our desktops. Tauri is powered by Rust which is a big reason why it's so fast and lightweight. 
 
-In this post, we will be creating a simple file reading app with Svelte and Tauri. I chose Svelte here as it's my favourite frontend framework however you can use whatever web stack you like!
+In this post, we will be creating a simple file reading app with Svelte and Tauri. I chose Svelte for the frontend here as it's my favourite framework, however you can use whatever web stack you like!
 
 ! MAYBE INSERT GIF OF APP HERE
 
