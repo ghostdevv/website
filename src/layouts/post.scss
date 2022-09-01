@@ -4,6 +4,10 @@
     font-size: var(--post-font-size, 16px);
     line-height: var(--post-line-height, 1.5);
 
+    code {
+        font-size: calc(var(--post-font-size, 16px) - 2px);
+    }
+
     pre {
         width: 100%;
         padding: 22px;
@@ -14,8 +18,13 @@
         background-color: var(--background-secondary) !important;
     }
 
-    code {
-        font-size: calc(var(--post-font-size, 16px) - 2px);
+    code:not(pre code) {
+        background-color: var(--background-secondary);
+        color: var(--secondary);
+        border-radius: 8px;
+        font-weight: bold;
+        padding: 4px 8px;
+        white-space: pre;
     }
 
     ul,

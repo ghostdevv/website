@@ -134,7 +134,7 @@ const imageUrl = await getImageSrc(frontmatter.image!);
                 border-radius: 0 0 $border-radius $border-radius;
 
                 // Re-enable this when/if it's fixed
-                // backdrop-filter: blur(8px);
+                backdrop-filter: blur(8px);
 
                 @include media($cp) {
                     grid-template-areas:
@@ -143,7 +143,7 @@ const imageUrl = await getImageSrc(frontmatter.image!);
                         'title';
 
                     grid-template-columns: 1fr;
-                    grid-template-rows: 1fr max-content 1fr;
+                    grid-template-rows: min-content max-content 1fr;
 
                     justify-items: center;
                     align-items: center;
@@ -160,6 +160,10 @@ const imageUrl = await getImageSrc(frontmatter.image!);
                     grid-area: tag;
                     min-height: fit-content;
                     min-width: fit-content;
+                
+                    @include media($cp) {
+                        padding: 8px 0px;
+                    }
                 }
 
                 .timestamp {
