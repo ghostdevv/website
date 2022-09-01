@@ -19,12 +19,13 @@
     }
 
     code:not(pre code) {
-        background-color: rgba(var(--primary-rgb), 0.1);
-        color: var(--secondary);
+        background-color: var(--background-secondary);
+        color: var(--primary);
+        border-radius: 8px;
         font-weight: bold;
         padding: 4px 8px;
+        white-space: pre;
     }
-
 
     ul,
     ol {
