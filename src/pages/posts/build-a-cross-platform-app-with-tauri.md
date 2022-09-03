@@ -18,7 +18,7 @@ In this post, we will be creating a simple file reading app with Svelte and Taur
 
 If you want to follow along with this post in your IDE you might need to install some tools. It won't take long and you can find [Tauri's official guide](https://tauri.app/v1/guides/getting-started/prerequisites) on their website.
 
-For those of you who haven't written any Rust before, don't be scared. Rust is one of the best programming languages ever made. If you aren't convinced then five minutes of watching [No Boilerplate on YouTube](https://www.youtube.com/c/NoBoilerplate) will make you fall in love. If you want to learn rust there are so many [free YouTube tutorials](https://www.youtube.com/results?search_query=learn+rust+), and there is an amazing course called [Rust for JavaScript developers](https://rustforjs.dev/) if you want to purchase some material.
+For those of you who haven't written any Rust before, don't be scared. Rust is one of the best programming languages ever made. If you aren't convinced then five minutes of watching [No Boilerplate on YouTube](https://www.youtube.com/c/NoBoilerplate) will make you fall in love. For those yet to learn rust, there are so many [free YouTube tutorials](https://www.youtube.com/results?search_query=learn+rust+). If you want to purchase a course then I recommend the amazing [Rust for JavaScript developers](https://rustforjs.dev/).
 
 # Create our project
 
@@ -28,11 +28,11 @@ Fortunately we don't need to do any work here as `create-tauri-app` will do all 
 npm create tauri-app
 ```
 
-Once we have answered a couple questions it will tell us to open our code editor and run `npm run tauri dev`. The first time we run this Rust will need to compile some dependancies, but don't worry they are cached on subsequent runs.
+Once we have answered a couple questions, open your code editor and run `npm run tauri dev`. The first time this runs Rust will need to compile some dependancies, but don't worry they are cached on subsequent runs.
 
 # Project Structure
 
-This part won't show the Svelte specific parts as that won't be helpful if you aren't using Svelte. But every project will have this core structure:
+Every project will have this core structure, it doesn't include any framework specific files:
 
 ```
 package.json
@@ -46,7 +46,7 @@ src-tauri/              # The backend app code
 
 Tauri has a system called [commands](https://tauri.app/v1/guides/features/command/) which allow you to call Rust code from the frontend. You can write as many commands as you like and are a superpower when writing any Tauri app. There are also [built in commands](https://tauri.app/v1/api/js/modules/app) for common tasks, these are what we will be using today.
 
-For those of you curious about the shape of a Tauri command lets write a command that takes in a `name` parameter and returns `Hello <name>!`.
+For those of you curious about the shape of a Tauri command lets write an example command that takes in a `name` parameter and returns `Hello <name>!`.
 
 ```rs
 #[tauri::command] // This macro marks this as a command
