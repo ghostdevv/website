@@ -10,7 +10,7 @@ timestamp:
 
 [Tauri](https://tauri.studio/) proves that building fast, lightweight, and portable desktop applications doesn't have to come at a cost. Developers traditionally reach for tools like [Electron](https://www.electronjs.org/), which powers some of the most popular desktop apps around such as VSCode, Spotify, and Discord. However, newer tools such as [Tauri](https://tauri.studio/) are changing how we think about bringing the Web to our desktops. Tauri is powered by Rust which is a big reason why it's so fast and lightweight. 
 
-In this post, we will be creating a simple file reading app with Svelte and Tauri. I chose Svelte for the frontend here as it's my favourite framework, however you can use whatever web stack you like!
+In this post I will create a simple file reading app with Svelte and Tauri, and explain how Tauri works along the way. I chose Svelte for the frontend here as it's my favourite framework, however you can use whatever web stack you like!
 
 ! MAYBE INSERT GIF OF APP HERE
 
@@ -18,7 +18,7 @@ In this post, we will be creating a simple file reading app with Svelte and Taur
 
 If you want to follow along with this post in your IDE you might need to install some tools. It won't take long and you can find [Tauri's official guide](https://tauri.app/v1/guides/getting-started/prerequisites) on their website.
 
-For those of you who haven't written any Rust before, don't be scared. Rust is one of the best programming languages ever made. If you aren't convinced then five minutes of watching [No Boilerplate on YouTube](https://www.youtube.com/c/NoBoilerplate) will make you fall in love. For those yet to learn rust, there are so many [free YouTube tutorials](https://www.youtube.com/results?search_query=learn+rust+). If you want to purchase a course then I recommend the amazing [Rust for JavaScript developers](https://rustforjs.dev/).
+For those of you who haven't written any Rust before, don't be scared. Rust is one of the best programming languages ever made. If you aren't convinced then five minutes of watching [No Boilerplate on YouTube](https://www.youtube.com/c/NoBoilerplate) will make you fall in love. For those yet to learn rust, there are so many [free YouTube tutorials](https://www.youtube.com/results?search_query=learn+rust+). There is also an amazing paid course called [Rust for JavaScript developers](https://rustforjs.dev/).
 
 # Create our project
 
@@ -62,7 +62,7 @@ import { invoke } from '@tauri-apps/api/tauri';
 
 async function run() {
     const result = await invoke('greet', {
-        // Because of how powerful Rust's macros are Tauri can workout that the parameter the greet function has is called name
+        // Because of how powerful Rust's macros are, Tauri can workout that the parameter our greet command takes is called "name"
         name: 'Willow'
     });
 
@@ -71,3 +71,35 @@ async function run() {
 
 run()
 ```
+
+# File Reading app
+
+As promised we can now cover our file reading app. Using what we have learned about Tauri we can hit the ground running.
+
+We are going to use the `dialog` and `fs` built-in APIs. The `dialog` api's `open` function is used to prompt the user to select a path, there is a lot of options you can use here to control what the user can select. The `fs` library provides a few options for reading files but we are going to use the `readTextFile` api.
+
+```svelte
+<script>
+    import { readTextFile } from '@tauri-apps/api/fs';
+    import { open } from '@tauri-apps/api/dialog';
+
+    let contents;
+
+    async function openFile() {
+        const file = await open({
+            multiple: false,
+            directory: false,
+        });
+
+        contents = await readTextFile(file);
+    }
+</script>
+
+<button on:click={openFile}> Open File </button>
+
+{#if contents}
+    <pre>{contents}</pre>
+{/if}
+```
+
+The code for this app is [available on GitHub](https://github.com/ghostdevv/tauri-file-reader) if you want to check that out.
