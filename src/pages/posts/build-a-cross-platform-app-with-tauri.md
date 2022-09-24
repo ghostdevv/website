@@ -103,3 +103,7 @@ We are going to use the `dialog` and `fs` built-in APIs. The `dialog` api's `ope
 ```
 
 The code for this app is [available on GitHub](https://github.com/ghostdevv/tauri-file-reader) if you want to check that out.
+
+# Conclusion
+
+Tauri is great for building cross platform applications. It's light weight and comes with all kinds of APIs and features for powering your app, plus it supports using web technology which makes it super easy to use. If you want to get started checkout [the official guides](https://tauri.app/v1/guides/), and for support you can [join the Tauri Discord](https://discord.com/invite/tauri), or [my Discord The Dev Lounge](https://discord.gg/2Vd4wAjJnm).
