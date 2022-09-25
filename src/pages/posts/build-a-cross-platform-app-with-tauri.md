@@ -3,7 +3,7 @@ layout: $layouts/Post.astro
 
 tag: blog
 title: Build a cross platform app with Tauri
-excerpt: 
+excerpt: Tauri is excellent at building cross-platform lightweight desktop applications using web technology. This post covers what Tauri is, and what it can do.
 image: placeholder.png
 timestamp: 
 ---
