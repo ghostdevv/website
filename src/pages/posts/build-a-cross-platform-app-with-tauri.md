@@ -104,6 +104,14 @@ We are going to use the `dialog` and `fs` built-in APIs. The `dialog` api's `ope
 
 The code for this app is [available on GitHub](https://github.com/ghostdevv/tauri-file-reader) if you want to check that out.
 
+# Building
+
+You can build your app as a [Windows Installer](https://tauri.app/v1/guides/building/windows), [MacOS Bundle](https://tauri.app/v1/guides/building/macos), [Debian Package](https://tauri.app/v1/guides/building/debian), or an [App Image](https://tauri.app/v1/guides/distribution/linux#appimage). All the build decisions are managed through your `tauri.conf.json` so you don't have to use an external tool or mess around with cli flags.
+
+Tauri doesn't fully support [cross-platform compliation](https://tauri.app/v1/guides/building/cross-platform) (for example if I were on Linux I could build for windows). The recommended workflow is to use [CI/CD such as GitHub actions](https://tauri.app/v1/guides/building/cross-platform#tauri-github-action).
+
+Building your Tauri app is as simple as `npm run tauri build`!
+
 # Conclusion
 
 Tauri is great for building cross platform applications. It's light weight and comes with all kinds of APIs and features for powering your app, plus it supports using web technology which makes it super easy to use. If you want to get started checkout [the official guides](https://tauri.app/v1/guides/), and for support you can [join the Tauri Discord](https://discord.com/invite/tauri), or [my Discord The Dev Lounge](https://discord.gg/2Vd4wAjJnm).
