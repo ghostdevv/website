@@ -77,7 +77,7 @@ export const linkPosts: LinkPost[] = [
             "GHOST joins Oliver's Stream to helpout with his Backblaze B2 Image Galley with Svelte",
         image: 'oliver-b2-stream.png',
         tag: 'stream',
-        link: '',
+        link: 'https://www.twitch.tv/videos/1588401790',
         timestamp: 1662925899000,
     },
 ];
