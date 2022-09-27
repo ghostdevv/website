@@ -62,4 +62,22 @@ export const linkPosts: LinkPost[] = [
         link: 'https://www.youtube.com/watch?v=iYKKg-50Gm4',
         timestamp: 1660676400000,
     },
+    {
+        title: 'Upgrading SvelteKit',
+        excerpt:
+            'GHOST joins Brittney and Kev to update the Svelte Sirens website and showcase upgrading your SvelteKit projects',
+        image: 'upgrading-sveltekit.png',
+        tag: 'stream',
+        link: 'https://www.youtube.com/watch?v=vzeZskhjoeQ',
+        timestamp: 1664283600000,
+    },
+    {
+        title: 'Backblaze B2 Image Gallery',
+        excerpt:
+            "GHOST joins Oliver's Stream to helpout with his Backblaze B2 Image Galley with Svelte",
+        image: 'oliver-b2-stream.png',
+        tag: 'stream',
+        link: '',
+        timestamp: 1662925899000,
+    },
 ];
