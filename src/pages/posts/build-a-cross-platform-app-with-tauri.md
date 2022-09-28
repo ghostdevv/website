@@ -44,9 +44,10 @@ src-tauri/              # The backend app code
 
 # Tauri API
 
-Tauri provides many powerful built in APIs for interacting with the system, this includes `fs`, `path`, `clipboard`, `os`, [and much more](https://tauri.app/v1/api/js/). You can use this api with the `@tauri-apps/api` package which you will become very familiar with. We will even be using some of these APIs later! Let's show an example of how you might use the `clipboard` API:
+Tauri provides many powerful built in APIs for interacting with the system. This includes `fs`, `path`, `clipboard`, `os`, [and much more](https://tauri.app/v1/api/js/). You can use this api with the `@tauri-apps/api` package, which you will soon become very familiar with. We will even be using some of these APIs later! Let's show an example of how you might use the `clipboard` API:
 
 ```js
+// Import from @tauri-apps/api/ followed by the name of the API you want
 import { readText, writeText } from '@tauri-apps/api/clipboard';
 
 // Get the text from the clipboard
@@ -61,9 +62,7 @@ await writeText(newText)
 
 # Tauri Commands
 
-Tauri has a system called [commands](https://tauri.app/v1/guides/features/command/) which allow you to call Rust code from the frontend. You can write as many commands as you like, and they're a superpower when writing Tauri apps.
-
-For those of you curious about the shape of a Tauri command, let's write an example command that takes in a `name` parameter and returns `Hello <name>!`.
+Tauri has a system called [commands](https://tauri.app/v1/guides/features/command/) which allow you to call Rust code from the frontend. You can write as many commands as you like, and they're a superpower when writing Tauri apps. For those of you curious about the shape of a Tauri command, let's write an example command that takes in a `name` parameter and returns `Hello <name>!`.
 
 ```rs
 #[tauri::command] // This macro marks this as a command
