@@ -12,8 +12,6 @@ timestamp:
 
 In this post, I will create a simple file reading app with Svelte and Tauri, and explain how Tauri works along the way. I chose Svelte for the frontend here as it's my favourite framework, but you can use whatever web stack you like!
 
-! MAYBE INSERT GIF OF APP HERE
-
 # Prerequisites
 
 If you want to follow along with this post in your IDE, you might need to install some tools. It won't take long, and you can find [Tauri's official guide](https://tauri.app/v1/guides/getting-started/prerequisites) on their website.
