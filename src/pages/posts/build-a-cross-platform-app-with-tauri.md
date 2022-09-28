@@ -5,7 +5,7 @@ tag: blog
 title: Build a cross platform app with Tauri
 excerpt: Tauri is excellent at building cross-platform lightweight desktop applications using web technology. This post covers what Tauri is, and what it can do.
 image: tauri-svelte.png
-timestamp: 
+timestamp: 1664324761977
 ---
 
 [Tauri](https://tauri.studio/) proves that building fast, lightweight, and portable desktop applications using web technology doesn't have to come at a cost. Developers traditionally reach for tools like [Electron](https://www.electronjs.org/), which powers some of the most popular desktop apps around such as VSCode, Spotify, and Discord. However, newer tools such as [Tauri](https://tauri.studio/) are changing how we think about bringing the Web to our desktops. Tauri is powered by Rust which is a big reason why it's so fast and lightweight.
