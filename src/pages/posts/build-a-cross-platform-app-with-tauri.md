@@ -72,7 +72,7 @@ fn greet(name: &str) -> String {
 }
 ```
 
-We should also add this command to our tauri handler:
+We should also add this command to our Tauri handler:
 
 ```rs
 fn main() {
