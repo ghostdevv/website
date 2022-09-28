@@ -44,7 +44,7 @@ src-tauri/              # The backend app code
 
 # Tauri API
 
-Tauri provides many powerful built in APIs for interacting with the system, this includes `fs`, `path`, `clipboard`, `os`, [and much more](https://tauri.app/v1/api/js/). You can use this api with the `@tauri-apps/api` package which you will become very familiar with. We will even be using some of these APIs later! Let's show an example of how you might call the `clipboard` API:
+Tauri provides many powerful built in APIs for interacting with the system, this includes `fs`, `path`, `clipboard`, `os`, [and much more](https://tauri.app/v1/api/js/). You can use this api with the `@tauri-apps/api` package which you will become very familiar with. We will even be using some of these APIs later! Let's show an example of how you might use the `clipboard` API:
 
 ```js
 import { readText, writeText } from '@tauri-apps/api/clipboard';
