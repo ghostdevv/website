@@ -24,7 +24,7 @@ const imageUrl = await getImageSrc(frontmatter.image!);
                 </div>
 
                 <p class="timestamp">
-                    {format(frontmatter?.timestamp, 'do LLLL yyyy')}
+                    {format(frontmatter?.timestamp || 0, 'do LLLL yyyy')}
                 </p>
 
                 <h1 class="title">{frontmatter?.title}</h1>
