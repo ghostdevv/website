@@ -8,7 +8,7 @@ image: tauri-svelte.png
 timestamp: 
 ---
 
-[Tauri](https://tauri.studio/) proves that building fast, lightweight, and portable desktop applications doesn't have to come at a cost. Developers traditionally reach for tools like [Electron](https://www.electronjs.org/), which powers some of the most popular desktop apps around such as VSCode, Spotify, and Discord. However, newer tools such as [Tauri](https://tauri.studio/) are changing how we think about bringing the Web to our desktops. Tauri is powered by Rust which is a big reason why it's so fast and lightweight. 
+[Tauri](https://tauri.studio/) proves that building fast, lightweight, and portable desktop applications using web technology doesn't have to come at a cost. Developers traditionally reach for tools like [Electron](https://www.electronjs.org/), which powers some of the most popular desktop apps around such as VSCode, Spotify, and Discord. However, newer tools such as [Tauri](https://tauri.studio/) are changing how we think about bringing the Web to our desktops. Tauri is powered by Rust which is a big reason why it's so fast and lightweight.
 
 In this post, I will create a simple file reading app with Svelte and Tauri, and explain how Tauri works along the way. I chose Svelte for the frontend here as it's my favourite framework, but you can use whatever web stack you like!
 
@@ -42,9 +42,26 @@ src-tauri/              # The backend app code
     src/                # Our tauri/custom rust code
 ```
 
-# Tauri Commands/API
+# Tauri API
 
-Tauri has a system called [commands](https://tauri.app/v1/guides/features/command/) which allow you to call Rust code from the frontend. You can write as many commands as you like, and they're a superpower when writing Tauri apps. There are also [built in commands](https://tauri.app/v1/api/js/modules/app) for common tasks. These are what we will be using today.
+Tauri provides many powerful built in APIs for interacting with the system, this includes `fs`, `path`, `clipboard`, `os` [and much more](https://tauri.app/v1/api/js/). You can use this api with the `@tauri-apps/api` which you will become very familiar with. We will even be using some of these APIs later. Let's show an example of how you might call the `clipboard` API:
+
+```js
+import { readText, writeText } from '@tauri-apps/api/clipboard';
+
+// Get the text from the clipboard
+const text = await readText();
+
+// Lets truncate the text to 50 characters
+const newText = `${text.slice(0, 50)}...`;
+
+// Finally write the text back
+await writeText(newText)
+```
+
+# Tauri Commands
+
+Tauri has a system called [commands](https://tauri.app/v1/guides/features/command/) which allow you to call Rust code from the frontend. You can write as many commands as you like, and they're a superpower when writing Tauri apps.
 
 For those of you curious about the shape of a Tauri command, let's write an example command that takes in a `name` parameter and returns `Hello <name>!`.
 
@@ -52,6 +69,18 @@ For those of you curious about the shape of a Tauri command, let's write an exam
 #[tauri::command] // This macro marks this as a command
 fn greet(name: &str) -> String {
     return format!("Hello, {}!", name) // Return a string 
+}
+```
+
+We should also add this command to our tauri handler:
+
+```rs
+fn main() {
+  tauri::Builder::default()
+    // This is where you pass in your commands
+    .invoke_handler(tauri::generate_handler![greet])
+    .run(tauri::generate_context!())
+    .expect("Failed to run app");
 }
 ```
 
