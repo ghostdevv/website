@@ -12,7 +12,6 @@ export const projects: Project[] = [
     {
         name: 'Svelte Hamburgers',
         url: 'https://github.com/ghostdevv/svelte-hamburgers',
-        star: true,
     },
     {
         name: 'SourceBin',
@@ -116,5 +115,10 @@ export const projects: Project[] = [
     {
         name: 'GHOSTSUi',
         url: 'https://github.com/ghostdevv/ghostsui',
+    },
+    {
+        name: 'Svelte Turnstile',
+        url: 'https://github.com/ghostdevv/svelte-turnstile',
+        star: true,
     },
 ];
