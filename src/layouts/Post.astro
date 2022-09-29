@@ -74,7 +74,7 @@ const imageUrl = await getImageSrc(frontmatter.image!);
     article {
         width: 100%;
 
-        display: flex !important;
+        display: flex;
         flex-direction: column;
         gap: 16px;
 
@@ -160,7 +160,7 @@ const imageUrl = await getImageSrc(frontmatter.image!);
                     grid-area: tag;
                     min-height: fit-content;
                     min-width: fit-content;
-                
+
                     @include media($cp) {
                         padding: 8px 0px;
                     }

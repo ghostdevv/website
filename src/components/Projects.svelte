@@ -16,13 +16,13 @@
 
 <style lang="scss">
     .project {
-        border-color: var(--background-tertiary) !important;
-        transition: border-color 0.2s ease-in-out !important;
+        border-color: var(--background-tertiary);
+        transition: border-color 0.2s ease-in-out;
 
         &.star,
         &:focus,
         &:hover {
-            border-color: var(--primary) !important;
+            border-color: var(--primary);
         }
     }
 </style>

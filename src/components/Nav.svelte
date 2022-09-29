@@ -79,11 +79,11 @@
 
         background-color: var(--background-primary);
 
-        border: 0px !important;
-        border-bottom: 2px solid transparent !important;
+        border: 0px;
+        border-bottom: 2px solid transparent;
 
         transition: background-color 0.2s ease-in-out,
-            border-color 0.2s ease-in-out !important;
+            border-color 0.2s ease-in-out;
 
         &.active {
             box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.1),
@@ -91,7 +91,7 @@
 
             background-color: rgba(var(--background-primary-rgb), 0.8);
             backdrop-filter: blur(12px);
-            border-color: var(--primary) !important;
+            border-color: var(--primary);
         }
     }
 
