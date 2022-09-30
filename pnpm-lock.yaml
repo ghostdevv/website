@@ -9,11 +9,11 @@ specifiers:
   '@fortawesome/free-solid-svg-icons': ^6.2.0
   astro: ^1.4.0
   date-fns: ^2.29.3
-  ghostsui: ^1.4.8
+  ghostsui: ^1.5.0
   include-media: ^1.4.10
   polykit: ^0.2.0
   prettier: ^2.7.1
-  prettier-plugin-astro: ^0.5.4
+  prettier-plugin-astro: ^0.5.5
   prettier-plugin-svelte: ^2.7.1
   sass: ^1.55.0
   svelte: ^3.50.1
@@ -33,11 +33,11 @@ devDependencies:
   '@fortawesome/free-solid-svg-icons': 6.2.0
   astro: 1.4.0_sass@1.55.0
   date-fns: 2.29.3
-  ghostsui: 1.4.8
+  ghostsui: 1.5.0
   include-media: 1.4.10
   polykit: 0.2.0
   prettier: 2.7.1
-  prettier-plugin-astro: 0.5.4
+  prettier-plugin-astro: 0.5.5
   prettier-plugin-svelte: 2.7.1_nk6d2fkgcllkkdynqbuearcure
   sass: 1.55.0
   svelte: 3.50.1
@@ -92,7 +92,7 @@ packages:
       '@vscode/emmet-helper': 2.8.4
       events: 3.3.0
       prettier: 2.7.1
-      prettier-plugin-astro: 0.5.4
+      prettier-plugin-astro: 0.5.5
       source-map: 0.7.4
       vscode-css-languageservice: 6.1.1
       vscode-html-languageservice: 5.0.2
@@ -1097,7 +1097,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001414
-      electron-to-chromium: 1.4.268
+      electron-to-chromium: 1.4.269
       node-releases: 2.0.6
       update-browserslist-db: 1.0.9_browserslist@4.21.4
     dev: true
@@ -1366,8 +1366,8 @@ packages:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
     dev: true
 
-  /electron-to-chromium/1.4.268:
-    resolution: {integrity: sha512-PO90Bv++vEzdln+eA9qLg1IRnh0rKETus6QkTzcFm5P3Wg3EQBZud5dcnzkpYXuIKWBjKe5CO8zjz02cicvn1g==}
+  /electron-to-chromium/1.4.269:
+    resolution: {integrity: sha512-7mHFONwp7MNvdyto1v70fCwk28NJMFgsK79op+iYHzz1BLE8T66a1B2qW5alb8XgE0yi3FL3ZQjSYZpJpF6snw==}
     dev: true
 
   /emmet/2.3.6:
@@ -2005,8 +2005,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /ghostsui/1.4.8:
-    resolution: {integrity: sha512-JzhBwtPWO8L2NXwE/Ozn40r78nq8OpgshUShyIuo2r0CEOSDWrG3fLNsZYIweo0rL6o3fPwua7wgLVOAgEoNrw==}
+  /ghostsui/1.5.0:
+    resolution: {integrity: sha512-Nz5i3eb2kg7qBxaZDeOQC6ZzhftFtwKJyafUWTKezHcQ3D9luNd9Tewrqa6TX+rltuWn88L+Julxn3tSckLKkw==}
     dependencies:
       greset: 2.0.0
       sass-hex-rgb: 1.0.1
@@ -3339,8 +3339,8 @@ packages:
       which-pm: 2.0.0
     dev: true
 
-  /prettier-plugin-astro/0.5.4:
-    resolution: {integrity: sha512-ILs/WgUYtKBOn3Zh217/PwjCFtUWEKQjcCFJDevri0hGEBwEnnda9aqSLL0/nhCOmQn/UE7M9zLQvThu970ZHw==}
+  /prettier-plugin-astro/0.5.5:
+    resolution: {integrity: sha512-tEJiPjTB1eVT5Czcbkj9GoRG/oMewOnG9x737p/hJUD5QXJmn7LiYFM2dKkX0i4A1fhhsGfXT+uqsAXcw2r8JQ==}
     engines: {node: ^14.15.0 || >=16.0.0, npm: '>=6.14.0'}
     dependencies:
       '@astrojs/compiler': 0.23.5
