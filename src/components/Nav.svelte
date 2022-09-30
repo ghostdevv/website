@@ -1,7 +1,7 @@
 <script lang="ts">
     import { slide } from 'svelte-reduced-motion/transition';
     import { Hamburger } from 'svelte-hamburgers';
-    import TRainbow from './TRainbow.svelte';
+    // import TRainbow from './TRainbow.svelte';
     import { mounted } from 'svelte-mount';
 
     export let url: URL;
@@ -21,7 +21,11 @@
 <div class="wrapper" class:active={scroll || open}>
     <nav class:scroll>
         <a class:scroll href="/" class="logo" aria-label="Home">
-            <TRainbow />
+            <!-- <TRainbow /> -->
+            <img
+                style="width: 100%; height: 100%"
+                src="/ghost-halloween.png"
+                alt="GHOST's Halloween Theme Logo" />
         </a>
 
         <div class="hamburger">
@@ -44,7 +48,7 @@
         </div>
 
         {#if $mounted && mobile && open}
-            <div class="links" transition:slide>
+            <div class="links" transition:slide={{}}>
                 <a href="/" class="link" class:active={url.pathname == '/'}>
                     Home
                 </a>
