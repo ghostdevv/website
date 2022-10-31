@@ -1,0 +1,58 @@
+---
+import ColourGroup from '$components/branding/ColourGroup.astro';
+import Logo from '$components/Logo.svelte';
+import LogoRainbow from '$components/LogoRainbow.svelte';
+import { colours } from '$data/colours';
+import Page from '$layouts/Page.astro';
+---
+
+<Page>
+    <section class="col">
+        <h1>Branding</h1>
+        <p>
+            This page contains my colours and logos,
+            <a href="/contact">let me know</a> if there is anything missing!
+        </p>
+    </section>
+
+    <section class="col">
+        <h2>Colours</h2>
+        <hr />
+
+        <div class="colours">
+            {colours.map((group) => <ColourGroup group={group} />)}
+        </div>
+    </section>
+
+    <section class="col">
+        <h2>Logos</h2>
+        <hr />
+
+        <div class="logos">
+            <div class="logo">
+                <Logo />
+            </div>
+
+            <div class="logo">
+                <LogoRainbow />
+            </div>
+        </div>
+    </section>
+</Page>
+
+<style lang="scss">
+    .colours {
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+    }
+
+    .logos {
+        display: flex;
+        gap: 48px;
+    }
+
+    .logo {
+        width: 160px;
+    }
+</style>
