@@ -1,5 +1,6 @@
 {
   "name": "website",
+  "license": "GNU General Public License v3.0",
   "version": "3.0.0",
   "private": true,
   "scripts": {
