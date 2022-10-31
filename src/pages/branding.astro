@@ -1,5 +1,7 @@
 ---
 import ColourGroup from '$components/branding/ColourGroup.astro';
+import Logo from '$components/Logo.svelte';
+import LogoRainbow from '$components/LogoRainbow.svelte';
 import { colours } from '$data/colours';
 import Page from '$layouts/Page.astro';
 ---
@@ -21,6 +23,21 @@ import Page from '$layouts/Page.astro';
             {colours.map((group) => <ColourGroup group={group} />)}
         </div>
     </section>
+
+    <section class="col">
+        <h2>Logos</h2>
+        <hr />
+
+        <div class="logos">
+            <div class="logo">
+                <Logo />
+            </div>
+
+            <div class="logo">
+                <LogoRainbow />
+            </div>
+        </div>
+    </section>
 </Page>
 
 <style lang="scss">
@@ -28,5 +45,14 @@ import Page from '$layouts/Page.astro';
         display: flex;
         flex-direction: column;
         gap: 22px;
+    }
+
+    .logos {
+        display: flex;
+        gap: 48px;
+    }
+
+    .logo {
+        width: 160px;
     }
 </style>
