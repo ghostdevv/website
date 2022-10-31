@@ -14,13 +14,22 @@
     $: mobile = width < 750;
     $: scroll = scrollY > 0;
     $: if (!mobile) open = false;
+
+    function branding() {
+        window.location.href = '/branding';
+    }
 </script>
 
 <svelte:window bind:innerWidth={width} bind:scrollY />
 
 <div class="wrapper" class:active={scroll || open}>
     <nav class:scroll>
-        <a class:scroll href="/" class="logo" aria-label="Home">
+        <a
+            class:scroll
+            href="/"
+            class="logo"
+            aria-label="Home"
+            on:contextmenu|preventDefault={branding}>
             <!-- <TRainbow /> -->
             <img
                 style="width: 100%; height: 100%"
