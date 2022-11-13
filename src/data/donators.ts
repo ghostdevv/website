@@ -10,16 +10,16 @@ export const supporters: { current: Person[]; past: Person[] } = {
             image: '/donators/bruhdy-fractal.webp',
         },
         {
-            name: 'Stefan Bogdanović',
-            image: '/donators/stefan.webp',
-        },
-        {
             name: 'Dusan Malusev',
             image: '/donators/dusan.webp',
         },
     ],
 
     past: [
+        {
+            name: 'Stefan Bogdanović',
+            image: '/donators/stefan.webp',
+        },
         {
             name: 'Scott Spence',
             image: '/donators/scott-spence.webp',
