@@ -85,7 +85,7 @@ export const linkPosts: LinkPost[] = [
         excerpt:
             'In this Svelte Sirens stream Alex Warnes will teach us about Threlte: Declarative Threejs for Svelte.',
         image: 'threlte-declarative-threejs.png',
-        tag: 'stream',
+        tag: 'youtube',
         link: 'https://www.youtube.com/watch?v=dnclxsoRO_E',
         timestamp: 1668456000000,
     },
