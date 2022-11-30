@@ -89,4 +89,13 @@ export const linkPosts: LinkPost[] = [
         link: 'https://www.youtube.com/watch?v=dnclxsoRO_E',
         timestamp: 1668456000000,
     },
+    {
+        title: 'Sirens: Form Actions',
+        excerpt:
+            'Kev joins the Sirens again to chat about Form actions in SvelteKit and create a new form for speaker submissions on SvelteSirens.dev.',
+        image: 'sirens-form-actions.png',
+        tag: 'stream',
+        link: 'https://www.youtube.com/watch?v=2OISk5-EHek',
+        timestamp: 1669822200000,
+    },
 ];
