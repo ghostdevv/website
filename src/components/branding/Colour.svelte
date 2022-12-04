@@ -4,7 +4,22 @@
 
     export let colour: Colour;
 
+    let copying = false;
+    let timeout: ReturnType<typeof setTimeout> | null = null;
+
     $: [name, hex, textColour] = colour;
+
+    function onCopy() {
+        if (timeout) {
+            clearTimeout(timeout);
+        }
+
+        copying = true;
+
+        timeout = setTimeout(() => {
+            copying = false;
+        }, 1500);
+    }
 </script>
 
 <button
@@ -12,9 +27,9 @@
     data-hex={hex}
     style:--hex={hex}
     style:--text={textColour}
-    on:svelte-copy={() => alert(`Copied ${name} (${hex}) to clipboard`)}
+    on:svelte-copy={onCopy}
     use:copy={hex}>
-    <h4 class="name">{name}</h4>
+    <h4 class="name">{copying ? 'Copied!' : name}</h4>
     <p class="hex">{hex}</p>
 </button>
 
