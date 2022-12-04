@@ -1,8 +1,17 @@
 ---
 import { mapPosts } from '$data/posts/utils';
 import PostCard from './PostCard.astro';
+import type { tags } from '$data/tags';
 
-const posts = mapPosts(await Astro.glob('../../pages/posts/**/*.md'));
+interface Props {
+    filter?: keyof typeof tags;
+}
+
+let posts = mapPosts(await Astro.glob('../../pages/posts/**/*.md'));
+
+if (Astro.props.filter) {
+    posts = posts.filter((post) => post.tag == Astro.props.filter);
+}
 ---
 
 <div class="posts">

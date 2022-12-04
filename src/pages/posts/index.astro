@@ -1,8 +1,10 @@
 ---
+import PostFilter from '$components/posts/PostFilter.svelte';
 import Posts from '$components/posts/Posts.astro';
 import Page from '$layouts/Page.astro';
 ---
 
 <Page>
+    <PostFilter selectedTag="all" />
     <Posts />
 </Page>

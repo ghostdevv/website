@@ -1,0 +1,19 @@
+---
+import Posts from '$components/posts/Posts.astro';
+import Page from '$layouts/Page.astro';
+import { tags } from '$data/tags';
+import PostFilter from '$components/posts/PostFilter.svelte';
+
+const tag = Astro.params.tag as keyof typeof tags;
+
+export function getStaticPaths() {
+    return Object.keys(tags).map((tag) => ({
+        params: { tag },
+    }));
+}
+---
+
+<Page>
+    <PostFilter selectedTag={tag} />
+    <Posts filter={tag} />
+</Page>
