@@ -9,13 +9,13 @@ export const supporters: { current: Person[]; past: Person[] } = {
             name: 'Braden Wiggins',
             image: '/donators/bruhdy-fractal.webp',
         },
+    ],
+
+    past: [
         {
             name: 'Dusan Malusev',
             image: '/donators/dusan.webp',
         },
-    ],
-
-    past: [
         {
             name: 'Stefan Bogdanović',
             image: '/donators/stefan.webp',
