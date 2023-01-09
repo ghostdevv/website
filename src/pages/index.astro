@@ -1,5 +1,6 @@
 ---
 import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faMastodon } from '@fortawesome/free-brands-svg-icons';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import Posts from '$components/posts/Posts.astro';
 import Page from '$layouts/Page.astro';
@@ -30,6 +31,17 @@ import Fa from 'svelte-fa';
                 class="icon-link"
             >
                 <Fa size="md" icon={faDiscord} />
+            </a>
+
+            <a
+                title="Mastodon"
+                aria-label="Mastodon"
+                href="https://fosstodon.org/@onlyspaceghost"
+                target="_blank"
+                class="icon-link"
+                rel="me"
+            >
+                <Fa size="md" icon={faMastodon} />
             </a>
 
             <a

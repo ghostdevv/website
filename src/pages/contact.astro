@@ -1,5 +1,6 @@
 ---
 import { faDiscord, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faMastodon } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { Picture } from '@astrojs/image/components';
@@ -16,14 +17,15 @@ import Fa from 'svelte-fa';
             <a
                 target="_blank"
                 href="https://discord.com/users/282839711834177537"
-                >Discord (GHOST#7524)
+            >
+                Discord (GHOST#7524)
             </a>
         </p>
 
         <p class="row">
             <Fa icon={faEnvelope} />
-            <a target="_blank" href="mailto:ghostdevbusiness@gmail.com"
-                >ghostdevbusiness@gmail.com
+            <a target="_blank" href="mailto:ghostdevbusiness@gmail.com">
+                ghostdevbusiness@gmail.com
             </a>
         </p>
     </section>
@@ -35,6 +37,13 @@ import Fa from 'svelte-fa';
             <Fa icon={faTwitter} />
             <a target="_blank" href="https://twitter.com/onlyspaceghost">
                 @onlyspaceghost
+            </a>
+        </p>
+
+        <p class="row">
+            <Fa icon={faMastodon} />
+            <a target="_blank" href="https://fosstodon.org/@onlyspaceghost">
+                @onlyspaceghost@fosstodon.org
             </a>
         </p>
 
