@@ -1,10 +1,11 @@
-import type { tags } from '$data/tags';
+import type { CollectionEntry } from 'astro:content';
+import type { Tag } from '$data/tags';
 
 interface LinkPost {
     title: string;
     excerpt: string;
     image: string;
-    tag: keyof typeof tags;
+    tag: Tag;
     link: string;
     timestamp: number;
 }
@@ -14,16 +15,9 @@ export enum PostType {
     Text,
 }
 
-export interface Post {
-    title: string;
-    excerpt: string;
-    image: string;
-    tag: keyof typeof tags;
-    link?: string;
-    slug?: string;
-    timestamp: number;
-    type: PostType;
-}
+export type Post =
+    | (LinkPost & { type: PostType.Link })
+    | (CollectionEntry<'blog'>['data'] & { slug: string; type: PostType.Text });
 
 export const linkPosts: LinkPost[] = [
     {

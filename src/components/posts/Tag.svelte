@@ -1,11 +1,11 @@
 <script lang="ts">
-    import { tags } from '$data/tags';
+    import { Tag, tagColours } from '$data/tags';
 
-    export let name: keyof typeof tags;
+    export let name: Tag;
     export let large = false;
 </script>
 
-<span class="tag" style="--tag-colour: {tags[name]}" class:large>
+<span class="tag" style:--tag-colour={tagColours[name]} class:large>
     {name}
 </span>
 

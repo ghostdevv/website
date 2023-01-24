@@ -1,4 +1,4 @@
-import { PostType } from '$data/posts/posts';
+import { PostType } from '$data/posts';
 import { mapPosts } from '$data/posts/utils';
 import rss from '@astrojs/rss';
 

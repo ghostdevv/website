@@ -1,15 +1,13 @@
 ---
 import PostFilter from '$components/posts/PostFilter.svelte';
 import Posts from '$components/posts/Posts.astro';
+import { type Tag, tags } from '$data/tags';
 import Page from '$layouts/Page.astro';
-import { tags } from '$data/tags';
 
-const tag = Astro.params.tag as keyof typeof tags;
+const tag = Astro.params.tag as Tag;
 
 export function getStaticPaths() {
-    return Object.keys(tags).map((tag) => ({
-        params: { tag },
-    }));
+    return tags.map((tag) => ({ params: { tag } }));
 }
 ---
 
