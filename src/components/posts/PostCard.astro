@@ -12,7 +12,7 @@ const target = post.type == PostType.Text ? undefined : '_blank';
 
 <a href={href} target={target} class="postcard" aria-label={post.title}>
     <Image
-        width={500}
+        width={600}
         src={getImageData(post.image)!}
         alt="Post Cover Image"
         format="webp"
