@@ -1,13 +1,13 @@
 ---
-import { mapPosts } from '$data/posts/utils';
+import { getPosts } from '$helpers/posts';
 import PostCard from './PostCard.astro';
-import type { tags } from '$data/tags';
+import type { Tag } from '$data/tags';
 
 interface Props {
-    filter?: keyof typeof tags;
+    filter?: Tag;
 }
 
-let posts = mapPosts(await Astro.glob('../../pages/posts/**/*.md'));
+let posts = await getPosts();
 
 if (Astro.props.filter) {
     posts = posts.filter((post) => post.tag == Astro.props.filter);

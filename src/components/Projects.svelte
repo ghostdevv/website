@@ -7,6 +7,7 @@
         <a
             href={project.url}
             target="_blank"
+            rel="noreferrer"
             class="project card center"
             class:star={project.star}>
             <h5>{project.name}</h5>

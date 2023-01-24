@@ -1,6 +1,6 @@
-<script>
-    export let name;
-    export let image;
+<script lang="ts">
+    export let name: string;
+    export let image: string;
 
     export let slim = false;
 </script>

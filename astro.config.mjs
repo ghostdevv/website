@@ -5,9 +5,9 @@ import image from '@astrojs/image';
 
 // https://astro.build/config
 export default defineConfig({
-    integrations: [svelte({}), image(), sitemap()],
+    integrations: [svelte(), image(), sitemap()],
 
-    site: 'https://ghostdev.xyz',
+    site: 'https://ghostdev.xyz/',
 
     vite: {
         ssr: {

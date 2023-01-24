@@ -1,6 +1,4 @@
 ---
-layout: $layouts/Post.astro
-
 tag: blog
 title: Creating a RSS feed with Sanity and Svelte Kit
 excerpt: Read this post to learn how to leverage Svelte Kit endpoints, along with a CMS such as sanity to create a RSS feed for your blog.

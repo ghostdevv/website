@@ -1,33 +1,44 @@
 ---
 import SettingsModal from '$components/posts/SettingsModal.svelte';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { CollectionEntry, getCollection } from 'astro:content';
 import { faRss } from '@fortawesome/free-solid-svg-icons';
-import { getImageSrc } from '$data/posts/images';
 import Tag from '$components/posts/Tag.svelte';
+import { getImageSrc } from '$helpers/images';
 import { tweetLink } from '$helpers/twitter';
+import Page from '$layouts/Page.astro';
 import { format } from 'date-fns';
-import Page from './Page.astro';
+import '$layouts/post.scss';
 import Fa from 'svelte-fa';
-import './post.scss';
 
-const { frontmatter } = Astro.props;
+export async function getStaticPaths() {
+    const blogPosts = await getCollection('blog');
 
-const imageUrl = await getImageSrc(frontmatter.image!);
+    return blogPosts.map((post) => ({
+        params: { slug: post.slug },
+        props: { post },
+    }));
+}
+
+const post = Astro.props.post as CollectionEntry<'blog'>;
+
+const imageUrl = await getImageSrc(post.data.image);
+const { Content } = await post.render();
 ---
 
-<Page frontmatter={frontmatter}>
+<Page frontmatter={post.data}>
     <article>
         <div class="meta-image" style={`--image: url(${imageUrl})`}>
             <div class="meta">
                 <div class="tag">
-                    <Tag name={frontmatter.tag} large />
+                    <Tag name={post.data.tag} large />
                 </div>
 
                 <p class="timestamp">
-                    {format(frontmatter?.timestamp || 0, 'do LLLL yyyy')}
+                    {format(post.data.timestamp, 'do LLLL yyyy')}
                 </p>
 
-                <h1 class="title">{frontmatter?.title}</h1>
+                <h1 class="title">{post.data.title}</h1>
 
                 <div class="settings">
                     <SettingsModal client:load />
@@ -38,7 +49,7 @@ const imageUrl = await getImageSrc(frontmatter.image!);
         <hr />
 
         <div class="markdown">
-            <slot />
+            <Content />
         </div>
 
         <hr />
@@ -46,10 +57,9 @@ const imageUrl = await getImageSrc(frontmatter.image!);
         <footer>
             <div class="row wrap">
                 <a
-                    href={tweetLink(`Checkout this post by @onlyspaceghost!
-                    https://ghostdev.xyz/posts/${Astro.url.pathname
-                        .split('/')
-                        .at(-1)}`)}
+                    href={tweetLink(
+                        `Checkout this post by @onlyspaceghost!\n\nhttps://ghostdev.xyz/posts/${post.slug}`,
+                    )}
                     class="button"
                     target="_blank"
                 >

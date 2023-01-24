@@ -1,7 +1,7 @@
 <script lang="ts">
-    import { tags } from '$data/tags';
+    import { type Tag, tagColours } from '$data/tags';
 
-    export let selectedTag: keyof typeof tags | 'all';
+    export let selectedTag: Tag | 'all';
 </script>
 
 <div class="filter">
@@ -13,7 +13,7 @@
         All
     </a>
 
-    {#each Object.entries(tags) as [tag, colour]}
+    {#each Object.entries(tagColours) as [tag, colour]}
         <a
             href="/posts/tag/{tag}"
             style:--colour="rgb({colour})"
