@@ -1,8 +1,11 @@
 .markdown {
-    max-width: 100%;
+    font-size: var(--post-font-size, 18px);
+    line-height: var(--post-line-height, 1.8);
+    font-weight: 400;
 
-    font-size: var(--post-font-size, 16px);
-    line-height: var(--post-line-height, 1.5);
+    & >:first-child {
+        margin-top: 0px;
+    }
 
     code {
         font-size: calc(var(--post-font-size, 16px) - 2px);
@@ -27,6 +30,11 @@
         white-space: pre;
     }
 
+    code,
+    pre { 
+        font-family: 'Comic Mono', monospace
+    }
+
     ul,
     ol {
         list-style-position: outside;
@@ -42,7 +50,7 @@
         border-bottom: 4px solid var(--background-secondary);
 
         &:not(&:first-child) {
-            margin-top: 22px;
+            margin-top: 32px;
         }
     }
 }

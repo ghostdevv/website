@@ -19,9 +19,11 @@
 </script>
 
 <Modal let:close>
-    <button slot="activator" aria-label="Post Settings">
-        <Fa icon={faCog} />
-    </button>
+    <slot slot="activator">
+        <button aria-label="Post Settings">
+            <Fa icon={faCog} />
+        </button>
+    </slot>
 
     <card class="no-hover modal">
         <h1>Post Settings</h1>

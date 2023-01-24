@@ -125,15 +125,15 @@
             grid-template-areas: max-content 1fr;
             grid-template-areas: 'logo hamburger' 'links links';
             gap: 0px;
-
-            padding: 12px 24px;
         }
 
-        @include media($desktop) {
-            transition: padding 0.2s ease-in-out;
+        transition: padding 0.2s ease-in-out;
 
-            &.scroll {
-                padding: 20px 24px;
+        &.scroll {
+            padding: 20px 24px;
+
+            @include media($mobile) {
+                padding: 16px 24px;
             }
         }
 
