@@ -5,6 +5,8 @@
     import { Modal } from 'polykit';
     import Fa from 'svelte-fa';
 
+    export let inline = false;
+
     $: if ($mounted && ($fontSize || $lineHeight)) {
         document.documentElement.style.setProperty(
             '--post-font-size',
@@ -19,7 +21,7 @@
 </script>
 
 <Modal let:close>
-    <button slot="activator" aria-label="Post Settings">
+    <button class:inline slot="activator" aria-label="Post Settings">
         <Fa icon={faCog} />
     </button>
 
@@ -63,6 +65,32 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 4px;
+    }
+
+    .inline {
+        all: unset;
+
+        color: rgba(var(--text-rgb), 0.6);
+        cursor: pointer;
+
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        transition: color 0.2s ease-in-out;
+
+        &:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        &:hover:not(&:disabled),
+        &:active:not(&:disabled),
+        &:focus:not(&:disabled) {
+            background-color: transparent;
+            box-shadow: none;
+            color: var(--primary);
+        }
     }
 
     .modal {

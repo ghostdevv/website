@@ -30,16 +30,24 @@
     });
 </script>
 
-{#each headings as heading}
-    <a
-        class="link depth-{Math.min(heading.depth, 3)}"
-        class:active={activeHeading == heading.slug}
-        href="#{heading.slug}">
-        {heading.text}
-    </a>
-{/each}
+<div class="contents">
+    {#each headings as heading}
+        <a
+            class="link depth-{Math.min(heading.depth, 3)}"
+            class:active={activeHeading == heading.slug}
+            href="#{heading.slug}">
+            {heading.text}
+        </a>
+    {/each}
+</div>
 
 <style lang="scss">
+    .contents {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
     .link {
         color: rgba(var(--text-rgb), 0.6);
 

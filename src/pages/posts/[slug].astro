@@ -1,8 +1,8 @@
 ---
 import SettingsModal from '$components/posts/SettingsModal.svelte';
+import { faRss, faCog } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { CollectionEntry, getCollection } from 'astro:content';
-import { faRss } from '@fortawesome/free-solid-svg-icons';
 import Contents from '$components/posts/Contents.svelte';
 import { tweetLink } from '$helpers/twitter';
 import Page from '$layouts/Page.astro';
@@ -39,7 +39,12 @@ console.log(headings);
 
             <aside class="contents">
                 <h2 class="title">Table Of Contents</h2>
+
                 <Contents client:load headings={headings} />
+
+                <div class="settings">
+                    <SettingsModal client:load inline />
+                </div>
             </aside>
         </div>
 
@@ -110,6 +115,7 @@ console.log(headings);
             display: flex;
             flex-direction: column;
             align-self: flex-start;
+            align-items: flex-start;
             gap: 8px;
 
             position: sticky;
@@ -117,6 +123,10 @@ console.log(headings);
 
             .title {
                 font-size: 1.4rem;
+            }
+
+            .settings {
+                margin-top: 16px;
             }
         }
 
