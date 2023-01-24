@@ -19,7 +19,7 @@
 
         const observer = new IntersectionObserver(callback, {
             threshold: 1,
-            rootMargin: '50px 0px -80% 0px',
+            rootMargin: '25px 0px -75% 0px',
         });
 
         for (const heading of headings) {
