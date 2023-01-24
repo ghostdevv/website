@@ -1,8 +1,8 @@
 ---
 import SettingsModal from '$components/posts/SettingsModal.svelte';
+import { faRss, faCog } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { CollectionEntry, getCollection } from 'astro:content';
-import { faRss } from '@fortawesome/free-solid-svg-icons';
 import Contents from '$components/posts/Contents.svelte';
 import { tweetLink } from '$helpers/twitter';
 import Page from '$layouts/Page.astro';
@@ -42,8 +42,16 @@ console.log(headings);
 
                 <Contents client:load headings={headings} />
 
-                <div class="settings">
-                    <SettingsModal client:load inline />
+                <div class="buttons">
+                    <SettingsModal client:load>
+                        <button class="inline-button">
+                            <Fa icon={faCog} />
+                        </button>
+                    </SettingsModal>
+
+                    <a href="/rss.xml" target="_blank" class="inline-button">
+                        <Fa icon={faRss} />
+                    </a>
                 </div>
             </aside>
         </div>
@@ -125,8 +133,39 @@ console.log(headings);
                 font-size: 1.4rem;
             }
 
-            .settings {
+            .buttons {
                 margin-top: 16px;
+
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 12px;
+            }
+        }
+
+        .inline-button {
+            all: unset;
+
+            color: rgba(var(--text-rgb), 0.6);
+            cursor: pointer;
+
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            transition: color 0.2s ease-in-out;
+
+            &:disabled {
+                opacity: 0.6;
+                cursor: not-allowed;
+            }
+
+            &:hover:not(&:disabled),
+            &:active:not(&:disabled),
+            &:focus:not(&:disabled) {
+                background-color: transparent;
+                box-shadow: none;
+                color: var(--primary);
             }
         }
 
