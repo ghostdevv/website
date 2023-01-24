@@ -7,7 +7,7 @@ import image from '@astrojs/image';
 export default defineConfig({
     integrations: [svelte({}), image(), sitemap()],
 
-    site: 'https://ghostdev.xyz',
+    site: 'https://ghostdev.xyz/',
 
     vite: {
         ssr: {
