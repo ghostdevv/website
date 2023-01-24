@@ -1,5 +1,15 @@
 ---
+import SettingsModal from '$components/posts/SettingsModal.svelte';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { CollectionEntry, getCollection } from 'astro:content';
+import { faRss } from '@fortawesome/free-solid-svg-icons';
+import Tag from '$components/posts/Tag.svelte';
+import { getImageSrc } from '$helpers/images';
+import { tweetLink } from '$helpers/twitter';
+import Page from '$layouts/Page.astro';
+import { format } from 'date-fns';
+import '$layouts/post.scss';
+import Fa from 'svelte-fa';
 
 export async function getStaticPaths() {
     const blogPosts = await getCollection('blog');
@@ -11,7 +21,178 @@ export async function getStaticPaths() {
 }
 
 const post = Astro.props.post as CollectionEntry<'blog'>;
+
+const imageUrl = await getImageSrc(post.data.image);
 const { Content } = await post.render();
 ---
 
-<Content />
+<Page frontmatter={post.data}>
+    <article>
+        <div class="meta-image" style={`--image: url(${imageUrl})`}>
+            <div class="meta">
+                <div class="tag">
+                    <Tag name={post.data.tag} large />
+                </div>
+
+                <p class="timestamp">
+                    {format(post.data.timestamp, 'do LLLL yyyy')}
+                </p>
+
+                <h1 class="title">{post.data.title}</h1>
+
+                <div class="settings">
+                    <SettingsModal client:load />
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="markdown">
+            <Content />
+        </div>
+
+        <hr />
+
+        <footer>
+            <div class="row wrap">
+                <a
+                    href={tweetLink(
+                        `Checkout this post by @onlyspaceghost!\n\nhttps://ghostdev.xyz/posts/${post.slug}`,
+                    )}
+                    class="button"
+                    target="_blank"
+                >
+                    <Fa icon={faTwitter} />
+                    Share on twitter
+                </a>
+
+                <a href="/rss.xml" target="_blank" class="button">
+                    <Fa icon={faRss} />
+                    RSS
+                </a>
+            </div>
+
+            <SettingsModal client:load />
+        </footer>
+    </article>
+</Page>
+
+<style lang="scss">
+    @import 'src/helpers/media';
+
+    article {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        footer {
+            width: 100%;
+            padding-bottom: 16px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+
+            @include media('<600px') {
+                flex-wrap: wrap;
+            }
+        }
+
+        .meta-image {
+            $border-radius: 22px;
+
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            align-items: flex-start;
+            justify-content: flex-end;
+
+            width: 100%;
+            height: 500px;
+            max-height: 50vh;
+
+            border-radius: $border-radius;
+
+            background-image: var(--image);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            object-fit: cover;
+
+            .meta {
+                $cp: '<900px';
+
+                width: 100%;
+                padding: 22px;
+
+                position: relative;
+
+                display: grid;
+                grid-template-columns: max-content 1fr max-content;
+                grid-template-rows: max-content 1fr;
+                gap: 16px;
+                grid-template-areas:
+                    'tag timestamp .'
+                    'title title settings';
+
+                background-color: rgba(var(--background-tertiary-rgb), 0.95);
+                border-radius: 0 0 $border-radius $border-radius;
+
+                // Re-enable this when/if it's fixed
+                backdrop-filter: blur(8px);
+
+                @include media($cp) {
+                    grid-template-areas:
+                        'tag'
+                        'timestamp'
+                        'title';
+
+                    grid-template-columns: 1fr;
+                    grid-template-rows: min-content max-content 1fr;
+
+                    justify-items: center;
+                    align-items: center;
+                    text-align: center;
+
+                    gap: 8px 0px;
+                }
+
+                .title {
+                    grid-area: title;
+                }
+
+                .tag {
+                    grid-area: tag;
+                    min-height: fit-content;
+                    min-width: fit-content;
+
+                    @include media($cp) {
+                        padding: 8px 0px;
+                    }
+                }
+
+                .timestamp {
+                    grid-area: timestamp;
+                }
+
+                .settings {
+                    grid-area: settings;
+
+                    @include media($cp) {
+                        position: absolute;
+
+                        top: -56px;
+                        right: 0;
+
+                        margin: 0px 12px;
+                    }
+                }
+            }
+        }
+    }
+</style>
