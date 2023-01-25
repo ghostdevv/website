@@ -50,6 +50,7 @@
 
     .link {
         color: rgba(var(--text-rgb), 0.6);
+        margin-top: 12px;
 
         &:hover,
         &:active,
@@ -61,10 +62,6 @@
 
         &.active {
             color: var(--primary);
-        }
-
-        &.depth-1 {
-            margin-top: 12px;
         }
 
         &.depth-2,

@@ -4,7 +4,11 @@ import { getImageData } from '$helpers/images';
 import { Post, PostType } from '$data/posts';
 import Tag from './Tag.svelte';
 
-const post = Astro.props.post as Post;
+interface Props {
+    post: Post;
+}
+
+const { post } = Astro.props;
 
 const href = post.type == PostType.Text ? `/posts/${post.slug}` : post.link;
 const target = post.type == PostType.Text ? undefined : '_blank';

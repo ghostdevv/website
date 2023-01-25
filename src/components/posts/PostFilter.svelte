@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { type Tag, tagColours } from '$data/tags';
+    import { type Tag, tags, tagColours } from '$data/tags';
 
     export let selectedTag: Tag | 'all';
 </script>
@@ -9,14 +9,14 @@
         href="/posts"
         class="button option"
         style="--colour: var(--primary);"
-        class:selected={'all' == selectedTag}>
+        class:selected={selectedTag == 'all'}>
         All
     </a>
 
-    {#each Object.entries(tagColours) as [tag, colour]}
+    {#each tags as tag}
         <a
             href="/posts/tag/{tag}"
-            style:--colour="rgb({colour})"
+            style:--colour="rgb({tagColours[tag]})"
             class="button option"
             class:selected={tag == selectedTag}>
             {tag}
