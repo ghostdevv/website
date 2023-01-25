@@ -18,7 +18,7 @@
     "@astrojs/svelte": "^2.0.0",
     "@fortawesome/free-brands-svg-icons": "^6.2.1",
     "@fortawesome/free-solid-svg-icons": "^6.2.1",
-    "astro": "^2.0.0",
+    "astro": "^2.0.1",
     "date-fns": "^2.29.3",
     "ghostsui": "^1.6.0",
     "include-media": "^2.0.0",
