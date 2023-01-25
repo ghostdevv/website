@@ -38,7 +38,7 @@ const { Content, headings } = await post.render();
             <aside class="contents">
                 <h2 class="title">Table Of Contents</h2>
 
-                <Contents client:load headings={headings} />
+                <Contents client:visible headings={headings} />
 
                 <div class="buttons">
                     <SettingsModal client:load>
@@ -111,6 +111,10 @@ const { Content, headings } = await post.render();
             gap: 80px;
 
             position: relative;
+
+            @include media('<900px') {
+                display: block;
+            }
         }
 
         .markdown {
@@ -126,6 +130,10 @@ const { Content, headings } = await post.render();
 
             position: sticky;
             top: 150px;
+
+            @include media('<900px') {
+                display: none;
+            }
 
             .title {
                 font-size: 1.4rem;
