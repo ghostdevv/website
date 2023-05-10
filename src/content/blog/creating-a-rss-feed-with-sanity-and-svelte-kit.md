@@ -6,6 +6,8 @@ image: rss-sanity-sveltekit.webp
 timestamp: 1643897820000
 ---
 
+> This post has been updated for SvelteKit 1.0 and Sanity js 6
+
 The other day [I decided that I wanted to start using an rss reader](https://twitter.com/onlyspaceghost/status/1487032568100839428). Since RSS is awesome I thought it only makes sense that I add it to my site. This post will go over how I did this, so you can add it to your blog! I will be using Sanity as my CMS but you can use any data source that you like.
 
 # Dependencies
@@ -13,23 +15,23 @@ The other day [I decided that I wanted to start using an rss reader](https://twi
 The first step is to install the `rss` package to your Svelte Kit project. If you are not using Sanity don't install `groq` or `@sanity/client`
 
 ```bash
-npm i rss @sanity/client groq -D
+npm i @types/rss rss @sanity/client groq -D
 ```
 
 # Creating your endpoint
 
-We need a rss.xml endpoint that users can add to their RSS readers. In your routes folder create a file called `rss.xml.js`.
+We need a rss.xml endpoint that users can add to their RSS readers. In your routes folder create a file called `rss.xml/+server.js`.
 
 Next we need to structure our endpoint, lets start by importing our dependencies and creating our GET function.
 
 ```js
 // Only import these two if you are using Sanity
-import client from '@sanity/client';
+import { createClient } from '@sanity/client';
 import groq from 'groq';
 
 import RSS from 'rss';
 
-export async function get() {}
+export async function GET() {}
 ```
 
 # Creating your feed
@@ -49,7 +51,7 @@ const feed = new RSS({
 Now we have our feed we need to fetch our data, this is where Sanity comes in. I will assume that your post data has a `title`, `excerpt` (description), `timestamp`, and `slug` field.
 
 ```js
-const sanity = client({
+const sanity = createClient({
     projectId: '', // Sanity Project ID
     dataset: '', // Sanity DataSet
     useCdn: true,
@@ -97,18 +99,18 @@ Thank you for reading this post! Below is the end result of what we created inca
 
 ```js
 // Only import these two if you are using Sanity
-import client from '@sanity/client';
+import { createClient } from '@sanity/client';
 import groq from 'groq';
 
 import RSS from 'rss';
 
-const sanity = client({
+const sanity = createClient({
     projectId: '', // Sanity Project ID
     dataset: '', // Sanity DataSet
     useCdn: true,
 });
 
-export async function get() {
+export async function GET() {
     const feed = new RSS({
         title: 'GHOSTDev blog', // The title of our rss feed
         site_url: 'https://ghostdev.xyz', // Our base site url
@@ -136,8 +138,11 @@ export async function get() {
             url: `https://ghostdev.xyz/posts/${post.slug}`,
         });
 
-    return {
-        body: feed.xml({ indent: true }),
-    };
+    return new Response(feed.xml({ indent: true }), {
+        status: 200,
+        headers: {
+            'Content-Type': 'application/xml'
+        }
+    })
 }
 ```
