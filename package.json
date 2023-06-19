@@ -22,6 +22,7 @@
     "date-fns": "^2.30.0",
     "ghostsui": "^1.6.0",
     "include-media": "^2.0.0",
+    "just-shuffle": "^4.2.0",
     "polykit": "^0.2.0",
     "prettier": "^2.8.8",
     "prettier-plugin-astro": "^0.10.0",

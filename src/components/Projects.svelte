@@ -1,9 +1,10 @@
 <script lang="ts">
     import { projects } from '$data/projects';
+    import shuffle from 'just-shuffle';
 </script>
 
 <section class="row wrap center g16">
-    {#each projects as project}
+    {#each shuffle(projects) as project}
         <a
             href={project.url}
             target="_blank"
