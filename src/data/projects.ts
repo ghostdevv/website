@@ -65,7 +65,6 @@ export const projects: Project[] = [
     {
         name: 'greset',
         url: 'https://www.npmjs.com/package/greset',
-        star: true,
     },
     {
         name: 'sass-hex-rgb',
@@ -121,4 +120,13 @@ export const projects: Project[] = [
         url: 'https://github.com/ghostdevv/svelte-turnstile',
         star: true,
     },
+    {
+        name: 'Mneumonic Worker',
+        url: 'https://github.com/ghostdevv/mnemonic-worker',
+    },
+    {
+        name: 'esm.sh browser extension',
+        url: 'https://github.com/ghostdevv/esm.sh-extension',
+        star: true
+    }
 ];
