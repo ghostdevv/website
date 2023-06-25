@@ -55,7 +55,9 @@ const target = post.type == 'LINK' ? '_blank' : undefined;
         &:hover,
         &:active,
         &:focus {
+            color: var(--text);
             text-decoration: none;
+            background-color: var(--background-secondary);
             box-shadow: 0 0 0 transparent, 0 0 0 5px var(--primary);
         }
 
