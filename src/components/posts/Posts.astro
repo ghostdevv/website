@@ -1,7 +1,7 @@
 ---
+import { type Tag, tags } from '$data/tags';
 import { getPosts } from '$helpers/posts';
 import PostCard from './PostCard.astro';
-import type { Tag } from '$data/tags';
 
 interface Props {
     filter?: Tag;
@@ -9,7 +9,7 @@ interface Props {
 
 let posts = await getPosts();
 
-if (Astro.props.filter) {
+if (tags.includes(Astro.props.filter!)) {
     posts = posts.filter((post) => post.tag == Astro.props.filter);
 }
 ---
