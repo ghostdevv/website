@@ -1,7 +1,6 @@
 ---
-import { Image } from '@astrojs/image/components';
-import { getImageData } from '$helpers/images';
-import { Post, PostType } from '$data/posts';
+import type { Post } from '$data/posts';
+import { Image } from 'astro:assets';
 import Tag from './Tag.svelte';
 
 interface Props {
@@ -10,17 +9,12 @@ interface Props {
 
 const { post } = Astro.props;
 
-const href = post.type == PostType.Text ? `/posts/${post.slug}` : post.link;
-const target = post.type == PostType.Text ? undefined : '_blank';
+const href = post.type == 'BLOG' ? `/posts/${post.slug}` : post.link;
+const target = post.type == 'LINK' ? '_blank' : undefined;
 ---
 
 <a href={href} target={target} class="postcard" aria-label={post.title}>
-    <Image
-        width={600}
-        src={getImageData(post.image)!}
-        alt="Post Cover Image"
-        format="webp"
-    />
+    <Image width={600} src={post.image} alt="Post Cover Image" format="webp" />
 
     <div class="details">
         <Tag name={post.tag} />

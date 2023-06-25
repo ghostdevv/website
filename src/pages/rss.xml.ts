@@ -1,5 +1,4 @@
 import { getPosts } from '$helpers/posts';
-import { PostType } from '$data/posts';
 import rss from '@astrojs/rss';
 
 export const get = async () => {
@@ -11,7 +10,7 @@ export const get = async () => {
         site: 'https://ghostdev.xyz',
         items: posts.map((post) => {
             const link =
-                post.type == PostType.Text
+                post.type == 'BLOG'
                     ? `https://ghostdev.xyz/posts/${post.slug}`
                     : post.link;
 

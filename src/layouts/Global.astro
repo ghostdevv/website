@@ -1,8 +1,13 @@
 ---
 import 'ghostsui';
-import { getImageSrc } from '$helpers/images';
 
-const frontmatter = Astro.props.frontmatter || {};
+interface Frontmatter {
+    title?: string;
+    excerpt?: string;
+    image?: ImageMetadata;
+}
+
+const frontmatter: Frontmatter = Astro.props.frontmatter || {};
 
 const title = frontmatter.title
     ? `${frontmatter.title} - GHOST`
@@ -12,9 +17,7 @@ const description =
     frontmatter.excerpt ||
     'Hi I am GHOST! Welcome to my site, here you can look at my posts, find out more about what I do, follow me on socials, and donate!';
 
-const image_path = frontmatter.image
-    ? await getImageSrc(frontmatter.image)
-    : '/banner.png';
+const image_path = frontmatter.image ? frontmatter.image.src : '/banner.png';
 
 const image = `https://ghostdev.xyz${image_path}`;
 ---
@@ -54,8 +57,7 @@ const image = `https://ghostdev.xyz${image_path}`;
         <script
             data-goatcounter="https://ghost.goatcounter.com/count"
             async
-            src="//gc.zgo.at/count.js"
-        ></script>
+            src="//gc.zgo.at/count.js"></script>
 
         <!-- Build -->
     </head>

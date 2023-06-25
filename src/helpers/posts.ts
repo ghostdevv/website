@@ -1,16 +1,20 @@
-import { linkPosts, Post, PostType } from '../data/posts';
 import { getCollection } from 'astro:content';
+import type { Post } from '../data/posts';
 
 export async function getPosts() {
+    const linkPosts = await getCollection('links');
     const blogPosts = await getCollection('blog');
 
     const posts: Post[] = [
-        ...linkPosts.map<Post>((post) => ({ ...post, type: PostType.Link })),
+        ...linkPosts.map<Post>((post) => ({
+            type: 'LINK',
+            ...post.data,
+        })),
 
         ...blogPosts.map<Post>((post) => ({
-            ...post.data,
             slug: post.slug,
-            type: PostType.Text,
+            type: 'BLOG',
+            ...post.data,
         })),
     ];
 
