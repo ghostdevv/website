@@ -1,5 +1,5 @@
 ---
-import Nav from '$components/Nav.svelte';
+import Nav from '$lib/components/Nav.svelte';
 import Global from './Global.astro';
 
 const url = new URL(Astro.url);
@@ -14,7 +14,7 @@ const url = new URL(Astro.url);
 </Global>
 
 <style lang="scss">
-    @import 'src/helpers/media';
+    @import 'src/lib/media';
 
     .wrapper {
         max-width: 1300px;
@@ -27,7 +27,7 @@ const url = new URL(Astro.url);
         width: 100%;
 
         @include media('<750px') {
-            padding-top: 120px;
+            padding-top: 130px;
         }
     }
 

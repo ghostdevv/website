@@ -19,17 +19,14 @@
     "exactOptionalPropertyTypes": false,
     "baseUrl": ".",
     "paths": {
-      "$components/*": [
-        "src/components/*"
-      ],
-      "$layouts/*": [
-        "src/layouts/*"
-      ],
-      "$helpers/*": [
-        "src/helpers/*"
+      "$lib/*": [
+        "src/lib/*"
       ],
       "$data/*": [
         "src/data/*"
+      ],
+      "$assets/*": [
+        "src/assets/*"
       ]
     }
   }

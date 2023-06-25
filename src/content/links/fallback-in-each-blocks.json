@@ -1,0 +1,8 @@
+{
+  "title": "Fallback in each blocks",
+  "excerpt": "Did you know that you can use a {:else} in a Svelte Each block? Use this when your iterable is empty and you want to display some fallback content. Click to find out more",
+  "image": "$assets/fallback-eachblocks.webp",
+  "tag": "twitter",
+  "link": "https://twitter.com/onlyspaceghost/status/1481610492057686016",
+  "timestamp": 1642078560000
+}

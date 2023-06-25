@@ -2,7 +2,7 @@
 tag: blog
 title: Build a cross platform app with Tauri
 excerpt: Tauri is excellent at building cross-platform lightweight desktop applications using web technology. This post covers what Tauri is, and what it can do.
-image: tauri-svelte.png
+image: $assets/tauri-svelte.png
 timestamp: 1664324761977
 ---
 

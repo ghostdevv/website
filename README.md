@@ -21,6 +21,5 @@ Libs:
 - date-fns
 
 Astro Libs:
-- @astrojs/image
 - @astrojs/rss
 - @astrojs/sitemap
