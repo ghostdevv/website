@@ -3,7 +3,7 @@ import { faDiscord, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faMastodon } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { Picture } from '@astrojs/image/components';
+import { Image } from 'astro:assets';
 import Page from '$layouts/Page.astro';
 import Fa from 'svelte-fa';
 ---
@@ -60,13 +60,10 @@ import Fa from 'svelte-fa';
             target="_blank"
             class="card no-hover"
         >
-            <Picture
-                widths={[75]}
-                sizes="75px"
-                aspectRatio={1}
+            <Image
+                width={75}
                 src="https://cdn.discordapp.com/icons/755788441161302136/bc7d982c002e2786e34c17f58b848b06.webp"
                 alt="The Dev Lounge logo"
-                background="#29292a"
             />
 
             <div class="column meta">
