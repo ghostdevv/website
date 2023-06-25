@@ -19,14 +19,20 @@ if (tags.includes(Astro.props.filter!)) {
 </div>
 
 <style lang="scss">
+    @import 'src/lib/media';
+
     .posts {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: stretch;
-
+        display: grid;
+        grid-auto-rows: 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
         gap: 22px;
-        width: 100%;
 
+        @include media('<850px') {
+            grid-template-columns: 1fr;
+        }
+
+        width: 100%;
         margin: 12px 0px;
     }
 </style>

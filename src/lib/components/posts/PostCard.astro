@@ -14,7 +14,7 @@ const target = post.type == 'LINK' ? '_blank' : undefined;
 ---
 
 <a href={href} target={target} class="postcard" aria-label={post.title}>
-    <Image width={600} src={post.image} alt="Post Cover Image" format="webp" />
+    <Image width={800} src={post.image} alt="Post Cover Image" format="webp" />
 
     <div class="details">
         <Tag name={post.tag} />
@@ -36,7 +36,7 @@ const target = post.type == 'LINK' ? '_blank' : undefined;
         gap: 0px;
 
         min-width: 325px;
-        width: 325px;
+        width: 100%;
 
         @include media('<400px') {
             min-width: 200px;
@@ -47,8 +47,6 @@ const target = post.type == 'LINK' ? '_blank' : undefined;
         color: var(--text);
         background-color: var(--background-secondary);
         border-radius: 12px;
-
-        flex: 1 1 40%;
 
         transition: box-shadow 0.2s ease-in-out;
 
