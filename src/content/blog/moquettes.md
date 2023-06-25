@@ -2,7 +2,7 @@
 tag: blog
 title: Moquettes
 excerpt: ADD EXCERPT
-image: tauri-svelte.png
+image: $assets/tauri-svelte.png
 timestamp: 1687708151065 # TODO UPDATE
 ---
 
@@ -22,25 +22,25 @@ The designs/patterns are easily my favourite part about Moquettes. Getting the d
 
 I'm going to specifically focusing on the patterns seen in London since it's probably the most well documented use going all the way back to the 1920s. The first Moquette pattern was called Lozenge, commissioned by the Underground Group in 1923. It quickly became the standard pattern and was produced by three major Moquette manufacturers.
 
-![](https://www.ltmuseum.co.uk/system/files/styles/collection_item_component_600_px_wide/private/collection_item/DR00011mj.jpg?itok=-9UVefWC)
+![Lozenge Moquette]($assets/moquettes/lozenge-moquette.png)
 
 ### Routemaster Moquette
 
 In the '50s, Douglas Scott was commissioned to design the now iconic Routemaster busses, with the first prototype being created in 1954. He carefully chose the colours of the interior, and in 1961, a Moquette featuring the maroon, yellow, and green of the interior was introduced.
 
-![](https://www.ltmuseum.co.uk/system/files/styles/collection_item_component_600_px_wide/private/collection_item/i0000im5_1.jpg?itok=F8nX0TQF)
+![Routemaster Moquette]($assets/moquettes/routemaster-moquette.png)
 
 ### The Victoria Line
 
 Professor Misha Black worked as the design consultant for the Victoria Line in 1964. Marianne Straub, Jacqueline Groag, and the Orbit Design Group were comissioned to create some new Moquette designs for the line. Unfortunately, the designs were never used due to time pressures. Some pre-existing blue and green designs were used instead, featured both on the rail and the road.
 
-![](https://www.ltmuseum.co.uk/system/files/styles/collection_item_component_600_px_wide/private/collection_item/DR00012ak.jpg?itok=oJ8Q1Dya)
+![Victoria Line Moquette]($assets/moquettes/victoria-line-moquette.png)
 
 ### The Moquette Identity
 
 During the 1990s, the London Underground experimented with giving each line its own Moquette, rather than using pre-existing designs on its trains. The designs attempted to incorporate the colours of both the line and carriage, similar to the work Douglas did for the Routemaster bus. For example the following design was using on the red branded Central Line:
 
-![](https://www.ltmuseum.co.uk/system/files/styles/collection_item_component_600_px_wide/private/collection_item/DR00011md.jpg?itok=RRAS-mK-)
+![1990s Central Line Moquette]($assets/moquettes/old-central-line-moquette.png)
 
 ### Moquettes Today
 
@@ -50,7 +50,7 @@ The designs and colours of Moquettes have changed over time, but the tradition o
 
 My favourite Moquette design was made around 2011 and is still featured on the District (Green), Circle (Yellow), Metropolitan (Magenta), and Hammersmith & City Lines (Pink). Its design is simple but beautiful, bringing together the four colours of the lines it serves. It's an amazing easter egg for those of us who are enthusiasts or regular travellers of those lines.
 
-![](https://www.ltmuseum.co.uk/system/files/styles/collection_item_component_600_px_wide/private/collection_item/DR00013c3.jpg?itok=kMnrs0nr)
+![My Favourite Moquette]($assets/moquettes/best-moquette.png)
 
 ## Sources
 
