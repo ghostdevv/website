@@ -1,4 +1,4 @@
-import { getPosts } from '$helpers/posts';
+import { getPosts } from '$lib/posts';
 import rss from '@astrojs/rss';
 
 export const get = async () => {

@@ -76,7 +76,7 @@
 </div>
 
 <style lang="scss">
-    @import 'src/helpers/media';
+    @import 'src/lib/media';
 
     $mobile: '<750px';
     $desktop: '>750px';

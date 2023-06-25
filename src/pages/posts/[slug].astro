@@ -1,13 +1,13 @@
 ---
-import SettingsModal from '$components/posts/SettingsModal.svelte';
+import SettingsModal from '$lib/components/posts/SettingsModal.svelte';
 import { faRss, faCog } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { CollectionEntry, getCollection } from 'astro:content';
-import Contents from '$components/posts/Contents.svelte';
-import { tweetLink } from '$helpers/twitter';
-import Page from '$layouts/Page.astro';
+import Contents from '$lib/components/posts/Contents.svelte';
+import Page from '$lib/layouts/Page.astro';
+import { tweetLink } from '$lib/twitter';
 import { format } from 'date-fns';
-import '$layouts/post.scss';
+import '$lib/layouts/post.scss';
 import Fa from 'svelte-fa';
 
 export async function getStaticPaths() {
@@ -81,7 +81,7 @@ const { Content, headings } = await post.render();
 </Page>
 
 <style lang="scss">
-    @import 'src/helpers/media';
+    @import 'src/lib/media';
 
     article {
         width: 100%;

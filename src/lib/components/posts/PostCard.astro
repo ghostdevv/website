@@ -1,5 +1,5 @@
 ---
-import type { Post } from '$data/posts';
+import type { Post } from '$lib/posts';
 import { Image } from 'astro:assets';
 import Tag from './Tag.svelte';
 
@@ -28,7 +28,7 @@ const target = post.type == 'LINK' ? '_blank' : undefined;
 </a>
 
 <style lang="scss">
-    @import 'src/helpers/media';
+    @import 'src/lib/media';
 
     .postcard {
         display: flex;
