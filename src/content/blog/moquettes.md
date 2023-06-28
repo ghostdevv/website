@@ -1,10 +1,10 @@
 ---
 tag: blog
 title: Moquettes
-excerpt: ADD EXCERPT
+excerpt: Moquettes have been used on public transport around the world for over 100 years. Find out what they are and why in this post...
 image: $assets/moquettes/moquettes.png
 imagePosition: top
-timestamp: 1687708151065 # TODO UPDATE
+timestamp: 1687943365983
 ---
 
 Moquettes have been used on public transport around the world for over 100 years. There's a good chance you've sat on a Moquette covered seat; I am as I write this now! Moquettes are an extremely durable, woven fabric that's hard to stain. This makes them the perfect material for the millions of passengers that need somewhere to sit. The history of the Moquette is interesting since, while it's a dull topic at first glance, they're integral part of our transport networks.
