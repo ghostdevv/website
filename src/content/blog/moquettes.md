@@ -3,6 +3,7 @@ tag: blog
 title: Moquettes
 excerpt: ADD EXCERPT
 image: $assets/moquettes/moquettes.png
+imagePosition: top
 timestamp: 1687708151065 # TODO UPDATE
 ---
 

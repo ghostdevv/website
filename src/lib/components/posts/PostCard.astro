@@ -14,7 +14,13 @@ const target = post.type == 'LINK' ? '_blank' : undefined;
 ---
 
 <a href={href} target={target} class="postcard" aria-label={post.title}>
-    <Image width={800} src={post.image} alt="Post Cover Image" format="webp" />
+    <Image
+        width={800}
+        src={post.image}
+        alt="Post Cover Image"
+        format="webp"
+        class:list={post.imagePosition}
+    />
 
     <div class="details">
         <Tag name={post.tag} />
@@ -71,6 +77,10 @@ const target = post.type == 'LINK' ? '_blank' : undefined;
             object-fit: cover;
             transform: scale(1.04);
             border-radius: 12px 12px 0 0;
+
+            &.top {
+                object-position: top;
+            }
         }
 
         .details {
