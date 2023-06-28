@@ -2,7 +2,7 @@
 tag: blog
 title: Moquettes
 excerpt: ADD EXCERPT
-image: $assets/tauri-svelte.png
+image: $assets/moquettes/moquettes.png
 timestamp: 1687708151065 # TODO UPDATE
 ---
 
