@@ -16,6 +16,11 @@
             $lineHeight,
         );
     }
+
+    function reset() {
+        lineHeight.reset();
+        fontSize.reset();
+    }
 </script>
 
 <Modal let:close>
@@ -51,7 +56,10 @@
                 bind:value={$lineHeight} />
         </div>
 
-        <button on:click={close}>Close</button>
+        <div class="row">
+            <button on:click={close}>Close</button>
+            <button class="secondary" on:click={reset}>Reset</button>
+        </div>
     </card>
 </Modal>
 
