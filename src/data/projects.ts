@@ -127,6 +127,19 @@ export const projects: Project[] = [
     {
         name: 'esm.sh browser extension',
         url: 'https://github.com/ghostdevv/esm.sh-extension',
-        star: true
-    }
+        star: true,
+    },
+    {
+        name: 'Shire',
+        url: 'https://github.com/ghostdevv/shire',
+        star: true,
+    },
+    {
+        name: 'rpilocator webhooks',
+        url: 'https://github.com/ghostdevv/rpilocator-webhooks',
+    },
+    {
+        name: 'Short',
+        url: 'https://github.com/ghostdevv/short',
+    },
 ];
