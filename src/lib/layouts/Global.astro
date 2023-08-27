@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
 import 'ghostsui';
 
 interface Frontmatter {
@@ -60,6 +61,9 @@ const image = `https://ghostdev.xyz${image_path}`;
             data-goatcounter="https://ghost.goatcounter.com/count"
             async
             src="//gc.zgo.at/count.js"></script>
+
+        <!-- Transitions -->
+        <ViewTransitions />
 
         <!-- Build -->
     </head>
