@@ -8,11 +8,6 @@ export default defineConfig({
 
     site: 'https://ghostdev.xyz/',
 
-    experimental: {
-        assets: true,
-        viewTransitions: true,
-    },
-
     vite: {
         ssr: {
             noExternal: ['@fortawesome/*'],
