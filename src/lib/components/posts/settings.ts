@@ -1,6 +1,6 @@
 import { persisted } from 'svelte-local-storage-store';
 
-export const fontSize = setting('post-font-size', 18);
+export const fontSize = setting('post-font-size', 19);
 export const lineHeight = setting('post-line-height', 1.8);
 
 function setting<T>(key: string, initialValue: T) {
