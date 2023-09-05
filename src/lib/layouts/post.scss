@@ -42,6 +42,7 @@
     }
 
     p {
+        font-weight: 500;
         margin: 12px 0px;
     }
 
@@ -52,5 +53,10 @@
         &:not(&:first-child) {
             margin-top: 32px;
         }
+    }
+
+    h1,
+    h2 {
+        color: #fff;
     }
 }
