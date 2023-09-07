@@ -1,10 +1,14 @@
 ---
 import ColourGroup from '$lib/components/branding/ColourGroup.astro';
+import inlineFavicon from '$lib/components/branding/inlineFavicon';
+import CopyableInput from '$lib/components/CopyableInput.svelte';
+import { faDownload } from '@fortawesome/free-solid-svg-icons';
 import LogoRainbow from '$lib/components/LogoRainbow.svelte';
 import Logo from '$lib/components/branding/Logo.svelte';
 import RegularLogo from '$lib/components/Logo.svelte';
 import Page from '$lib/layouts/Page.astro';
 import { colours } from '$data/colours';
+import Fa from 'svelte-fa';
 
 function getLogos(type: 'main' | 'rainbow') {
     const formats = [
@@ -51,6 +55,18 @@ function getLogos(type: 'main' | 'rainbow') {
             </Logo>
         </div>
     </section>
+
+    <section class="col">
+        <h2>Favicon</h2>
+        <hr />
+
+        <a href="/favicon.png" target="_blank" download>
+            <Fa icon={faDownload} /> favicon.png
+        </a>
+
+        <h3 style="margin-top: 12px;">Inline Code</h3>
+        <CopyableInput client:load value={inlineFavicon} />
+    </section>
 </Page>
 
 <style lang="scss">
@@ -63,5 +79,9 @@ function getLogos(type: 'main' | 'rainbow') {
     .logos {
         display: flex;
         gap: 64px;
+    }
+
+    section {
+        margin: 64px auto;
     }
 </style>
