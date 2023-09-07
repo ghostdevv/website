@@ -1,9 +1,25 @@
 ---
 import ColourGroup from '$lib/components/branding/ColourGroup.astro';
-import Logo from '$lib/components/Logo.svelte';
 import LogoRainbow from '$lib/components/LogoRainbow.svelte';
-import { colours } from '$data/colours';
+import Logo from '$lib/components/branding/Logo.svelte';
+import RegularLogo from '$lib/components/Logo.svelte';
 import Page from '$lib/layouts/Page.astro';
+import { colours } from '$data/colours';
+
+function getLogos(type: 'main' | 'rainbow') {
+    const formats = [
+        { name: 'SVG', url: 'ghost-logo-$TYPE.svg' },
+        { name: 'WEBP 500x', url: 'ghost-logo-$TYPE.webp' },
+        { name: 'PNG 500x', url: 'ghost-logo-$TYPE-500.png' },
+        { name: 'PNG 1000x', url: 'ghost-logo-$TYPE-1000.png' },
+        { name: 'PNG Padded 500x', url: 'ghost-logo-$TYPE-padded.png' },
+    ];
+
+    return formats.map(({ name, url }) => ({
+        name,
+        url: `/logos/${type}/${url.replace(/\$TYPE/g, type)}`,
+    }));
+}
 ---
 
 <Page>
@@ -26,13 +42,13 @@ import Page from '$lib/layouts/Page.astro';
         <hr />
 
         <div class="logos">
-            <div class="logo">
-                <Logo />
-            </div>
+            <Logo name="Main" formats={getLogos('main')}>
+                <RegularLogo />
+            </Logo>
 
-            <div class="logo">
+            <Logo name="Rainbow" formats={getLogos('rainbow')}>
                 <LogoRainbow />
-            </div>
+            </Logo>
         </div>
     </section>
 </Page>
@@ -46,10 +62,6 @@ import Page from '$lib/layouts/Page.astro';
 
     .logos {
         display: flex;
-        gap: 48px;
-    }
-
-    .logo {
-        width: 160px;
+        gap: 64px;
     }
 </style>
