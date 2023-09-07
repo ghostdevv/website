@@ -1,9 +1,25 @@
 ---
 import ColourGroup from '$lib/components/branding/ColourGroup.astro';
-import Logo from '$lib/components/Logo.svelte';
+import inlineFavicon from '$lib/components/branding/inlineFavicon';
+import CopyableInput from '$lib/components/CopyableInput.svelte';
+import { faDownload } from '@fortawesome/free-solid-svg-icons';
 import LogoRainbow from '$lib/components/LogoRainbow.svelte';
-import { colours } from '$data/colours';
+import Logo from '$lib/components/branding/Logo.svelte';
+import RegularLogo from '$lib/components/Logo.svelte';
 import Page from '$lib/layouts/Page.astro';
+import { colours } from '$data/colours';
+import Fa from 'svelte-fa';
+
+function getLogos(type: 'main' | 'rainbow') {
+    // prettier-ignore
+    return [
+        { name: 'SVG', url: `/logos/${type}ghost-logo-${type}.svg` },
+        { name: 'WEBP 500x', url: `/logos/${type}ghost-logo-${type}.webp` },
+        { name: 'PNG 500x', url: `/logos/${type}ghost-logo-${type}-500.png` },
+        { name: 'PNG 1000x', url: `/logos/${type}ghost-logo-${type}-1000.png` },
+        { name: 'PNG Padded 500x', url: `/logos/${type}ghost-logo-${type}-padded.png` },
+    ];
+}
 ---
 
 <Page>
@@ -26,14 +42,26 @@ import Page from '$lib/layouts/Page.astro';
         <hr />
 
         <div class="logos">
-            <div class="logo">
-                <Logo />
-            </div>
+            <Logo name="Main" formats={getLogos('main')}>
+                <RegularLogo />
+            </Logo>
 
-            <div class="logo">
+            <Logo name="Rainbow" formats={getLogos('rainbow')}>
                 <LogoRainbow />
-            </div>
+            </Logo>
         </div>
+    </section>
+
+    <section class="col">
+        <h2>Favicon</h2>
+        <hr />
+
+        <a href="/favicon.png" target="_blank" download>
+            <Fa icon={faDownload} /> favicon.png
+        </a>
+
+        <h3 style="margin-top: 12px;">Inline Code</h3>
+        <CopyableInput client:load value={inlineFavicon} />
     </section>
 </Page>
 
@@ -46,10 +74,10 @@ import Page from '$lib/layouts/Page.astro';
 
     .logos {
         display: flex;
-        gap: 48px;
+        gap: 64px;
     }
 
-    .logo {
-        width: 160px;
+    section {
+        margin: 64px auto;
     }
 </style>
