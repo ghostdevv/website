@@ -1,6 +1,7 @@
 ---
 import type { Post } from '$lib/posts';
-import { Image } from 'astro:assets';
+
+import { getImage } from 'astro:assets';
 import Tag from './Tag.svelte';
 
 interface Props {
@@ -11,16 +12,12 @@ const { post } = Astro.props;
 
 const href = post.type == 'BLOG' ? `/posts/${post.slug}` : post.link;
 const target = post.type == 'LINK' ? '_blank' : undefined;
+
+const img = await getImage({ src: post.image, width: 800, format: 'webp' });
 ---
 
 <a href={href} target={target} class="postcard" aria-label={post.title}>
-    <Image
-        width={800}
-        src={post.image}
-        alt="Post Cover Image"
-        format="webp"
-        class:list={post.imagePosition}
-    />
+    <div class="image" style=`background-image: url(${img.src});`></div>
 
     <div class="details">
         <Tag name={post.tag} />
@@ -63,7 +60,9 @@ const target = post.type == 'LINK' ? '_blank' : undefined;
             color: var(--text);
             text-decoration: none;
             background-color: var(--background-secondary);
-            box-shadow: 0 0 0 transparent, 0 0 0 5px var(--primary);
+            box-shadow:
+                0 0 0 transparent,
+                0 0 0 5px var(--primary);
         }
 
         .title {
@@ -71,16 +70,21 @@ const target = post.type == 'LINK' ? '_blank' : undefined;
             font-weight: 500;
         }
 
-        img {
+        .image {
+            position: relative;
             width: 100%;
-            height: 300px;
-            object-fit: cover;
+            height: auto;
+            aspect-ratio: 2/1;
+            background-position: 0% 50%;
+            background-repeat: no-repeat;
+            background-size: cover;
+
             transform: scale(1.04);
             border-radius: 12px 12px 0 0;
-
-            &.top {
-                object-position: top;
-            }
+            box-shadow:
+                -2px 1px 10px #000a inset,
+                -2px 3px 20px #0006 inset,
+                -7px 3px 3px #fff6 inset;
         }
 
         .details {
