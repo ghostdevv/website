@@ -3,7 +3,6 @@ tag: blog
 title: Moquettes
 excerpt: Moquettes have been used on public transport around the world for over 100 years. Find out what they are and why in this post...
 image: $assets/moquettes/moquettes.png
-imagePosition: top
 timestamp: 1687943365983
 ---
 
