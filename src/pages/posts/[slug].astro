@@ -1,8 +1,8 @@
 ---
 import SettingsModal from '$lib/components/posts/SettingsModal.svelte';
+import { type CollectionEntry, getCollection } from 'astro:content';
 import { faRss, faCog } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { CollectionEntry, getCollection } from 'astro:content';
 import Contents from '$lib/components/posts/Contents.svelte';
 import Page from '$lib/layouts/Page.astro';
 import { tweetLink } from '$lib/twitter';
@@ -66,12 +66,12 @@ const { Content, headings } = await post.render();
                     target="_blank"
                 >
                     <Fa icon={faTwitter} />
-                    Share on twitter
+                     Share on twitter
                 </a>
 
                 <a href="/rss.xml" target="_blank" class="button">
                     <Fa icon={faRss} />
-                    RSS
+                     RSS
                 </a>
             </div>
 
@@ -108,7 +108,9 @@ const { Content, headings } = await post.render();
 
         .split {
             display: grid;
-            grid-template-columns: 1fr max-content;
+            max-width: 100%;
+            width: 100%;
+            grid-template-columns: 1fr max(250px);
             gap: 80px;
 
             position: relative;
@@ -119,6 +121,8 @@ const { Content, headings } = await post.render();
         }
 
         .markdown {
+            width: 100%;
+            max-width: 100%;
             overflow: auto;
         }
 

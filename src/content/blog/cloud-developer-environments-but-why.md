@@ -89,6 +89,6 @@ If you're looking for an experience similar to Gitpod, but you need to self host
 
 I'd also recommend checking out [Jetpack Devbox](https://www.jetpack.io/devbox). It's not technically a CDE if you're self hosting, since everything is running on your local machine, but it deserves a place in this list. With Devbox, you get an easy to use CLI that allows you to quickly spin up Nix based isolated dev environments. They use a custom [`devbox.json`](https://www.jetpack.io/devbox/docs/configuration/) configuration file which allows you to specify your toolchain without any Nix knowledge, lowering the barrier for entry. Jetpack is currently working on Devbox in the Cloud, which you can try out at [devbox.sh](https://devbox.sh). Devbox is an exciting option for those of us who have the hardware to power the CDE experience locally.
 
-#### Honorable Mentions
+### Honorable Mentions
 
 I wanna shout-out [Stackblitz](https://stackblitz.com/) here. They aren't a true Cloud Developer Environment since everything is happening in your local browser tab. However, their [webcontainers](https://webcontainers.io/) technology allows you to run NodeJS and operating system commands entirely in your browser. This is a great option if you are a web developer with a NodeJS tool chain because you don't have to pay for the cloud costs. You can even build your own REPL/IDE online, an amazing example of this is [SvelteLab](https://www.sveltelab.dev/).
