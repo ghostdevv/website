@@ -10,6 +10,8 @@ export default defineConfig({
     site: 'https://ghostdev.xyz/',
 
     markdown: {
+        gfm: true,
+
         rehypePlugins: [
             [
                 rehypeWrap,
