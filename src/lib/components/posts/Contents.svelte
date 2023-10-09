@@ -33,7 +33,7 @@
 <div class="contents">
     {#each headings as heading}
         <a
-            class="link depth-{Math.min(heading.depth, 3)}"
+            class="link depth-{Math.min(heading.depth, 4)}"
             class:active={activeHeading == heading.slug}
             href="#{heading.slug}">
             {heading.text}
@@ -65,7 +65,8 @@
         }
 
         &.depth-2,
-        &.depth-3 {
+        &.depth-3,
+        &.depth-4 {
             font-size: 0.9rem;
             margin-top: 4px;
         }
@@ -76,6 +77,10 @@
 
         &.depth-3 {
             padding-left: 24px;
+        }
+
+        &.depth-4 {
+            padding-left: 36px;
         }
     }
 </style>
