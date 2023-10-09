@@ -108,7 +108,9 @@ const { Content, headings } = await post.render();
 
         .split {
             display: grid;
-            grid-template-columns: 1fr max-content;
+            max-width: 100%;
+            width: 100%;
+            grid-template-columns: 1fr max(250px);
             gap: 80px;
 
             position: relative;
@@ -119,6 +121,8 @@ const { Content, headings } = await post.render();
         }
 
         .markdown {
+            width: 100%;
+            max-width: 100%;
             overflow: auto;
         }
 

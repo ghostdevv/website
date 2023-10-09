@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import rehypeWrap from 'rehype-wrap-all';
 import sitemap from '@astrojs/sitemap';
 import svelte from '@astrojs/svelte';
 
@@ -7,6 +8,18 @@ export default defineConfig({
     integrations: [svelte(), sitemap()],
 
     site: 'https://ghostdev.xyz/',
+
+    markdown: {
+        rehypePlugins: [
+            [
+                rehypeWrap,
+                {
+                    wrapper: 'div.table-wrapper',
+                    selector: 'table',
+                },
+            ],
+        ],
+    },
 
     vite: {
         ssr: {
