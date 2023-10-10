@@ -64,6 +64,7 @@ Here's a high-level overview of some CDE's I've tried, along with some of the mo
 | [IDX](https://idx.dev/)                                              | VScode                                                                              | GitHub [^2]               | ❌          | ❌            | ❓ [^3] |
 | [CodeSandbox](https://codesandbox.io/cloud-development-environments) | Custom in-browser, VSCode                                                           | GitHub                    | ❌          | ❌            | ✅      |
 | [Hocus](https://hocus.dev/)                                          | VSCode                                                                              | GitHub, GitLab, BitBucket | ✅          | ✅            | ❌      |
+| [Daytona](https://daytona.io/)                                       | VSCode, Jetbrains Suite, Terminal, Web IDE, VIM                                     | GitHub, GitLab, BitBucket | ❌          | ✅            | ❌      |
 | [DevZero](https://devzero.io/)                                       | VSCode                                                                              | GitHub, GitLab, BitBucket | ❌          | ❌ [^5]       | ✅      |
 | [Codeanywhere](https://codeanywhere.com/)                            | Custom in browser editor                                                            | GitHub, GitLab, BitBucket | ❌          | ❌            | ✅      |
 
