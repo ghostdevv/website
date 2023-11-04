@@ -1,8 +1,9 @@
 <script lang="ts">
     import { slide } from 'svelte-reduced-motion/transition';
     import { Hamburger } from 'svelte-hamburgers';
-    // import TRainbow from './TRainbow.svelte';
+    import TRainbow from './TRainbow.svelte';
     import { mounted } from 'svelte-mount';
+    import { HALLOWEEN } from '$lib/vars';
 
     export let url: URL;
 
@@ -30,11 +31,14 @@
             class="logo"
             aria-label="Home"
             on:contextmenu|preventDefault={branding}>
-            <!-- <TRainbow /> -->
-            <img
-                style="width: 100%; height: 100%"
-                src="/ghost-halloween.png"
-                alt="GHOST's Halloween Theme Logo" />
+            {#if HALLOWEEN}
+                <img
+                    style="width: 100%; height: 100%"
+                    src="/ghost-halloween.png"
+                    alt="GHOST's Halloween Theme Logo" />
+            {:else}
+                <TRainbow />
+            {/if}
         </a>
 
         <div class="hamburger">
