@@ -1,16 +1,16 @@
 ---
 tag: blog
-title: Cloud Developer Environments... but why?!
-excerpt: What is a Cloud Developer Environment (CDE) and why would I ever need one?
-image: $assets/cloud-developer-environments-but-why.png
+title: Cloud Development Environments... but why?!
+excerpt: What is a Cloud Development Environment (CDE) and why would I ever need one?
+image: $assets/cloud-development-environments-but-why.png
 timestamp: 1696875978128
 ---
 
-You might have come across a significant amount of news in recent years regarding Cloud Developer Environments (CDE). Nevertheless, CDE's are still an under-utilised tool, with many misunderstanding or underestimating their value. Resisting change is part of human nature; it can be intimidating - and in our industry - often involves financial costs. Plus, if you already have a powerful computer, why would you ever need a CDE?
+You might have come across a significant amount of news in recent years regarding Cloud Development Environments (CDE). Nevertheless, CDE's are still an under-utilised tool, with many misunderstanding or underestimating their value. Resisting change is part of human nature; it can be intimidating - and in our industry - often involves financial costs. Plus, if you already have a powerful computer, why would you ever need a CDE?
 
 I've grown quite passionate about this topic since joining the [Gitpod Community](https://www.gitpod.io/community) Team. While I was a skeptic myself, the enthusiasts in the CDE communities have helped me learn to appreciate the incredible workflows made possible by these environments. In this post, I'll try to address common concerns, and explore a comprehensive list of CDEs that I believe are worth trying out yourself.
 
-## What is a Cloud Developer Environment?
+## What is a Cloud Development Environment?
 
 A Cloud Development Environment (CDE) is a readily-available development environment that comes pre-configured with all the necessary tools, libraries, and dependencies required to write or review code. The ideal CDE is a reproducable environment, with direct access to the underlying machine, enabling you to use all the tools and software you love.
 
@@ -46,7 +46,7 @@ Most companies that create a CDE will have a dedicated security team that not on
 
 ### Saving money
 
-There are plenty of advantages I haven't mentioned yet - a big one being cost-savings for businesses. There are few things businesses love more than saving money. For most of the reasons outlined above, local developer environments can waste a lot of time. That time translates to thousands of dollars in development time for a company, and lots of unnecessary stress for developers who often prefer to focus on the code rather than the environment. [A recent survey](https://www.linkedin.com/posts/johanneslandgraf_development-environments-are-broken-the-activity-7079816892957216769-bkyu/) from the CEO of Gitpod found that the average developer spends ~ 2.2 hours per week troubleshooting local developer environments, which is a direct loss of developer time for a business.
+There are plenty of advantages I haven't mentioned yet - a big one being cost-savings for businesses. There are few things businesses love more than saving money. For most of the reasons outlined above, local development environments can waste a lot of time. That time translates to thousands of dollars in development time for a company, and lots of unnecessary stress for developers who often prefer to focus on the code rather than the environment. [A recent survey](https://www.linkedin.com/posts/johanneslandgraf_development-environments-are-broken-the-activity-7079816892957216769-bkyu/) from the CEO of Gitpod found that the average developer spends ~ 2.2 hours per week troubleshooting local development environments, which is a direct loss of developer time for a business.
 
 ## Ok, what are my options?
 
@@ -92,4 +92,4 @@ I'd also recommend checking out [Jetpack Devbox](https://www.jetpack.io/devbox).
 
 ### Honorable Mentions
 
-I wanna shout-out [Stackblitz](https://stackblitz.com/) here. They aren't a true Cloud Developer Environment since everything is happening in your local browser tab. However, their [webcontainers](https://webcontainers.io/) technology allows you to run NodeJS and operating system commands entirely in your browser. This is a great option if you are a web developer with a NodeJS tool chain because you don't have to pay for the cloud costs. You can even build your own REPL/IDE online, an amazing example of this is [SvelteLab](https://www.sveltelab.dev/).
+I wanna shout-out [Stackblitz](https://stackblitz.com/) here. They aren't a true Cloud Development Environment since everything is happening in your local browser tab. However, their [webcontainers](https://webcontainers.io/) technology allows you to run NodeJS and operating system commands entirely in your browser. This is a great option if you are a web developer with a NodeJS tool chain because you don't have to pay for the cloud costs. You can even build your own REPL/IDE online, an amazing example of this is [SvelteLab](https://www.sveltelab.dev/).
