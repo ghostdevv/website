@@ -5,10 +5,11 @@ import { getImage } from 'astro:assets';
 import Tag from './Tag.svelte';
 
 interface Props {
+    embedded?: boolean;
     post: Post;
 }
 
-const { post } = Astro.props;
+const { post, embedded } = Astro.props;
 
 const href = post.type == 'BLOG' ? `/posts/${post.slug}` : post.link;
 const target = post.type == 'LINK' ? '_blank' : undefined;
@@ -16,8 +17,8 @@ const target = post.type == 'LINK' ? '_blank' : undefined;
 const img = await getImage({ src: post.image, width: 800, format: 'webp' });
 ---
 
-<a href={href} target={target} class="postcard" aria-label={post.title}>
-    <div class="image" style=`background-image: url(${img.src});`></div>
+<a href={href} target={target} class="postcard" class:list={{ embedded }} {post.title}>
+    <div class="image" style={`background-image: url(${img.src});`}></div>
 
     <div class="details">
         <Tag name={post.tag} />
@@ -96,6 +97,17 @@ const img = await getImage({ src: post.image, width: 800, format: 'webp' });
 
             .description {
                 color: rgba(var(--text-rgb), 0.5);
+            }
+        }
+
+        &.embedded {
+            background-color: var(--background-tertiary);
+
+            .image {
+                box-shadow:
+                    -2px 1px 10px #1d1d1daa inset,
+                    -2px 3px 20px #1d1d1daa inset,
+                    -7px 3px 3px #fff6 inset;
             }
         }
     }

@@ -1,0 +1,24 @@
+---
+import PostCard from "$lib/components/posts/PostCard.astro"
+import Global from "$lib/layouts/Global.astro";
+import { getPosts } from "$lib/posts";
+
+let posts = await getPosts();
+---
+
+<Global>
+    <main>
+        <PostCard embedded={true} post={posts[0]!} />
+    </main>
+</Global>
+
+<style>
+    main {
+        padding: 16px;
+    }
+
+    html,
+    body {
+        background: var(--background-secondary)
+    }
+</style>
