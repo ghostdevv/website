@@ -67,7 +67,7 @@ Here's a high-level overview of some CDE's I've tried, along with some of the mo
 | [Daytona](https://daytona.io/)                                              | VSCode, Jetbrains Suite, Terminal, Web IDE, VIM                                     | GitHub, GitLab, BitBucket | ❌          | ✅            | ❌      |
 | [DevZero](https://devzero.io/)                                              | VSCode                                                                              | GitHub, GitLab, BitBucket | ❌          | ❌ [^5]       | ✅      |
 | [Codeanywhere](https://codeanywhere.com/)                                   | Custom in browser editor                                                            | GitHub, GitLab, BitBucket | ❌          | ❌            | ✅      |
-| [Cloudomation Devstack](https://cloudomation.com/en/cloudomation-devstack/) | VSCode, Jetbrains Suite, Eclipse, Web IDE                                           | Not tied to git           | ❌          | ✅ [^6]       | ✅      |
+| [Cloudomation DevStack](https://cloudomation.com/en/cloudomation-devstack/) | VSCode, Jetbrains Suite, Eclipse, Web IDE                                           | Not tied to git           | ❌          | ✅ [^6]       | ✅      |
 
 [^1]: Gitpod provides [no _official_ way to self host](https://www.gitpod.io/blog/introducing-gitpod-dedicated#ending-support-for-self-hosted-and-moving-our-source-code-to-the-open-source-agpl-licence), but it's still possible using some Community guides. Enterprise customers can run in their own cloud account with [Gitpod Dedicated](https://www.gitpod.io/dedicated).
 [^2]: I could only find a mention of GitHub and I'm still on the waitlist.
