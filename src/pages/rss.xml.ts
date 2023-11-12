@@ -1,7 +1,7 @@
 import { getPosts } from '$lib/posts';
 import rss from '@astrojs/rss';
 
-export const get = async () => {
+export const GET = async () => {
     const posts = await getPosts();
 
     return rss({
