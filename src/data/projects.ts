@@ -142,4 +142,8 @@ export const projects: Project[] = [
         name: 'Short',
         url: 'https://github.com/ghostdevv/short',
     },
+    {
+        name: 'Extractinator',
+        url: 'https://github.com/ghostdevv/extractinator',
+    },
 ];
