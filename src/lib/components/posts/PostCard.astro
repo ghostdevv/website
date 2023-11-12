@@ -53,10 +53,6 @@ const img = await getImage({ src: post.image, width: 800, format: 'webp' });
         border-radius: 12px;
         overflow: hidden;
 
-        &.embedded {
-            background-color: var(--background-primary);
-        }
-
         transition: box-shadow 0.2s ease-in-out;
 
         &:hover,
@@ -101,6 +97,17 @@ const img = await getImage({ src: post.image, width: 800, format: 'webp' });
 
             .description {
                 color: rgba(var(--text-rgb), 0.5);
+            }
+        }
+
+        &.embedded {
+            background-color: var(--background-tertiary);
+
+            .image {
+                box-shadow:
+                    -2px 1px 10px #1d1d1daa inset,
+                    -2px 3px 20px #1d1d1daa inset,
+                    -7px 3px 3px #fff6 inset;
             }
         }
     }
