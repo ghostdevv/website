@@ -17,7 +17,7 @@ const img = await getImage({ src: post.image, width: 800, format: 'webp' });
 ---
 
 <a href={href} target={target} class="postcard" aria-label={post.title}>
-    <div class="image" style=`background-image: url(${img.src});`></div>
+    <div class="image" style={`background-image: url(${img.src});`}></div>
 
     <div class="details">
         <Tag name={post.tag} />
