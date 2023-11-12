@@ -8,12 +8,17 @@ let posts = await getPosts();
 
 <Global>
     <main>
-        <PostCard post={posts[0]!} />
+        <PostCard embedded={true} post={posts[0]!} />
     </main>
 </Global>
 
 <style>
     main {
         padding: 16px;
+    }
+
+    html,
+    body {
+        background: var(--background-secondary)
     }
 </style>
