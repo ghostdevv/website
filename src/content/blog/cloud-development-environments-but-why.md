@@ -54,25 +54,27 @@ The list of companies making CDEs is still growing, making it increasingly diffi
 
 Here's a high-level overview of some CDE's I've tried, along with some of the more important features I look for when evaluating them:
 
-| CDE                                                                  | IDEs                                                                                | Git Providers             | Open Source | Self Hostable | SaaS    |
-| -------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ------------------------- | ----------- | ------------- | ------- |
-| [Gitpod](https://www.gitpod.io/)                                     | VSCode, Jetbrains Suite, Terminal                                                   | GitHub, GitLab, BitBucket | ✅          | ❌ [^1]       | ✅      |
-| [GitHub Codespaces](https://github.com/features/codespaces)          | VSCode, Jetbrains Suite, JupyterLab                                                 | GitHub                    | ❌          | ❌            | ✅      |
-| [Coder](https://coder.com/)                                          | VSCode, Jetbrains Suite, Jupyter, [and more](https://coder.com/docs/v2/latest/ides) | Not tied to git           | ✅          | ✅            | ❌      |
-| [Jetpack Devbox](https://www.jetpack.io/devbox)                      | VSCode                                                                              | GitHub                    | ✅          | ✅            | ❓ [^4] |
-| [Replit](https://replit.com/)                                        | Custom in-browser or mobile app editor                                              | GitHub                    | ❌          | ❌            | ✅      |
-| [IDX](https://idx.dev/)                                              | VScode                                                                              | GitHub [^2]               | ❌          | ❌            | ❓ [^3] |
-| [CodeSandbox](https://codesandbox.io/cloud-development-environments) | Custom in-browser, VSCode                                                           | GitHub                    | ❌          | ❌            | ✅      |
-| [Hocus](https://hocus.dev/)                                          | VSCode                                                                              | GitHub, GitLab, BitBucket | ✅          | ✅            | ❌      |
-| [Daytona](https://daytona.io/)                                       | VSCode, Jetbrains Suite, Terminal, Web IDE, VIM                                     | GitHub, GitLab, BitBucket | ❌          | ✅            | ❌      |
-| [DevZero](https://devzero.io/)                                       | VSCode                                                                              | GitHub, GitLab, BitBucket | ❌          | ❌ [^5]       | ✅      |
-| [Codeanywhere](https://codeanywhere.com/)                            | Custom in browser editor                                                            | GitHub, GitLab, BitBucket | ❌          | ❌            | ✅      |
+| CDE                                                                         | IDEs                                                                                | Git Providers             | Open Source | Self Hostable | SaaS    |
+| --------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ------------------------- | ----------- | ------------- | ------- |
+| [Gitpod](https://www.gitpod.io/)                                            | VSCode, Jetbrains Suite, Terminal                                                   | GitHub, GitLab, BitBucket | ✅          | ❌ [^1]       | ✅      |
+| [GitHub Codespaces](https://github.com/features/codespaces)                 | VSCode, Jetbrains Suite, JupyterLab                                                 | GitHub                    | ❌          | ❌            | ✅      |
+| [Coder](https://coder.com/)                                                 | VSCode, Jetbrains Suite, Jupyter, [and more](https://coder.com/docs/v2/latest/ides) | Not tied to git           | ✅          | ✅            | ❌      |
+| [Jetpack Devbox](https://www.jetpack.io/devbox)                             | VSCode                                                                              | GitHub                    | ✅          | ✅            | ❓ [^4] |
+| [Replit](https://replit.com/)                                               | Custom in-browser or mobile app editor                                              | GitHub                    | ❌          | ❌            | ✅      |
+| [IDX](https://idx.dev/)                                                     | VScode                                                                              | GitHub [^2]               | ❌          | ❌            | ❓ [^3] |
+| [CodeSandbox](https://codesandbox.io/cloud-development-environments)        | Custom in-browser, VSCode                                                           | GitHub                    | ❌          | ❌            | ✅      |
+| [Hocus](https://hocus.dev/)                                                 | VSCode                                                                              | GitHub, GitLab, BitBucket | ✅          | ✅            | ❌      |
+| [Daytona](https://daytona.io/)                                              | VSCode, Jetbrains Suite, Terminal, Web IDE, VIM                                     | GitHub, GitLab, BitBucket | ❌          | ✅            | ❌      |
+| [DevZero](https://devzero.io/)                                              | VSCode                                                                              | GitHub, GitLab, BitBucket | ❌          | ❌ [^5]       | ✅      |
+| [Codeanywhere](https://codeanywhere.com/)                                   | Custom in browser editor                                                            | GitHub, GitLab, BitBucket | ❌          | ❌            | ✅      |
+| [Cloudomation Devstack](https://cloudomation.com/en/cloudomation-devstack/) | VSCode, Jetbrains Suite, Eclipse, Web IDE                                           | Not tied to git           | ❌          | ✅ [^6]       | ✅      |
 
 [^1]: Gitpod provides [no _official_ way to self host](https://www.gitpod.io/blog/introducing-gitpod-dedicated#ending-support-for-self-hosted-and-moving-our-source-code-to-the-open-source-agpl-licence), but it's still possible using some Community guides. Enterprise customers can run in their own cloud account with [Gitpod Dedicated](https://www.gitpod.io/dedicated).
 [^2]: I could only find a mention of GitHub and I'm still on the waitlist.
 [^3]: It's safe to assume it will be a SaaS but I couldn't find any pricing information.
 [^4]: Cloud version is free whilst in beta.
 [^5]: Enterprise customers can run in their own cloud account.
+[^6]: Can be self-hosted but requires a [license purchase](https://cloudomation.com/en/cloudomation-devstack/devstack-pricing/)
 
 This table is accurate as of October 2023, please [let me know](/contact) if there are mistakes or any CDEs missing.
 
