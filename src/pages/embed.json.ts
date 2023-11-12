@@ -3,13 +3,18 @@ import { getPosts } from '$lib/posts';
 
 const latestPost = (await getPosts())[0]!;
 
+const link =
+    latestPost.type == 'LINK' ? latestPost.link : `/posts/${latestPost.slug}`;
+
 const img = await getImage({
     src: latestPost.image,
     width: 800,
     format: 'webp',
 });
 
-export const GET = (request: Request) => {
-    const url = new URL(img.src, new URL(request.url).origin);
-    return Response.redirect(url.toString(), 307);
+export const GET = () => {
+    return Response.json({
+        image: img.src,
+        link,
+    });
 };
