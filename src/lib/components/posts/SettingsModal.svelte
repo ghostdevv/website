@@ -1,8 +1,8 @@
 <script>
     import { faCog } from '@fortawesome/free-solid-svg-icons';
     import { fontSize, lineHeight } from './settings';
+    import Modal from '$lib/components/Modal.svelte';
     import { mounted } from 'svelte-mount';
-    import { Modal } from 'polykit';
     import Fa from 'svelte-fa';
 
     $: if ($mounted && ($fontSize || $lineHeight)) {
@@ -79,10 +79,5 @@
         display: flex;
         flex-direction: column;
         gap: 16px;
-
-        @include media('<900px') {
-            align-items: center;
-            text-align: center;
-        }
     }
 </style>

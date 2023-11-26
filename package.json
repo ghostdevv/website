@@ -23,7 +23,6 @@
     "ghostsui": "^1.6.0",
     "include-media": "^2.0.0",
     "just-shuffle": "^4.2.0",
-    "polykit": "^0.2.0",
     "prettier": "^3.1.0",
     "prettier-plugin-astro": "^0.12.2",
     "prettier-plugin-svelte": "^3.1.2",
