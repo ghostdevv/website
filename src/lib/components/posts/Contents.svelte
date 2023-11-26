@@ -22,7 +22,7 @@
             rootMargin: '25px 0px -75% 0px',
         });
 
-        for (const heading of headings) {
+        for (const heading of Array.from(headings)) {
             observer.observe(heading);
         }
 
