@@ -17,7 +17,13 @@ const target = post.type == 'LINK' ? '_blank' : undefined;
 const img = await getImage({ src: post.image, width: 800, format: 'webp' });
 ---
 
-<a href={href} target={target} class="postcard" class:list={{ embedded }} {post.title}>
+<a
+    href={href}
+    target={target}
+    class="postcard"
+    class:list={{ embedded }}
+    {post.title}
+>
     <div class="image" style={`background-image: url(${img.src});`}></div>
 
     <div class="details">

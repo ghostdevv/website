@@ -1,12 +1,13 @@
 <script lang="ts">
     import type { MarkdownHeading } from 'astro';
-    import { onMount } from 'svelte';
 
-    export let headings: MarkdownHeading[];
+    let { headings } = $props<{ headings: MarkdownHeading[] }>();
 
-    let activeHeading: string | null = null;
+    let activeHeading = $state<string | null>(null);
 
-    onMount(() => {
+    $effect(() => {
+        console.log('running effect');
+
         const root = document.querySelector('#post-body')!;
         const headings = root.querySelectorAll('h1, h2, h3, h4, h5, h6');
 

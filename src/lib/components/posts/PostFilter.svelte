@@ -1,7 +1,7 @@
 <script lang="ts">
     import { type Tag, tags, tagColours } from '$data/tags';
 
-    export let selectedTag: Tag | 'all';
+    let { selectedTag } = $props<{ selectedTag: Tag | 'all' }>();
 </script>
 
 <div class="filter">
@@ -42,7 +42,8 @@
         background-color: transparent;
         border-color: var(--colour);
 
-        transition: border-color 0.2s ease-in-out,
+        transition:
+            border-color 0.2s ease-in-out,
             background-color 0.2s ease-in-out opacity 0.2s ease-in-out;
 
         opacity: 0.6;

@@ -7,8 +7,7 @@
         url: string;
     }
 
-    export let name: string;
-    export let formats: Format[];
+    let { name, formats } = $props<{ name: String; formats: Format[] }>();
 </script>
 
 <div class="container">

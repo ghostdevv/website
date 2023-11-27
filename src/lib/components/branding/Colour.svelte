@@ -2,12 +2,12 @@
     import type { Colour } from '$data/colours';
     import { copy } from 'svelte-copy';
 
-    export let colour: Colour;
+    let { colour } = $props<{ colour: Colour }>();
 
-    let copying = false;
-    let timeout: ReturnType<typeof setTimeout> | null = null;
+    let timeout = $state<ReturnType<typeof setTimeout> | null>(null);
+    let copying = $state(false);
 
-    $: [name, hex, textColour] = colour;
+    let [name, hex, textColour] = $derived(colour);
 
     function onCopy() {
         if (timeout) {

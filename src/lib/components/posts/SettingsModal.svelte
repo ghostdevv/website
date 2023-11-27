@@ -5,7 +5,7 @@
     import { mounted } from 'svelte-mount';
     import Fa from 'svelte-fa';
 
-    $: if ($mounted && ($fontSize || $lineHeight)) {
+    $effect(() => {
         document.documentElement.style.setProperty(
             '--post-font-size',
             `${$fontSize}px`,
@@ -15,7 +15,7 @@
             '--post-line-height',
             $lineHeight,
         );
-    }
+    });
 
     function reset() {
         lineHeight.reset();

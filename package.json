@@ -28,7 +28,7 @@
     "prettier-plugin-svelte": "^3.1.2",
     "rehype-wrap-all": "^1.1.0",
     "sass": "^1.69.5",
-    "svelte": "^4.2.7",
+    "svelte": "5.0.0-next.13",
     "svelte-copy": "^1.4.1",
     "svelte-fa": "^3.0.4",
     "svelte-hamburgers": "^4.2.0",
