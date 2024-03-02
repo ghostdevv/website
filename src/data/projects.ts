@@ -146,4 +146,8 @@ export const projects: Project[] = [
         name: 'Extractinator',
         url: 'https://github.com/ghostdevv/extractinator',
     },
+    {
+        name: 'kjua-revived',
+        url: 'https://github.com/ghostdevv/kjua-revived',
+    },
 ];
