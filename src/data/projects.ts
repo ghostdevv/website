@@ -150,4 +150,8 @@ export const projects: Project[] = [
         name: 'kjua-revived',
         url: 'https://github.com/ghostdevv/kjua-revived',
     },
+    {
+        name: 'request-bin',
+        url: 'https://github.com/ghostdevv/request-bin',
+    },
 ];
