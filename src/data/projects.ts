@@ -154,4 +154,8 @@ export const projects: Project[] = [
         name: 'request-bin',
         url: 'https://github.com/ghostdevv/request-bin',
     },
+    {
+        name: 'cloudflare-pages-cleanup',
+        url: 'https://github.com/ghostdevv/cloudflare-pages-cleanup',
+    }
 ];
