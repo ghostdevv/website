@@ -150,4 +150,16 @@ export const projects: Project[] = [
         name: 'kjua-revived',
         url: 'https://github.com/ghostdevv/kjua-revived',
     },
+    {
+        name: 'request-bin',
+        url: 'https://github.com/ghostdevv/request-bin',
+    },
+    {
+        name: 'cloudflare-pages-cleanup',
+        url: 'https://github.com/ghostdevv/cloudflare-pages-cleanup',
+    },
+    {
+        name: 'bereal-rs',
+        url: 'https://github.com/ghostdevv/bereal-rs',
+    },
 ];
