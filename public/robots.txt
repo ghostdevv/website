@@ -1,3 +1,4 @@
-Sitemap: https://ghostdev.xyz/sitemap-index.xml
-
 User-agent: *
+Allow: /
+
+Sitemap: https://ghostdev.xyz/sitemap-index.xml
