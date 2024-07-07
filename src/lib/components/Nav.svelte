@@ -19,6 +19,13 @@
     function branding() {
         window.location.href = '/branding';
     }
+
+    const LINKS = [
+        { label: 'Posts', href: '/posts' },
+        { label: 'Projects', href: '/projects' },
+        { label: 'Sponsor', href: '/donate' },
+        { label: 'Contact', href: '/contact' },
+    ];
 </script>
 
 <svelte:window bind:innerWidth={width} bind:scrollY />
@@ -50,12 +57,12 @@
                 Home
             </a>
 
-            {#each ['posts', 'projects', 'donate', 'contact'] as link, i (i)}
+            {#each LINKS as link, i (i)}
                 <a
-                    href="/{link}"
+                    href={link.href}
                     class="link"
                     class:active={url.pathname.startsWith(`/${link}`)}>
-                    {link}
+                    {link.label}
                 </a>
             {/each}
         </div>
@@ -66,12 +73,12 @@
                     Home
                 </a>
 
-                {#each ['posts', 'projects', 'donate', 'contact'] as link, i (i)}
+                {#each LINKS as link, i (i)}
                     <a
-                        href="/{link}"
+                        href={link.href}
                         class="link"
                         class:active={url.pathname.startsWith(`/${link}`)}>
-                        {link}
+                        {link.label}
                     </a>
                 {/each}
             </div>
@@ -99,11 +106,13 @@
         border: 0px;
         border-bottom: 2px solid transparent;
 
-        transition: background-color 0.2s ease-in-out,
+        transition:
+            background-color 0.2s ease-in-out,
             border-color 0.2s ease-in-out;
 
         &.active {
-            box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.1),
+            box-shadow:
+                0 4px 10px -2px rgba(0, 0, 0, 0.1),
                 0 4px 20px 0 rgba(0, 0, 0, 0.1);
 
             background-color: rgba(var(--background-primary-rgb), 0.8);
@@ -179,7 +188,9 @@
         border-radius: 8px;
         border: 2px solid transparent;
 
-        transition: border-color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+        transition:
+            border-color 0.2s ease-in-out,
+            opacity 0.2s ease-in-out;
 
         color: var(--text);
         opacity: 0.6;
@@ -205,7 +216,9 @@
         display: grid;
         place-items: center;
 
-        transition: height 0.2s ease-in-out, width 0.2s ease-in-out;
+        transition:
+            height 0.2s ease-in-out,
+            width 0.2s ease-in-out;
 
         @include media($desktop) {
             &.scroll {
