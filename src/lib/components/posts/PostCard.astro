@@ -22,7 +22,7 @@ const img = await getImage({ src: post.image, width: 800, format: 'webp' });
     target={target}
     class="postcard"
     class:list={{ embedded }}
-    {post.title}
+    title={post.title}
 >
     <div class="image" style={`background-image: url(${img.src});`}></div>
 

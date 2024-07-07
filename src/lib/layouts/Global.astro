@@ -23,7 +23,7 @@ const image_path = frontmatter.image ? frontmatter.image.src : '/banner.png';
 const image = `https://ghostdev.xyz${image_path}`;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -60,9 +60,11 @@ const image = `https://ghostdev.xyz${image_path}`;
 
         <!-- Privacy respecting analytics -->
         <script
+            is:inline
             data-goatcounter="https://ghost.goatcounter.com/count"
             async
-            src="//gc.zgo.at/count.js"></script>
+            src="//gc.zgo.at/count.js"
+        ></script>
 
         <!-- Transitions -->
         <ViewTransitions />
