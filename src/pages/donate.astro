@@ -50,7 +50,7 @@ import Fa from 'svelte-fa';
             {
                 supporters.current
                     .sort((a, b) => a.name.localeCompare(b.name))
-                    .map((p) => <Donator name={p.name} image={p.image} />)
+                    .map((p) => <Donator name={p.name} src={p.src} />)
             }
         </div>
 
@@ -61,7 +61,7 @@ import Fa from 'svelte-fa';
                 supporters.past
                     .concat(donators)
                     .sort((a, b) => a.name.localeCompare(b.name))
-                    .map((p) => <Donator name={p.name} image={p.image} slim />)
+                    .map((p) => <Donator name={p.name} src={p.src} slim />)
             }
         </div>
     </section>

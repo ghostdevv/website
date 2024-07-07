@@ -3,18 +3,11 @@ import { Image } from 'astro:assets';
 
 interface Props {
     name: string;
-    image: string;
+    src: ImageMetadata;
     slim?: boolean;
 }
 
-const { name, image, slim = false } = Astro.props;
-
-const sponsorImages = await Astro.glob('$assets/sponsors/*').then((images) =>
-    images.map((image) => image.default),
-);
-
-const src = sponsorImages.find((img) => img.src.includes(image));
-if (!src) throw new Error(`Unable to find donator image "${image}"`);
+const { name, src, slim = false } = Astro.props;
 ---
 
 <card class:list={['person', slim && 'slim']}>

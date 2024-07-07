@@ -1,40 +1,45 @@
 export interface Person {
     name: string;
-    image: string;
+    src: ImageMetadata;
+}
+
+async function img(name: string) {
+    const mod = await import(`../assets/sponsors/${name}`);
+    return mod.default as ImageMetadata;
 }
 
 export const supporters: { current: Person[]; past: Person[] } = {
     current: [
         {
             name: 'Braden Wiggins',
-            image: 'brady.webp',
+            src: await img('brady.webp'),
         },
     ],
 
     past: [
         {
             name: 'Dusan Malusev',
-            image: 'dusan.webp',
+            src: await img('dusan.webp'),
         },
         {
             name: 'Stefan Bogdanović',
-            image: 'stefan.webp',
+            src: await img('stefan.webp'),
         },
         {
             name: 'Scott Spence',
-            image: 'scott-spence.webp',
+            src: await img('scott-spence.webp'),
         },
         {
             name: 'Alfie',
-            image: 'alfie.webp',
+            src: await img('alfie.webp'),
         },
         {
             name: 'Cain',
-            image: 'cain.webp',
+            src: await img('cain.webp'),
         },
         {
             name: 'Gen Ashley',
-            image: 'gen-ashley.webp',
+            src: await img('gen-ashley.webp'),
         },
     ],
 };
@@ -42,10 +47,10 @@ export const supporters: { current: Person[]; past: Person[] } = {
 export const donators: Person[] = [
     {
         name: 'Kevin Åberg Kultalahti',
-        image: 'kevin.webp',
+        src: await img('kevin.webp'),
     },
     {
         name: 'ChristopherMc',
-        image: 'christophermc.webp',
+        src: await img('christophermc.webp'),
     },
 ];
