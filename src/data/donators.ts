@@ -7,7 +7,7 @@ export const supporters: { current: Person[]; past: Person[] } = {
     current: [
         {
             name: 'Braden Wiggins',
-            image: 'bruhdy-fractal.webp',
+            image: 'brady.webp',
         },
     ],
 
