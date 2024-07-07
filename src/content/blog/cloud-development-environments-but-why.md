@@ -2,7 +2,7 @@
 tag: blog
 title: Cloud Development Environments... but why?!
 excerpt: What is a Cloud Development Environment (CDE) and why would I ever need one?
-image: $assets/cloud-development-environments-but-why.png
+image: $assets/posts/cloud-development-environments-but-why.png
 timestamp: 1696875978128
 ---
 

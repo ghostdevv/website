@@ -1,7 +1,7 @@
 {
   "title": "Threlte: Declarative Threejs for Svelte",
   "excerpt": "In this Svelte Sirens stream Alex Warnes will teach us about Threlte: Declarative Threejs for Svelte.",
-  "image": "$assets/threlte-declarative-threejs.png",
+  "image": "$assets/posts/threlte-declarative-threejs.png",
   "tag": "youtube",
   "link": "https://www.youtube.com/watch?v=dnclxsoRO_E",
   "timestamp": 1668456000000

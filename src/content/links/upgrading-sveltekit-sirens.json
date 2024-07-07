@@ -1,7 +1,7 @@
 {
   "title": "Upgrading SvelteKit",
   "excerpt": "GHOST joins Brittney and Kev to update the Svelte Sirens website and showcase upgrading your SvelteKit projects",
-  "image": "$assets/upgrading-sveltekit.png",
+  "image": "$assets/posts/upgrading-sveltekit.png",
   "tag": "stream",
   "link": "https://www.youtube.com/watch?v=vzeZskhjoeQ",
   "timestamp": 1664283600000

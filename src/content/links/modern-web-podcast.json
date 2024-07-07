@@ -1,7 +1,7 @@
 {
     "title": "Exploring Svelte, Open Source, and Discord Bots with Willow (GHOST)",
     "excerpt": "I am interviewed by Rob Ocel from the Modern Web Podcast. We talk about Web Development, Svelte, SvelteKit, Open Source, Discord Bots, and more.",
-    "image": "$assets/modern-web-podcast.jpg",
+    "image": "$assets/posts/modern-web-podcast.jpg",
     "tag": "podcast",
     "link": "https://www.youtube.com/watch?v=7KAUQa76Vfw",
     "timestamp": 1694784310000

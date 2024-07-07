@@ -1,7 +1,7 @@
 {
   "title": "Exploring Routify in Svelte Kit",
   "excerpt": "GHOST does her first talk on Svelte Sirens about how awesome Routify in Svelte Kit can be!",
-  "image": "$assets/routify-sveltekit-sirens.webp",
+  "image": "$assets/posts/routify-sveltekit-sirens.webp",
   "tag": "youtube",
   "link": "https://www.youtube.com/watch?v=epVRgjhjI7M",
   "timestamp": 1639764000000

@@ -1,7 +1,7 @@
 {
     "title": "Svelte with Brittney and Willow",
     "excerpt": "Brittney and I go on Behind the Source by Mike Street to chat about Svelte, SvelteKit, and the Svelte Sirens.",
-    "image": "$assets/behind-the-source-sirens.png",
+    "image": "$assets/posts/behind-the-source-sirens.png",
     "tag": "podcast",
     "link": "https://www.behindthesource.co.uk/podcasts/s02e05-svelte-with-brittney-and-willow/",
     "timestamp": 1668470400000

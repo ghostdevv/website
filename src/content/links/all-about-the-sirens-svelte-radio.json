@@ -1,7 +1,7 @@
 {
     "title": "All About the Sirens",
     "excerpt": "The Svelte Sirens go on Svelte Radio to chat about us!",
-    "image": "$assets/all-about-the-sirens-svelte-radio.png",
+    "image": "$assets/posts/all-about-the-sirens-svelte-radio.png",
     "tag": "podcast",
     "link": "https://www.svelteradio.com/episodes/all-about-the-sirens",
     "timestamp": 1656284400000
