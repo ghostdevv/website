@@ -8,8 +8,8 @@
     height="100%"
     fill="none"
     viewBox="0 0 486 460"
-    on:mouseenter={() => (hovering = true)}
-    on:mouseleave={() => (hovering = false)}>
+    on:pointerenter={() => (hovering = true)}
+    on:pointerleave={() => (hovering = false)}>
     <g clip-path="url(#clip0_257_2)">
         <path
             fill="#DB955B"
