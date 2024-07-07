@@ -1,0 +1,8 @@
+{
+    "title": "Svelte London: SvelteKit & Pocketbase",
+    "excerpt": "Every side project starts out with a question: \"What's the BEST tech stack\" - how silly! there's no answer right... Meet Pocketbase, an open source go backend providing you everything you need for your app (except users).",
+    "image": "$assets/posts/svelte-london-sveltekit-and-pocketbase.png",
+    "tag": "stream",
+    "link": "https://www.youtube.com/live/EggM2qMzqdU?t=1700s",
+    "timestamp": 1716579540000
+}
