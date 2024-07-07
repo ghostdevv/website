@@ -1,16 +1,26 @@
-<script lang="ts">
-    export let name: string;
-    export let image: string;
+---
+import { Image } from 'astro:assets';
 
-    export let slim = false;
-</script>
+interface Props {
+    name: string;
+    image: string;
+    slim?: boolean;
+}
 
-<card class="person" class:slim>
-    <img src={image} alt="{name}'s pfp" loading="lazy" />
+const { name, image, slim = false } = Astro.props;
 
-    {#if !slim}
-        <hr />
-    {/if}
+const sponsorImages = await Astro.glob('$assets/sponsors/*').then((images) =>
+    images.map((image) => image.default),
+);
+
+const src = sponsorImages.find((img) => img.src.includes(image));
+if (!src) throw new Error(`Unable to find donator image "${image}"`);
+---
+
+<card class:list={['person', slim && 'slim']}>
+    <Image {src} alt={`${name}'s pfp`} width="150" height="150" />
+
+    {!slim && <hr />}
 
     <h4>{name}</h4>
 </card>
@@ -40,7 +50,6 @@
 
         &.slim {
             flex-direction: row;
-            justify-content: center;
 
             padding: 18px;
 
