@@ -84,4 +84,10 @@
         font-weight: 600;
         margin-top: 28px;
     }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        overflow-x: auto;
+    }
 }
