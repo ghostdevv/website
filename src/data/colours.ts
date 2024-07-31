@@ -27,6 +27,7 @@ export const colours: ColourGroup[] = [
             ['Text', '#eee', '#000'],
             ['Green', '#67c157'],
             ['Red', '#f26c4b'],
+            ['Orange', '#f29b4b'],
         ],
     },
 ];
