@@ -56,6 +56,12 @@ const { Content, headings } = await post.render();
 
         <hr style="margin-top: 16px;" />
 
+        {
+            post.data.attribution && (
+                <p class="attribution">{post.data.attribution}</p>
+            )
+        }
+
         <footer>
             <div class="row wrap">
                 <a
@@ -94,7 +100,7 @@ const { Content, headings } = await post.render();
         footer {
             width: 100%;
             padding-bottom: 16px;
-            margin-top: 32px;
+            margin-top: 8px;
 
             display: flex;
             align-items: center;
@@ -190,6 +196,12 @@ const { Content, headings } = await post.render();
             gap: 12px;
 
             margin-bottom: 32px;
+        }
+
+        .attribution {
+            color: rgba(var(--text-rgb), 0.8);
+            line-height: 1.6;
+            font-size: 14px;
         }
     }
 </style>
