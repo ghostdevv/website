@@ -5,7 +5,7 @@
 
     max-width: 100%;
 
-    & >:first-child {
+    & > :first-child {
         margin-top: 0px;
     }
 
@@ -43,8 +43,8 @@
     }
 
     code,
-    pre { 
-        font-family: 'Comic Mono', monospace
+    pre {
+        font-family: 'Comic Mono', monospace;
     }
 
     ul,
@@ -77,7 +77,6 @@
         margin-top: 48px;
         color: #fff;
     }
-
 
     h3,
     h4 {
