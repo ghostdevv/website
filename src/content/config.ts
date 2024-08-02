@@ -11,6 +11,7 @@ export const collections = {
                 excerpt: z.string().trim().min(1),
                 image: image(),
                 timestamp: z.number(),
+                attribution: z.string().optional(),
             }),
     }),
 

@@ -56,22 +56,28 @@ const { Content, headings } = await post.render();
 
         <hr style="margin-top: 16px;" />
 
+        {
+            post.data.attribution && (
+                <p class="attribution">{post.data.attribution}</p>
+            )
+        }
+
         <footer>
             <div class="row wrap">
                 <a
                     href={tweetLink(
                         `Checkout this post by @onlyspaceghost!\n\nhttps://ghostdev.xyz/posts/${post.slug}`,
                     )}
-                    class="button"
+                    class="button secondary"
                     target="_blank"
                 >
                     <Fa icon={faTwitter} />
-                     Share on twitter
+                    Share on twitter
                 </a>
 
-                <a href="/rss.xml" target="_blank" class="button">
+                <a href="/rss.xml" target="_blank" class="button secondary">
                     <Fa icon={faRss} />
-                     RSS
+                    RSS
                 </a>
             </div>
 
@@ -94,7 +100,7 @@ const { Content, headings } = await post.render();
         footer {
             width: 100%;
             padding-bottom: 16px;
-            margin-top: 32px;
+            margin-top: 8px;
 
             display: flex;
             align-items: center;
@@ -190,6 +196,12 @@ const { Content, headings } = await post.render();
             gap: 12px;
 
             margin-bottom: 32px;
+        }
+
+        .attribution {
+            color: rgba(var(--text-rgb), 0.8);
+            line-height: 1.6;
+            font-size: 14px;
         }
     }
 </style>
