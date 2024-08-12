@@ -1,3 +1,4 @@
+import serendipity from './src/lib/serendipity-shiki';
 import { defineConfig } from 'astro/config';
 import rehypeWrap from 'rehype-wrap-all';
 import sitemap from '@astrojs/sitemap';
@@ -11,6 +12,11 @@ export default defineConfig({
 
     markdown: {
         gfm: true,
+
+        syntaxHighlight: 'shiki',
+        shikiConfig: {
+            theme: serendipity,
+        },
 
         rehypePlugins: [
             [
