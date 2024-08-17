@@ -82,6 +82,15 @@ import Fa from 'svelte-fa';
     @import 'src/lib/media';
 
     .devlounge {
+        position: fixed;
+        bottom: 32px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        width: calc(100% - 64px);
+        max-width: 1400px;
+        margin: 0 auto;
+
         .card {
             border-color: #cf4a4a;
 
@@ -100,14 +109,5 @@ import Fa from 'svelte-fa';
                 }
             }
         }
-
-        position: fixed;
-        bottom: 32px;
-        left: 50%;
-        transform: translateX(-50%);
-
-        width: calc(100% - 64px);
-        max-width: 1400px;
-        margin: 0 auto;
     }
 </style>

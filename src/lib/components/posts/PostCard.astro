@@ -48,18 +48,18 @@ const img = await getImage({ src: post.image, width: 800, format: 'webp' });
         min-width: 325px;
         width: 100%;
 
-        @include media('<400px') {
-            min-width: 200px;
-            flex-shrink: 0;
-            width: 100%;
-        }
-
         color: var(--text);
         background-color: var(--background-secondary);
         border-radius: 12px;
         overflow: hidden;
 
         transition: box-shadow 0.2s ease-in-out;
+
+        @include media('<400px') {
+            min-width: 200px;
+            flex-shrink: 0;
+            width: 100%;
+        }
 
         &:hover,
         &:active,

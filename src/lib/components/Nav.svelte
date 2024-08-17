@@ -132,6 +132,8 @@
         align-items: center;
         gap: 22px;
 
+        transition: padding 0.2s ease-in-out;
+
         @include media($mobile) {
             display: grid;
             grid-template-columns: 1fr max-content;
@@ -139,8 +141,6 @@
             grid-template-areas: 'logo hamburger' 'links links';
             gap: 0px;
         }
-
-        transition: padding 0.2s ease-in-out;
 
         &.scroll {
             padding: 20px 24px;
