@@ -42,7 +42,10 @@ const { Content, headings } = await post.render();
 
 				<div class="buttons">
 					<SettingsModal client:load>
-						<button class="inline-button">
+						<button
+							class="inline-button"
+							aria-label="Post Settings"
+						>
 							<Fa icon={faCog} />
 						</button>
 					</SettingsModal>
@@ -157,32 +160,6 @@ const { Content, headings } = await post.render();
 				flex-direction: row;
 				align-items: center;
 				gap: 12px;
-			}
-		}
-
-		.inline-button {
-			all: unset;
-
-			color: rgba(var(--text-rgb), 0.6);
-			cursor: pointer;
-
-			display: flex;
-			align-items: center;
-			gap: 8px;
-
-			transition: color 0.2s ease-in-out;
-
-			&:disabled {
-				opacity: 0.6;
-				cursor: not-allowed;
-			}
-
-			&:hover:not(&:disabled),
-			&:active:not(&:disabled),
-			&:focus:not(&:disabled) {
-				background-color: transparent;
-				box-shadow: none;
-				color: var(--primary);
 			}
 		}
 
