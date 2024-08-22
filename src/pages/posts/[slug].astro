@@ -41,14 +41,7 @@ const { Content, headings } = await post.render();
 				<Contents client:visible headings={headings} />
 
 				<div class="buttons">
-					<SettingsModal client:load>
-						<button
-							class="inline-button"
-							aria-label="Post Settings"
-						>
-							<Fa icon={faCog} />
-						</button>
-					</SettingsModal>
+					<SettingsModal client:load />
 
 					<a href="/rss.xml" target="_blank" class="inline-button">
 						<Fa icon={faRss} />
