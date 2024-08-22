@@ -37,14 +37,12 @@
 			href="/"
 			class="logo"
 			aria-label="Home"
-			on:contextmenu|preventDefault={branding}
-		>
+			on:contextmenu|preventDefault={branding}>
 			{#if HALLOWEEN}
 				<img
 					style="width: 100%; height: 100%"
 					src="/ghost-halloween.png"
-					alt="GHOST's Halloween Theme Logo"
-				/>
+					alt="GHOST's Halloween Theme Logo" />
 			{:else}
 				<TRainbow />
 			{/if}
@@ -63,8 +61,7 @@
 				<a
 					href={link.href}
 					class="link"
-					class:active={url.pathname.startsWith(`/${link}`)}
-				>
+					class:active={url.pathname.startsWith(`/${link}`)}>
 					{link.label}
 				</a>
 			{/each}
@@ -80,8 +77,7 @@
 					<a
 						href={link.href}
 						class="link"
-						class:active={url.pathname.startsWith(`/${link}`)}
-					>
+						class:active={url.pathname.startsWith(`/${link}`)}>
 						{link.label}
 					</a>
 				{/each}

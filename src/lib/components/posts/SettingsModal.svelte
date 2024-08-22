@@ -41,8 +41,7 @@
 				type="range"
 				min="14"
 				max="28"
-				bind:value={$fontSize}
-			/>
+				bind:value={$fontSize} />
 		</div>
 
 		<div class="input-group">
@@ -54,8 +53,7 @@
 				min="0.5"
 				max="2.5"
 				step="0.1"
-				bind:value={$lineHeight}
-			/>
+				bind:value={$lineHeight} />
 		</div>
 
 		<div class="row">

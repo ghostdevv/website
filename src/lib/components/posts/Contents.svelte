@@ -6,8 +6,6 @@
 	let activeHeading = $state<string | null>(null);
 
 	$effect(() => {
-		console.log('running effect');
-
 		const root = document.querySelector('#post-body')!;
 		const headings = root.querySelectorAll('h1, h2, h3, h4, h5, h6');
 
@@ -36,8 +34,7 @@
 		<a
 			class="link depth-{Math.min(heading.depth, 4)}"
 			class:active={activeHeading == heading.slug}
-			href="#{heading.slug}"
-		>
+			href="#{heading.slug}">
 			{heading.text}
 		</a>
 	{/each}
