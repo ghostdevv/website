@@ -10,7 +10,7 @@ I'm gonna cover my journey of self-hosting my own DNS resolver with [AdGuard Hom
 
 ## My Requirements
 
-In my opinion the **bare minimum** a custom DNS resolver needs to do in order to make more sense than just sending requests to [1.1.1.1](https://developers.cloudflare.com/1.1.1.1/encryption/dns-over-https/make-api-requests/), [quad9](https://www.quad9.net/service/service-addresses-and-features), or [Mullvad](https://mullvad.net/en/help/dns-over-https-and-dns-over-tls) directly is as follows:
+In my opinion, the **bare minimum** a custom DNS resolver needs to do in order to make more sense than just sending requests to [1.1.1.1](https://developers.cloudflare.com/1.1.1.1/encryption/dns-over-https/make-api-requests/), [quad9](https://www.quad9.net/service/service-addresses-and-features), or [Mullvad](https://mullvad.net/en/help/dns-over-https-and-dns-over-tls) directly is as follows:
 
 -   Custom blocking lists for spammy/malicious/invasive domains (e.g. [oisd](https://oisd.nl/))
 -   Recursively forward requests to your choice of DNS provider (e.g 1.1.1.1)
@@ -94,7 +94,6 @@ networks:
 
 To run the AdGuard Setup wizard, you'll need to go to port `127.0.0.1:3000`. The port can be removed from the file afterwards, as it's only needed for the inital setup.
 
-> [!NOTE]
 > The custom network is needed in order for AdGuard Home to trust the docker proxy when you configure it later. If there is a better way to do this that isn't using host mode, [let me know](https://twitter.com/onlyspaceghost).
 
 ### Configuring
