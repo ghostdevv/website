@@ -9,7 +9,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "strict": true,
-    "importsNotUsedAsValues": "error",
+    "verbatimModuleSyntax": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
     "noImplicitReturns": true,
