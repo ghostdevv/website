@@ -2,7 +2,7 @@
 tag: blog
 title: Self Hosting DNS
 excerpt: My journey of self hosting DNS
-image: $assets/posts/placeholder.png
+image: $assets/posts/self-hosting-dns/self-hosting-dns.png
 timestamp: 1723614966732
 ---
 
