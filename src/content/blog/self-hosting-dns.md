@@ -1,12 +1,12 @@
 ---
 tag: blog
-title: Self Hosting DNS
-excerpt: My journey of self hosting DNS
+title: Self-hosting DNS
+excerpt: My journey of self-hosting DNS
 image: $assets/posts/self-hosting-dns/self-hosting-dns.png
 timestamp: 1723614966732
 ---
 
-I'm gonna cover my journey of self hosting my own DNS resolver with [AdGuard Home](https://github.com/AdGuardTeam/AdGuardHome), but I think it makes sense to first start with my motivations. I've wanted to have my own customisable DNS resolver for a couple years now, so when I found out about [NextDNS](https://nextdns.io) I subscribed straight away. I was on their [paid plan](https://nextdns.io/pricing) for individuals and super happy. It comes in at only £1.79/m (~$2.25) for unlimited queries. They have a super nice UI with all the features I need, including an [integration with Tailscale](https://tailscale.com/kb/1218/nextdns). Alas, I am also a big fan of self hosting — which NextDNS can't do.
+I'm gonna cover my journey of self-hosting my own DNS resolver with [AdGuard Home](https://github.com/AdGuardTeam/AdGuardHome), but I think it makes sense to first start with my motivations. I've wanted to have my own customisable DNS resolver for a couple years now, so when I found out about [NextDNS](https://nextdns.io) I subscribed straight away. I was on their [paid plan](https://nextdns.io/pricing) for individuals and super happy. It comes in at only £1.79/m (~$2.25) for unlimited queries. They have a super nice UI with all the features I need, including an [integration with Tailscale](https://tailscale.com/kb/1218/nextdns). Alas, I am also a big fan of self-hosting — which NextDNS can't do.
 
 ## My Requirements
 
@@ -23,7 +23,7 @@ It's a big bonus if they have:
 
 I also require support for modern DNS protocols. The most common way a DNS request is done uses a plain, unencrypted request to port 53. It's super important to be able to use at least one of the main three encrypted methods: HTTPS (DoH), T LS (DoT), or QUIC (DoQ). I'll come back to these later.
 
-I'm not going to completely self host the DNS stack (just yet), so I'll still need a public DNS resolver to forward queries to. However, self hosting everything still has its benefits. By using multiple different resolvers, operated by different companies, no single one gets the whole picture. Resolvers could also be raced to see which is able to return the query the fastest. Additionally, it only needs to be changed in one place if I stop using a resolver.
+I'm not going to completely self-host the DNS stack (just yet), so I'll still need a public DNS resolver to forward queries to. However, self-hosting everything still has its benefits. By using multiple different resolvers, operated by different companies, no single one gets the whole picture. Resolvers could also be raced to see which is able to return the query the fastest. Additionally, it only needs to be changed in one place if I stop using a resolver.
 
 ## Pi-hole
 
