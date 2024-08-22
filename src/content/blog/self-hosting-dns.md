@@ -12,13 +12,14 @@ I'm gonna cover my journey of self hosting my own DNS resolver with [AdGuard Hom
 
 In my opinion the **bare minimum** a custom DNS resolver needs to do in order to make more sense than just sending requests to [1.1.1.1](https://developers.cloudflare.com/1.1.1.1/encryption/dns-over-https/make-api-requests/), [quad9](https://www.quad9.net/service/service-addresses-and-features), or [Mullvad](https://mullvad.net/en/help/dns-over-https-and-dns-over-tls) directly is as follows:
 
-- Custom blocking lists for spammy/malicious/invasive domains (e.g. [oisd](https://oisd.nl/))
-- Recursively forward requests to your choice of DNS provider (e.g 1.1.1.1)
-- Allow custom dns rewrites (e.g. `example.local -> 10.0.0.0`)
+-   Custom blocking lists for spammy/malicious/invasive domains (e.g. [oisd](https://oisd.nl/))
+-   Recursively forward requests to your choice of DNS provider (e.g 1.1.1.1)
+-   Allow custom dns rewrites (e.g. `example.local -> 10.0.0.0`)
 
 It's a big bonus if they have:
-- Custom rules for different users
-- Analytics
+
+-   Custom rules for different users
+-   Analytics
 
 I also require support for modern DNS protocols. The most common way a DNS request is done uses a plain, unencrypted request to port 53. It's super important to be able to use at least one of the main three encrypted methods: HTTPS (DoH), T LS (DoT), or QUIC (DoQ). I'll come back to these later.
 
@@ -30,19 +31,20 @@ I think the first thing most people think of when you talk about running your ow
 
 | Feature                                                                 | AdGuard&nbsp;Home | Pi-Hole                                                 |
 | ----------------------------------------------------------------------- | ----------------- | ------------------------------------------------------- |
-| Blocking ads and trackers                                               | ✅                 | ✅                                                       |
-| Customizing blocklists                                                  | ✅                 | ✅                                                       |
-| Built-in DHCP server                                                    | ✅                 | ✅                                                       |
-| HTTPS for the Admin interface                                           | ✅                 | Kind of, but you'll need to manually configure lighttpd |
-| Encrypted DNS upstream servers (DNS-over-HTTPS, DNS-over-TLS, DNSCrypt) | ✅                 | ❌ (requires additional software)                        |
-| Cross-platform                                                          | ✅                 | ❌ (not natively, only via Docker)                       |
-| Running as a DNS-over-HTTPS or DNS-over-TLS server                      | ✅                 | ❌ (requires additional software)                        |
-| Blocking phishing and malware domains                                   | ✅                 | ❌ (requires non-default blocklists)                     |
-| Parental control (blocking adult domains)                               | ✅                 | ❌ (requires non-default blocklists)                     |
-| Force Safe search on search engines                                     | ✅                 | ❌                                                       |
-| Per-client (device) configuration                                       | ✅                 | ✅                                                       |
-| Access settings (choose who can use AGH DNS)                            | ✅                 | ❌                                                       |
-| Running without root privileges                                         | ✅                 | ❌                                                       |
+| Blocking ads and trackers                                               | ✅                | ✅                                                      |
+| Customizing blocklists                                                  | ✅                | ✅                                                      |
+| Built-in DHCP server                                                    | ✅                | ✅                                                      |
+| HTTPS for the Admin interface                                           | ✅                | Kind of, but you'll need to manually configure lighttpd |
+| Encrypted DNS upstream servers (DNS-over-HTTPS, DNS-over-TLS, DNSCrypt) | ✅                | ❌ (requires additional software)                       |
+| Cross-platform                                                          | ✅                | ❌ (not natively, only via Docker)                      |
+| Running as a DNS-over-HTTPS or DNS-over-TLS server                      | ✅                | ❌ (requires additional software)                       |
+| Blocking phishing and malware domains                                   | ✅                | ❌ (requires non-default blocklists)                    |
+| Parental control (blocking adult domains)                               | ✅                | ❌ (requires non-default blocklists)                    |
+| Force Safe search on search engines                                     | ✅                | ❌                                                      |
+| Per-client (device) configuration                                       | ✅                | ✅                                                      |
+| Access settings (choose who can use AGH DNS)                            | ✅                | ❌                                                      |
+| Running without root privileges                                         | ✅                | ❌                                                      |
+
 Source: [AdGuardTeam/AdGuardHome#comparison-pi-hole](https://github.com/AdGuardTeam/AdGuardHome#comparison-pi-hole)
 
 ## AdGuard Home
@@ -54,40 +56,40 @@ Thankfully, the second most popular option, [AdGuard Home](https://github.com/Ad
 I started with the following Docker Compose file.
 
 ```yaml
-version: "3"
+version: '3'
 
 services:
-  adguard-home:
-    restart: always
-    image: adguard/adguardhome
-    volumes:
-      - ./workdir:/opt/adguardhome/work
-      - ./conf:/opt/adguardhome/conf
-      # Required if you want DoH/DoT/DoQ - see section of this post about SSL
-      - ./certs/certificates:/certs
-    ports:
-      # Plain DNS
-      - "53:53/tcp"
-      - "53:53/udp"      
-      # DOT
-      - "853:853/tcp"
-      # DOQ
-      - "853:853/udp"
-      # Admin UI
-      - "80:80"
-      - "443:443"
-      # Initial setup (can be removed after first install)
-      - "127.0.0.1:3000:3000"
-    networks:
-      - adguard_net
+    adguard-home:
+        restart: always
+        image: adguard/adguardhome
+        volumes:
+            - ./workdir:/opt/adguardhome/work
+            - ./conf:/opt/adguardhome/conf
+            # Required if you want DoH/DoT/DoQ - see section of this post about SSL
+            - ./certs/certificates:/certs
+        ports:
+            # Plain DNS
+            - '53:53/tcp'
+            - '53:53/udp'
+            # DOT
+            - '853:853/tcp'
+            # DOQ
+            - '853:853/udp'
+            # Admin UI
+            - '80:80'
+            - '443:443'
+            # Initial setup (can be removed after first install)
+            - '127.0.0.1:3000:3000'
+        networks:
+            - adguard_net
 
 networks:
-  adguard_net:
-    driver: bridge
-    ipam:
-      driver: default
-      config:
-        - subnet: 172.28.0.0/16
+    adguard_net:
+        driver: bridge
+        ipam:
+            driver: default
+            config:
+                - subnet: 172.28.0.0/16
 ```
 
 To run the AdGuard Setup wizard, you'll need to go to port `127.0.0.1:3000`. The port can be removed from the file afterwards, as it's only needed for the inital setup.
@@ -97,37 +99,37 @@ To run the AdGuard Setup wizard, you'll need to go to port `127.0.0.1:3000`. The
 
 ### Configuring
 
-AdGuard Home will save its config to a file named `AdGuardHome.yaml` (which I've checked into git). I'll show you some key parts of this config file you'll need to change. Make sure AdGuard Home is *not* running while you do this:
+AdGuard Home will save its config to a file named `AdGuardHome.yaml` (which I've checked into git). I'll show you some key parts of this config file you'll need to change. Make sure AdGuard Home is _not_ running while you do this:
 
 ```yaml
 dns:
-  bind_hosts:
-    - 0.0.0.0
-  port: 53
-  # The recursive DNS resolver you wish to use - I recommend using DoH/DoT/DoQ here
-  upstream_dns:
-    - https://1.1.1.1/dns-query
-    - https://1.0.0.1/dns-query
-    - https://dns.mullvad.net/dns-query
-    - https://dns.quad9.net/dns-query
-  # These must be plain and are used when first setting up an external DoH/DoT/DoQ resolver
-  bootstrap_dns:
-    - 1.1.1.1
-    - 2606:4700:4700::1111
-  trusted_proxies:
-    # If you changed the docker network configuration you'll need to update this 
-    - 172.28.0.0/16
+    bind_hosts:
+        - 0.0.0.0
+    port: 53
+    # The recursive DNS resolver you wish to use - I recommend using DoH/DoT/DoQ here
+    upstream_dns:
+        - https://1.1.1.1/dns-query
+        - https://1.0.0.1/dns-query
+        - https://dns.mullvad.net/dns-query
+        - https://dns.quad9.net/dns-query
+    # These must be plain and are used when first setting up an external DoH/DoT/DoQ resolver
+    bootstrap_dns:
+        - 1.1.1.1
+        - 2606:4700:4700::1111
+    trusted_proxies:
+        # If you changed the docker network configuration you'll need to update this
+        - 172.28.0.0/16
 # See the below section of this post on SSL
 tls:
-  enabled: true
-  server_name: dns.example.com
-  force_https: false
-  port_https: 443
-  port_dns_over_tls: 853
-  port_dns_over_quic: 853
-  port_dnscrypt: 0
-  certificate_path: /certs/dns.example.com.crt
-  private_key_path: /certs/dns.example.com.pem
+    enabled: true
+    server_name: dns.example.com
+    force_https: false
+    port_https: 443
+    port_dns_over_tls: 853
+    port_dns_over_quic: 853
+    port_dnscrypt: 0
+    certificate_path: /certs/dns.example.com.crt
+    private_key_path: /certs/dns.example.com.pem
 ```
 
 ### Identifying Clients
@@ -143,16 +145,16 @@ When making a DoH/DoT/DoQ request, you have the luxury of being able to use a do
 You'll need to setup a certificate for your domains. I'll assume you're going to use `*.dns.example.com` (wildcard optional see [Client Id](#client-id)) and `dns.example.com`. In my setup I've opted to use [lego](https://github.com/go-acme/lego) to provision these using an [ACME challenge](https://letsencrypt.org/docs/challenge-types/#dns-01-challenge) and their Cloudflare DNS plugin. You'll need the following `docker-compose.yml`, `.env`, and `crt.sh` files. Once you edit the `--domains` flags in the compose file and the contents of the `.env`, you can run `chmod +x ./crt.sh && ./crt.sh` to generate the certificates.
 
 > [!NOTE]
-> If you're *not* using a reverse proxy with SSL generation built-in, this certificate should also include the domain of the AdGuard Home panel.
+> If you're _not_ using a reverse proxy with SSL generation built-in, this certificate should also include the domain of the AdGuard Home panel.
 
 ```yaml
 services:
-  certs:
-    image: goacme/lego
-    env_file: .env
-    command: --email="$CERT_EMAIL" --accept-tos --domains="dns.example.com" --domains="*.dns.example.com" --pem --dns cloudflare run
-    volumes:
-      - ./certs:/.lego
+    certs:
+        image: goacme/lego
+        env_file: .env
+        command: --email="$CERT_EMAIL" --accept-tos --domains="dns.example.com" --domains="*.dns.example.com" --pem --dns cloudflare run
+        volumes:
+            - ./certs:/.lego
 ```
 
 ```bash
@@ -168,15 +170,15 @@ It's important you make sure your cert path is set correctly. Here is what needs
 
 ```yaml
 tls:
-  enabled: true
-  server_name: dns.example.com
-  force_https: true
-  port_https: 443
-  port_dns_over_tls: 853
-  port_dns_over_quic: 853
-  port_dnscrypt: 0
-  certificate_path: /certs/dns.example.com.crt
-  private_key_path: /certs/dns.example.com.pem
+    enabled: true
+    server_name: dns.example.com
+    force_https: true
+    port_https: 443
+    port_dns_over_tls: 853
+    port_dns_over_quic: 853
+    port_dnscrypt: 0
+    certificate_path: /certs/dns.example.com.crt
+    private_key_path: /certs/dns.example.com.pem
 ```
 
 ### Reverse Proxy
@@ -187,20 +189,20 @@ To start you'll want to edit your `docker-compose.yml` file to only expose port 
 
 ```yaml
 services:
-  adguard-home:
-    # ...
-    ports:
-      # ...
-      - "127.0.0.1:6781:80"
+    adguard-home:
+        # ...
+        ports:
+            # ...
+            - '127.0.0.1:6781:80'
 ```
 
 Next update your AdGuard Home config:
 
 ```yaml
 tls:
-  force_https: false
-  port_https: 0
-  allow_unencrypted_doh: true
+    force_https: false
+    port_https: 0
+    allow_unencrypted_doh: true
 ```
 
 Finally, you'll need to setup Caddy:
@@ -215,7 +217,7 @@ manage.example.com {
 *.dns.example.com,
 dns.example.com {
     tls <cert_file> <key_file> # you can use these from the previous step
-    
+
     handle /dns-query {
         reverse_proxy 127.0.0.1:6781
     }
@@ -226,7 +228,7 @@ dns.example.com {
 
 ### Routers
 
-If your router supports setting a custom DNS resolver, this is a great way to have it across your whole home. There *are* some drawbacks of course; it can be harder to have user-specific analytics, and non-technical members of your family might struggle with it. AdGuard Home can also [act as a DHCP server](https://github.com/AdGuardTeam/AdGuardHome/wiki/DHCP) which might work even better for you.
+If your router supports setting a custom DNS resolver, this is a great way to have it across your whole home. There _are_ some drawbacks of course; it can be harder to have user-specific analytics, and non-technical members of your family might struggle with it. AdGuard Home can also [act as a DHCP server](https://github.com/AdGuardTeam/AdGuardHome/wiki/DHCP) which might work even better for you.
 
 ### Windows
 
@@ -281,18 +283,18 @@ Next up, you need to configure dnsproxy by editing the `/etc/dnsproxy/dnsproxy.y
 ```yaml
 ---
 bootstrap:
-  - "1.1.1.1"
+    - '1.1.1.1'
 listen-addrs:
-  - "0.0.0.0"
+    - '0.0.0.0'
 slisten-ports:
-  - 53
+    - 53
 max-go-routines: 0
 ratelimit: 0
 ratelimit-subnet-len-ipv4: 24
 ratelimit-subnet-len-ipv6: 64
 udp-buf-size: 0
 upstream:
-  - "https://1.1.1.1/dns-query" # Replace me with your dns resolver address
+    - 'https://1.1.1.1/dns-query' # Replace me with your dns resolver address
 timeout: '10s'
 cache: true
 ```
@@ -322,7 +324,7 @@ On my Samsung phone, I was able to set a "Private DNS" option that allowed me to
 
 ## Creating a DoH API
 
-I frequently use [dog](https://github.com/ogham/dog) to query dns servers while testing, but I also occasionally use [dns.google](https://dns.google/), which inspired me to create something similar (side projects side project 🤯). I wanted to use a JSON API like some [DoH providers support](https://developers.cloudflare.com/1.1.1.1/encryption/dns-over-https/make-api-requests/#http-method) but unfortunately AdGuard Home doesn't have this built-in.  Instead I opted to use [Deno](https://deno.land/) to construct the DNS packet, then send it to our DNS resolver over HTTPS:
+I frequently use [dog](https://github.com/ogham/dog) to query dns servers while testing, but I also occasionally use [dns.google](https://dns.google/), which inspired me to create something similar (side projects side project 🤯). I wanted to use a JSON API like some [DoH providers support](https://developers.cloudflare.com/1.1.1.1/encryption/dns-over-https/make-api-requests/#http-method) but unfortunately AdGuard Home doesn't have this built-in. Instead I opted to use [Deno](https://deno.land/) to construct the DNS packet, then send it to our DNS resolver over HTTPS:
 
 ```ts
 // @deno-types="npm:@types/dns-packet"
@@ -349,7 +351,7 @@ async function query(type: string, name: string) {
             questions: [{ type: TYPE, name: NAME }],
         }),
     });
-    
+
     const rawData = packet.decode(Buffer.from(await response.arrayBuffer()));
 
     return {
@@ -365,7 +367,7 @@ async function query(type: string, name: string) {
         answers: rawData.answers || null,
         authorities: rawData.authorities || null,
         additionals: rawData.additionals || null,
-    }
+    };
 }
 
 // Success!
@@ -442,7 +444,7 @@ As you can imagine, there are massive caveats to self-hosting DNS. It's not an e
 
 I received an insane amount of spam, nearly 850,000 requests from 571,798 unique ip addresses in just a day. I ended up having to block port 53 which is not ideal for clients that can't use one of the newer secure protocols. Fortunately, I was able to migrate everything to DoH with some local proxying on some devices, but it means I won't be able to take full advantage of my DNS resolver.
 
-An important note about reliability — if your DNS resolver goes down, you'll lose access to the *entire* internet (nearly). Make sure you set a fallback to a public DNS resolver — and make sure your device supports this!
+An important note about reliability — if your DNS resolver goes down, you'll lose access to the _entire_ internet (nearly). Make sure you set a fallback to a public DNS resolver — and make sure your device supports this!
 
 ## Should you do this?
 
