@@ -1,8 +1,8 @@
 {
-    "title": "Routify 3 with Jake and Willow",
-    "excerpt": "Jake and I go on Svelte Radio to talk about what's new with Routify 3 beta",
-    "image": "$assets/posts/routify-3-svelte-radio.png",
-    "tag": "podcast",
-    "link": "https://www.svelteradio.com/episodes/routify-3-with-jake-and-willow",
-    "timestamp": 1632351600000
+	"title": "Routify 3 with Jake and Willow",
+	"excerpt": "Jake and I go on Svelte Radio to talk about what's new with Routify 3 beta",
+	"image": "$assets/posts/routify-3-svelte-radio.png",
+	"tag": "podcast",
+	"link": "https://www.svelteradio.com/episodes/routify-3-with-jake-and-willow",
+	"timestamp": 1632351600000
 }

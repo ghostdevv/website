@@ -7,69 +7,69 @@ import Fa from 'svelte-fa';
 ---
 
 <Page>
-    <section class="column g16">
-        <h1>🥳 Sponsors</h1>
+	<section class="column g16">
+		<h1>🥳 Sponsors</h1>
 
-        <p style="max-width: 800px;">
-            Thank you to everyone who's supported my work or is thinking about
-            it! I'd also encourage you to checkout your other favourite tools
-            sponsorship pages, or donate to a collective such as
-            <a href="https://opencollective.com/antfu">Anthony Fu's</a> which share
-            the donations in the community.
-        </p>
+		<p style="max-width: 800px;">
+			Thank you to everyone who's supported my work or is thinking about
+			it! I'd also encourage you to checkout your other favourite tools
+			sponsorship pages, or donate to a collective such as
+			<a href="https://opencollective.com/antfu">Anthony Fu's</a> which share
+			the donations in the community.
+		</p>
 
-        <div class="row">
-            <a
-                title="Patreon"
-                aria-label="Patreon"
-                href="https://www.patreon.com/onlyspaceghost"
-                target="_blank"
-                class="icon-link"
-            >
-                <Fa icon={faPatreon} />
-            </a>
+		<div class="row">
+			<a
+				title="Patreon"
+				aria-label="Patreon"
+				href="https://www.patreon.com/onlyspaceghost"
+				target="_blank"
+				class="icon-link"
+			>
+				<Fa icon={faPatreon} />
+			</a>
 
-            <a
-                title="PayPal"
-                aria-label="PayPal"
-                href="https://paypal.me/onlyspaceghost"
-                target="_blank"
-                class="icon-link"
-            >
-                <Fa icon={faPaypal} />
-            </a>
-        </div>
-    </section>
+			<a
+				title="PayPal"
+				aria-label="PayPal"
+				href="https://paypal.me/onlyspaceghost"
+				target="_blank"
+				class="icon-link"
+			>
+				<Fa icon={faPaypal} />
+			</a>
+		</div>
+	</section>
 
-    <hr />
+	<hr />
 
-    <section class="column g16">
-        <h3 style="font-size: calc(1.275rem + .3vw);">Current Supporters</h3>
+	<section class="column g16">
+		<h3 style="font-size: calc(1.275rem + .3vw);">Current Supporters</h3>
 
-        <div class="row wrap">
-            {
-                supporters.current
-                    .sort((a, b) => a.name.localeCompare(b.name))
-                    .map((p) => <Donator name={p.name} src={p.src} />)
-            }
-        </div>
+		<div class="row wrap">
+			{
+				supporters.current
+					.sort((a, b) => a.name.localeCompare(b.name))
+					.map((p) => <Donator name={p.name} src={p.src} />)
+			}
+		</div>
 
-        <h3 style="font-size: calc(1.275rem + .3vw);">Past Supporters</h3>
+		<h3 style="font-size: calc(1.275rem + .3vw);">Past Supporters</h3>
 
-        <div class="row wrap">
-            {
-                supporters.past
-                    .concat(donators)
-                    .sort((a, b) => a.name.localeCompare(b.name))
-                    .map((p) => <Donator name={p.name} src={p.src} slim />)
-            }
-        </div>
-    </section>
+		<div class="row wrap">
+			{
+				supporters.past
+					.concat(donators)
+					.sort((a, b) => a.name.localeCompare(b.name))
+					.map((p) => <Donator name={p.name} src={p.src} slim />)
+			}
+		</div>
+	</section>
 </Page>
 
 <style lang="scss">
-    .icon-link {
-        color: rgba(var(--text-rgb), 0.6);
-        padding: 4px;
-    }
+	.icon-link {
+		color: rgba(var(--text-rgb), 0.6);
+		padding: 4px;
+	}
 </style>

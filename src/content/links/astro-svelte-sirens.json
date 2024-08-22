@@ -1,8 +1,8 @@
 {
-  "title": "Astro & Svelte",
-  "excerpt": "Astro just hit 1.0! Fred K Schott joins us to answer questions on Astro and see how you can integrate Svelte.",
-  "image": "$assets/posts/astro-svelte.png",
-  "tag": "youtube",
-  "link": "https://www.youtube.com/watch?v=iYKKg-50Gm4",
-  "timestamp": 1660676400000
+	"title": "Astro & Svelte",
+	"excerpt": "Astro just hit 1.0! Fred K Schott joins us to answer questions on Astro and see how you can integrate Svelte.",
+	"image": "$assets/posts/astro-svelte.png",
+	"tag": "youtube",
+	"link": "https://www.youtube.com/watch?v=iYKKg-50Gm4",
+	"timestamp": 1660676400000
 }

@@ -6,34 +6,34 @@ const url = new URL(Astro.url);
 ---
 
 <Global frontmatter={Astro.props.frontmatter}>
-    <Nav url={url} client:load />
+	<Nav url={url} client:load />
 
-    <div class="wrapper">
-        <slot />
-    </div>
+	<div class="wrapper">
+		<slot />
+	</div>
 </Global>
 
 <style lang="scss">
-    @import 'src/lib/media';
+	@import 'src/lib/media';
 
-    .wrapper {
-        max-width: 1300px;
-        margin: 0px auto;
+	.wrapper {
+		max-width: 1300px;
+		margin: 0px auto;
 
-        padding: 16px 32px;
-        padding-bottom: 64px;
-        padding-top: 140px;
+		padding: 16px 32px;
+		padding-bottom: 64px;
+		padding-top: 140px;
 
-        width: 100%;
+		width: 100%;
 
-        @include media('<750px') {
-            padding-top: 130px;
-        }
-    }
+		@include media('<750px') {
+			padding-top: 130px;
+		}
+	}
 
-    html,
-    body {
-        scroll-behavior: smooth;
-        scroll-padding-top: 100px;
-    }
+	html,
+	body {
+		scroll-behavior: smooth;
+		scroll-padding-top: 100px;
+	}
 </style>

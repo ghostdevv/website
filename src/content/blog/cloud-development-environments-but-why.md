@@ -70,10 +70,15 @@ Here's a high-level overview of some CDE's I've tried, along with some of the mo
 | [Cloudomation DevStack](https://cloudomation.com/en/cloudomation-devstack/) | VSCode, Jetbrains Suite, Eclipse, Web IDE                                           | Not tied to git           | ❌          | ✅ [^6]       | ✅      |
 
 [^1]: Gitpod provides [no _official_ way to self host](https://www.gitpod.io/blog/introducing-gitpod-dedicated#ending-support-for-self-hosted-and-moving-our-source-code-to-the-open-source-agpl-licence), but it's still possible using some Community guides. Enterprise customers can run in their own cloud account with [Gitpod Dedicated](https://www.gitpod.io/dedicated).
+
 [^2]: I could only find a mention of GitHub and I'm still on the waitlist.
+
 [^3]: It's safe to assume it will be a SaaS but I couldn't find any pricing information.
+
 [^4]: Cloud version is free whilst in beta.
+
 [^5]: Enterprise customers can run in their own cloud account.
+
 [^6]: Can be self-hosted but requires a [license purchase](https://cloudomation.com/en/cloudomation-devstack/devstack-pricing/)
 
 This table is accurate as of October 2023, please [let me know](/contact) if there are mistakes or any CDEs missing.

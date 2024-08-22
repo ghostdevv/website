@@ -4,35 +4,35 @@ import { getPosts } from '$lib/posts';
 import PostCard from './PostCard.astro';
 
 interface Props {
-    filter?: Tag;
+	filter?: Tag;
 }
 
 let posts = await getPosts();
 
 if (tags.includes(Astro.props.filter!)) {
-    posts = posts.filter((post) => post.tag == Astro.props.filter);
+	posts = posts.filter((post) => post.tag == Astro.props.filter);
 }
 ---
 
 <div class="posts">
-    {posts.map((post) => <PostCard {post} />)}
+	{posts.map((post) => <PostCard {post} />)}
 </div>
 
 <style lang="scss">
-    @import 'src/lib/media';
+	@import 'src/lib/media';
 
-    .posts {
-        display: grid;
-        grid-auto-rows: max-content;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: max-content;
-        gap: 22px;
+	.posts {
+		display: grid;
+		grid-auto-rows: max-content;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: max-content;
+		gap: 22px;
 
-        @include media('<850px') {
-            grid-template-columns: 1fr;
-        }
+		@include media('<850px') {
+			grid-template-columns: 1fr;
+		}
 
-        width: 100%;
-        margin: 12px 0px;
-    }
+		width: 100%;
+		margin: 12px 0px;
+	}
 </style>

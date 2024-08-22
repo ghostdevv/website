@@ -26,11 +26,11 @@ To make it easy, we provide a way to use any of Svelte's built-in transitions ou
 
 ```svelte
 <script>
-  import { fly } from 'svelte-reduced-motion/transition';
+	import { fly } from 'svelte-reduced-motion/transition';
 </script>
 
 <div transition:fly={{ y: -20 }}>
-  I will fly by default, and fade if the user requests reduced motion
+	I will fly by default, and fade if the user requests reduced motion
 </div>
 ```
 
@@ -40,35 +40,33 @@ All the transitions from [svelte/transition](https://svelte.dev/docs#run-time-sv
 
 With `svelte-reduced-motion`, it's easy to set a fallback transition for users who prefer reduced motion. The signature is simple. We can pass in the desired transition and a fallback. We also have a way of customising the options for each individually (the options we pass in the template are passed to both. In some cases, we might need to configure them individually)
 
-- Simple Example
+-   Simple Example
 
-  ```svelte
-  <script>
-      import { createTransition } from 'svelte-reduced-motion';
-      import { fly } from 'svelte/transition';
+    ```svelte
+    <script>
+    	import { createTransition } from 'svelte-reduced-motion';
+    	import { fly } from 'svelte/transition';
 
-      const accessibleTransition = createTransition(fly);
-  </script>
+    	const accessibleTransition = createTransition(fly);
+    </script>
 
-  <!-- You can even specify the options as usual-->
-  <div transition:accessibleTransition={{ y: -20 }}>
-      Hello world
-  </div>
-  ```
+    <!-- You can even specify the options as usual-->
+    <div transition:accessibleTransition={{ y: -20 }}>Hello world</div>
+    ```
 
-- Custom options for each transition
+-   Custom options for each transition
 
-  ```js
-  const accessibleTransition = createTransition(
-      [fly, { duration: 1000 }], // default
-      [fade, { duration: 200 }]  // reduced-motion fallback
-  );
+    ```js
+    const accessibleTransition = createTransition(
+    	[fly, { duration: 1000 }], // default
+    	[fade, { duration: 200 }], // reduced-motion fallback
+    );
 
-  const accessibleTransition = createTransition(
-      [fly, { duration: 750, y: -20 }],
-      fade
-  );
-  ```
+    const accessibleTransition = createTransition(
+    	[fly, { duration: 750, y: -20 }],
+    	fade,
+    );
+    ```
 
 # Reacting to reduced motion
 
@@ -76,12 +74,10 @@ The last thing we can do with `svelte-reduced-motion` is react to whether the us
 
 ```html
 <script>
-    import { reducedMotion } from 'svelte-reduced-motion';
+	import { reducedMotion } from 'svelte-reduced-motion';
 </script>
 
-<p>
-    Reduced Motion: {$reducedMotion ? 'enabled' : 'disabled'}
-</p>
+<p>Reduced Motion: {$reducedMotion ? 'enabled' : 'disabled'}</p>
 ```
 
 # Conclusion

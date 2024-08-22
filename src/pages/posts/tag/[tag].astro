@@ -7,11 +7,11 @@ import Page from '$lib/layouts/Page.astro';
 const tag = Astro.params.tag as Tag;
 
 export function getStaticPaths() {
-    return tags.map((tag) => ({ params: { tag } }));
+	return tags.map((tag) => ({ params: { tag } }));
 }
 ---
 
 <Page>
-    <PostFilter selectedTag={tag} />
-    <Posts filter={tag} />
+	<PostFilter selectedTag={tag} />
+	<Posts filter={tag} />
 </Page>

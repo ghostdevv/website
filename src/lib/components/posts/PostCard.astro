@@ -5,8 +5,8 @@ import { getImage } from 'astro:assets';
 import Tag from './Tag.svelte';
 
 interface Props {
-    embedded?: boolean;
-    post: Post;
+	embedded?: boolean;
+	post: Post;
 }
 
 const { post, embedded } = Astro.props;
@@ -18,103 +18,103 @@ const img = await getImage({ src: post.image, width: 800, format: 'webp' });
 ---
 
 <a
-    href={href}
-    target={target}
-    class="postcard"
-    class:list={{ embedded }}
-    title={post.title}
+	href={href}
+	target={target}
+	class="postcard"
+	class:list={{ embedded }}
+	title={post.title}
 >
-    <div class="image" style={`background-image: url(${img.src});`}></div>
+	<div class="image" style={`background-image: url(${img.src});`}></div>
 
-    <div class="details">
-        <Tag name={post.tag} />
+	<div class="details">
+		<Tag name={post.tag} />
 
-        <h2 class="title">{post.title}</h2>
+		<h2 class="title">{post.title}</h2>
 
-        <p class="description">
-            {post.excerpt}
-        </p>
-    </div>
+		<p class="description">
+			{post.excerpt}
+		</p>
+	</div>
 </a>
 
 <style lang="scss">
-    @import 'src/lib/media';
+	@import 'src/lib/media';
 
-    .postcard {
-        display: flex;
-        flex-direction: column;
-        gap: 0px;
+	.postcard {
+		display: flex;
+		flex-direction: column;
+		gap: 0px;
 
-        min-width: 325px;
-        width: 100%;
+		min-width: 325px;
+		width: 100%;
 
-        color: var(--text);
-        background-color: var(--background-secondary);
-        border-radius: 12px;
-        overflow: hidden;
+		color: var(--text);
+		background-color: var(--background-secondary);
+		border-radius: 12px;
+		overflow: hidden;
 
-        transition: box-shadow 0.2s ease-in-out;
+		transition: box-shadow 0.2s ease-in-out;
 
-        @include media('<400px') {
-            min-width: 200px;
-            flex-shrink: 0;
-            width: 100%;
-        }
+		@include media('<400px') {
+			min-width: 200px;
+			flex-shrink: 0;
+			width: 100%;
+		}
 
-        &:hover,
-        &:active,
-        &:focus {
-            color: var(--text);
-            text-decoration: none;
-            background-color: var(--background-secondary);
-            box-shadow:
-                0 0 0 transparent,
-                0 0 0 5px var(--primary);
-        }
+		&:hover,
+		&:active,
+		&:focus {
+			color: var(--text);
+			text-decoration: none;
+			background-color: var(--background-secondary);
+			box-shadow:
+				0 0 0 transparent,
+				0 0 0 5px var(--primary);
+		}
 
-        .title {
-            font-size: calc(1.275rem + 0.3vw);
-            font-weight: 500;
-        }
+		.title {
+			font-size: calc(1.275rem + 0.3vw);
+			font-weight: 500;
+		}
 
-        .image {
-            position: relative;
-            width: 100%;
-            height: auto;
-            aspect-ratio: 2/1;
-            background-position: 0% 50%;
-            background-repeat: no-repeat;
-            background-size: cover;
+		.image {
+			position: relative;
+			width: 100%;
+			height: auto;
+			aspect-ratio: 2/1;
+			background-position: 0% 50%;
+			background-repeat: no-repeat;
+			background-size: cover;
 
-            transform: scale(1.04);
-            border-radius: 12px 12px 0 0;
-            box-shadow:
-                -2px 1px 10px #000a inset,
-                -2px 3px 20px #0006 inset,
-                -7px 3px 3px #fff6 inset;
-        }
+			transform: scale(1.04);
+			border-radius: 12px 12px 0 0;
+			box-shadow:
+				-2px 1px 10px #000a inset,
+				-2px 3px 20px #0006 inset,
+				-7px 3px 3px #fff6 inset;
+		}
 
-        .details {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
+		.details {
+			display: flex;
+			flex-direction: column;
+			gap: 6px;
 
-            padding: 18px;
+			padding: 18px;
 
-            .description {
-                color: rgba(var(--text-rgb), 0.5);
-            }
-        }
+			.description {
+				color: rgba(var(--text-rgb), 0.5);
+			}
+		}
 
-        &.embedded {
-            background-color: var(--background-tertiary);
+		&.embedded {
+			background-color: var(--background-tertiary);
 
-            .image {
-                box-shadow:
-                    -2px 1px 10px #1d1d1daa inset,
-                    -2px 3px 20px #1d1d1daa inset,
-                    -7px 3px 3px #fff6 inset;
-            }
-        }
-    }
+			.image {
+				box-shadow:
+					-2px 1px 10px #1d1d1daa inset,
+					-2px 3px 20px #1d1d1daa inset,
+					-7px 3px 3px #fff6 inset;
+			}
+		}
+	}
 </style>

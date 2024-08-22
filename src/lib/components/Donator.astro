@@ -2,53 +2,53 @@
 import { Image } from 'astro:assets';
 
 interface Props {
-    name: string;
-    src: ImageMetadata;
-    slim?: boolean;
+	name: string;
+	src: ImageMetadata;
+	slim?: boolean;
 }
 
 const { name, src, slim = false } = Astro.props;
 ---
 
 <card class:list={['person', slim && 'slim']}>
-    <Image {src} alt={`${name}'s pfp`} width="150" height="150" />
+	<Image {src} alt={`${name}'s pfp`} width="150" height="150" />
 
-    {!slim && <hr />}
+	{!slim && <hr />}
 
-    <h4>{name}</h4>
+	<h4>{name}</h4>
 </card>
 
 <style lang="scss">
-    .person {
-        display: flex;
-        flex-direction: column;
+	.person {
+		display: flex;
+		flex-direction: column;
 
-        align-items: center;
-        text-align: center;
+		align-items: center;
+		text-align: center;
 
-        img {
-            border-radius: 100%;
-            width: 150px;
-            height: 150px;
-        }
+		img {
+			border-radius: 100%;
+			width: 150px;
+			height: 150px;
+		}
 
-        &.slim img {
-            width: 50px;
-            height: 50px;
-        }
+		&.slim img {
+			width: 50px;
+			height: 50px;
+		}
 
-        hr {
-            border-color: var(--background-secondary);
-        }
+		hr {
+			border-color: var(--background-secondary);
+		}
 
-        &.slim {
-            flex-direction: row;
+		&.slim {
+			flex-direction: row;
 
-            padding: 18px;
+			padding: 18px;
 
-            img {
-                width: 50px;
-            }
-        }
-    }
+			img {
+				width: 50px;
+			}
+		}
+	}
 </style>

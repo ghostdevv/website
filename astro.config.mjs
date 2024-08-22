@@ -6,32 +6,32 @@ import svelte from '@astrojs/svelte';
 
 // https://astro.build/config
 export default defineConfig({
-    integrations: [svelte(), sitemap()],
+	integrations: [svelte(), sitemap()],
 
-    site: 'https://ghostdev.xyz/',
+	site: 'https://ghostdev.xyz/',
 
-    markdown: {
-        gfm: true,
+	markdown: {
+		gfm: true,
 
-        syntaxHighlight: 'shiki',
-        shikiConfig: {
-            theme: serendipity,
-        },
+		syntaxHighlight: 'shiki',
+		shikiConfig: {
+			theme: serendipity,
+		},
 
-        rehypePlugins: [
-            [
-                rehypeWrap,
-                {
-                    wrapper: 'div.table-wrapper',
-                    selector: 'table',
-                },
-            ],
-        ],
-    },
+		rehypePlugins: [
+			[
+				rehypeWrap,
+				{
+					wrapper: 'div.table-wrapper',
+					selector: 'table',
+				},
+			],
+		],
+	},
 
-    vite: {
-        ssr: {
-            noExternal: ['@fortawesome/*'],
-        },
-    },
+	vite: {
+		ssr: {
+			noExternal: ['@fortawesome/*'],
+		},
+	},
 });

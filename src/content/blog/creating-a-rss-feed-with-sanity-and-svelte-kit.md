@@ -40,9 +40,9 @@ Now we have our endpoint file, we need to create our feed, there are many option
 
 ```js
 const feed = new RSS({
-    title: 'GHOSTDev blog', // The title of our rss feed
-    site_url: 'https://ghostdev.xyz', // Our base site url
-    feed_url: 'https://ghostdev.xyz/rss.xml', // This links to our endpoint
+	title: 'GHOSTDev blog', // The title of our rss feed
+	site_url: 'https://ghostdev.xyz', // Our base site url
+	feed_url: 'https://ghostdev.xyz/rss.xml', // This links to our endpoint
 });
 ```
 
@@ -52,9 +52,9 @@ Now we have our feed we need to fetch our data, this is where Sanity comes in. I
 
 ```js
 const sanity = createClient({
-    projectId: '', // Sanity Project ID
-    dataset: '', // Sanity DataSet
-    useCdn: true,
+	projectId: '', // Sanity Project ID
+	dataset: '', // Sanity DataSet
+	useCdn: true,
 });
 
 const query = groq`
@@ -75,12 +75,12 @@ Once we have our data we can add it to our feed. You can view all possible field
 
 ```js
 for (const post of posts)
-    feed.item({
-        title: post.title,
-        description: post.excerpt,
-        date: post.timestamp,
-        url: `https://ghostdev.xyz/posts/${post.slug}`,
-    });
+	feed.item({
+		title: post.title,
+		description: post.excerpt,
+		date: post.timestamp,
+		url: `https://ghostdev.xyz/posts/${post.slug}`,
+	});
 ```
 
 # Finishing up
@@ -89,7 +89,7 @@ We are just about done! The last step is returning the rss data from your endpoi
 
 ```js
 return {
-    body: feed.xml({ indent: true }),
+	body: feed.xml({ indent: true }),
 };
 ```
 
@@ -105,19 +105,19 @@ import groq from 'groq';
 import RSS from 'rss';
 
 const sanity = createClient({
-    projectId: '', // Sanity Project ID
-    dataset: '', // Sanity DataSet
-    useCdn: true,
+	projectId: '', // Sanity Project ID
+	dataset: '', // Sanity DataSet
+	useCdn: true,
 });
 
 export async function GET() {
-    const feed = new RSS({
-        title: 'GHOSTDev blog', // The title of our rss feed
-        site_url: 'https://ghostdev.xyz', // Our base site url
-        feed_url: 'https://ghostdev.xyz/rss.xml', // This links to our endpoint
-    });
+	const feed = new RSS({
+		title: 'GHOSTDev blog', // The title of our rss feed
+		site_url: 'https://ghostdev.xyz', // Our base site url
+		feed_url: 'https://ghostdev.xyz/rss.xml', // This links to our endpoint
+	});
 
-    const query = groq`
+	const query = groq`
         *[_type == 'post']{
             title,
             excerpt,
@@ -128,21 +128,21 @@ export async function GET() {
         } | order(timestamp desc)
     `;
 
-    const posts = await sanity.fetch(query);
+	const posts = await sanity.fetch(query);
 
-    for (const post of posts)
-        feed.item({
-            title: post.title,
-            description: post.excerpt,
-            date: post.timestamp,
-            url: `https://ghostdev.xyz/posts/${post.slug}`,
-        });
+	for (const post of posts)
+		feed.item({
+			title: post.title,
+			description: post.excerpt,
+			date: post.timestamp,
+			url: `https://ghostdev.xyz/posts/${post.slug}`,
+		});
 
-    return new Response(feed.xml({ indent: true }), {
-        status: 200,
-        headers: {
-            'Content-Type': 'application/xml'
-        }
-    })
+	return new Response(feed.xml({ indent: true }), {
+		status: 200,
+		headers: {
+			'Content-Type': 'application/xml',
+		},
+	});
 }
 ```

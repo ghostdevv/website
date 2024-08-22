@@ -338,36 +338,36 @@ import { Buffer } from 'node:buffer';
  * @param name the host to check e.g. google.com
  */
 async function query(type: string, name: string) {
-    // Try replacing this URL with your DoH endpoint
-    const response = await fetch('https://1.1.1.1/dns-query', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/dns-message',
-        },
-        body: packet.encode({
-            type: 'query',
-            id: Math.floor(Math.random() * 65534) + 1,
-            flags: packet.RECURSION_DESIRED,
-            questions: [{ type: TYPE, name: NAME }],
-        }),
-    });
+	// Try replacing this URL with your DoH endpoint
+	const response = await fetch('https://1.1.1.1/dns-query', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/dns-message',
+		},
+		body: packet.encode({
+			type: 'query',
+			id: Math.floor(Math.random() * 65534) + 1,
+			flags: packet.RECURSION_DESIRED,
+			questions: [{ type: TYPE, name: NAME }],
+		}),
+	});
 
-    const rawData = packet.decode(Buffer.from(await response.arrayBuffer()));
+	const rawData = packet.decode(Buffer.from(await response.arrayBuffer()));
 
-    return {
-        status: 'rcode' in rawData ? rawData.rcode : null,
-        flags: {
-            tc: rawData.flag_tc,
-            rd: rawData.flag_rd,
-            ra: rawData.flag_ra,
-            ad: rawData.flag_ad,
-            cd: rawData.flag_cd,
-        },
-        questions: rawData.questions || null,
-        answers: rawData.answers || null,
-        authorities: rawData.authorities || null,
-        additionals: rawData.additionals || null,
-    };
+	return {
+		status: 'rcode' in rawData ? rawData.rcode : null,
+		flags: {
+			tc: rawData.flag_tc,
+			rd: rawData.flag_rd,
+			ra: rawData.flag_ra,
+			ad: rawData.flag_ad,
+			cd: rawData.flag_cd,
+		},
+		questions: rawData.questions || null,
+		answers: rawData.answers || null,
+		authorities: rawData.authorities || null,
+		additionals: rawData.additionals || null,
+	};
 }
 
 // Success!
@@ -386,17 +386,17 @@ server.use(logger());
 server.use(cors({ origin: '*' }));
 
 server.get('/query', async (c) => {
-    const { name, type = 'A' } = c.req.query();
+	const { name, type = 'A' } = c.req.query();
 
-    if (!name?.trim().length) {
-        throw new HTTPException(400, { message: 'invalid/missing name param' });
-    }
+	if (!name?.trim().length) {
+		throw new HTTPException(400, { message: 'invalid/missing name param' });
+	}
 
-    // Use your query() function from the last codeblock
-    // don't forget to change the URL to your new DNS resolver!
-    const result = await query(type, name);
+	// Use your query() function from the last codeblock
+	// don't forget to change the URL to your new DNS resolver!
+	const result = await query(type, name);
 
-    return c.json(result);
+	return c.json(result);
 });
 
 Deno.serve(server.fetch);

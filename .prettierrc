@@ -5,10 +5,9 @@
     "bracketSpacing": true,
     "arrowParens": "always",
     "semi": true,
-    "useTabs": false,
+    "useTabs": true,
     "tabWidth": 4,
-
-    "svelteSortOrder": "scripts-markup-styles",
+    "svelteSortOrder": "scripts-options-markup-styles",
     "svelteAllowShorthand": true,
     "svelteBracketNewLine": false,
     "svelteIndentScriptAndStyle": true

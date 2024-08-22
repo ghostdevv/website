@@ -53,7 +53,7 @@ const text = await readText();
 const newText = `${text.slice(0, 50)}...`;
 
 // Finally write the text back
-await writeText(newText)
+await writeText(newText);
 ```
 
 # Tauri Commands
@@ -63,7 +63,7 @@ Tauri has a system called [commands](https://tauri.app/v1/guides/features/comman
 ```rs
 #[tauri::command] // This macro marks this as a command
 fn greet(name: &str) -> String {
-    return format!("Hello, {}!", name) // Return a string 
+    return format!("Hello, {}!", name) // Return a string
 }
 ```
 
@@ -85,15 +85,15 @@ We can then call this from the frontend:
 import { invoke } from '@tauri-apps/api/tauri';
 
 async function run() {
-    const result = await invoke('greet', {
-        // Because of how powerful Rust's macros are, Tauri can workout that the parameter our greet command takes is called "name"
-        name: 'Willow'
-    });
+	const result = await invoke('greet', {
+		// Because of how powerful Rust's macros are, Tauri can workout that the parameter our greet command takes is called "name"
+		name: 'Willow',
+	});
 
-    console.log(result); // Hello Willow!
+	console.log(result); // Hello Willow!
 }
 
-run()
+run();
 ```
 
 # File Reading app
@@ -104,25 +104,25 @@ We're going to use the built-in `dialog` and `fs` APIs. The `dialog` api's `open
 
 ```svelte
 <script>
-    import { readTextFile } from '@tauri-apps/api/fs';
-    import { open } from '@tauri-apps/api/dialog';
+	import { readTextFile } from '@tauri-apps/api/fs';
+	import { open } from '@tauri-apps/api/dialog';
 
-    let contents;
+	let contents;
 
-    async function openFile() {
-        const file = await open({
-            multiple: false,
-            directory: false,
-        });
+	async function openFile() {
+		const file = await open({
+			multiple: false,
+			directory: false,
+		});
 
-        contents = await readTextFile(file);
-    }
+		contents = await readTextFile(file);
+	}
 </script>
 
 <button on:click={openFile}> Open File </button>
 
 {#if contents}
-    <pre>{contents}</pre>
+	<pre>{contents}</pre>
 {/if}
 ```
 

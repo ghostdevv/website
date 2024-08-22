@@ -3,33 +3,33 @@ import type { ColourGroup } from '$data/colours';
 import Colour from './Colour.svelte';
 
 interface Props {
-    group: ColourGroup;
+	group: ColourGroup;
 }
 
 const { group } = Astro.props as Props;
 ---
 
 <div class="group">
-    <h3 class="title">{group.title}</h3>
+	<h3 class="title">{group.title}</h3>
 
-    <div class="colours">
-        {group.colours.map((colour) => <Colour colour={colour} client:load />)}
-    </div>
+	<div class="colours">
+		{group.colours.map((colour) => <Colour colour={colour} client:load />)}
+	</div>
 </div>
 
 <style lang="scss">
-    .group {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-    }
+	.group {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+	}
 
-    .title {
-        text-transform: capitalize;
-    }
+	.title {
+		text-transform: capitalize;
+	}
 
-    .colours {
-        display: flex;
-        gap: 32px;
-    }
+	.colours {
+		display: flex;
+		gap: 32px;
+	}
 </style>

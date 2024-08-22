@@ -11,12 +11,12 @@ import '$lib/layouts/post.scss';
 import Fa from 'svelte-fa';
 
 export async function getStaticPaths() {
-    const blogPosts = await getCollection('blog');
+	const blogPosts = await getCollection('blog');
 
-    return blogPosts.map((post) => ({
-        params: { slug: post.slug },
-        props: { post },
-    }));
+	return blogPosts.map((post) => ({
+		params: { slug: post.slug },
+		props: { post },
+	}));
 }
 
 const post = Astro.props.post as CollectionEntry<'blog'>;
@@ -24,184 +24,184 @@ const { Content, headings } = await post.render();
 ---
 
 <Page frontmatter={post.data}>
-    <article>
-        <div class="meta">
-            <h1>{post.data.title}</h1>
-            <p>{format(post.data.timestamp, 'do LLLL yyyy')}</p>
-        </div>
+	<article>
+		<div class="meta">
+			<h1>{post.data.title}</h1>
+			<p>{format(post.data.timestamp, 'do LLLL yyyy')}</p>
+		</div>
 
-        <div class="split">
-            <div class="markdown" id="post-body">
-                <Content />
-            </div>
+		<div class="split">
+			<div class="markdown" id="post-body">
+				<Content />
+			</div>
 
-            <aside class="contents">
-                <h2 class="title">Table Of Contents</h2>
+			<aside class="contents">
+				<h2 class="title">Table Of Contents</h2>
 
-                <Contents client:visible headings={headings} />
+				<Contents client:visible headings={headings} />
 
-                <div class="buttons">
-                    <SettingsModal client:load>
-                        <button class="inline-button">
-                            <Fa icon={faCog} />
-                        </button>
-                    </SettingsModal>
+				<div class="buttons">
+					<SettingsModal client:load>
+						<button class="inline-button">
+							<Fa icon={faCog} />
+						</button>
+					</SettingsModal>
 
-                    <a href="/rss.xml" target="_blank" class="inline-button">
-                        <Fa icon={faRss} />
-                    </a>
-                </div>
-            </aside>
-        </div>
+					<a href="/rss.xml" target="_blank" class="inline-button">
+						<Fa icon={faRss} />
+					</a>
+				</div>
+			</aside>
+		</div>
 
-        <hr style="margin-top: 16px;" />
+		<hr style="margin-top: 16px;" />
 
-        {
-            post.data.attribution && (
-                <p class="attribution">{post.data.attribution}</p>
-            )
-        }
+		{
+			post.data.attribution && (
+				<p class="attribution">{post.data.attribution}</p>
+			)
+		}
 
-        <footer>
-            <div class="row wrap">
-                <a
-                    href={tweetLink(
-                        `Checkout this post by @onlyspaceghost!\n\nhttps://ghostdev.xyz/posts/${post.slug}`,
-                    )}
-                    class="button secondary"
-                    target="_blank"
-                >
-                    <Fa icon={faTwitter} />
-                    Share on twitter
-                </a>
+		<footer>
+			<div class="row wrap">
+				<a
+					href={tweetLink(
+						`Checkout this post by @onlyspaceghost!\n\nhttps://ghostdev.xyz/posts/${post.slug}`,
+					)}
+					class="button secondary"
+					target="_blank"
+				>
+					<Fa icon={faTwitter} />
+					Share on twitter
+				</a>
 
-                <a href="/rss.xml" target="_blank" class="button secondary">
-                    <Fa icon={faRss} />
-                    RSS
-                </a>
-            </div>
+				<a href="/rss.xml" target="_blank" class="button secondary">
+					<Fa icon={faRss} />
+					RSS
+				</a>
+			</div>
 
-            <SettingsModal client:load />
-        </footer>
-    </article>
+			<SettingsModal client:load />
+		</footer>
+	</article>
 </Page>
 
 <style lang="scss">
-    @import 'src/lib/media';
+	@import 'src/lib/media';
 
-    article {
-        width: 100%;
-        max-width: 100%;
+	article {
+		width: 100%;
+		max-width: 100%;
 
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
 
-        footer {
-            width: 100%;
-            padding-bottom: 16px;
-            margin-top: 8px;
+		footer {
+			width: 100%;
+			padding-bottom: 16px;
+			margin-top: 8px;
 
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 16px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 16px;
 
-            @include media('<600px') {
-                flex-wrap: wrap;
-            }
-        }
+			@include media('<600px') {
+				flex-wrap: wrap;
+			}
+		}
 
-        .split {
-            display: grid;
-            max-width: 100%;
-            width: 100%;
-            grid-template-columns: 1fr max(250px);
-            gap: 80px;
+		.split {
+			display: grid;
+			max-width: 100%;
+			width: 100%;
+			grid-template-columns: 1fr max(250px);
+			gap: 80px;
 
-            position: relative;
+			position: relative;
 
-            @include media('<900px') {
-                display: block;
-            }
-        }
+			@include media('<900px') {
+				display: block;
+			}
+		}
 
-        .markdown {
-            width: 100%;
-            max-width: 100%;
-            overflow: auto;
-        }
+		.markdown {
+			width: 100%;
+			max-width: 100%;
+			overflow: auto;
+		}
 
-        .contents {
-            display: flex;
-            flex-direction: column;
-            align-self: flex-start;
-            align-items: flex-start;
-            gap: 8px;
+		.contents {
+			display: flex;
+			flex-direction: column;
+			align-self: flex-start;
+			align-items: flex-start;
+			gap: 8px;
 
-            position: sticky;
-            top: 150px;
+			position: sticky;
+			top: 150px;
 
-            @include media('<900px') {
-                display: none;
-            }
+			@include media('<900px') {
+				display: none;
+			}
 
-            .title {
-                font-size: 1.4rem;
-            }
+			.title {
+				font-size: 1.4rem;
+			}
 
-            .buttons {
-                margin-top: 16px;
+			.buttons {
+				margin-top: 16px;
 
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                gap: 12px;
-            }
-        }
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				gap: 12px;
+			}
+		}
 
-        .inline-button {
-            all: unset;
+		.inline-button {
+			all: unset;
 
-            color: rgba(var(--text-rgb), 0.6);
-            cursor: pointer;
+			color: rgba(var(--text-rgb), 0.6);
+			cursor: pointer;
 
-            display: flex;
-            align-items: center;
-            gap: 8px;
+			display: flex;
+			align-items: center;
+			gap: 8px;
 
-            transition: color 0.2s ease-in-out;
+			transition: color 0.2s ease-in-out;
 
-            &:disabled {
-                opacity: 0.6;
-                cursor: not-allowed;
-            }
+			&:disabled {
+				opacity: 0.6;
+				cursor: not-allowed;
+			}
 
-            &:hover:not(&:disabled),
-            &:active:not(&:disabled),
-            &:focus:not(&:disabled) {
-                background-color: transparent;
-                box-shadow: none;
-                color: var(--primary);
-            }
-        }
+			&:hover:not(&:disabled),
+			&:active:not(&:disabled),
+			&:focus:not(&:disabled) {
+				background-color: transparent;
+				box-shadow: none;
+				color: var(--primary);
+			}
+		}
 
-        .meta {
-            background-color: var(--background-secondary);
-            border-radius: 22px;
-            padding: 32px;
+		.meta {
+			background-color: var(--background-secondary);
+			border-radius: 22px;
+			padding: 32px;
 
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
+			display: flex;
+			flex-direction: column;
+			gap: 12px;
 
-            margin-bottom: 32px;
-        }
+			margin-bottom: 32px;
+		}
 
-        .attribution {
-            color: rgba(var(--text-rgb), 0.8);
-            line-height: 1.6;
-            font-size: 14px;
-        }
-    }
+		.attribution {
+			color: rgba(var(--text-rgb), 0.8);
+			line-height: 1.6;
+			font-size: 14px;
+		}
+	}
 </style>

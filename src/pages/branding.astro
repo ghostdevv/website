@@ -11,8 +11,8 @@ import { colours } from '$data/colours';
 import Fa from 'svelte-fa';
 
 function getLogos(type: 'main' | 'rainbow') {
-    // prettier-ignore
-    return [
+	// prettier-ignore
+	return [
         { name: 'SVG', url: `/logos/${type}/ghost-logo-${type}.svg` },
         { name: 'WEBP 500x', url: `/logos/${type}/ghost-logo-${type}.webp` },
         { name: 'PNG 500x', url: `/logos/${type}/ghost-logo-${type}-500.png` },
@@ -23,61 +23,61 @@ function getLogos(type: 'main' | 'rainbow') {
 ---
 
 <Page>
-    <section class="col">
-        <h1>Branding</h1>
-        <p>😱 You found my secret branding page!</p>
-    </section>
+	<section class="col">
+		<h1>Branding</h1>
+		<p>😱 You found my secret branding page!</p>
+	</section>
 
-    <section class="col">
-        <h2>Colours</h2>
-        <hr />
+	<section class="col">
+		<h2>Colours</h2>
+		<hr />
 
-        <div class="colours">
-            {colours.map((group) => <ColourGroup group={group} />)}
-        </div>
-    </section>
+		<div class="colours">
+			{colours.map((group) => <ColourGroup group={group} />)}
+		</div>
+	</section>
 
-    <section class="col">
-        <h2>Logos</h2>
-        <hr />
+	<section class="col">
+		<h2>Logos</h2>
+		<hr />
 
-        <div class="logos">
-            <Logo name="Main" formats={getLogos('main')}>
-                <RegularLogo />
-            </Logo>
+		<div class="logos">
+			<Logo name="Main" formats={getLogos('main')}>
+				<RegularLogo />
+			</Logo>
 
-            <Logo name="Rainbow" formats={getLogos('rainbow')}>
-                <LogoRainbow />
-            </Logo>
-        </div>
-    </section>
+			<Logo name="Rainbow" formats={getLogos('rainbow')}>
+				<LogoRainbow />
+			</Logo>
+		</div>
+	</section>
 
-    <section class="col">
-        <h2>Favicon</h2>
-        <hr />
+	<section class="col">
+		<h2>Favicon</h2>
+		<hr />
 
-        <a href="/favicon.png" target="_blank" download>
-            <Fa icon={faDownload} /> favicon.png
-        </a>
+		<a href="/favicon.png" target="_blank" download>
+			<Fa icon={faDownload} /> favicon.png
+		</a>
 
-        <h3 style="margin-top: 12px;">Inline Code</h3>
-        <CopyableInput client:load value={inlineFavicon} />
-    </section>
+		<h3 style="margin-top: 12px;">Inline Code</h3>
+		<CopyableInput client:load value={inlineFavicon} />
+	</section>
 </Page>
 
 <style lang="scss">
-    .colours {
-        display: flex;
-        flex-direction: column;
-        gap: 22px;
-    }
+	.colours {
+		display: flex;
+		flex-direction: column;
+		gap: 22px;
+	}
 
-    .logos {
-        display: flex;
-        gap: 64px;
-    }
+	.logos {
+		display: flex;
+		gap: 64px;
+	}
 
-    section {
-        margin: 64px auto;
-    }
+	section {
+		margin: 64px auto;
+	}
 </style>

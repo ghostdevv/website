@@ -9,68 +9,68 @@ import { HALLOWEEN } from '$lib/vars';
 ---
 
 <Page>
-    <section class="column g16">
-        <h1>
-            👋{HALLOWEEN ? '🎃' : ''} Hey, I'm Willow
-            <span class="aka">(aka GHOST)</span>
-        </h1>
-        <p>I am a fullstack web developer from the UK.</p>
+	<section class="column g16">
+		<h1>
+			👋{HALLOWEEN ? '🎃' : ''} Hey, I'm Willow
+			<span class="aka">(aka GHOST)</span>
+		</h1>
+		<p>I am a fullstack web developer from the UK.</p>
 
-        <div class="row">
-            <a
-                title="Twitter"
-                aria-label="Twitter"
-                href="https://twitter.com/onlyspaceghost"
-                target="_blank"
-                class="icon-link"
-            >
-                <Fa size="md" icon={faTwitter} />
-            </a>
+		<div class="row">
+			<a
+				title="Twitter"
+				aria-label="Twitter"
+				href="https://twitter.com/onlyspaceghost"
+				target="_blank"
+				class="icon-link"
+			>
+				<Fa size="md" icon={faTwitter} />
+			</a>
 
-            <a
-                title="Discord"
-                aria-label="Discord"
-                href="https://discord.com/users/282839711834177537"
-                target="_blank"
-                class="icon-link"
-            >
-                <Fa size="md" icon={faDiscord} />
-            </a>
+			<a
+				title="Discord"
+				aria-label="Discord"
+				href="https://discord.com/users/282839711834177537"
+				target="_blank"
+				class="icon-link"
+			>
+				<Fa size="md" icon={faDiscord} />
+			</a>
 
-            <a
-                title="Mastodon"
-                aria-label="Mastodon"
-                href="https://fosstodon.org/@onlyspaceghost"
-                target="_blank"
-                class="icon-link"
-                rel="me"
-            >
-                <Fa size="md" icon={faMastodon} />
-            </a>
+			<a
+				title="Mastodon"
+				aria-label="Mastodon"
+				href="https://fosstodon.org/@onlyspaceghost"
+				target="_blank"
+				class="icon-link"
+				rel="me"
+			>
+				<Fa size="md" icon={faMastodon} />
+			</a>
 
-            <a
-                title="GitHub"
-                aria-label="GitHub"
-                href="https://github.com/ghostdevv"
-                target="_blank"
-                class="icon-link"
-            >
-                <Fa size="md" icon={faGithub} />
-            </a>
-        </div>
-    </section>
+			<a
+				title="GitHub"
+				aria-label="GitHub"
+				href="https://github.com/ghostdevv"
+				target="_blank"
+				class="icon-link"
+			>
+				<Fa size="md" icon={faGithub} />
+			</a>
+		</div>
+	</section>
 
-    <Posts />
+	<Posts />
 </Page>
 
 <style>
-    .aka {
-        opacity: 0.6;
-        font-size: 0.8rem;
-    }
+	.aka {
+		opacity: 0.6;
+		font-size: 0.8rem;
+	}
 
-    .icon-link {
-        color: rgba(var(--text-rgb), 0.6);
-        padding: 4px;
-    }
+	.icon-link {
+		color: rgba(var(--text-rgb), 0.6);
+		padding: 4px;
+	}
 </style>
