@@ -10,7 +10,7 @@ export const collections = {
 				title: z.string().trim().min(1),
 				excerpt: z.string().trim().min(1),
 				image: image(),
-				timestamp: z.number(),
+				postedAt: z.number(),
 				attribution: z.string().optional(),
 			}),
 	}),
@@ -24,7 +24,7 @@ export const collections = {
 				excerpt: z.string().trim().min(1),
 				image: image(),
 				link: z.string().url().trim().min(1),
-				timestamp: z.number(),
+				postedAt: z.number(),
 			}),
 	}),
 };

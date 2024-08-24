@@ -3,7 +3,7 @@ tag: blog
 title: Home Assistant Green
 excerpt: My experience with the latest Home Assistant hardware from Nabu Casa
 image: $assets/posts/home-assistant-green/thumbnail.png
-timestamp: 1722579812403
+postedAt: 1722579812403
 attribution: Images of the Home Assistant Green in the thumbnail background, and under the "What is it?" heading belong to Home Assistant.
 ---
 

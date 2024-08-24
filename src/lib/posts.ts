@@ -26,5 +26,5 @@ export async function getPosts() {
 		})),
 	];
 
-	return posts.sort((a, b) => b.timestamp - a.timestamp);
+	return posts.sort((a, b) => b.postedAt - a.postedAt);
 }

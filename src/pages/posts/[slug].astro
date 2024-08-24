@@ -27,7 +27,7 @@ const { Content, headings } = await post.render();
 	<article>
 		<div class="meta">
 			<h1>{post.data.title}</h1>
-			<p>{format(post.data.timestamp, 'do LLLL yyyy')}</p>
+			<p>{format(post.data.postedAt, 'do LLLL yyyy')}</p>
 		</div>
 
 		<div class="split">

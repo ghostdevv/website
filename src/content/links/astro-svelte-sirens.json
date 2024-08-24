@@ -4,5 +4,5 @@
 	"image": "$assets/posts/astro-svelte.png",
 	"tag": "youtube",
 	"link": "https://www.youtube.com/watch?v=iYKKg-50Gm4",
-	"timestamp": 1660676400000
+	"postedAt": 1660676400000
 }

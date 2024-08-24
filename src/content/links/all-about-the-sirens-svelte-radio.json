@@ -4,5 +4,5 @@
 	"image": "$assets/posts/all-about-the-sirens-svelte-radio.png",
 	"tag": "podcast",
 	"link": "https://www.svelteradio.com/episodes/all-about-the-sirens",
-	"timestamp": 1656284400000
+	"postedAt": 1656284400000
 }

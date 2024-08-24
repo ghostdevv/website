@@ -4,5 +4,5 @@
 	"image": "$assets/posts/routify-3-svelte-radio.png",
 	"tag": "podcast",
 	"link": "https://www.svelteradio.com/episodes/routify-3-with-jake-and-willow",
-	"timestamp": 1632351600000
+	"postedAt": 1632351600000
 }

@@ -4,5 +4,5 @@
 	"image": "$assets/posts/routify-sveltekit-sirens.webp",
 	"tag": "youtube",
 	"link": "https://www.youtube.com/watch?v=epVRgjhjI7M",
-	"timestamp": 1639764000000
+	"postedAt": 1639764000000
 }

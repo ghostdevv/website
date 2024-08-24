@@ -17,7 +17,7 @@ export const GET = async () => {
 			return {
 				title: post.title,
 				description: post.excerpt,
-				pubDate: new Date(post.timestamp),
+				pubDate: new Date(post.postedAt),
 				draft: false,
 				link,
 			};
