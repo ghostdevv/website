@@ -5,8 +5,8 @@ export const GET = async () => {
 	const posts = await getPosts();
 
 	return rss({
-		title: 'GHOSTDev blog',
-		description: 'Welcome to the blog of GHOST!',
+		title: "Willow (GHOST)'s Blog",
+		description: 'Occasional posts about stuff I find interesting!',
 		site: 'https://ghostdev.xyz',
 		items: posts.map((post) => {
 			const link =
