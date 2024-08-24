@@ -4,6 +4,7 @@ title: Cloud Development Environments... but why?!
 excerpt: What is a Cloud Development Environment (CDE) and why would I ever need one?
 image: $assets/posts/cloud-development-environments-but-why.png
 postedAt: 1696875978128
+lastEdited: 1699821671000
 ---
 
 You might have come across a significant amount of news in recent years regarding Cloud Development Environments (CDE). Nevertheless, CDE's are still an under-utilised tool, with many misunderstanding or underestimating their value. Resisting change is part of human nature; it can be intimidating - and in our industry - often involves financial costs. Plus, if you already have a powerful computer, why would you ever need a CDE?

@@ -1,12 +1,11 @@
 ---
 import SettingsModal from '$lib/components/posts/SettingsModal.svelte';
 import { type CollectionEntry, getCollection } from 'astro:content';
-import { faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faRss, faShare } from '@fortawesome/free-solid-svg-icons';
+import DateText from '$lib/components/posts/DateText.svelte';
 import Contents from '$lib/components/posts/Contents.svelte';
-import { faRss } from '@fortawesome/free-solid-svg-icons';
 import Page from '$lib/layouts/Page.astro';
 import { tweetLink } from '$lib/twitter';
-import { format } from 'date-fns';
 import '$lib/layouts/post.scss';
 import Fa from 'svelte-fa';
 
@@ -27,7 +26,6 @@ const { Content, headings } = await post.render();
 	<article>
 		<div class="meta">
 			<h1>{post.data.title}</h1>
-			<p>{format(post.data.postedAt, 'do LLLL yyyy')}</p>
 		</div>
 
 		<div class="split">
@@ -52,32 +50,41 @@ const { Content, headings } = await post.render();
 
 		<hr style="margin-top: 16px;" />
 
-		{
-			post.data.attribution && (
-				<p class="attribution">{post.data.attribution}</p>
-			)
-		}
-
 		<footer>
-			<div class="row wrap">
+			<p class="attribution">
+				Posted on the <DateText timestamp={post.data.postedAt} />, last
+				updated <DateText timestamp={post.data.lastEdited} />.
+			</p>
+
+			{
+				post.data.attribution && (
+					<p class="attribution">{post.data.attribution}</p>
+				)
+			}
+
+			<div class="footer-buttons row">
 				<a
 					href={tweetLink(
 						`Checkout this post by @onlyspaceghost!\n\nhttps://ghostdev.xyz/posts/${post.slug}`,
 					)}
-					class="button secondary"
+					title="Share on X (Twitter)"
+					class="button inline-button"
 					target="_blank"
 				>
-					<Fa icon={faTwitter} />
-					Share on twitter
+					<Fa icon={faShare} />
 				</a>
 
-				<a href="/rss.xml" target="_blank" class="button secondary">
+				<a
+					href="/rss.xml"
+					title="RSS Feed"
+					target="_blank"
+					class="button inline-button"
+				>
 					<Fa icon={faRss} />
-					RSS
 				</a>
-			</div>
 
-			<SettingsModal client:load />
+				<SettingsModal client:load />
+			</div>
 		</footer>
 	</article>
 </Page>
@@ -98,13 +105,31 @@ const { Content, headings } = await post.render();
 			padding-bottom: 16px;
 			margin-top: 8px;
 
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			gap: 16px;
+			display: grid;
+			grid-template-rows: max-content;
+			grid-template-columns: 1fr;
+			gap: 12px;
 
-			@include media('<600px') {
-				flex-wrap: wrap;
+			.attribution {
+				color: rgba(var(--text-rgb), 0.8);
+				line-height: 1.6;
+				font-size: 14px;
+				max-width: 600px;
+			}
+
+			.footer-buttons {
+				margin: 4px 0px;
+			}
+
+			@include media('>800px') {
+				grid-template-columns: 1fr max-content;
+				grid-template-rows: max-content;
+
+				.footer-buttons {
+					grid-column: 2;
+					grid-row: 1 / span 2;
+					height: fit-content;
+				}
 			}
 		}
 
@@ -161,17 +186,7 @@ const { Content, headings } = await post.render();
 			border-radius: 22px;
 			padding: 32px;
 
-			display: flex;
-			flex-direction: column;
-			gap: 12px;
-
 			margin-bottom: 32px;
-		}
-
-		.attribution {
-			color: rgba(var(--text-rgb), 0.8);
-			line-height: 1.6;
-			font-size: 14px;
 		}
 	}
 </style>

@@ -4,6 +4,8 @@ title: Self-hosting DNS
 excerpt: My journey of DNS, including self-hosting the resolver with Pi-hole and AdGuard Home, using paid services like NextDNS and AdGuard DNS, and public privacy-respecting resolvers.
 image: $assets/posts/self-hosting-dns/self-hosting-dns.png
 postedAt: 1724295643540
+lastEdited: 1724537307000
+attribution: as
 ---
 
 I'm gonna cover my journey of self-hosting my own DNS resolver with [AdGuard Home](https://github.com/AdGuardTeam/AdGuardHome), but I think it makes sense to first start with my motivations. I've wanted to have my own customisable DNS resolver for a couple years now, so when I found out about [NextDNS](https://nextdns.io) I subscribed straight away. I was on their [paid plan](https://nextdns.io/pricing) for individuals and super happy. It comes in at only £1.79/m (~$2.25) for unlimited queries. They have a super nice UI with all the features I need, including an [integration with Tailscale](https://tailscale.com/kb/1218/nextdns). Alas, I am also a big fan of self-hosting — which NextDNS can't do.
