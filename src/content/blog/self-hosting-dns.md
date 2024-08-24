@@ -454,3 +454,5 @@ It depends! If you find this stuff interesting and want to learn more, it's 100%
 It's been a super fun experiment, and if I have any major issues, I'll likely give the [AdGuard DNS Cloud](https://adguard-dns.io/en/license.html) offering a try (or switch back to NextDNS). The pricing between the two is basically the same!
 
 If you're going to take anything from this article, please please please switch your default DNS resolvers to something more private than what your ISP provides. I'm partial to [Cloudflare (1.1.1.1)](https://one.one.one.one/), [quad9](https://www.quad9.net/service/service-addresses-and-features), and [Mullvad's](https://mullvad.net/en/help/dns-over-https-and-dns-over-tls) resolvers but there is a [super complete list by AdGuard](https://adguard-dns.io/kb/general/dns-providers/). It's a big plus if you can use DoH.
+
+There are so many different ways to achieve this, you could even just have it running locally on your computer. AdGuard Home, PiHole, etc are just made up of other open source components with a UI and quality of life features on top. So you could even build your own!
