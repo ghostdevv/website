@@ -1,7 +1,7 @@
 ---
 tag: blog
 title: Self-hosting DNS
-excerpt: My journey of DNS, including self-hosting with Pi-hole and AdGuard Home, using paid services like NextDNS and AdGuard DNS, and public privacy-respecting resolvers.
+excerpt: My journey of DNS, including self-hosting the resolver with Pi-hole and AdGuard Home, using paid services like NextDNS and AdGuard DNS, and public privacy-respecting resolvers.
 image: $assets/posts/self-hosting-dns/self-hosting-dns.png
 timestamp: 1724295643540
 ---
@@ -27,9 +27,9 @@ I'm not going to completely self-host the DNS stack (just yet), so I'll still ne
 
 ## Pi-hole
 
-I think the first thing most people think of when you talk about running your own DNS resolver, you think of [Pi-hole](https://pi-hole.net/), so that's the first thing I tried. It was super easy to get running and [setup in Docker](https://github.com/pi-hole/docker-pi-hole). I was initially quite happy, but quickly realised I would have to look at other options because of my feature [requirements](#Requirements):
+I think the first thing most people think of when you talk about running your own DNS resolver is [Pi-hole](https://pi-hole.net/), so that's the first thing I tried. It was super easy to get running and [setup in Docker](https://github.com/pi-hole/docker-pi-hole). I was initially quite happy, but quickly realised I would have to look at other options because of my feature [requirements](#Requirements):
 
-| Feature                                                                 | AdGuard&nbsp;Home | Pi-Hole                                                 |
+| Feature                                                                 | AdGuard Home | Pi-Hole                                                 |
 | ----------------------------------------------------------------------- | ----------------- | ------------------------------------------------------- |
 | Blocking ads and trackers                                               | ✅                | ✅                                                      |
 | Customizing blocklists                                                  | ✅                | ✅                                                      |
@@ -46,6 +46,8 @@ I think the first thing most people think of when you talk about running your ow
 | Running without root privileges                                         | ✅                | ❌                                                      |
 
 Source: [AdGuardTeam/AdGuardHome#comparison-pi-hole](https://github.com/AdGuardTeam/AdGuardHome#comparison-pi-hole)
+
+PiHole is still a great option, especially when running only in your local network. However, for this post we'll focus on AdGuard, as it's the only option I found at the time that meets nearly all my requirements.
 
 ## AdGuard Home
 
