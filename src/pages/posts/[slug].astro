@@ -2,7 +2,7 @@
 import SettingsModal from '$lib/components/posts/SettingsModal.svelte';
 import { type CollectionEntry, getCollection } from 'astro:content';
 import { faRss, faShare } from '@fortawesome/free-solid-svg-icons';
-import DateText from '$lib/components/posts/DateText.svelte';
+import PostTime from '$lib/components/posts/PostTime.svelte';
 import Contents from '$lib/components/posts/Contents.svelte';
 import Page from '$lib/layouts/Page.astro';
 import { tweetLink } from '$lib/twitter';
@@ -26,6 +26,11 @@ const { Content, headings } = await post.render();
 	<article>
 		<div class="meta">
 			<h1>{post.data.title}</h1>
+
+			<PostTime
+				postedAt={post.data.postedAt}
+				lastEdited={post.data.lastEdited}
+			/>
 		</div>
 
 		<div class="split">
@@ -51,11 +56,6 @@ const { Content, headings } = await post.render();
 		<hr style="margin-top: 16px;" />
 
 		<footer>
-			<p class="attribution">
-				Posted on the <DateText timestamp={post.data.postedAt} />, last
-				updated <DateText timestamp={post.data.lastEdited} />.
-			</p>
-
 			{
 				post.data.attribution && (
 					<p class="attribution">{post.data.attribution}</p>
@@ -110,13 +110,6 @@ const { Content, headings } = await post.render();
 			grid-template-columns: 1fr;
 			gap: 12px;
 
-			.attribution {
-				color: rgba(var(--text-rgb), 0.8);
-				line-height: 1.6;
-				font-size: 14px;
-				max-width: 600px;
-			}
-
 			.footer-buttons {
 				margin: 4px 0px;
 			}
@@ -124,6 +117,14 @@ const { Content, headings } = await post.render();
 			@include media('>800px') {
 				grid-template-columns: 1fr max-content;
 				grid-template-rows: max-content;
+
+				.attribution {
+					color: rgba(var(--text-rgb), 0.8);
+					line-height: 1.6;
+					font-size: 14px;
+					max-width: 600px;
+					margin: 6px 0px;
+				}
 
 				.footer-buttons {
 					grid-column: 2;
