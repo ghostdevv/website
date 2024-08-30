@@ -162,4 +162,8 @@ export const projects: Project[] = [
 		name: 'bereal-rs',
 		url: 'https://github.com/ghostdevv/bereal-rs',
 	},
+	{
+		name: 'svelte-check-action',
+		url: 'https://github.com/ghostdevv/svelte-check-action'
+	}
 ];
