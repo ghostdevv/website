@@ -1,2 +1,2 @@
 /*
-    Content-Security-Policy: default-src 'none'; style-src 'self' 'unsafe-inline'; script-src: 'self' 'unsafe-inline' https://gc.zgo.at; img-src 'self'; object-src 'none';
+    Content-Security-Policy: default-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://gc.zgo.at https://static.cloudflareinsights.com; img-src 'self'; object-src 'none';
