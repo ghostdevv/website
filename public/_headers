@@ -1,2 +1,2 @@
 /*
-    Content-Security-Policy: default-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://gc.zgo.at https://static.cloudflareinsights.com; img-src 'self'; object-src 'none'; connect-src 'none' https://cloudflareinsights.com;
+    Content-Security-Policy: default-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://gc.zgo.at https://static.cloudflareinsights.com; img-src 'self'; object-src 'none'; connect-src https://cloudflareinsights.com https://ghost.goatcounter.com;
