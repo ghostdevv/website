@@ -61,7 +61,7 @@
 				<a
 					href={link.href}
 					class="link"
-					class:active={url.pathname.startsWith(`/${link}`)}>
+					class:active={url.pathname.startsWith(link.href)}>
 					{link.label}
 				</a>
 			{/each}
@@ -77,7 +77,7 @@
 					<a
 						href={link.href}
 						class="link"
-						class:active={url.pathname.startsWith(`/${link}`)}>
+						class:active={url.pathname.startsWith(link.href)}>
 						{link.label}
 					</a>
 				{/each}
