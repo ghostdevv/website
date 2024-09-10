@@ -19,11 +19,9 @@
 <style lang="scss">
 	.project {
 		border-color: var(--background-tertiary);
-		transition: border-color 0.2s ease-in-out;
+		text-align: center;
 
-		&.star,
-		&:focus,
-		&:hover {
+		&.star {
 			border-color: var(--primary);
 		}
 	}

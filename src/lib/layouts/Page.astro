@@ -1,12 +1,10 @@
 ---
 import Nav from '$lib/components/Nav.svelte';
 import Global from './Global.astro';
-
-const url = new URL(Astro.url);
 ---
 
 <Global frontmatter={Astro.props.frontmatter}>
-	<Nav url={url} client:load />
+	<Nav url={Astro.url} client:load />
 
 	<div class="wrapper">
 		<slot />

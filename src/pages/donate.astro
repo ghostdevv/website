@@ -7,7 +7,7 @@ import Fa from 'svelte-fa';
 ---
 
 <Page>
-	<section class="column g16">
+	<section>
 		<h1>🥳 Sponsors</h1>
 
 		<p style="max-width: 800px;">
@@ -18,13 +18,13 @@ import Fa from 'svelte-fa';
 			the donations in the community.
 		</p>
 
-		<div class="row">
+		<div>
 			<a
 				title="Patreon"
 				aria-label="Patreon"
 				href="https://www.patreon.com/onlyspaceghost"
 				target="_blank"
-				class="icon-link"
+				class="button icon muted"
 			>
 				<Fa icon={faPatreon} />
 			</a>
@@ -34,7 +34,7 @@ import Fa from 'svelte-fa';
 				aria-label="PayPal"
 				href="https://paypal.me/onlyspaceghost"
 				target="_blank"
-				class="icon-link"
+				class="button icon muted"
 			>
 				<Fa icon={faPaypal} />
 			</a>
@@ -66,10 +66,3 @@ import Fa from 'svelte-fa';
 		</div>
 	</section>
 </Page>
-
-<style lang="scss">
-	.icon-link {
-		color: rgba(var(--text-rgb), 0.6);
-		padding: 4px;
-	}
-</style>

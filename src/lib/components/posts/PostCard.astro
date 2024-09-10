@@ -97,9 +97,12 @@ const img = await getImage({ src: post.image, width: 800, format: 'webp' });
 		.details {
 			display: flex;
 			flex-direction: column;
-			gap: 6px;
 
 			padding: 18px;
+
+			.title {
+				margin-bottom: 4px;
+			}
 
 			.description {
 				color: rgba(var(--text-rgb), 0.5);

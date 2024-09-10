@@ -19,44 +19,6 @@
 		width: 100%;
 	}
 
-	code {
-		font-size: calc(var(--post-font-size, 16px) - 2px);
-	}
-
-	pre {
-		width: 100%;
-		padding: 22px;
-		border-radius: 16px;
-
-		display: block;
-
-		background-color: var(--background-secondary) !important;
-	}
-
-	code:not(pre code) {
-		background-color: var(--background-secondary);
-		color: var(--secondary);
-		border-radius: 8px;
-		// font-weight: bold;
-		padding: 4px 8px;
-		white-space: pre;
-	}
-
-	code,
-	pre {
-		font-family: 'Comic Mono', monospace;
-	}
-
-	ul,
-	ol {
-		list-style-position: outside;
-		padding-left: 2em;
-	}
-
-	ol {
-		list-style-type: decimal;
-	}
-
 	p {
 		margin: 12px 0px;
 	}

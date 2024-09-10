@@ -9,20 +9,21 @@ import { HALLOWEEN } from '$lib/vars';
 ---
 
 <Page>
-	<section class="column g16">
+	<section>
 		<h1>
 			👋{HALLOWEEN ? '🎃' : ''} Hey, I'm Willow
 			<span class="aka">(aka GHOST)</span>
 		</h1>
+
 		<p>I am a fullstack web developer from the UK.</p>
 
-		<div class="row">
+		<div>
 			<a
 				title="Twitter"
 				aria-label="Twitter"
 				href="https://twitter.com/onlyspaceghost"
 				target="_blank"
-				class="icon-link"
+				class="button icon muted"
 			>
 				<Fa size="md" icon={faTwitter} />
 			</a>
@@ -32,7 +33,7 @@ import { HALLOWEEN } from '$lib/vars';
 				aria-label="Discord"
 				href="https://discord.com/users/282839711834177537"
 				target="_blank"
-				class="icon-link"
+				class="button icon muted"
 			>
 				<Fa size="md" icon={faDiscord} />
 			</a>
@@ -42,7 +43,7 @@ import { HALLOWEEN } from '$lib/vars';
 				aria-label="Mastodon"
 				href="https://fosstodon.org/@onlyspaceghost"
 				target="_blank"
-				class="icon-link"
+				class="button icon muted"
 				rel="me"
 			>
 				<Fa size="md" icon={faMastodon} />
@@ -53,7 +54,7 @@ import { HALLOWEEN } from '$lib/vars';
 				aria-label="GitHub"
 				href="https://github.com/ghostdevv"
 				target="_blank"
-				class="icon-link"
+				class="button icon muted"
 			>
 				<Fa size="md" icon={faGithub} />
 			</a>
@@ -67,10 +68,5 @@ import { HALLOWEEN } from '$lib/vars';
 	.aka {
 		opacity: 0.6;
 		font-size: 0.8rem;
-	}
-
-	.icon-link {
-		color: rgba(var(--text-rgb), 0.6);
-		padding: 4px;
 	}
 </style>

@@ -46,7 +46,7 @@ const { Content, headings } = await post.render();
 				<div class="buttons">
 					<SettingsModal client:load />
 
-					<a href="/rss.xml" target="_blank" class="inline-button">
+					<a href="/rss.xml" target="_blank" class="button icon">
 						<Fa icon={faRss} />
 					</a>
 				</div>
@@ -62,13 +62,13 @@ const { Content, headings } = await post.render();
 				)
 			}
 
-			<div class="footer-buttons row">
+			<div class="footer-buttons">
 				<a
 					href={tweetLink(
 						`Checkout this post by @onlyspaceghost!\n\nhttps://ghostdev.xyz/posts/${post.slug}`,
 					)}
 					title="Share on X (Twitter)"
-					class="button inline-button"
+					class="button icon"
 					target="_blank"
 				>
 					<Fa icon={faShare} />
@@ -78,7 +78,7 @@ const { Content, headings } = await post.render();
 					href="/rss.xml"
 					title="RSS Feed"
 					target="_blank"
-					class="button inline-button"
+					class="button icon"
 				>
 					<Fa icon={faRss} />
 				</a>
@@ -175,10 +175,9 @@ const { Content, headings } = await post.render();
 			.buttons {
 				margin-top: 16px;
 
-				display: flex;
-				flex-direction: row;
-				align-items: center;
-				gap: 12px;
+				// display: flex;
+				// flex-direction: row;
+				// align-items: center;
 			}
 		}
 

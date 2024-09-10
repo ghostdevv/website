@@ -26,7 +26,7 @@
 <Modal let:close>
 	<slot slot="activator">
 		<button
-			class="secondary inline-button"
+			class="secondary icon"
 			aria-label="Post Settings"
 			title="Post Settings">
 			<Fa icon={faCog} />

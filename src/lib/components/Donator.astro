@@ -10,18 +10,19 @@ interface Props {
 const { name, src, slim = false } = Astro.props;
 ---
 
-<card class:list={['person', slim && 'slim']}>
+<div class="card" class:list={[slim && 'slim']}>
 	<Image {src} alt={`${name}'s pfp`} width="150" height="150" />
 
 	{!slim && <hr />}
 
 	<h4>{name}</h4>
-</card>
+</div>
 
 <style lang="scss">
-	.person {
+	.card {
 		display: flex;
 		flex-direction: column;
+		gap: 12px;
 
 		align-items: center;
 		text-align: center;
@@ -32,22 +33,13 @@ const { name, src, slim = false } = Astro.props;
 			height: 150px;
 		}
 
-		&.slim img {
-			width: 50px;
-			height: 50px;
-		}
-
-		hr {
-			border-color: var(--background-secondary);
-		}
-
 		&.slim {
 			flex-direction: row;
-
 			padding: 18px;
 
 			img {
 				width: 50px;
+				height: 50px;
 			}
 		}
 	}
