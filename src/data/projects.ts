@@ -164,6 +164,10 @@ export const projects: Project[] = [
 	},
 	{
 		name: 'svelte-check-action',
-		url: 'https://github.com/ghostdevv/svelte-check-action'
-	}
+		url: 'https://github.com/ghostdevv/svelte-check-action',
+	},
+	{
+		name: 'discord-rss',
+		url: 'https://github.com/ghostdevv/discord-rss',
+	},
 ];
