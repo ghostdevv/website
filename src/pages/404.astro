@@ -1,10 +1,12 @@
 ---
 import Global from '$lib/layouts/Global.astro';
+import cat404 from '$assets/http-cat/404.png';
+import { Image } from 'astro:assets';
 ---
 
 <Global>
 	<main>
-		<img src="https://http.cat/404" alt="HTTP Cat 404" />
+		<Image src={cat404} alt="HTTP Cat 404" height={500} />
 		<a href="/">&lt; Go Home</a>
 	</main>
 </Global>
