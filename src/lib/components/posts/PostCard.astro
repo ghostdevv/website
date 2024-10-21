@@ -38,7 +38,7 @@ const img = await getImage({ src: post.image, width: 800, format: 'webp' });
 </a>
 
 <style lang="scss">
-	@import 'src/lib/media';
+	@use 'src/lib/media' as *;
 
 	.postcard {
 		display: flex;

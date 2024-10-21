@@ -19,7 +19,7 @@
 </dialog>
 
 <style lang="scss">
-	@import 'src/lib/media';
+	@use 'src/lib/media' as *;
 
 	button {
 		display: contents;

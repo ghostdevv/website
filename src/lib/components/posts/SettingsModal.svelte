@@ -67,7 +67,7 @@
 </Modal>
 
 <style lang="scss">
-	@import 'src/lib/media';
+	@use 'src/lib/media' as *;
 
 	.input-group {
 		width: 100%;

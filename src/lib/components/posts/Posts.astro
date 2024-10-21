@@ -19,7 +19,7 @@ if (tags.includes(Astro.props.filter!)) {
 </div>
 
 <style lang="scss">
-	@import 'src/lib/media';
+	@use 'src/lib/media' as *;
 
 	.posts {
 		display: grid;

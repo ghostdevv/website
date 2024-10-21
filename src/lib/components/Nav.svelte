@@ -87,7 +87,7 @@
 </div>
 
 <style lang="scss">
-	@import 'src/lib/media';
+	@use 'src/lib/media' as *;
 
 	$mobile: '<750px';
 	$desktop: '>750px';
