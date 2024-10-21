@@ -1,43 +1,38 @@
 <script lang="ts">
-	let dialog: HTMLDialogElement;
+	import type { Snippet } from "svelte";
+
+	interface Props {
+		activator?: Snippet;
+			children: Snippet<[open: () => void, close: () => void]>;
+	}
+
+	const { activator, children }: Props = $props();
+	let dialog = $state<HTMLDialogElement>();
 
 	function close() {
-		dialog.close();
+		dialog?.close();
 	}
 
 	function open() {
-		dialog.showModal();
+		dialog?.showModal();
 	}
 </script>
 
-<button on:close={close} on:click={open}>
-	<slot name="activator" />
-</button>
+<!-- svelte-ignore a11y_click_events_have_key_events -->
+<!-- svelte-ignore a11y_click_events_have_key_events -->
+<!-- svelte-ignore a11y_no_static_element_interactions -->
+<div class="activator" onclose={close} onclick={open}>
+	{@render activator?.()}
+</div>
 
 <dialog bind:this={dialog}>
-	<slot {close} />
+	{@render children(open, close)}
 </dialog>
 
 <style lang="scss">
 	@use 'src/lib/media' as *;
 
-	button {
+	.activator {
 		display: contents;
-	}
-
-	dialog {
-		background: transparent;
-		border: none;
-
-		width: min(80%, 600px);
-
-		@include media('<600px') {
-			min-width: 90%;
-		}
-
-		&::backdrop {
-			// todo replace with var(--background-primary-rgb) when supported
-			background: rgba(18, 18, 20, 0.8);
-		}
 	}
 </style>

@@ -5,18 +5,25 @@
 	import { mounted } from 'svelte-mount';
 	import { HALLOWEEN } from '$lib/vars';
 
-	export let url: URL;
+	interface Props {
+		url: URL;
+	}
 
-	let width: number;
-	let scrollY: number;
+	const { url }: Props = $props();
 
-	let open = false;
+	let scrollY = $state(0);
+	let width = $state(0);
+	let open = $state(false);
 
-	$: mobile = width < 750;
-	$: scroll = scrollY > 0;
-	$: if (!mobile) open = false;
+	let mobile = $derived(width < 750);
+	let scroll = $derived(scrollY > 0);
 
-	function branding() {
+	$effect(() => {
+		if (!mobile) open = false;
+	});
+
+	function branding(event: MouseEvent) {
+		event.preventDefault();
 		window.location.href = '/branding';
 	}
 
@@ -37,7 +44,7 @@
 			href="/"
 			class="logo"
 			aria-label="Home"
-			on:contextmenu|preventDefault={branding}>
+			oncontextmenu={branding}>
 			{#if HALLOWEEN}
 				<img
 					style="width: 100%; height: 100%"

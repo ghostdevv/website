@@ -1,7 +1,11 @@
 <script lang="ts">
 	import { type Tag, tags, tagColours } from '$data/tags';
 
-	let { selectedTag } = $props<{ selectedTag: Tag | 'all' }>();
+	interface Props {
+		selectedTag: Tag | 'all';
+	}
+
+	let { selectedTag }: Props = $props();
 </script>
 
 <div class="filter">

@@ -1,7 +1,11 @@
 <script lang="ts">
 	import type { MarkdownHeading } from 'astro';
 
-	let { headings } = $props<{ headings: MarkdownHeading[] }>();
+	interface Props {
+		headings: MarkdownHeading[];
+	}
+
+	let { headings }: Props = $props();
 
 	let activeHeading = $state<string | null>(null);
 

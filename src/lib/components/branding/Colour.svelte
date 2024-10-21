@@ -2,7 +2,11 @@
 	import type { Colour } from '$data/colours';
 	import { copy } from 'svelte-copy';
 
-	let { colour } = $props<{ colour: Colour }>();
+	interface Props {
+		colour: Colour;
+	}
+
+	let { colour }: Props = $props();
 
 	let timeout = $state<ReturnType<typeof setTimeout> | null>(null);
 	let copying = $state(false);

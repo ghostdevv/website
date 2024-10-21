@@ -1,5 +1,5 @@
-<script>
-	let hovering;
+<script lang="ts">
+	let hovering = $state(false);
 </script>
 
 <svg
@@ -8,8 +8,8 @@
 	height="100%"
 	fill="none"
 	viewBox="0 0 486 460"
-	on:pointerenter={() => (hovering = true)}
-	on:pointerleave={() => (hovering = false)}>
+	onpointerenter={() => (hovering = true)}
+	onpointerleave={() => (hovering = false)}>
 	<g clip-path="url(#clip0_257_2)">
 		<path
 			fill="#DB955B"

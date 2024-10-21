@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { faDownload } from '@fortawesome/free-solid-svg-icons';
+	import type { Snippet } from 'svelte';
 	import Fa from 'svelte-fa';
 
 	interface Format {
@@ -7,12 +8,18 @@
 		url: string;
 	}
 
-	let { name, formats } = $props<{ name: String; formats: Format[] }>();
+	interface Props {
+		name: String;
+		formats: Format[];
+		children: Snippet
+	}
+
+	let { name, formats, children }: Props = $props();
 </script>
 
 <div class="container">
 	<div class="logo">
-		<slot />
+		{@render children()}
 	</div>
 
 	<h4>{name}</h4>

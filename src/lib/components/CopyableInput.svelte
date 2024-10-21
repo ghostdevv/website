@@ -3,8 +3,12 @@
 	import { copy } from 'svelte-copy';
 	import Fa from 'svelte-fa';
 
-	export let value: string;
-	export let disabled: boolean = true;
+	interface Props {
+		value: string;
+		disabled?: boolean;
+	}
+
+	let { value = $bindable(), disabled = true }: Props = $props();
 </script>
 
 <div class="copyable">

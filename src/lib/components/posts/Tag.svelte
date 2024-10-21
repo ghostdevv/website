@@ -1,7 +1,12 @@
 <script lang="ts">
 	import { type Tag, tagColours } from '$data/tags';
 
-	let { name, large = false } = $props<{ name: Tag; large?: boolean }>();
+	interface Props {
+		name: Tag;
+		large?: boolean;
+	}
+
+	let { name, large = false }: Props = $props();
 </script>
 
 <span class="tag" style:--tag-colour={tagColours[name]} class:large>
