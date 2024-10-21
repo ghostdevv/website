@@ -56,7 +56,12 @@
 		</a>
 
 		<div class="hamburger">
-			<Hamburger --color="var(--text)" type="squeeze" bind:open />
+			<Hamburger
+				--color="var(--text)"
+				title="Toggle navigation open"
+				ariaControls="mobile-nav-contents"
+				type="squeeze"
+				bind:open />
 		</div>
 
 		<div class="links desktop">
@@ -75,7 +80,7 @@
 		</div>
 
 		{#if $mounted && mobile && open}
-			<div class="links" transition:slide={{}}>
+			<div id="mobile-nav-contents" class="links" transition:slide={{}}>
 				<a href="/" class="link" class:active={url.pathname == '/'}>
 					Home
 				</a>
