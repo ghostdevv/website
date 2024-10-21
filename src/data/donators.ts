@@ -14,6 +14,10 @@ export const supporters: { current: Person[]; past: Person[] } = {
 			name: 'Braden Wiggins',
 			src: await img('brady'),
 		},
+		{
+			name: 'Jazza',
+			src: await img('jazza'),
+		},
 	],
 
 	past: [
