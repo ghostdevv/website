@@ -1,11 +1,15 @@
 ---
-import { faDiscord, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { faMastodon } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import Page from '$lib/layouts/Page.astro';
 import { Image } from 'astro:assets';
 import Fa from 'svelte-fa';
+import {
+	faDiscord,
+	faTwitter,
+	faBluesky,
+	faMastodon,
+	faGithub,
+} from '@fortawesome/free-brands-svg-icons';
 ---
 
 <Page>
@@ -44,6 +48,13 @@ import Fa from 'svelte-fa';
 			<Fa icon={faMastodon} />
 			<a target="_blank" href="https://fosstodon.org/@onlyspaceghost">
 				@onlyspaceghost@fosstodon.org
+			</a>
+		</p>
+
+		<p class="row">
+			<Fa icon={faBluesky} />
+			<a target="_blank" href="https://bsky.app/profile/willow.sh">
+				@willow.sh
 			</a>
 		</p>
 
