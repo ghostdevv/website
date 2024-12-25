@@ -14,7 +14,7 @@ export const projects: Project[] = [
 		url: 'https://github.com/ghostdevv/svelte-hamburgers',
 	},
 	{
-		name: 'SourceBin',
+		name: 'SourceBin JS',
 		url: 'https://github.com/ghoststools/sourcebin',
 	},
 	{
@@ -85,7 +85,6 @@ export const projects: Project[] = [
 	{
 		name: 'Neru',
 		url: 'https://github.com/NeruJS/neru',
-		star: true,
 	},
 	{
 		name: 'Methods',
@@ -127,12 +126,10 @@ export const projects: Project[] = [
 	{
 		name: 'esm.sh browser extension',
 		url: 'https://github.com/ghostdevv/esm.sh-extension',
-		star: true,
 	},
 	{
 		name: 'Shire',
 		url: 'https://github.com/ghostdevv/shire',
-		star: true,
 	},
 	{
 		name: 'rpilocator webhooks',
@@ -153,6 +150,7 @@ export const projects: Project[] = [
 	{
 		name: 'request-bin',
 		url: 'https://github.com/ghostdevv/request-bin',
+		star: true,
 	},
 	{
 		name: 'cloudflare-pages-cleanup',
