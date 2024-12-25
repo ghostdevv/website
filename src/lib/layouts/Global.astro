@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
+import { ClientRouter } from 'astro:transitions';
 import 'ghostsui';
 
 interface Frontmatter {
@@ -66,7 +66,7 @@ const image = `https://ghostdev.xyz${image_path}`;
 			src="https://gc.zgo.at/count.js"></script>
 
 		<!-- Transitions -->
-		<ViewTransitions />
+		<ClientRouter />
 
 		<!-- Build -->
 	</head>
