@@ -10,7 +10,8 @@
 		"build": "astro build && tsm scripts/embed.ts",
 		"preview": "astro preview",
 		"check": "astro check && svelte-check",
-		"astro": "astro"
+		"astro": "astro",
+		"format": "prettier --write ."
 	},
 	"devDependencies": {
 		"@astrojs/check": "^0.9.4",

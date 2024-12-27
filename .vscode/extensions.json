@@ -1,7 +1,8 @@
 {
-    "recommendations": [
-        "esbenp.prettier-vscode",
-        "christian-kohler.npm-intellisense",
-        "astro-build.astro-vscode"
-    ]
+	"recommendations": [
+		"esbenp.prettier-vscode",
+		"astro-build.astro-vscode",
+		"svelte.svelte-vscode",
+		"unifiedjs.vscode-mdx"
+	]
 }
