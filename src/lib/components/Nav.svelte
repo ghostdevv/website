@@ -99,7 +99,7 @@
 </div>
 
 <style lang="scss">
-	@use 'src/lib/media' as *;
+	@use 'include-media' as *;
 
 	$mobile: '<750px';
 	$desktop: '>750px';

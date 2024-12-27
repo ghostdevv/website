@@ -29,7 +29,7 @@
 	}
 </script>
 
-<Modal >
+<Modal>
 	{#snippet activator()}
 		{#if _activator}
 			{@render _activator()}
@@ -79,8 +79,6 @@
 </Modal>
 
 <style lang="scss">
-	@use 'src/lib/media' as *;
-
 	.input-group {
 		width: 100%;
 
