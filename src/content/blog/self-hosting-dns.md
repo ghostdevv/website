@@ -13,14 +13,14 @@ I'm gonna cover my journey of self-hosting my own DNS resolver with [AdGuard Hom
 
 In my opinion, the **bare minimum** a custom DNS resolver needs to do in order to make more sense than just sending requests to [1.1.1.1](https://developers.cloudflare.com/1.1.1.1/encryption/dns-over-https/make-api-requests/), [quad9](https://www.quad9.net/service/service-addresses-and-features), or [Mullvad](https://mullvad.net/en/help/dns-over-https-and-dns-over-tls) directly is as follows:
 
--   Custom blocking lists for spammy/malicious/invasive domains (e.g. [oisd](https://oisd.nl/))
--   Recursively forward requests to your choice of DNS provider (e.g 1.1.1.1)
--   Allow custom dns rewrites (e.g. `example.local -> 10.0.0.0`)
+- Custom blocking lists for spammy/malicious/invasive domains (e.g. [oisd](https://oisd.nl/))
+- Recursively forward requests to your choice of DNS provider (e.g 1.1.1.1)
+- Allow custom dns rewrites (e.g. `example.local -> 10.0.0.0`)
 
 It's a big bonus if they have:
 
--   Custom rules for different users
--   Analytics
+- Custom rules for different users
+- Analytics
 
 I also require support for modern DNS protocols. The most common way a DNS request is done uses a plain, unencrypted request to port 53. It's super important to be able to use at least one of the main three encrypted methods: HTTPS (DoH), T LS (DoT), or QUIC (DoQ). I'll come back to these later.
 
@@ -31,20 +31,20 @@ I'm not going to completely self-host the DNS stack (just yet), so I'll still ne
 I think the first thing most people think of when you talk about running your own DNS resolver is [Pi-hole](https://pi-hole.net/), so that's the first thing I tried. It was super easy to get running and [setup in Docker](https://github.com/pi-hole/docker-pi-hole). I was initially quite happy, but quickly realised I would have to look at other options because of my feature [requirements](#Requirements):
 
 | Feature                                                                 | AdGuard Home | Pi-Hole                                                 |
-| ----------------------------------------------------------------------- | ----------------- | ------------------------------------------------------- |
-| Blocking ads and trackers                                               | ✅                | ✅                                                      |
-| Customizing blocklists                                                  | ✅                | ✅                                                      |
-| Built-in DHCP server                                                    | ✅                | ✅                                                      |
-| HTTPS for the Admin interface                                           | ✅                | Kind of, but you'll need to manually configure lighttpd |
-| Encrypted DNS upstream servers (DNS-over-HTTPS, DNS-over-TLS, DNSCrypt) | ✅                | ❌ (requires additional software)                       |
-| Cross-platform                                                          | ✅                | ❌ (not natively, only via Docker)                      |
-| Running as a DNS-over-HTTPS or DNS-over-TLS server                      | ✅                | ❌ (requires additional software)                       |
-| Blocking phishing and malware domains                                   | ✅                | ❌ (requires non-default blocklists)                    |
-| Parental control (blocking adult domains)                               | ✅                | ❌ (requires non-default blocklists)                    |
-| Force Safe search on search engines                                     | ✅                | ❌                                                      |
-| Per-client (device) configuration                                       | ✅                | ✅                                                      |
-| Access settings (choose who can use AGH DNS)                            | ✅                | ❌                                                      |
-| Running without root privileges                                         | ✅                | ❌                                                      |
+| ----------------------------------------------------------------------- | ------------ | ------------------------------------------------------- |
+| Blocking ads and trackers                                               | ✅           | ✅                                                      |
+| Customizing blocklists                                                  | ✅           | ✅                                                      |
+| Built-in DHCP server                                                    | ✅           | ✅                                                      |
+| HTTPS for the Admin interface                                           | ✅           | Kind of, but you'll need to manually configure lighttpd |
+| Encrypted DNS upstream servers (DNS-over-HTTPS, DNS-over-TLS, DNSCrypt) | ✅           | ❌ (requires additional software)                       |
+| Cross-platform                                                          | ✅           | ❌ (not natively, only via Docker)                      |
+| Running as a DNS-over-HTTPS or DNS-over-TLS server                      | ✅           | ❌ (requires additional software)                       |
+| Blocking phishing and malware domains                                   | ✅           | ❌ (requires non-default blocklists)                    |
+| Parental control (blocking adult domains)                               | ✅           | ❌ (requires non-default blocklists)                    |
+| Force Safe search on search engines                                     | ✅           | ❌                                                      |
+| Per-client (device) configuration                                       | ✅           | ✅                                                      |
+| Access settings (choose who can use AGH DNS)                            | ✅           | ❌                                                      |
+| Running without root privileges                                         | ✅           | ❌                                                      |
 
 Source: [AdGuardTeam/AdGuardHome#comparison-pi-hole](https://github.com/AdGuardTeam/AdGuardHome#comparison-pi-hole)
 

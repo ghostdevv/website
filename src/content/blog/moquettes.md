@@ -54,10 +54,10 @@ My favourite Moquette design was made around 2011 and is still featured on the D
 
 ## Sources
 
--   https://en.wikipedia.org/wiki/Moquette
--   https://www.ltmuseum.co.uk/collections/stories/design/history-moquette
--   https://dataportal.orr.gov.uk/statistics/usage/passenger-rail-usage/
--   https://www.ltmuseum.co.uk/collections/collections-online/vehicle-parts/item/1997-2993-128
--   https://en.wikipedia.org/wiki/AEC_Routemaster
--   https://www.ltmuseum.co.uk/collections/projects/moquette-project
--   https://youtu.be/BebTORlFqAs
+- https://en.wikipedia.org/wiki/Moquette
+- https://www.ltmuseum.co.uk/collections/stories/design/history-moquette
+- https://dataportal.orr.gov.uk/statistics/usage/passenger-rail-usage/
+- https://www.ltmuseum.co.uk/collections/collections-online/vehicle-parts/item/1997-2993-128
+- https://en.wikipedia.org/wiki/AEC_Routemaster
+- https://www.ltmuseum.co.uk/collections/projects/moquette-project
+- https://youtu.be/BebTORlFqAs

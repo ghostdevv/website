@@ -15,7 +15,6 @@
 	</span>
 {/snippet}
 
-
 <p>
 	Posted {@render date(postedAt)}{lastEdited ? ',' : ''}
 

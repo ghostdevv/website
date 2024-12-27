@@ -11,7 +11,7 @@
 	interface Props {
 		name: String;
 		formats: Format[];
-		children: Snippet
+		children: Snippet;
 	}
 
 	let { name, formats, children }: Props = $props();

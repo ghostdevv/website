@@ -1,9 +1,9 @@
 <script lang="ts">
-	import type { Snippet } from "svelte";
+	import type { Snippet } from 'svelte';
 
 	interface Props {
 		activator?: Snippet;
-			children: Snippet<[open: () => void, close: () => void]>;
+		children: Snippet<[open: () => void, close: () => void]>;
 	}
 
 	const { activator, children }: Props = $props();
@@ -30,7 +30,7 @@
 </dialog>
 
 <style lang="scss">
-	@use 'src/lib/media' as *;
+	@use 'include-media' as *;
 
 	.activator {
 		display: contents;

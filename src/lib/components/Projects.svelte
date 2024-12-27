@@ -10,7 +10,8 @@
 			target="_blank"
 			rel="noreferrer"
 			class="project card center"
-			class:star={project.star}>
+			class:star={project.star}
+		>
 			<h5>{project.name}</h5>
 		</a>
 	{/each}

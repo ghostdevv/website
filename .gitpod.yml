@@ -1,9 +1,9 @@
 tasks:
-  - init: pnpm install
-    command: pnpm run dev
+    - init: pnpm install
+      command: pnpm run dev
 
 ports:
-  - port: 4321
-    name: website
-    visibility: public
-    onOpen: open-browser
+    - port: 4321
+      name: website
+      visibility: public
+      onOpen: open-browser

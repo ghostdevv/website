@@ -40,7 +40,7 @@ All the transitions from [svelte/transition](https://svelte.dev/docs#run-time-sv
 
 With `svelte-reduced-motion`, it's easy to set a fallback transition for users who prefer reduced motion. The signature is simple. We can pass in the desired transition and a fallback. We also have a way of customising the options for each individually (the options we pass in the template are passed to both. In some cases, we might need to configure them individually)
 
--   Simple Example
+- Simple Example
 
     ```svelte
     <script>
@@ -54,7 +54,7 @@ With `svelte-reduced-motion`, it's easy to set a fallback transition for users w
     <div transition:accessibleTransition={{ y: -20 }}>Hello world</div>
     ```
 
--   Custom options for each transition
+- Custom options for each transition
 
     ```js
     const accessibleTransition = createTransition(

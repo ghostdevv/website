@@ -38,7 +38,8 @@
 		<a
 			class="link depth-{Math.min(heading.depth, 4)}"
 			class:active={activeHeading == heading.slug}
-			href="#{heading.slug}">
+			href="#{heading.slug}"
+		>
 			{heading.text}
 		</a>
 	{/each}
