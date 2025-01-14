@@ -2,9 +2,9 @@
 // https://github.com/braebo
 // https://github.com/Serendipity-Theme/old-serendipity
 
-import type { ThemeInput } from 'shiki';
+import type { ThemeRegistration } from 'shiki';
 
-export const serendipity: ThemeInput = {
+export const serendipity: ThemeRegistration = {
 	name: 'serendipity',
 	type: 'dark',
 	colors: {

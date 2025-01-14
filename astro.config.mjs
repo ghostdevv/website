@@ -1,3 +1,4 @@
+// @ts-check
 import serendipity from './src/lib/serendipity-shiki';
 import { defineConfig } from 'astro/config';
 import rehypeWrap from 'rehype-wrap-all';
