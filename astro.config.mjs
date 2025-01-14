@@ -11,14 +11,14 @@ export default defineConfig({
 
 	site: 'https://ghostdev.xyz/',
 
+	trailingSlash: 'never',
+
 	markdown: {
 		gfm: true,
-
 		syntaxHighlight: 'shiki',
 		shikiConfig: {
 			theme: serendipity,
 		},
-
 		rehypePlugins: [
 			[
 				rehypeWrap,
