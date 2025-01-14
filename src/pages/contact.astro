@@ -1,7 +1,6 @@
 ---
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import Page from '$lib/layouts/Page.astro';
-import { Image } from 'astro:assets';
 import Fa from 'svelte-fa';
 import {
 	faDiscord,
@@ -62,30 +61,6 @@ import {
 			<Fa icon={faGithub} />
 			<a target="_blank" href="https://github.com/ghostdevv">ghostdevv</a>
 		</p>
-	</section>
-
-	<section class="devlounge">
-		<a
-			aria-label="Join The Dev Lounge"
-			href="https://discord.gg/2Vd4wAjJnm"
-			target="_blank"
-			class="card no-hover"
-		>
-			<Image
-				width={75}
-				height={75}
-				src="/logos/dev-lounge.png"
-				alt="The Dev Lounge logo"
-			/>
-
-			<div class="column meta">
-				<h4>The Dev Lounge</h4>
-				<p>
-					You can join my Discord server to chat with fellow
-					Developers, share projects, and get help with code!
-				</p>
-			</div>
-		</a>
 	</section>
 </Page>
 
