@@ -12,6 +12,9 @@ export default defineConfig({
 	site: 'https://ghostdev.xyz/',
 
 	trailingSlash: 'never',
+	build: {
+		format: 'file',
+	},
 
 	markdown: {
 		gfm: true,
