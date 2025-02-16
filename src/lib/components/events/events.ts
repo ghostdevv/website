@@ -33,12 +33,12 @@ export async function getEvents() {
 }
 
 export const placeTagColours: Record<Event['place'], string> = {
-	'in-person': '61, 121, 252',
-	online: '242, 101, 93',
+	'in-person': 'var(--primary-rgb)',
+	online: 'var(--secondary-rgb)',
 	hybrid: '201, 86, 247',
 };
 
 export const typeTagColours: Record<Event['type'], string> = {
-	conference: '61, 121, 252',
-	meetup: '242, 101, 93',
+	conference: 'var(--orange-rgb)',
+	meetup: 'var(--green-rgb)',
 };
