@@ -1,5 +1,6 @@
 // @ts-check
 import serendipity from './src/lib/serendipity-shiki';
+import cloudflare from '@astrojs/cloudflare';
 import { defineConfig } from 'astro/config';
 import rehypeWrap from 'rehype-wrap-all';
 import sitemap from '@astrojs/sitemap';
@@ -11,6 +12,8 @@ export default defineConfig({
 
 	site: 'https://ghostdev.xyz/',
 
+	adapter: cloudflare(),
+	output: 'static',
 	trailingSlash: 'never',
 	build: {
 		format: 'file',
