@@ -1,6 +1,10 @@
 ---
-import ProjectsList from '$lib/components/Projects.svelte';
+import { getCollection } from 'astro:content';
 import Page from '$lib/layouts/Page.astro';
+import shuffle from 'just-shuffle';
+
+const projectsCollection = await getCollection('projects');
+const projects = shuffle(projectsCollection.map((p) => p.data));
 ---
 
 <Page>
@@ -13,7 +17,29 @@ import Page from '$lib/layouts/Page.astro';
 		</p>
 	</section>
 
-	<section>
-		<ProjectsList />
+	<section class="row wrap center g16">
+		{
+			projects.map((project) => (
+				<a
+					href={project.url}
+					target="_blank"
+					rel="noreferrer"
+					class:list={['project card center', { star: project.star }]}
+				>
+					<h5>{project.name}</h5>
+				</a>
+			))
+		}
 	</section>
 </Page>
+
+<style lang="scss">
+	.project {
+		border-color: var(--background-tertiary);
+		text-align: center;
+
+		&.star {
+			border-color: var(--primary);
+		}
+	}
+</style>

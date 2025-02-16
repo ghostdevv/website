@@ -38,4 +38,14 @@ export const collections = {
 				pfp: image(),
 			}),
 	}),
+
+	projects: defineCollection({
+		type: 'data',
+		schema: () =>
+			z.object({
+				name: z.string().trim().min(1),
+				url: z.string().url().trim().min(1),
+				star: z.boolean().optional().default(false),
+			}),
+	}),
 };
