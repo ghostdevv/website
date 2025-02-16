@@ -1,0 +1,69 @@
+---
+import EventCard from '$lib/components/events/EventCard.astro';
+import { getEvents } from '$lib/components/events/events';
+import Page from '$lib/layouts/Page.astro';
+
+const { past, upcoming, now } = await getEvents();
+---
+
+<Page>
+	<section class="column g4">
+		<h1>Events</h1>
+		<p>An incomplete list of events I'm attending, or have attended.</p>
+	</section>
+
+	{
+		!!now.length && (
+			<section class="column g4">
+				<h2>Happening Now</h2>
+
+				<div class="event-grid">
+					{now.map((event) => (
+						<EventCard event={event} />
+					))}
+				</div>
+			</section>
+		)
+	}
+
+	{
+		!!upcoming.length && (
+			<section class="column g4">
+				<h2>Upcoming Events</h2>
+
+				<div class="event-grid">
+					{upcoming.map((event) => (
+						<EventCard event={event} />
+					))}
+				</div>
+			</section>
+		)
+	}
+
+	<section class="column g4">
+		<h2>Past Events</h2>
+
+		<div class="event-grid">
+			{past.map((event) => <EventCard event={event} />)}
+		</div>
+	</section>
+</Page>
+
+<style lang="scss">
+	@use 'include-media' as *;
+
+	.event-grid {
+		display: grid;
+		grid-auto-rows: max-content;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: max-content;
+		gap: 22px;
+
+		width: 100%;
+		margin: 12px 0px;
+
+		@include media('<850px') {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

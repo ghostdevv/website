@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { type Tag, tags, tagColours } from '$lib/tags';
+	import { type Tag, tags, tagColours } from '$lib/components/posts/tags';
 
 	interface Props {
 		selectedTag: Tag | 'all';

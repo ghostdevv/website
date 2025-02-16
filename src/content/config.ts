@@ -1,5 +1,5 @@
 import { defineCollection, z } from 'astro:content';
-import { tags } from '../lib/tags';
+import { tags } from '../lib/components/posts/tags';
 
 export const collections = {
 	blog: defineCollection({
@@ -47,6 +47,24 @@ export const collections = {
 				url: z.string().url().trim().min(1),
 				star: z.boolean().optional().default(false),
 				archived: z.boolean().optional().default(false),
+			}),
+	}),
+
+	events: defineCollection({
+		type: 'data',
+		schema: ({ image }) =>
+			z.object({
+				name: z.string().trim().min(1),
+				place: z.union([
+					z.literal('online'),
+					z.literal('in-person'),
+					z.literal('hybrid'),
+				]),
+				type: z.union([z.literal('conference'), z.literal('meetup')]),
+				url: z.string().url(),
+				thumbnail: image(),
+				start: z.coerce.date(),
+				end: z.coerce.date(),
 			}),
 	}),
 };
