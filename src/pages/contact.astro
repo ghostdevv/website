@@ -4,7 +4,7 @@ import Page from '$lib/layouts/Page.astro';
 import Fa from 'svelte-fa';
 import {
 	faDiscord,
-	faTwitter,
+	faXTwitter,
 	faBluesky,
 	faMastodon,
 	faGithub,
@@ -37,10 +37,15 @@ import {
 		<h1>Links</h1>
 
 		<p class="row">
-			<Fa icon={faTwitter} />
-			<a target="_blank" href="https://twitter.com/onlyspaceghost">
-				@onlyspaceghost
+			<Fa icon={faBluesky} />
+			<a target="_blank" href="https://bsky.app/profile/willow.sh">
+				@willow.sh
 			</a>
+		</p>
+
+		<p class="row">
+			<Fa icon={faGithub} />
+			<a target="_blank" href="https://github.com/ghostdevv">ghostdevv</a>
 		</p>
 
 		<p class="row">
@@ -51,15 +56,10 @@ import {
 		</p>
 
 		<p class="row">
-			<Fa icon={faBluesky} />
-			<a target="_blank" href="https://bsky.app/profile/willow.sh">
-				@willow.sh
+			<Fa icon={faXTwitter} />
+			<a target="_blank" href="https://x.com/onlyspaceghost">
+				@onlyspaceghost
 			</a>
-		</p>
-
-		<p class="row">
-			<Fa icon={faGithub} />
-			<a target="_blank" href="https://github.com/ghostdevv">ghostdevv</a>
 		</p>
 	</section>
 </Page>

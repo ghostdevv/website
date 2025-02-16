@@ -1,11 +1,15 @@
 ---
-import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faMastodon } from '@fortawesome/free-brands-svg-icons';
-import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import Posts from '$lib/components/posts/Posts.astro';
 import Page from '$lib/layouts/Page.astro';
-import Fa from 'svelte-fa';
 import { HALLOWEEN } from '$lib/vars';
+import Fa from 'svelte-fa';
+import {
+	faDiscord,
+	faGithub,
+	faMastodon,
+	faXTwitter,
+	faBluesky,
+} from '@fortawesome/free-brands-svg-icons';
 ---
 
 <Page>
@@ -19,13 +23,23 @@ import { HALLOWEEN } from '$lib/vars';
 
 		<div>
 			<a
-				title="Twitter"
-				aria-label="Twitter"
-				href="https://twitter.com/onlyspaceghost"
+				title="Bluesky"
+				aria-label="Bluesky"
+				href="https://bsky.app/profile/willow.sh"
 				target="_blank"
 				class="button icon muted"
 			>
-				<Fa size="md" icon={faTwitter} />
+				<Fa size="md" icon={faBluesky} />
+			</a>
+
+			<a
+				title="GitHub"
+				aria-label="GitHub"
+				href="https://github.com/ghostdevv"
+				target="_blank"
+				class="button icon muted"
+			>
+				<Fa size="md" icon={faGithub} />
 			</a>
 
 			<a
@@ -50,13 +64,13 @@ import { HALLOWEEN } from '$lib/vars';
 			</a>
 
 			<a
-				title="GitHub"
-				aria-label="GitHub"
-				href="https://github.com/ghostdevv"
+				title="X"
+				aria-label="X"
+				href="https://x.com/onlyspaceghost"
 				target="_blank"
 				class="button icon muted"
 			>
-				<Fa size="md" icon={faGithub} />
+				<Fa size="md" icon={faXTwitter} />
 			</a>
 		</div>
 	</section>
