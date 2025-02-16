@@ -1,9 +1,12 @@
 ---
 import { faPaypal, faPatreon } from '@fortawesome/free-brands-svg-icons';
-import { supporters, donators } from '$data/donators';
 import Donator from '$lib/components/Donator.astro';
 import Page from '$lib/layouts/Page.astro';
+import { getCollection } from 'astro:content';
 import Fa from 'svelte-fa';
+
+const current = await getCollection('supporters', (s) => s.data.active);
+const past = await getCollection('supporters', (s) => !s.data.active);
 ---
 
 <Page>
@@ -48,9 +51,9 @@ import Fa from 'svelte-fa';
 
 		<div class="row wrap">
 			{
-				supporters.current
-					.sort((a, b) => a.name.localeCompare(b.name))
-					.map((p) => <Donator name={p.name} src={p.src} />)
+				current
+					.sort((a, b) => a.data.name.localeCompare(b.data.name))
+					.map((p) => <Donator name={p.data.name} src={p.data.pfp} />)
 			}
 		</div>
 
@@ -58,10 +61,12 @@ import Fa from 'svelte-fa';
 
 		<div class="row wrap">
 			{
-				supporters.past
-					.concat(donators)
-					.sort((a, b) => a.name.localeCompare(b.name))
-					.map((p) => <Donator name={p.name} src={p.src} slim />)
+				past
+
+					.sort((a, b) => a.data.name.localeCompare(b.data.name))
+					.map((p) => (
+						<Donator name={p.data.name} src={p.data.pfp} slim />
+					))
 			}
 		</div>
 	</section>

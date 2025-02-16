@@ -28,4 +28,14 @@ export const collections = {
 				postedAt: z.number(),
 			}),
 	}),
+
+	supporters: defineCollection({
+		type: 'data',
+		schema: ({ image }) =>
+			z.object({
+				name: z.string().trim().min(1),
+				active: z.boolean().optional().default(false),
+				pfp: image(),
+			}),
+	}),
 };
