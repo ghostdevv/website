@@ -20,7 +20,6 @@
 		"baseUrl": ".",
 		"paths": {
 			"$lib/*": ["src/lib/*"],
-			"$data/*": ["src/data/*"],
 			"$assets/*": ["src/assets/*"]
 		}
 	}

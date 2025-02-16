@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { type Tag, tags, tagColours } from '$data/tags';
+	import { type Tag, tags, tagColours } from '$lib/tags';
 
 	interface Props {
 		selectedTag: Tag | 'all';
@@ -13,8 +13,7 @@
 		href="/posts"
 		class="button option"
 		style="--colour: var(--primary);"
-		class:selected={selectedTag == 'all'}
-	>
+		class:selected={selectedTag == 'all'}>
 		All
 	</a>
 
@@ -23,8 +22,7 @@
 			href="/posts/tag/{tag}"
 			style:--colour="rgb({tagColours[tag]})"
 			class="button option"
-			class:selected={tag == selectedTag}
-		>
+			class:selected={tag == selectedTag}>
 			{tag}
 		</a>
 	{/each}

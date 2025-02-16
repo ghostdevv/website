@@ -1,5 +1,5 @@
 import { defineCollection, z } from 'astro:content';
-import { tags } from '../data/tags';
+import { tags } from '../lib/tags';
 
 export const collections = {
 	blog: defineCollection({

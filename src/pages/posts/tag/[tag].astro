@@ -1,7 +1,7 @@
 ---
 import PostFilter from '$lib/components/posts/PostFilter.svelte';
 import Posts from '$lib/components/posts/Posts.astro';
-import { type Tag, tags } from '$data/tags';
+import { type Tag, tags } from '$lib/tags';
 import Page from '$lib/layouts/Page.astro';
 
 const tag = Astro.params.tag as Tag;
