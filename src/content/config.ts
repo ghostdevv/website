@@ -60,7 +60,11 @@ export const collections = {
 					z.literal('in-person'),
 					z.literal('hybrid'),
 				]),
-				type: z.union([z.literal('conference'), z.literal('meetup')]),
+				type: z.union([
+					z.literal('conference'),
+					z.literal('meetup'),
+					z.literal('stream'),
+				]),
 				url: z.string().url(),
 				thumbnail: image(),
 				start: z.coerce.date(),

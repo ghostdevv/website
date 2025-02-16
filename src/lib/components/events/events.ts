@@ -41,4 +41,5 @@ export const placeTagColours: Record<Event['place'], string> = {
 export const typeTagColours: Record<Event['type'], string> = {
 	conference: 'var(--orange-rgb)',
 	meetup: 'var(--green-rgb)',
+	stream: 'var(--red-rgb)',
 };
