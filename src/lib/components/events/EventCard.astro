@@ -15,8 +15,25 @@ const img = await getImage({
 });
 ---
 
+<script>
+	const observer = new IntersectionObserver((entries) => {
+		for (const entry of entries) {
+			if (entry.isIntersecting) {
+				const target = entry.target as HTMLDivElement;
+				const imageUrl = target.dataset.eventImage;
+				target.style.backgroundImage = `url(${imageUrl})`;
+				observer.unobserve(target);
+			}
+		}
+	});
+
+	document.querySelectorAll('[data-event-image]').forEach((element) => {
+		observer.observe(element);
+	});
+</script>
+
 <a href={event.url} target="_blank" class="event" title={event.name}>
-	<div class="image" style={`background-image: url(${img.src});`}></div>
+	<div class="image" data-event-image={img.src}></div>
 
 	<div class="details">
 		<h3 class="title">{event.name}</h3>
