@@ -46,6 +46,7 @@ export const collections = {
 				name: z.string().trim().min(1),
 				url: z.string().url().trim().min(1),
 				star: z.boolean().optional().default(false),
+				archived: z.boolean().optional().default(false),
 			}),
 	}),
 };

@@ -3,8 +3,12 @@ import { getCollection } from 'astro:content';
 import Page from '$lib/layouts/Page.astro';
 import shuffle from 'just-shuffle';
 
-const projectsCollection = await getCollection('projects');
-const projects = shuffle(projectsCollection.map((p) => p.data));
+const allProjects = await getCollection('projects').then((data) =>
+	shuffle(data.map((p) => p.data)),
+);
+
+const active = allProjects.filter((p) => !p.archived);
+const archived = allProjects.filter((p) => p.archived);
 ---
 
 <Page>
@@ -19,7 +23,7 @@ const projects = shuffle(projectsCollection.map((p) => p.data));
 
 	<section class="row wrap center g16">
 		{
-			projects.map((project) => (
+			active.map((project) => (
 				<a
 					href={project.url}
 					target="_blank"
@@ -30,6 +34,27 @@ const projects = shuffle(projectsCollection.map((p) => p.data));
 				</a>
 			))
 		}
+	</section>
+
+	<section>
+		<details>
+			<summary>Archived</summary>
+
+			<section class="row wrap center g16">
+				{
+					archived.map((project) => (
+						<a
+							href={project.url}
+							target="_blank"
+							rel="noreferrer"
+							class="project card center"
+						>
+							<h5>{project.name}</h5>
+						</a>
+					))
+				}
+			</section>
+		</details>
 	</section>
 </Page>
 
