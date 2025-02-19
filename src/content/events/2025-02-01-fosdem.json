@@ -1,0 +1,9 @@
+{
+	"name": "FOSDEM 2025",
+	"place": "hybrid",
+	"type": "conference",
+	"url": "https://fosdem.org/2025",
+	"thumbnail": "$assets/events/2025-02-01-fosdem.jpg",
+	"start": "2025-02-01T09:30:00+01:00",
+	"end": "2025-02-02T21:18:15+01:00"
+}
