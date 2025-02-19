@@ -22,13 +22,15 @@ export async function getEvents() {
 				...event.data,
 				status: getEventStatus(event.data),
 			}))
-			.sort((a, b) => b.start.getTime() - a.start.getTime()),
+			.sort((a, b) => a.start.getTime() - b.start.getTime()),
 	);
 
 	return {
 		upcoming: allEvents.filter((event) => event.status === 'upcoming'),
-		past: allEvents.filter((event) => event.status === 'past'),
 		now: allEvents.filter((event) => event.status === 'now'),
+		past: allEvents
+			.filter((event) => event.status === 'past')
+			.sort((a, b) => b.start.getTime() - a.start.getTime()),
 	};
 }
 
