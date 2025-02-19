@@ -1,6 +1,7 @@
 ---
 import { type Event, placeTagColours, typeTagColours } from './events';
 import { getImage } from 'astro:assets';
+import { format } from 'date-fns';
 
 interface Props {
 	event: Event;
@@ -36,8 +37,6 @@ const img = await getImage({
 	<div class="image" data-event-image={img.src}></div>
 
 	<div class="details">
-		<h3 class="title">{event.name}</h3>
-
 		<div class="tags">
 			<span
 				class="tag"
@@ -52,7 +51,13 @@ const img = await getImage({
 			>
 				{event.type}
 			</span>
+
+			<p class="date">
+				{format(event.start, 'do MMM yyyy')}
+			</p>
 		</div>
+
+		<h3 class="title">{event.name}</h3>
 	</div>
 </a>
 
@@ -91,11 +96,6 @@ const img = await getImage({
 				0 0 0 5px var(--primary);
 		}
 
-		.title {
-			font-size: calc(1.275rem + 0.3vw);
-			font-weight: 500;
-		}
-
 		.image {
 			position: relative;
 			width: 100%;
@@ -115,13 +115,15 @@ const img = await getImage({
 
 		.details {
 			display: flex;
-			flex-direction: row;
-			align-items: center;
-			justify-content: space-between;
+			flex-direction: column;
 			padding: 8px 18px;
-			padding-top: 12px;
+			padding-top: 16px;
+			gap: 4px;
 
 			.title {
+				font-size: calc(1.275rem + 0.3vw);
+				font-weight: 500;
+				padding-right: 8px;
 				flex-grow: 1;
 				text-overflow: ellipsis;
 			}
@@ -130,9 +132,14 @@ const img = await getImage({
 
 	.tags {
 		display: flex;
-		flex-direction: row;
+		flex-flow: row wrap;
 		align-items: center;
+		justify-content: flex-end3;
 		gap: 8px;
+
+		.date {
+			margin-left: auto;
+		}
 	}
 
 	.tag {
