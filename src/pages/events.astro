@@ -4,6 +4,8 @@ import { getEvents } from '$lib/components/events/events';
 import Page from '$lib/layouts/Page.astro';
 
 const { past, upcoming, now } = await getEvents();
+
+export const prerender = false;
 ---
 
 <Page>
