@@ -44,13 +44,19 @@
 		"tsm": "^2.3.0",
 		"typescript": "^5.8.3"
 	},
-	"packageManager": "pnpm@10.4.0",
+	"packageManager": "pnpm@10.11.1",
 	"volta": {
-		"node": "22.12.0",
-		"pnpm": "10.4.0"
+		"node": "22.16.0",
+		"pnpm": "10.11.1"
+	},
+	"engines": {
+		"node": "22.16.0",
+		"npm": "forbidden, use pnpm",
+		"pnpm": ">=10.9.0"
 	},
 	"pnpm": {
 		"onlyBuiltDependencies": [
+			"@parcel/watcher",
 			"esbuild",
 			"sharp",
 			"workerd"
