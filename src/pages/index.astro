@@ -1,15 +1,9 @@
 ---
+import { faGithub, faBluesky } from '@fortawesome/free-brands-svg-icons';
 import Posts from '$lib/components/posts/Posts.astro';
 import Page from '$lib/layouts/Page.astro';
 import { HALLOWEEN } from '$lib/vars';
 import Fa from 'svelte-fa';
-import {
-	faDiscord,
-	faGithub,
-	faMastodon,
-	faXTwitter,
-	faBluesky,
-} from '@fortawesome/free-brands-svg-icons';
 ---
 
 <Page>
@@ -19,19 +13,17 @@ import {
 			<span class="aka">(aka GHOST)</span>
 		</h1>
 
-		<p>I am a fullstack web developer from the UK.</p>
-
-		<div>
+		<p>
+			Checkout what I've been creating below, come chat with me on
 			<a
-				title="Bluesky"
-				aria-label="Bluesky"
+				title="BlueSky"
+				aria-label="BlueSky"
 				href="https://bsky.app/profile/willow.sh"
 				target="_blank"
 				class="button icon muted"
 			>
-				<Fa size="md" icon={faBluesky} />
-			</a>
-
+				<Fa size="sm" icon={faBluesky} /> BlueSky</a
+			>, or poke around my
 			<a
 				title="GitHub"
 				aria-label="GitHub"
@@ -39,40 +31,9 @@ import {
 				target="_blank"
 				class="button icon muted"
 			>
-				<Fa size="md" icon={faGithub} />
-			</a>
-
-			<a
-				title="Discord"
-				aria-label="Discord"
-				href="https://discord.com/users/282839711834177537"
-				target="_blank"
-				class="button icon muted"
-			>
-				<Fa size="md" icon={faDiscord} />
-			</a>
-
-			<a
-				title="Mastodon"
-				aria-label="Mastodon"
-				href="https://fosstodon.org/@onlyspaceghost"
-				target="_blank"
-				class="button icon muted"
-				rel="me"
-			>
-				<Fa size="md" icon={faMastodon} />
-			</a>
-
-			<a
-				title="X"
-				aria-label="X"
-				href="https://x.com/onlyspaceghost"
-				target="_blank"
-				class="button icon muted"
-			>
-				<Fa size="md" icon={faXTwitter} />
-			</a>
-		</div>
+				<Fa size="sm" icon={faGithub} /> GitHub
+			</a>.
+		</p>
 	</section>
 
 	<Posts />
@@ -82,5 +43,19 @@ import {
 	.aka {
 		opacity: 0.6;
 		font-size: 0.8rem;
+	}
+
+	p {
+		max-width: 500px;
+		line-height: 1.4;
+
+		a {
+			display: inline-block !important;
+			padding: 0px !important;
+		}
+	}
+
+	section {
+		margin-bottom: 48px;
 	}
 </style>
