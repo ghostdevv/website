@@ -1,13 +1,25 @@
 ---
 import Global from '$lib/layouts/Global.astro';
+import cat418 from '$assets/http-cat/418.jpeg';
 import cat404 from '$assets/http-cat/404.png';
 import { Image } from 'astro:assets';
+
+interface Props {
+	status: 404 | 418;
+}
+
+const { status }: Props = Astro.props;
 ---
 
 <Global>
 	<main>
-		<Image src={cat404} alt="HTTP Cat 404" height={500} />
-		<a href="/">&lt; Go Home</a>
+		<Image
+			src={status === 404 ? cat404 : cat418}
+			alt={`HTTP Cat ${status}`}
+			height={500}
+		/>
+
+		{status === 404 && <a href="/">&lt; Go Home</a>}
 	</main>
 </Global>
 
