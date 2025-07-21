@@ -1,6 +1,7 @@
 ---
 import Page404 from '../404.astro';
 Astro.response.status = 418;
+export const prerender = false;
 ---
 
 <Page404 status={418} />
