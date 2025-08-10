@@ -66,4 +66,9 @@
 	:is(ul, ol) li p {
 		display: inline;
 	}
+
+	.footnotes {
+		padding-top: 16px;
+		border-top: 2px solid var(--background-secondary);
+	}
 }
