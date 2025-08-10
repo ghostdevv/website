@@ -8,7 +8,7 @@ interface Props {
 	status: 404 | 418;
 }
 
-const { status }: Props = Astro.props;
+const { status = 404 }: Props = Astro.props;
 ---
 
 <Global>
