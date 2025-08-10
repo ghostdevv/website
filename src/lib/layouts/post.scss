@@ -59,6 +59,10 @@
 		}
 	}
 
+	a {
+		word-wrap: break-word;
+	}
+
 	:is(ul, ol) li p {
 		display: inline;
 	}
