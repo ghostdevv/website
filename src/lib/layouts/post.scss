@@ -58,4 +58,8 @@
 			margin: 8px;
 		}
 	}
+
+	:is(ul, ol) li p {
+		display: inline;
+	}
 }
