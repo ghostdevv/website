@@ -1,7 +1,7 @@
 import { readFile, appendFile, rm } from 'node:fs/promises';
-import { join } from 'desm';
+import { join } from 'node:path';
 
-const DIST = join(import.meta.url, '../dist');
+const DIST = join(import.meta.dirname, '../dist');
 
 const embed = JSON.parse(await readFile(`${DIST}/embed.json`, 'utf-8')) as {
 	image: string;
