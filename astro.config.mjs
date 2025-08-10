@@ -2,9 +2,23 @@
 import { serendipity } from './src/lib/shiki/serendipity-shiki';
 import cloudflare from '@astrojs/cloudflare';
 import { defineConfig } from 'astro/config';
+import { readFile } from 'node:fs/promises';
 import rehypeWrap from 'rehype-wrap-all';
 import sitemap from '@astrojs/sitemap';
 import svelte from '@astrojs/svelte';
+import { join } from 'node:path';
+
+/** @param {string} lang */
+async function shikiLang(lang) {
+	const path = join(
+		import.meta.dirname,
+		'./src/lib/shiki',
+		`${lang}.tmLanguage.json`,
+	);
+
+	const data = await readFile(path, 'utf8');
+	return JSON.parse(data);
+}
 
 // https://astro.build/config
 export default defineConfig({
@@ -24,7 +38,7 @@ export default defineConfig({
 		syntaxHighlight: 'shiki',
 		shikiConfig: {
 			theme: serendipity,
-			langs: [],
+			langs: [await shikiLang('caddyfile')],
 		},
 		rehypePlugins: [
 			[
