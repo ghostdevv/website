@@ -1,5 +1,6 @@
 // @ts-check
 import { serendipity } from './src/lib/shiki/serendipity-shiki';
+import { rehypeGithubAlerts } from 'rehype-github-alerts';
 import cloudflare from '@astrojs/cloudflare';
 import { defineConfig } from 'astro/config';
 import { readFile } from 'node:fs/promises';
@@ -41,6 +42,7 @@ export default defineConfig({
 			langs: [await shikiLang('caddyfile')],
 		},
 		rehypePlugins: [
+			rehypeGithubAlerts,
 			[
 				rehypeWrap,
 				{

@@ -50,4 +50,12 @@
 		height: auto;
 		overflow-x: auto;
 	}
+
+	.markdown-alert {
+		// patch for the styling here
+		p {
+			line-height: normal;
+			margin: 8px;
+		}
+	}
 }
