@@ -22,6 +22,7 @@
 		"@fortawesome/free-brands-svg-icons": "^6.7.2",
 		"@fortawesome/free-solid-svg-icons": "^6.7.2",
 		"astro": "^5.8.2",
+		"astro-expressive-code": "^0.41.3",
 		"date-fns": "^4.1.0",
 		"ghostsui": "2.0.0-beta.3",
 		"include-media": "^2.0.0",

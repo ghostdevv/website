@@ -71,4 +71,50 @@
 		padding-top: 16px;
 		border-top: 2px solid var(--background-secondary);
 	}
+
+	.expressive-code {
+		margin: 12px 0px;
+
+		// restore box shadow and add to code title
+		pre:has(code),
+		.frame.has-title .header .title {
+			box-shadow:
+				1px 1px 6px var(--background-tertiary) inset,
+				-1px -1px 6px var(--background-primary) inset;
+		}
+
+		// Hack to make codeblock title full width
+		.frame.has-title .header .title {
+			flex-grow: 1;
+			text-align: center;
+			--ec-frm-edActTabIndBtmCol: var(--background-tertiary);
+		}
+
+		// Uncomment if not using above hack
+		// fixes wrong border radius with my custom theme
+		/* .frame.has-title pre {
+			border-top-right-radius: inherit;
+		} */
+
+		// Workaround to disable terminal frame
+		// https://github.com/expressive-code/expressive-code/issues/355
+		.frame.is-terminal {
+			--button-spacing: 0.4rem;
+
+			figcaption {
+				display: none;
+			}
+
+			pre {
+				border-top-right-radius: inherit;
+				border-top-left-radius: inherit;
+			}
+		}
+
+		// Patch copy button
+		.copy button {
+			background: transparent;
+			border-radius: 4px;
+		}
+	}
 }

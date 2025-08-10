@@ -89,7 +89,7 @@ export const serendipity: ThemeRegistration = {
 		'tab.inactiveForeground': '#8c94a3',
 		'tab.unfocusedActiveForeground': '#8c94a3',
 		'tab.unfocusedInactiveForeground': '#8c94a3',
-		'editor.background': 'transparent',
+		'editor.background': '#00000000',
 		'editor.foreground': '#f6f6f6',
 		'editorLineNumber.foreground': '#8c94a366',
 		'editorLineNumber.activeForeground': '#8c94a3cc',

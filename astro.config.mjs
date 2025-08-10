@@ -1,6 +1,7 @@
 // @ts-check
 import { serendipity } from './src/lib/shiki/serendipity-shiki';
 import { rehypeGithubAlerts } from 'rehype-github-alerts';
+import expressiveCode from 'astro-expressive-code';
 import cloudflare from '@astrojs/cloudflare';
 import { defineConfig } from 'astro/config';
 import { readFile } from 'node:fs/promises';
@@ -23,7 +24,43 @@ async function shikiLang(lang) {
 
 // https://astro.build/config
 export default defineConfig({
-	integrations: [svelte(), sitemap()],
+	integrations: [
+		svelte(),
+		sitemap(),
+		expressiveCode({
+			themes: [serendipity],
+			shiki: {
+				langs: [await shikiLang('caddyfile')],
+			},
+
+			useThemedScrollbars: false,
+			useStyleReset: true,
+			styleOverrides: {
+				uiFontFamily: 'var(--font-family)',
+				codeFontSize: 'var(--post-font-size)',
+				codeFontFamily: "'Comic Mono', monospace",
+				codeBackground: 'var(--background-secondary)',
+				borderColor: 'transparent',
+				borderWidth: '0px',
+				frames: {
+					frameBoxShadowCssValue: 'none',
+					// code frame + title
+					editorTabBarBackground: 'transparent',
+					editorActiveTabBackground: 'var(--background-secondary)',
+					editorActiveTabBorderColor: 'transparent',
+					editorActiveTabIndicatorTopColor:
+						'var(--background-secondary)',
+					editorActiveTabIndicatorBottomColor: 'var(--primary)',
+					editorActiveTabIndicatorHeight: '1px',
+					// Copy Button
+					tooltipSuccessBackground: 'var(--green)',
+					inlineButtonBackground: 'var(--background-tertiary)',
+					inlineButtonBackgroundHoverOrFocusOpacity: '1',
+					inlineButtonBackgroundActiveOpacity: '1',
+				},
+			},
+		}),
+	],
 
 	site: 'https://ghostdev.xyz/',
 
@@ -36,11 +73,7 @@ export default defineConfig({
 
 	markdown: {
 		gfm: true,
-		syntaxHighlight: 'shiki',
-		shikiConfig: {
-			theme: serendipity,
-			langs: [await shikiLang('caddyfile')],
-		},
+		syntaxHighlight: false,
 		rehypePlugins: [
 			rehypeGithubAlerts,
 			[
