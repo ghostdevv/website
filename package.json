@@ -23,7 +23,7 @@
 		"@fortawesome/free-solid-svg-icons": "^6.7.2",
 		"astro": "^5.8.2",
 		"date-fns": "^4.1.0",
-		"ghostsui": "2.0.0-beta.1",
+		"ghostsui": "2.0.0-beta.3",
 		"include-media": "^2.0.0",
 		"just-shuffle": "^4.2.0",
 		"prettier": "^3.5.3",

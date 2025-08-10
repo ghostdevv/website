@@ -36,8 +36,8 @@ importers:
         specifier: ^4.1.0
         version: 4.1.0
       ghostsui:
-        specifier: 2.0.0-beta.1
-        version: 2.0.0-beta.1
+        specifier: 2.0.0-beta.3
+        version: 2.0.0-beta.3
       include-media:
         specifier: ^2.0.0
         version: 2.0.0
@@ -1651,8 +1651,8 @@ packages:
   get-source@2.0.12:
     resolution: {integrity: sha512-X5+4+iD+HoSeEED+uwrQ07BOQr0kEDFMVqqpBuI+RaZBpBpHCuXxo70bjar6f0b0u/DQJsJ7ssurpP0V60Az+w==}
 
-  ghostsui@2.0.0-beta.1:
-    resolution: {integrity: sha512-T11BXPTNbrje4PS3hDIAAsdMW5yfxqfS43C7d1uwpMSi80HmzyBqbH4gLWzrweAFbEu90QDirLQLbnzyG6txUg==}
+  ghostsui@2.0.0-beta.3:
+    resolution: {integrity: sha512-1qLjvIEJCu6FhBdByxKhYQqWkSuyvIvjG87jSrux0MVMGvn5P258DU5AOH/xTetcnWlRO8fIPsp9MNzGWuD9gA==}
 
   github-slugger@2.0.0:
     resolution: {integrity: sha512-IaOQ9puYtjrkq7Y0Ygl9KDZnrf/aiUJYUpVf89y8kyaxbRG7Y1SrX/jaumrv81vc61+kiMempujsM3Yw7w5qcw==}
@@ -4271,7 +4271,7 @@ snapshots:
       data-uri-to-buffer: 2.0.2
       source-map: 0.6.1
 
-  ghostsui@2.0.0-beta.1: {}
+  ghostsui@2.0.0-beta.3: {}
 
   github-slugger@2.0.0: {}
 
