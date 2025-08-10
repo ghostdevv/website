@@ -1,5 +1,5 @@
 // @ts-check
-import serendipity from './src/lib/serendipity-shiki';
+import { serendipity } from './src/lib/shiki/serendipity-shiki';
 import cloudflare from '@astrojs/cloudflare';
 import { defineConfig } from 'astro/config';
 import rehypeWrap from 'rehype-wrap-all';
@@ -24,6 +24,7 @@ export default defineConfig({
 		syntaxHighlight: 'shiki',
 		shikiConfig: {
 			theme: serendipity,
+			langs: [],
 		},
 		rehypePlugins: [
 			[

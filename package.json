@@ -33,6 +33,7 @@
 		"rehype-wrap-all": "^1.1.0",
 		"sass": "^1.89.1",
 		"sharp": "^0.34.2",
+		"shiki": "^3.9.2",
 		"svelte": "^5.33.14",
 		"svelte-check": "^4.2.1",
 		"svelte-copy": "^2.0.0",
