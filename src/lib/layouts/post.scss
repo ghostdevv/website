@@ -70,6 +70,22 @@
 	.footnotes {
 		padding-top: 16px;
 		border-top: 2px solid var(--background-secondary);
+
+		ol li {
+			&::marker {
+				font-size: 0.85rem;
+				color: var(--text-grey);
+			}
+
+			a[data-footnote-backref] {
+				color: var(--text-grey);
+
+				&:focus-visible,
+				&:hover {
+					color: var(--primary);
+				}
+			}
+		}
 	}
 
 	.expressive-code {
