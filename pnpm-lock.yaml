@@ -23,6 +23,9 @@ importers:
       '@astrojs/svelte':
         specifier: 7.1.0
         version: 7.1.0(@types/node@22.15.29)(astro@5.8.2(@types/node@22.15.29)(jiti@2.4.2)(rollup@4.41.1)(sass@1.89.1)(typescript@5.8.3)(yaml@2.8.0))(jiti@2.4.2)(sass@1.89.1)(svelte@5.33.14)(typescript@5.8.3)(yaml@2.8.0)
+      '@expressive-code/plugin-collapsible-sections':
+        specifier: ^0.41.3
+        version: 0.41.3
       '@fortawesome/free-brands-svg-icons':
         specifier: ^6.7.2
         version: 6.7.2
@@ -580,6 +583,9 @@ packages:
 
   '@expressive-code/core@0.41.3':
     resolution: {integrity: sha512-9qzohqU7O0+JwMEEgQhnBPOw5DtsQRBXhW++5fvEywsuX44vCGGof1SL5OvPElvNgaWZ4pFZAFSlkNOkGyLwSQ==}
+
+  '@expressive-code/plugin-collapsible-sections@0.41.3':
+    resolution: {integrity: sha512-cuHIN7Ipl7gUcaWFfsgy6G3wn0Svk8dQ6WKXNQha63BURbm7CSBhD6y9qFGeIOrxaJtvH4Pj3Xb4C2Ni0OVwYA==}
 
   '@expressive-code/plugin-frames@0.41.3':
     resolution: {integrity: sha512-rFQtmf/3N2CK3Cq/uERweMTYZnBu+CwxBdHuOftEmfA9iBE7gTVvwpbh82P9ZxkPLvc40UMhYt7uNuAZexycRQ==}
@@ -3316,6 +3322,10 @@ snapshots:
       postcss-nested: 6.2.0(postcss@8.5.4)
       unist-util-visit: 5.0.0
       unist-util-visit-parents: 6.0.1
+
+  '@expressive-code/plugin-collapsible-sections@0.41.3':
+    dependencies:
+      '@expressive-code/core': 0.41.3
 
   '@expressive-code/plugin-frames@0.41.3':
     dependencies:

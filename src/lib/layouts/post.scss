@@ -132,5 +132,10 @@
 			background: transparent;
 			border-radius: 4px;
 		}
+
+		// Fix collapsable code allignment
+		.ec-section summary :is(.expand, .collapse) {
+			vertical-align: middle;
+		}
 	}
 }

@@ -1,4 +1,5 @@
 // @ts-check
+import { pluginCollapsibleSections } from '@expressive-code/plugin-collapsible-sections';
 import { serendipity } from './src/lib/shiki/serendipity-shiki';
 import { rehypeGithubAlerts } from 'rehype-github-alerts';
 import expressiveCode from 'astro-expressive-code';
@@ -28,6 +29,11 @@ export default defineConfig({
 		svelte(),
 		sitemap(),
 		expressiveCode({
+			plugins: [pluginCollapsibleSections()],
+			defaultProps: {
+				collapseStyle: 'collapsible-auto',
+			},
+
 			themes: [serendipity],
 			shiki: {
 				langs: [await shikiLang('caddyfile')],
@@ -57,6 +63,11 @@ export default defineConfig({
 					inlineButtonBackground: 'var(--background-tertiary)',
 					inlineButtonBackgroundHoverOrFocusOpacity: '1',
 					inlineButtonBackgroundActiveOpacity: '1',
+				},
+				collapsibleSections: {
+					openBackgroundColorCollapsible:
+						'var(--background-tertiary)',
+					closedBackgroundColor: 'var(--background-tertiary)',
 				},
 			},
 		}),
