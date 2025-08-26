@@ -1,0 +1,134 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+
+interface Props {
+	id: string;
+}
+
+const itemRaw = (await getCollection('postCardsYouTube'))
+	// todo is there a built in method for this
+	.find((item) => item.id === Astro.props.id);
+
+if (!itemRaw) {
+	throw new Error(`No YouTube post card found with id ${Astro.props.id}`);
+}
+
+const { id, data } = itemRaw;
+---
+
+<a
+	href={`https://www.youtube.com/watch?v=${id}`}
+	target="_blank"
+	class="youtube"
+>
+	<div class="thumbnail">
+		<Image src={data.thumbnail} alt="thumbnail for video" height={400} />
+	</div>
+
+	<div class="meta">
+		<p class="title">{data.title}</p>
+		<p class="description">{data.description}</p>
+	</div>
+</a>
+
+<style>
+	.youtube {
+		display: grid;
+		grid-template-columns: max-content 1fr;
+		grid-template-rows: 175px;
+		gap: 12px;
+
+		width: 100%;
+		max-width: 100%;
+		padding: 12px;
+		border: 2px solid var(--background-tertiary);
+		border-radius: 12px;
+
+		color: #eee;
+		font-size: 1rem;
+
+		.thumbnail {
+			position: relative;
+			width: fit-content;
+			height: 175px;
+
+			img {
+				width: auto;
+				height: 100%;
+				object-fit: cover;
+				aspect-ratio: 16 / 9;
+				border-radius: 8px;
+				filter: opacity(0.8) blur(2px);
+			}
+
+			&:after {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				z-index: 10;
+
+				width: 64px;
+				height: 64px;
+				transition: filter 0.2s ease-in-out;
+				filter: grayscale(1);
+				content: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9Jy0zNS4yIC00MS4zMzMgMzA1LjA2NyAyNDgnPjxwYXRoIGZpbGw9J3JlZCcgZD0nTTIyOS43NjMgMjUuODE3Yy0yLjY5OS0xMC4xNjItMTAuNjUtMTguMTY1LTIwLjc0OC0yMC44ODFDMTkwLjcxNiAwIDExNy4zMzMgMCAxMTcuMzMzIDBTNDMuOTUxIDAgMjUuNjUxIDQuOTM2QzE1LjU1MyA3LjY1MiA3LjYgMTUuNjU1IDQuOTAzIDI1LjgxNyAwIDQ0LjIzNiAwIDgyLjY2NyAwIDgyLjY2N3MwIDM4LjQyOSA0LjkwMyA1Ni44NUM3LjYgMTQ5LjY4IDE1LjU1MyAxNTcuNjgxIDI1LjY1IDE2MC40YzE4LjMgNC45MzQgOTEuNjgyIDQuOTM0IDkxLjY4MiA0LjkzNHM3My4zODMgMCA5MS42ODItNC45MzRjMTAuMDk4LTIuNzE4IDE4LjA0OS0xMC43MiAyMC43NDgtMjAuODgyIDQuOTA0LTE4LjQyMSA0LjkwNC01Ni44NSA0LjkwNC01Ni44NXMwLTM4LjQzMS00LjkwNC01Ni44NScvPjxwYXRoIGZpbGw9JyNmZmYnIGQ9J205My4zMzMgMTE3LjU1OSA2MS4zMzMtMzQuODktNjEuMzMzLTM0Ljg5NHonLz48L3N2Zz4=');
+			}
+		}
+
+		.meta {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.title {
+			font-size: 1.3rem;
+			margin: 0px;
+		}
+
+		.description {
+			margin: 0px;
+			color: var(--text-grey);
+			text-overflow: ellipsis;
+			overflow: hidden;
+		}
+
+		transition: border-color 0.2s ease-in-out;
+
+		&:hover,
+		&:focus,
+		&:focus-visible,
+		&:active {
+			text-decoration: none;
+			background-color: transparent;
+			border-color: var(--primary);
+
+			.thumbnail:after {
+				filter: none;
+			}
+		}
+
+		@media (max-width: 648px) {
+			grid-template-columns: 1fr;
+			grid-template-rows: auto;
+			gap: 0px;
+
+			width: 100%;
+
+			.description {
+				display: none;
+			}
+
+			.thumbnail {
+				width: 100%;
+				height: fit-content;
+
+				img {
+					width: 100%;
+					height: auto;
+				}
+			}
+		}
+	}
+</style>

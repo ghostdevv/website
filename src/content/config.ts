@@ -1,5 +1,7 @@
 import { defineCollection, z } from 'astro:content';
 import { tags } from '../lib/components/posts/tags';
+import { glob } from 'astro/loaders';
+import { basename, join } from 'node:path';
 
 export const collections = {
 	blog: defineCollection({
@@ -69,6 +71,22 @@ export const collections = {
 				thumbnail: image(),
 				start: z.coerce.date(),
 				end: z.coerce.date(),
+			}),
+	}),
+
+	postCardsYouTube: defineCollection({
+		loader: glob({
+			base: join(import.meta.dirname, './post-cards/youtube'),
+			pattern: '**/*.json',
+			generateId({ entry }) {
+				return basename(entry, '.json');
+			},
+		}),
+		schema: ({ image }) =>
+			z.object({
+				title: z.string(),
+				description: z.string(),
+				thumbnail: image(),
 			}),
 	}),
 };
