@@ -10,6 +10,7 @@ import rehypeWrap from 'rehype-wrap-all';
 import sitemap from '@astrojs/sitemap';
 import svelte from '@astrojs/svelte';
 import { join } from 'node:path';
+import mdx from '@astrojs/mdx';
 
 /** @param {string} lang */
 async function shikiLang(lang) {
@@ -71,6 +72,7 @@ export default defineConfig({
 				},
 			},
 		}),
+		mdx(),
 	],
 
 	site: 'https://ghostdev.xyz/',
