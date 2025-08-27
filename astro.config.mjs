@@ -33,6 +33,11 @@ export default defineConfig({
 			plugins: [pluginCollapsibleSections()],
 			defaultProps: {
 				collapseStyle: 'collapsible-auto',
+				overridesByLang: {
+					'bash,sh': {
+						frame: 'code',
+					},
+				},
 			},
 
 			themes: [serendipity],
