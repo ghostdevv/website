@@ -1,5 +1,5 @@
 compatibility_date = "2025-02-16"
-compatibility_flags = ["streams_enable_constructors"]
+compatibility_flags = ["nodejs_compat", "streams_enable_constructors"]
 
 [vars]
 NODE_VERSION = "22.16.0"
