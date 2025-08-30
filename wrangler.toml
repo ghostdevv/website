@@ -4,6 +4,12 @@ compatibility_flags = ["nodejs_compat"]
 
 main = "./dist/_worker.js/index.js"
 
+workers_dev = false
+
+[[routes]]
+custom_domain = true
+pattern = "ghostdev.xyz"
+
 [assets]
 binding = "ASSETS"
 directory = "./dist"
