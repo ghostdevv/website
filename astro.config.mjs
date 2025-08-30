@@ -82,7 +82,7 @@ export default defineConfig({
 
 	site: 'https://ghostdev.xyz/',
 
-	adapter: cloudflare(),
+	adapter: cloudflare({ imageService: 'compile' }),
 	output: 'static',
 	trailingSlash: 'never',
 	build: {
