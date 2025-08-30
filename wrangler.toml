@@ -1,6 +1,6 @@
 name = "website"
 compatibility_date = "2025-08-30"
-compatibility_flags = ["nodejs_compat"]
+compatibility_flags = ["nodejs_compat", "global_fetch_strictly_public"]
 
 main = "./dist/_worker.js/index.js"
 
