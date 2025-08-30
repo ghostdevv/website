@@ -1,9 +1,9 @@
 {
-  "name": "Cloudflare Community Meetup - July 2024",
-  "place": "in-person",
-  "type": "meetup",
-  "url": "https://www.meetup.com/london-cloudflare-community-meetup/events/302178020/",
-  "thumbnail": "$assets/events/2024-07-25-cloudflare-community-meetup.jpg",
-  "start": "2024-07-25T18:00:00+01:00",
-  "end": "2024-07-25T20:30:00+01:00"
+	"name": "Cloudflare Community Meetup - July 2024",
+	"place": "in-person",
+	"type": "meetup",
+	"url": "https://www.meetup.com/london-cloudflare-community-meetup/events/302178020/",
+	"thumbnail": "$assets/events/2024-07-25-cloudflare-community-meetup.jpg",
+	"start": "2024-07-25T18:00:00+01:00",
+	"end": "2024-07-25T20:30:00+01:00"
 }

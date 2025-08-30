@@ -1,9 +1,9 @@
 {
-  "name": "Plymouth Web Social Meetup",
-  "place": "in-person",
-  "type": "meetup",
-  "url": "https://www.meetup.com/plymouth-web/events/289667780/",
-  "thumbnail": "$assets/events/2022-12-15-plymouth-web-social-meetup.jpg",
-  "start": "2022-12-15T19:00:00Z",
-  "end": "2022-12-15T21:00:00Z"
+	"name": "Plymouth Web Social Meetup",
+	"place": "in-person",
+	"type": "meetup",
+	"url": "https://www.meetup.com/plymouth-web/events/289667780/",
+	"thumbnail": "$assets/events/2022-12-15-plymouth-web-social-meetup.jpg",
+	"start": "2022-12-15T19:00:00Z",
+	"end": "2022-12-15T21:00:00Z"
 }

@@ -45,12 +45,14 @@
 			href="/"
 			class="logo"
 			aria-label="Home"
-			oncontextmenu={branding}>
+			oncontextmenu={branding}
+		>
 			{#if HALLOWEEN}
 				<img
 					style="width: 100%; height: 100%"
 					src="/ghost-halloween.png"
-					alt="GHOST's Halloween Theme Logo" />
+					alt="GHOST's Halloween Theme Logo"
+				/>
 			{:else}
 				<TRainbow />
 			{/if}
@@ -62,7 +64,8 @@
 				title="Toggle navigation open"
 				ariaControls="mobile-nav-contents"
 				type="squeeze"
-				bind:open />
+				bind:open
+			/>
 		</div>
 
 		<div class="links desktop">
@@ -74,7 +77,8 @@
 				<a
 					href={link.href}
 					class="link"
-					class:active={url.pathname.startsWith(link.href)}>
+					class:active={url.pathname.startsWith(link.href)}
+				>
 					{link.label}
 				</a>
 			{/each}
@@ -90,7 +94,8 @@
 					<a
 						href={link.href}
 						class="link"
-						class:active={url.pathname.startsWith(link.href)}>
+						class:active={url.pathname.startsWith(link.href)}
+					>
 						{link.label}
 					</a>
 				{/each}

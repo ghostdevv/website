@@ -31,7 +31,8 @@
 	data-hex={hex}
 	style:--hex={hex}
 	style:--text={textColour}
-	use:copy={{ text: hex, onCopy }}>
+	use:copy={{ text: hex, onCopy }}
+>
 	<h4 class="name">{copying ? 'Copied!' : name}</h4>
 	<p class="hex">{hex}</p>
 </button>
