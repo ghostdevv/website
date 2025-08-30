@@ -3,13 +3,13 @@
 	"quoteProps": "as-needed",
 	"trailingComma": "all",
 	"bracketSpacing": true,
+	"bracketSameLine": false,
 	"arrowParens": "always",
 	"semi": true,
 	"useTabs": true,
 	"tabWidth": 4,
 
 	"svelteAllowShorthand": true,
-	"svelteBracketNewLine": false,
 	"svelteIndentScriptAndStyle": true,
 
 	"plugins": ["prettier-plugin-svelte", "prettier-plugin-astro"],

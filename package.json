@@ -9,7 +9,7 @@
 		"start": "astro dev",
 		"build": "astro build && tsm scripts/embed.ts",
 		"preview": "astro preview",
-		"check": "astro check && svelte-check",
+		"check": "astro check && svelte-check && prettier --check .",
 		"astro": "astro",
 		"format": "prettier --write ."
 	},
