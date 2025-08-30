@@ -28,8 +28,10 @@ const img = await getImage({
 		}
 	});
 
-	document.querySelectorAll('[data-event-image]').forEach((element) => {
-		observer.observe(element);
+	document.addEventListener('astro:page-load', () => {
+		document.querySelectorAll('[data-event-image]').forEach((element) => {
+			observer.observe(element);
+		});
 	});
 </script>
 
