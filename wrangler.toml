@@ -1,8 +1,16 @@
 name = "website"
-compatibility_date = "2025-02-16"
-compatibility_flags = []
+compatibility_date = "2025-08-30"
+compatibility_flags = ["nodejs_compat"]
 
-pages_build_output_dir = "dist"
+main = "./dist/_worker.js/index.js"
+
+[assets]
+binding = "ASSETS"
+directory = "./dist"
+not_found_handling = "404-page"
+
+[observability]
+enabled = true
 
 [vars]
 NODE_VERSION = "22.16.0"

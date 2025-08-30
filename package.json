@@ -46,7 +46,8 @@
 		"svelte-mount": "^3.0.2",
 		"svelte-reduced-motion": "^2.0.0",
 		"tsm": "^2.3.0",
-		"typescript": "^5.9.2"
+		"typescript": "^5.9.2",
+		"wrangler": "^4.33.1"
 	},
 	"packageManager": "pnpm@10.11.1",
 	"volta": {
