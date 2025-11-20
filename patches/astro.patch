@@ -1,0 +1,13 @@
+diff --git a/dist/content/utils.js b/dist/content/utils.js
+index dc05fab1eb8bb0fcaffc222bed4b7a1dfdde6824..6401479093d996d0c4739cff124d50ad744298f1 100644
+--- a/dist/content/utils.js
++++ b/dist/content/utils.js
+@@ -128,7 +128,7 @@ async function getEntryDataAndImages(entry, collectionConfig, shouldEmitFile, ex
+       schema = schema({
+         image: () => z.string().transform((val) => {
+           let normalizedPath = val;
+-          if (val && !val.startsWith("./") && !val.startsWith("../") && !val.startsWith("/") && !val.startsWith("~") && !val.startsWith("@") && !val.includes("://")) {
++          if (val && !val.startsWith("./") && !val.startsWith("../") && !val.startsWith("/") && !val.startsWith("~") && !val.startsWith("@") && !val.includes("://") && !val.startsWith("$")) {
+             normalizedPath = `./${val}`;
+           }
+           imageImports.add(normalizedPath);
