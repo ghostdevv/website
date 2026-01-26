@@ -47,7 +47,7 @@
 		"svelte-reduced-motion": "^2.0.0",
 		"tsm": "^2.3.0",
 		"typescript": "^5.9.3",
-		"wrangler": "^4.49.1"
+		"wrangler": "^4.59.1"
 	},
 	"packageManager": "pnpm@10.11.1",
 	"volta": {
