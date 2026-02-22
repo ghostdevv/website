@@ -1,12 +1,11 @@
 <script lang="ts">
+	import { Modal, type ActivatorSnippet } from '@ghostsui/svelte/modal';
 	import { faCog } from '@fortawesome/free-solid-svg-icons';
 	import { fontSize, lineHeight } from './settings';
-	import Modal from '$lib/components/Modal.svelte';
-	import type { Snippet } from 'svelte';
 	import Fa from 'svelte-fa';
 
 	interface Props {
-		activator?: Snippet;
+		activator?: ActivatorSnippet;
 	}
 
 	let { activator: _activator }: Props = $props();
@@ -30,12 +29,13 @@
 </script>
 
 <Modal>
-	{#snippet activator()}
+	{#snippet activator(attrs, ctx)}
 		{#if _activator}
-			{@render _activator()}
+			{@render _activator(attrs, ctx)}
 		{:else}
 			<button
-				class="secondary icon"
+				{...attrs}
+				class="icon"
 				aria-label="Post Settings"
 				title="Post Settings"
 			>
@@ -44,7 +44,7 @@
 		{/if}
 	{/snippet}
 
-	{#snippet children(_open, close)}
+	{#snippet children(ctx)}
 		<card class="no-hover modal">
 			<h1>Post Settings</h1>
 
@@ -74,8 +74,8 @@
 			</div>
 
 			<div class="row">
-				<button onclick={close}>Close</button>
-				<button class="secondary" onclick={reset}>Reset</button>
+				<button onclick={ctx.close}>Close</button>
+				<button class="outline" onclick={reset}>Reset</button>
 			</div>
 		</card>
 	{/snippet}
