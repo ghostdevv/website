@@ -5,6 +5,7 @@ excerpt: My experience with the latest Home Assistant hardware from Nabu Casa
 image: $assets/posts/home-assistant-green/thumbnail.png
 postedAt: 1722579812403
 attribution: Images of the Home Assistant Green in the thumbnail background, and under the "What is it?" heading belong to Home Assistant.
+atUri: 'at://did:plc:dfkjiu36xs6ogt7pux7i7o2b/site.standard.document/3mgeb2zqeun22'
 ---
 
 [Home Assistant](https://www.home-assistant.io/) is the most popular open source home automation software. Think Google Home or Apple Homekit but under your control, running in your house, and powered by a worldwide community of developers. It serves as the central hub of your smart home, allowing you to control, monitor, and automate your devices. Coming in strong with nearly 350,000 active installs and just under 3000 official integrations. It can be installed on any system from a spare computer, to a raspberry pi. Home Assistant is governed by the [Open Home Foundation](https://www.openhomefoundation.org/), so it's here to stay. I won't go any more into the specifics of how Home Assistant works and what you can do with it in this post - but [let me know](https://ghostdev.xyz/contact) if that's something you would be interested in.

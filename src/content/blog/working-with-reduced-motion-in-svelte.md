@@ -4,6 +4,7 @@ title: Working with reduced motion in Svelte
 excerpt: Working with reduced motion and Svelte transitions can be easy. In this post I cover how we can adapt our website for those who prefer reduced motion, and how to use svelte-reduced-motion to make your transitions accessible.
 image: $assets/posts/reduced-motion.webp
 postedAt: 1651016520000
+atUri: 'at://did:plc:dfkjiu36xs6ogt7pux7i7o2b/site.standard.document/3mgeb32bwff22'
 ---
 
 Accessibility on the web is important. It's why frameworks like Svelte have accessibility warnings built in, and why it's a metric in tools such as lighthouse. You want the ability to control the look and feel of your website for those who use assistive technology, or just want a better experience on the web.

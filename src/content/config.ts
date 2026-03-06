@@ -15,6 +15,7 @@ export const collections = {
 				postedAt: z.number(),
 				lastEdited: z.number().optional(),
 				attribution: z.string().optional(),
+				atUri: z.string().startsWith('at://'),
 			}),
 	}),
 

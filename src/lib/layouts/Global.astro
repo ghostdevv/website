@@ -6,6 +6,7 @@ interface Frontmatter {
 	title?: string;
 	excerpt?: string;
 	image?: ImageMetadata;
+	atUri?: string;
 }
 
 const frontmatter: Frontmatter = Astro.props.frontmatter || {};
@@ -35,6 +36,12 @@ const image = `https://ghostdev.xyz${image_path}`;
 		<meta name="darkreader-lock" />
 
 		<link rel="sitemap" href="/sitemap-index.xml" />
+
+		{
+			frontmatter.atUri && (
+				<link rel="site.standard.document" href={frontmatter.atUri} />
+			)
+		}
 
 		<!-- Meta -->
 		<meta name="theme-color" content="#2885d6" />

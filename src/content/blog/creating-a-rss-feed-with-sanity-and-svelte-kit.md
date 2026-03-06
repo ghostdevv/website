@@ -4,6 +4,7 @@ title: Creating a RSS feed with Sanity and Svelte Kit
 excerpt: Read this post to learn how to leverage Svelte Kit endpoints, along with a CMS such as sanity to create a RSS feed for your blog.
 image: $assets/posts/rss-sanity-sveltekit.webp
 postedAt: 1643897820000
+atUri: 'at://did:plc:dfkjiu36xs6ogt7pux7i7o2b/site.standard.document/3mgeb32gulv22'
 ---
 
 > This post has been updated for SvelteKit 1.0 and Sanity js 6
