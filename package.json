@@ -14,33 +14,33 @@
 		"format": "prettier --write ."
 	},
 	"devDependencies": {
-		"@astrojs/check": "^0.9.5",
-		"@astrojs/cloudflare": "^12.6.11",
-		"@astrojs/mdx": "^4.3.12",
-		"@astrojs/rss": "^4.0.14",
-		"@astrojs/sitemap": "^3.6.0",
-		"@astrojs/svelte": "7.2.2",
-		"@expressive-code/plugin-collapsible-sections": "^0.41.3",
+		"@astrojs/check": "^0.9.6",
+		"@astrojs/cloudflare": "^12.6.12",
+		"@astrojs/mdx": "^4.3.13",
+		"@astrojs/rss": "^4.0.15",
+		"@astrojs/sitemap": "^3.7.0",
+		"@astrojs/svelte": "7.2.5",
+		"@expressive-code/plugin-collapsible-sections": "^0.41.7",
 		"@fortawesome/free-brands-svg-icons": "^6.7.2",
 		"@fortawesome/free-solid-svg-icons": "^6.7.2",
-		"@ghostsui/svelte": "1.0.0-beta.1",
-		"astro": "^5.16.0",
-		"astro-expressive-code": "^0.41.3",
+		"@ghostsui/svelte": "1.0.0-beta.3",
+		"astro": "^5.18.0",
+		"astro-expressive-code": "^0.41.7",
 		"date-fns": "^4.1.0",
 		"ghostsui": "2.0.0-beta.8",
 		"include-media": "^2.0.0",
 		"just-shuffle": "^4.2.0",
-		"prettier": "^3.6.2",
+		"prettier": "^3.8.1",
 		"prettier-plugin-astro": "^0.14.1",
-		"prettier-plugin-svelte": "^3.4.0",
-		"rehype-github-alerts": "^4.1.1",
+		"prettier-plugin-svelte": "^3.5.1",
+		"rehype-github-alerts": "^4.2.0",
 		"rehype-wrap-all": "^1.1.0",
-		"sass": "^1.94.2",
+		"sass": "^1.97.3",
 		"sequoia-cli": "^0.5.0",
 		"sharp": "^0.34.5",
-		"shiki": "^3.15.0",
-		"svelte": "^5.43.13",
-		"svelte-check": "^4.3.4",
+		"shiki": "^4.0.1",
+		"svelte": "^5.53.7",
+		"svelte-check": "^4.4.4",
 		"svelte-copy": "^2.0.0",
 		"svelte-fa": "^4.0.4",
 		"svelte-hamburgers": "^5.0.0",
@@ -49,7 +49,7 @@
 		"svelte-reduced-motion": "^2.0.0",
 		"tsm": "^2.3.0",
 		"typescript": "^5.9.3",
-		"wrangler": "^4.49.1"
+		"wrangler": "^4.71.0"
 	},
 	"packageManager": "pnpm@10.11.1",
 	"volta": {
@@ -67,9 +67,6 @@
 			"esbuild",
 			"sharp",
 			"workerd"
-		],
-		"patchedDependencies": {
-			"astro": "patches/astro.patch"
-		}
+		]
 	}
 }
