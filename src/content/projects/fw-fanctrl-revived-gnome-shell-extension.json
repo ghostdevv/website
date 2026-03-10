@@ -1,4 +1,5 @@
 {
 	"name": "Framework Fan Control Gnome Extension",
-	"url": "https://extensions.gnome.org/extension/7864/framework-fan-control"
+	"url": "https://github.com/ghostdevv/fw-fanctrl-revived-gnome-shell-extension",
+	"archived": false
 }

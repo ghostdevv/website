@@ -1,4 +1,5 @@
 {
 	"name": "Svelte Discord Bot",
-	"url": "https://github.com/sveltejs/discord-bot"
+	"url": "https://github.com/sveltejs/discord-bot",
+	"archived": false
 }
