@@ -1,11 +1,14 @@
 {
+	"$schema": "https://tangled.org/stevedylan.dev/sequoia/raw/main/sequoia.schema.json",
 	"siteUrl": "https://ghostdev.xyz",
 	"contentDir": "./src/content/blog",
 	"imagesDir": "./src/assets/posts",
 	"publicationUri": "at://did:plc:dfkjiu36xs6ogt7pux7i7o2b/site.standard.publication/3mgeayo264v22",
+	"publishContent": false,
 	"frontmatter": {
 		"description": "excerpt",
 		"publishDate": "postedAt",
-		"coverImage": "image"
+		"coverImage": "image",
+		"updatedAt": "lastEdited"
 	}
 }
