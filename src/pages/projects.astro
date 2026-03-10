@@ -1,4 +1,5 @@
 ---
+import Projects from '$lib/components/projects/Projects.svelte';
 import { getCollection } from 'astro:content';
 import Page from '$lib/layouts/Page.astro';
 import shuffle from 'just-shuffle';
@@ -23,19 +24,7 @@ const archived = allProjects.filter((p) => p.archived);
 	</section>
 
 	<section class="row wrap center g16">
-		{
-			active.map((project) => (
-				<a
-					href={project.url}
-					target="_blank"
-					rel="noreferrer"
-					class:list={['project card center', { star: project.star }]}
-				>
-					<h4>{project.name}</h4>
-					<p>{project.description}</p>
-				</a>
-			))
-		}
+		<Projects projects={active} />
 	</section>
 
 	<section>
@@ -43,43 +32,8 @@ const archived = allProjects.filter((p) => p.archived);
 			<summary>Archived</summary>
 
 			<section class="row wrap center g16">
-				{
-					archived.map((project) => (
-						<a
-							href={project.url}
-							target="_blank"
-							rel="noreferrer"
-							class="project card center"
-						>
-							<h5>{project.name}</h5>
-							<p>{project.description}</p>
-						</a>
-					))
-				}
+				<Projects projects={archived} />
 			</section>
 		</details>
 	</section>
 </Page>
-
-<style lang="scss">
-	.project {
-		border-color: var(--background-tertiary);
-		text-align: left;
-		flex-shrink: 1;
-		padding: 22px;
-
-		h4 {
-			margin-top: 0px;
-			margin-bottom: 8px;
-		}
-
-		p {
-			margin: 0px;
-			max-width: 400px;
-		}
-
-		&.star {
-			border-color: var(--primary);
-		}
-	}
-</style>
