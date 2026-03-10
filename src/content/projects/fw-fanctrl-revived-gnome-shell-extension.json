@@ -1,5 +1,6 @@
 {
 	"name": "Framework Fan Control Gnome Extension",
 	"url": "https://github.com/ghostdevv/fw-fanctrl-revived-gnome-shell-extension",
-	"archived": false
+	"archived": false,
+	"description": "A Gnome extension that provides a convenient way to control your framework laptop fan profile when using fw-"
 }

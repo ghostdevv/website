@@ -1,5 +1,6 @@
 {
 	"name": "Short",
 	"url": "https://github.com/ghostdevv/short",
-	"archived": false
+	"archived": false,
+	"description": "A microservice for creating short links"
 }

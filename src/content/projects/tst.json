@@ -1,5 +1,6 @@
 {
 	"name": "TST",
 	"url": "https://github.com/ghostdevv/tst",
-	"archived": false
+	"archived": false,
+	"description": "It's like `.txt` but with scripting"
 }

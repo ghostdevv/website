@@ -1,5 +1,6 @@
 {
 	"name": "Docker Images",
 	"url": "https://github.com/ghostdevv/docker-images",
-	"archived": false
+	"archived": false,
+	"description": "A collection of automatically updated docker images that are needed for my projects"
 }

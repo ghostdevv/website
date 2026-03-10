@@ -1,5 +1,6 @@
 {
 	"name": "Create Routify",
 	"url": "https://github.com/roxiness/create-routify",
-	"archived": false
+	"archived": false,
+	"description": "A powerful cli for super-powering your routify development experience"
 }

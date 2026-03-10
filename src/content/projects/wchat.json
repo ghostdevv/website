@@ -1,5 +1,6 @@
 {
 	"name": "wchat",
 	"url": "https://github.com/ghostdevv/wchat",
-	"archived": false
+	"archived": false,
+	"description": "Work in progress local-first ai chat app"
 }

@@ -1,5 +1,6 @@
 {
 	"name": "esm.sh browser extension",
 	"url": "https://github.com/ghostdevv/esm.sh-extension",
-	"archived": false
+	"archived": false,
+	"description": "A browser extension that adds a \"Copy esm.sh import\" button on npm package pages"
 }

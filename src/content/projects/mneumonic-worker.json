@@ -1,5 +1,6 @@
 {
 	"name": "Mneumonic Worker",
 	"url": "https://github.com/ghostdevv/mnemonic-worker",
-	"archived": false
+	"archived": false,
+	"description": "A cloudflare worker for generating mnemonic phrases"
 }

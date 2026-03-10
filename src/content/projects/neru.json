@@ -1,5 +1,6 @@
 {
 	"name": "Neru",
 	"url": "https://github.com/ghostdevv/neru",
-	"archived": false
+	"archived": false,
+	"description": "Neru is a small and lightweight file router for your favourite backends"
 }

@@ -1,5 +1,6 @@
 {
 	"name": "Svelte Mount",
 	"url": "https://github.com/ghostdevv/svelte-mount",
-	"archived": false
+	"archived": false,
+	"description": "A library to make detecting mounted state easier in Svelte"
 }

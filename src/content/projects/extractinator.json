@@ -1,5 +1,6 @@
 {
 	"name": "Extractinator",
 	"url": "https://github.com/ghostdevv/extractinator",
-	"archived": false
+	"archived": false,
+	"description": "A tool to extract the api information from Svelte and TS/JS files"
 }

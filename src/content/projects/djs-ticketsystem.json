@@ -1,5 +1,6 @@
 {
 	"name": "djs-ticketsystem",
 	"url": "https://github.com/ghostdevv/djs-ticketsystem",
-	"archived": true
+	"archived": true,
+	"description": "DJS-TicketSystem is an extension to discord.js designed to make creating \"tickets\" in discord servers easier"
 }

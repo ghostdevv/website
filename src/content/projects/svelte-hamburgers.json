@@ -1,5 +1,6 @@
 {
 	"name": "Svelte Hamburgers",
 	"url": "https://github.com/ghostdevv/svelte-hamburgers",
-	"archived": false
+	"archived": false,
+	"description": "Custom Hamburger Icons in Svelte with ease"
 }

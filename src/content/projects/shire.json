@@ -1,5 +1,6 @@
 {
 	"name": "Shire",
 	"url": "https://github.com/ghostdevv/shire",
-	"archived": false
+	"archived": false,
+	"description": "Shire is a simple no fuss ddns client for cloudflare"
 }

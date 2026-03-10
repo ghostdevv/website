@@ -1,5 +1,6 @@
 {
 	"name": "webhook",
 	"url": "https://github.com/ghostdevv/webhook",
-	"archived": false
+	"archived": false,
+	"description": "A simple proxy that sends webhooks it recieves to Discord"
 }

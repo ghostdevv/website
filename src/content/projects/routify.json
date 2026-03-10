@@ -1,5 +1,6 @@
 {
 	"name": "Routify",
 	"url": "https://github.com/roxiness/routify",
-	"archived": false
+	"archived": false,
+	"description": "Automated Svelte routes"
 }

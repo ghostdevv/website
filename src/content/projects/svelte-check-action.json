@@ -2,5 +2,6 @@
 	"name": "svelte-check-action",
 	"url": "https://github.com/ghostdevv/svelte-check-action",
 	"star": true,
-	"archived": false
+	"archived": false,
+	"description": "run svelte-check on the files that change in a pull request and have the errors commented"
 }

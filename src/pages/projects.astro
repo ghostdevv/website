@@ -31,7 +31,8 @@ const archived = allProjects.filter((p) => p.archived);
 					rel="noreferrer"
 					class:list={['project card center', { star: project.star }]}
 				>
-					<h5>{project.name}</h5>
+					<h4>{project.name}</h4>
+					<p>{project.description}</p>
 				</a>
 			))
 		}
@@ -51,6 +52,7 @@ const archived = allProjects.filter((p) => p.archived);
 							class="project card center"
 						>
 							<h5>{project.name}</h5>
+							<p>{project.description}</p>
 						</a>
 					))
 				}
@@ -62,7 +64,19 @@ const archived = allProjects.filter((p) => p.archived);
 <style lang="scss">
 	.project {
 		border-color: var(--background-tertiary);
-		text-align: center;
+		text-align: left;
+		flex-shrink: 1;
+		padding: 22px;
+
+		h4 {
+			margin-top: 0px;
+			margin-bottom: 8px;
+		}
+
+		p {
+			margin: 0px;
+			max-width: 400px;
+		}
 
 		&.star {
 			border-color: var(--primary);

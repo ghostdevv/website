@@ -2,5 +2,6 @@
 	"name": "JellyCommands",
 	"url": "https://github.com/ghostdevv/jellycommands",
 	"star": true,
-	"archived": false
+	"archived": false,
+	"description": "A command handler for Discord.js"
 }

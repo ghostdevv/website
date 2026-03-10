@@ -1,5 +1,6 @@
 {
 	"name": "npm.rest",
 	"url": "https://github.com/e18e/npm.rest",
-	"archived": false
+	"archived": false,
+	"description": "An alternative npm registry database & API enriched with additional metadata"
 }

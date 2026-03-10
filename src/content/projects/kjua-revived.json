@@ -1,5 +1,6 @@
 {
 	"name": "kjua-revived",
 	"url": "https://github.com/ghostdevv/kjua-revived",
-	"archived": false
+	"archived": false,
+	"description": "An updated version of the popular kjua QR Code library"
 }

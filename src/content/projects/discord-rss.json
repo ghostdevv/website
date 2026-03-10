@@ -1,5 +1,6 @@
 {
 	"name": "discord-rss",
 	"url": "https://github.com/ghostdevv/discord-rss",
-	"archived": false
+	"archived": false,
+	"description": "A simple script that will check RSS feeds for updates, and if there are any found publish a discord webhook."
 }

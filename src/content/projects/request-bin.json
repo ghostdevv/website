@@ -2,5 +2,6 @@
 	"name": "request-bin",
 	"url": "https://github.com/ghostdevv/request-bin",
 	"star": true,
-	"archived": false
+	"archived": false,
+	"description": "Simple request bin built on Cloudflare Workers"
 }

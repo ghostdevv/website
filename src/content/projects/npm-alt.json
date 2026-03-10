@@ -1,5 +1,6 @@
 {
 	"name": "npm-alt",
 	"url": "https://github.com/ghostdevv/npm-alt",
-	"archived": false
+	"archived": false,
+	"description": "work in progress npm frontend alternative"
 }

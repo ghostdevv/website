@@ -1,5 +1,6 @@
 {
 	"name": "GHOSTSUi",
 	"url": "https://github.com/ghostdevv/ghostsui",
-	"archived": false
+	"archived": false,
+	"description": "My personalised UI library"
 }

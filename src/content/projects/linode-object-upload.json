@@ -1,5 +1,6 @@
 {
 	"name": "linode-object-upload",
 	"url": "https://github.com/ghostdevv/linode-object-upload",
-	"archived": true
+	"archived": true,
+	"description": "A simple cli tool to upload a file to Linode Object Storage"
 }

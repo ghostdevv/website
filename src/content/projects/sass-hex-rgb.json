@@ -1,5 +1,6 @@
 {
 	"name": "sass-hex-rgb",
 	"url": "https://github.com/ghostdevv/sass-hex-rgb",
-	"archived": false
+	"archived": false,
+	"description": "A util for converting hex values to rgb (e.g. #302def -> 48, 45, 239)"
 }

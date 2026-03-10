@@ -2,5 +2,6 @@
 	"name": "Station Quest",
 	"url": "https://github.com/ghostdevv/station-quest",
 	"star": true,
-	"archived": false
+	"archived": false,
+	"description": "An app for exploring and tracking train station visits"
 }
