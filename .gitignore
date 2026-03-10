@@ -4,3 +4,4 @@ pnpm-debug.log*
 .astro
 .wrangler
 .sequoia-state.json
+.env
