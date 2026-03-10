@@ -1,6 +1,7 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { readdir } from 'node:fs/promises';
 import { extname, join } from 'node:path';
+import { parseArgs } from 'node:util';
 import { env } from 'node:process';
 
 const { GITHUB_TOKEN } = env;
@@ -9,6 +10,11 @@ if (!GITHUB_TOKEN) throw new Error('GITHUB_TOKEN is not set');
 const PROJECTS_DIR = join(import.meta.dirname, '../src/content/projects');
 
 const IGNORED_REPOS = ['.github'];
+
+const args = parseArgs({
+	args: process.argv.slice(2),
+	options: { 'update-only': { type: 'boolean', default: false } },
+});
 
 interface Repository {
 	id: number;
@@ -65,10 +71,27 @@ export async function fetchRepositories(): Promise<Repository[]> {
 	return repos;
 }
 
+async function fetchRepo(owner: string, name: string) {
+	const url = new URL('https://api.github.com');
+	url.pathname = `/repos/${owner}/${name}`;
+
+	const res = await fetch(url, {
+		headers: {
+			Authorization: `Bearer ${env.GITHUB_TOKEN}`,
+			Accept: 'application/vnd.github.v3+json',
+			'User-Agent': 'repo-mirror-script',
+		},
+	});
+
+	const repo: Repository = await res.json();
+	return repo;
+}
+
 interface Project {
 	name: string;
 	url: string;
 	archived?: boolean;
+	description: string;
 }
 
 async function getProjects() {
@@ -96,10 +119,26 @@ async function getProjects() {
 const projects = await getProjects();
 const repos = await fetchRepositories();
 
+for (const project of projects.values()) {
+	if (!repos.find((repo) => repo.html_url === project.url)) {
+		const [owner, name] = project.url.split('/').slice(-2);
+
+		if (!owner || !name) {
+			console.error('Invalid project URL:', project.url);
+			continue;
+		}
+
+		const repo = await fetchRepo(owner, name);
+		repos.push(repo);
+	}
+}
+
 for (const repo of repos) {
 	const existing = projects.get(repo.html_url);
 
 	if (!existing) {
+		if (args.values['update-only']) continue;
+
 		const path = join(
 			PROJECTS_DIR,
 			`${repo.name.toLowerCase().replace(/\s/g, '-')}.json`,
@@ -109,6 +148,8 @@ for (const repo of repos) {
 			name: repo.name,
 			url: repo.html_url,
 			archived: repo.archived,
+			// missing description will fail build which makes sure it's added manually
+			description: repo.description!,
 		};
 
 		projects.set(project.url, { ...project, path });
@@ -116,8 +157,16 @@ for (const repo of repos) {
 		continue;
 	}
 
-	if (existing.archived !== repo.archived) {
+	const changed =
+		existing.archived !== repo.archived ||
+		(repo.description && existing.description !== repo.description);
+
+	if (changed) {
 		existing.archived = repo.archived;
+		existing.description = repo.description
+			? repo.description
+			: existing.description;
+
 		const { path, ...project } = existing;
 		await writeFile(path, JSON.stringify(project, null, 2));
 	}
