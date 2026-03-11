@@ -7,12 +7,12 @@
 	"scripts": {
 		"dev": "astro dev",
 		"start": "astro dev",
-		"build": "astro build && tsm scripts/embed.ts",
+		"build": "astro build && node scripts/embed.ts",
 		"preview": "astro preview",
 		"check": "astro check && svelte-check && prettier --check .",
 		"astro": "astro",
 		"format": "prettier --write .",
-		"sync-projects": "node --experimental-strip-types --env-file=.env scripts/projects.ts"
+		"sync-projects": "node --env-file=.env scripts/projects.ts"
 	},
 	"devDependencies": {
 		"@astrojs/check": "^0.9.7",
@@ -48,7 +48,6 @@
 		"svelte-local-storage-store": "^0.6.4",
 		"svelte-mount": "^3.0.2",
 		"svelte-reduced-motion": "^2.0.0",
-		"tsm": "^2.3.0",
 		"typescript": "^5.9.3",
 		"wrangler": "^4.72.0"
 	},
