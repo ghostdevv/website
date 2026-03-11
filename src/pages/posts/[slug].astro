@@ -1,11 +1,10 @@
 ---
 import SettingsModal from '$lib/components/posts/SettingsModal.svelte';
 import { type CollectionEntry, getCollection } from 'astro:content';
-import { faRss, faShare } from '@fortawesome/free-solid-svg-icons';
 import PostTime from '$lib/components/posts/PostTime.svelte';
 import Contents from '$lib/components/posts/Contents.svelte';
+import { faRss } from '@fortawesome/free-solid-svg-icons';
 import Page from '$lib/layouts/Page.astro';
-import { tweetLink } from '$lib/twitter';
 import { render } from 'astro:content';
 import '$lib/layouts/post.scss';
 import Fa from 'svelte-fa';
@@ -64,17 +63,6 @@ const { Content, headings } = await render(post);
 			}
 
 			<div class="footer-buttons">
-				<a
-					href={tweetLink(
-						`Checkout this post by @onlyspaceghost!\n\nhttps://ghostdev.xyz/posts/${post.id}`,
-					)}
-					title="Share on X (Twitter)"
-					class="button icon"
-					target="_blank"
-				>
-					<Fa icon={faShare} />
-				</a>
-
 				<a
 					href="/rss.xml"
 					title="RSS Feed"
