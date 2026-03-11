@@ -6,6 +6,7 @@ import PostTime from '$lib/components/posts/PostTime.svelte';
 import Contents from '$lib/components/posts/Contents.svelte';
 import Page from '$lib/layouts/Page.astro';
 import { tweetLink } from '$lib/twitter';
+import { render } from 'astro:content';
 import '$lib/layouts/post.scss';
 import Fa from 'svelte-fa';
 
@@ -13,13 +14,13 @@ export async function getStaticPaths() {
 	const blogPosts = await getCollection('blog');
 
 	return blogPosts.map((post) => ({
-		params: { slug: post.slug },
+		params: { slug: post.id },
 		props: { post },
 	}));
 }
 
 const post = Astro.props.post as CollectionEntry<'blog'>;
-const { Content, headings } = await post.render();
+const { Content, headings } = await render(post);
 ---
 
 <Page frontmatter={post.data}>
@@ -65,7 +66,7 @@ const { Content, headings } = await post.render();
 			<div class="footer-buttons">
 				<a
 					href={tweetLink(
-						`Checkout this post by @onlyspaceghost!\n\nhttps://ghostdev.xyz/posts/${post.slug}`,
+						`Checkout this post by @onlyspaceghost!\n\nhttps://ghostdev.xyz/posts/${post.id}`,
 					)}
 					title="Share on X (Twitter)"
 					class="button icon"

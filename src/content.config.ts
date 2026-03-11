@@ -1,11 +1,12 @@
-import { defineCollection, z } from 'astro:content';
-import { tags } from '../lib/components/posts/tags';
-import { glob } from 'astro/loaders';
+import { defineCollection } from 'astro:content';
+import { tags } from './lib/components/posts/tags';
 import { basename, join } from 'node:path';
+import { glob } from 'astro/loaders';
+import { z } from 'astro/zod';
 
 export const collections = {
 	blog: defineCollection({
-		type: 'content',
+		loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
 		schema: ({ image }) =>
 			z.object({
 				tag: z.enum(tags),
@@ -20,20 +21,23 @@ export const collections = {
 	}),
 
 	links: defineCollection({
-		type: 'data',
+		loader: glob({ pattern: '**/*.json', base: './src/content/links' }),
 		schema: ({ image }) =>
 			z.object({
 				tag: z.enum(tags),
 				title: z.string().trim().min(1),
 				excerpt: z.string().trim().min(1),
 				image: image(),
-				link: z.string().url().trim().min(1),
+				link: z.url().trim().min(1),
 				postedAt: z.number(),
 			}),
 	}),
 
 	supporters: defineCollection({
-		type: 'data',
+		loader: glob({
+			pattern: '**/*.json',
+			base: './src/content/supporters',
+		}),
 		schema: ({ image }) =>
 			z.object({
 				name: z.string().trim().min(1),
@@ -43,11 +47,11 @@ export const collections = {
 	}),
 
 	projects: defineCollection({
-		type: 'data',
+		loader: glob({ pattern: '**/*.json', base: './src/content/projects' }),
 		schema: () =>
 			z.object({
 				name: z.string().trim().min(1),
-				url: z.string().url().trim().min(1),
+				url: z.url().trim().min(1),
 				description: z.string().trim().min(1),
 				star: z.boolean().optional().default(false),
 				archived: z.boolean(),
@@ -55,7 +59,7 @@ export const collections = {
 	}),
 
 	events: defineCollection({
-		type: 'data',
+		loader: glob({ pattern: '**/*.json', base: './src/content/events' }),
 		schema: ({ image }) =>
 			z.object({
 				name: z.string().trim().min(1),
@@ -69,7 +73,7 @@ export const collections = {
 					z.literal('meetup'),
 					z.literal('stream'),
 				]),
-				url: z.string().url(),
+				url: z.url(),
 				thumbnail: image(),
 				start: z.coerce.date(),
 				end: z.coerce.date(),

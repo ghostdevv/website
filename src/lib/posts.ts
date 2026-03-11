@@ -20,7 +20,7 @@ export async function getPosts() {
 		})),
 
 		...blogPosts.map<Post>((post) => ({
-			slug: post.slug,
+			slug: post.id,
 			type: 'BLOG',
 			...post.data,
 		})),

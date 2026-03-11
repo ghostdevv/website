@@ -108,13 +108,5 @@ export default defineConfig({
 		ssr: {
 			noExternal: ['@fortawesome/*'],
 		},
-
-		css: {
-			preprocessorOptions: {
-				scss: {
-					api: 'modern',
-				},
-			},
-		},
 	},
 });
