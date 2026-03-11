@@ -18,4 +18,4 @@ directory = "./dist"
 enabled = true
 
 [vars]
-NODE_VERSION = "22.16.0"
+NODE_VERSION = "24.14.0"
