@@ -1,7 +1,6 @@
 <script lang="ts">
-	import { faDownload } from '@fortawesome/free-solid-svg-icons';
+	import IconDownload from '~icons/lucide/download';
 	import type { Snippet } from 'svelte';
-	import Fa from 'svelte-fa';
 
 	interface Format {
 		name: string;
@@ -26,7 +25,7 @@
 
 	{#each formats as { name, url }}
 		<a href={url} target="_blank" download>
-			<Fa icon={faDownload} />
+			<IconDownload />
 			{name}
 		</a>
 	{/each}

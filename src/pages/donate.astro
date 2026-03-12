@@ -1,9 +1,8 @@
 ---
-import { faPaypal, faPatreon } from '@fortawesome/free-brands-svg-icons';
 import Donator from '$lib/components/Donator.astro';
-import Page from '$lib/layouts/Page.astro';
+import IconPatreon from '~icons/custom/patreon';
 import { getCollection } from 'astro:content';
-import Fa from 'svelte-fa';
+import Page from '$lib/layouts/Page.astro';
 
 const current = await getCollection('supporters', (s) => s.data.active);
 const past = await getCollection('supporters', (s) => !s.data.active);
@@ -29,17 +28,7 @@ const past = await getCollection('supporters', (s) => !s.data.active);
 				target="_blank"
 				class="button icon muted"
 			>
-				<Fa icon={faPatreon} />
-			</a>
-
-			<a
-				title="PayPal"
-				aria-label="PayPal"
-				href="https://paypal.me/onlyspaceghost"
-				target="_blank"
-				class="button icon muted"
-			>
-				<Fa icon={faPaypal} />
+				<IconPatreon />
 			</a>
 		</div>
 	</section>

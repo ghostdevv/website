@@ -1,12 +1,14 @@
 // @ts-check
 import { pluginCollapsibleSections } from '@expressive-code/plugin-collapsible-sections';
 import { serendipity } from './src/lib/shiki/serendipity-shiki';
+import { FileSystemIconLoader } from 'unplugin-icons/loaders';
 import { rehypeGithubAlerts } from 'rehype-github-alerts';
 import expressiveCode from 'astro-expressive-code';
 import cloudflare from '@astrojs/cloudflare';
 import { defineConfig } from 'astro/config';
 import { readFile } from 'node:fs/promises';
 import rehypeWrap from 'rehype-wrap-all';
+import icons from 'unplugin-icons/vite';
 import sitemap from '@astrojs/sitemap';
 import svelte from '@astrojs/svelte';
 import { join } from 'node:path';
@@ -105,8 +107,15 @@ export default defineConfig({
 	},
 
 	vite: {
-		ssr: {
-			noExternal: ['@fortawesome/*'],
-		},
+		plugins: [
+			icons({
+				compiler: 'svelte',
+				defaultStyle:
+					'vertical-align: -.125em; transform-origin: center;',
+				customCollections: {
+					custom: FileSystemIconLoader('./src/lib/icons'),
+				},
+			}),
+		],
 	},
 });

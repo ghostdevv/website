@@ -1,14 +1,11 @@
 ---
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import IconMastodon from '~icons/custom/mastodon';
+import IconBluesky from '~icons/custom/bluesky';
+import IconDiscord from '~icons/custom/discord';
+import IconGitHub from '~icons/lucide/github';
+import IconX from '~icons/custom/twitter-x';
 import Page from '$lib/layouts/Page.astro';
-import Fa from 'svelte-fa';
-import {
-	faDiscord,
-	faXTwitter,
-	faBluesky,
-	faMastodon,
-	faGithub,
-} from '@fortawesome/free-brands-svg-icons';
+import IconMail from '~icons/lucide/mail';
 ---
 
 <Page>
@@ -16,7 +13,7 @@ import {
 		<h1>Contact</h1>
 
 		<p class="row">
-			<Fa icon={faDiscord} />
+			<IconDiscord />
 			<a
 				target="_blank"
 				href="https://discord.com/users/282839711834177537"
@@ -26,7 +23,7 @@ import {
 		</p>
 
 		<p class="row">
-			<Fa icon={faEnvelope} />
+			<IconMail />
 			<a target="_blank" href="mailto:ghostdevbusiness@gmail.com">
 				ghostdevbusiness@gmail.com
 			</a>
@@ -37,26 +34,26 @@ import {
 		<h1>Links</h1>
 
 		<p class="row">
-			<Fa icon={faBluesky} />
+			<IconBluesky />
 			<a target="_blank" href="https://bsky.app/profile/willow.sh">
 				@willow.sh
 			</a>
 		</p>
 
 		<p class="row">
-			<Fa icon={faGithub} />
+			<IconGitHub />
 			<a target="_blank" href="https://github.com/ghostdevv">ghostdevv</a>
 		</p>
 
 		<p class="row">
-			<Fa icon={faMastodon} />
+			<IconMastodon />
 			<a target="_blank" href="https://fosstodon.org/@onlyspaceghost">
 				@onlyspaceghost@fosstodon.org
 			</a>
 		</p>
 
 		<p class="row">
-			<Fa icon={faXTwitter} />
+			<IconX />
 			<a target="_blank" href="https://x.com/onlyspaceghost">
 				@onlyspaceghost
 			</a>

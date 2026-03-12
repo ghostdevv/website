@@ -2,13 +2,12 @@
 import ColourGroup from '$lib/components/branding/ColourGroup.astro';
 import inlineFavicon from '$lib/components/branding/inlineFavicon';
 import CopyableInput from '$lib/components/CopyableInput.svelte';
-import { faDownload } from '@fortawesome/free-solid-svg-icons';
 import LogoRainbow from '$lib/components/LogoRainbow.svelte';
 import Logo from '$lib/components/branding/Logo.svelte';
 import RegularLogo from '$lib/components/Logo.svelte';
+import IconDownload from '~icons/lucide/download';
 import Page from '$lib/layouts/Page.astro';
 import { colours } from '$lib/colours';
-import Fa from 'svelte-fa';
 
 function getLogos(type: 'main' | 'rainbow') {
 	// prettier-ignore
@@ -57,7 +56,7 @@ function getLogos(type: 'main' | 'rainbow') {
 		<hr />
 
 		<a href="/favicon.png" target="_blank" download>
-			<Fa icon={faDownload} /> favicon.png
+			<IconDownload /> favicon.png
 		</a>
 
 		<h3 style="margin-top: 12px;">Inline Code</h3>

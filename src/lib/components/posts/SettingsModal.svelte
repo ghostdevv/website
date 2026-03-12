@@ -1,8 +1,7 @@
 <script lang="ts">
 	import { Modal, type ActivatorSnippet } from '@ghostsui/svelte/modal';
-	import { faCog } from '@fortawesome/free-solid-svg-icons';
+	import IconSettings from '~icons/lucide/settings';
 	import { fontSize, lineHeight } from './settings';
-	import Fa from 'svelte-fa';
 
 	interface Props {
 		activator?: ActivatorSnippet;
@@ -39,7 +38,7 @@
 				aria-label="Post Settings"
 				title="Post Settings"
 			>
-				<Fa icon={faCog} />
+				<IconSettings />
 			</button>
 		{/if}
 	{/snippet}

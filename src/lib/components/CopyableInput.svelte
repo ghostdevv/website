@@ -1,7 +1,6 @@
 <script lang="ts">
-	import { faCopy } from '@fortawesome/free-solid-svg-icons';
+	import IconCopy from '~icons/lucide/copy';
 	import { copy } from 'svelte-copy';
-	import Fa from 'svelte-fa';
 
 	interface Props {
 		value: string;
@@ -13,7 +12,7 @@
 
 <div class="copyable">
 	<button use:copy={value} class="icon">
-		<Fa icon={faCopy} />
+		<IconCopy />
 	</button>
 
 	<input class="input" type="text" {disabled} bind:value />

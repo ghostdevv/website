@@ -1,9 +1,9 @@
 ---
-import { faGithub, faBluesky } from '@fortawesome/free-brands-svg-icons';
 import Posts from '$lib/components/posts/Posts.astro';
+import IconBluesky from '~icons/custom/bluesky';
+import IconGitHub from '~icons/lucide/github';
 import Page from '$lib/layouts/Page.astro';
 import { HALLOWEEN } from '$lib/vars';
-import Fa from 'svelte-fa';
 ---
 
 <Page>
@@ -22,7 +22,7 @@ import Fa from 'svelte-fa';
 				target="_blank"
 				class="button icon muted"
 			>
-				<Fa size="sm" icon={faBluesky} /> BlueSky</a
+				<IconBluesky /> BlueSky</a
 			>, or poke around my
 			<a
 				title="GitHub"
@@ -31,7 +31,7 @@ import Fa from 'svelte-fa';
 				target="_blank"
 				class="button icon muted"
 			>
-				<Fa size="sm" icon={faGithub} /> GitHub
+				<IconGitHub /> GitHub
 			</a>.
 		</p>
 	</section>

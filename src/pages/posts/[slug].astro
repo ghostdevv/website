@@ -3,11 +3,10 @@ import SettingsModal from '$lib/components/posts/SettingsModal.svelte';
 import { type CollectionEntry, getCollection } from 'astro:content';
 import PostTime from '$lib/components/posts/PostTime.svelte';
 import Contents from '$lib/components/posts/Contents.svelte';
-import { faRss } from '@fortawesome/free-solid-svg-icons';
 import Page from '$lib/layouts/Page.astro';
+import IconRSS from '~icons/lucide/rss';
 import { render } from 'astro:content';
 import '$lib/layouts/post.scss';
-import Fa from 'svelte-fa';
 
 export async function getStaticPaths() {
 	const blogPosts = await getCollection('blog');
@@ -47,7 +46,7 @@ const { Content, headings } = await render(post);
 					<SettingsModal client:load />
 
 					<a href="/rss.xml" target="_blank" class="button icon">
-						<Fa icon={faRss} />
+						<IconRSS />
 					</a>
 				</div>
 			</aside>
@@ -69,7 +68,7 @@ const { Content, headings } = await render(post);
 					target="_blank"
 					class="button icon"
 				>
-					<Fa icon={faRss} />
+					<IconRSS />
 				</a>
 
 				<SettingsModal client:load />
