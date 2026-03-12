@@ -2,5 +2,5 @@
 	"name": "npm.rest",
 	"description": "An alternative npm registry database & API enriched with additional metadata",
 	"url": "https://github.com/e18e/npm.rest",
-	"category": "wip"
+	"category": "featured"
 }
