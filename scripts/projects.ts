@@ -1,8 +1,11 @@
 import { readFile, writeFile } from 'node:fs/promises';
+import type { CollectionEntry } from 'astro:content';
 import { readdir } from 'node:fs/promises';
 import { extname, join } from 'node:path';
 import { parseArgs } from 'node:util';
 import { env } from 'node:process';
+
+type Project = CollectionEntry<'projects'>['data'];
 
 const { GITHUB_TOKEN } = env;
 if (!GITHUB_TOKEN) throw new Error('GITHUB_TOKEN is not set');
@@ -87,13 +90,6 @@ async function fetchRepo(owner: string, name: string) {
 	return repo;
 }
 
-interface Project {
-	name: string;
-	url: string;
-	archived?: boolean;
-	description: string;
-}
-
 async function getProjects() {
 	const projects = new Map<string, Project & { path: string }>();
 
@@ -108,7 +104,10 @@ async function getProjects() {
 		}
 
 		projects.set(project.url, {
-			...project,
+			name: project.name,
+			description: project.description,
+			url: project.url,
+			category: project.category || 'misc',
 			path,
 		});
 	}
@@ -147,9 +146,9 @@ for (const repo of repos) {
 		const project: Project = {
 			name: repo.name,
 			url: repo.html_url,
-			archived: repo.archived,
 			// missing description will fail build which makes sure it's added manually
 			description: repo.description!,
+			category: repo.archived ? 'archived' : 'misc',
 		};
 
 		projects.set(project.url, { ...project, path });
@@ -157,16 +156,24 @@ for (const repo of repos) {
 		continue;
 	}
 
-	const changed =
-		existing.archived !== repo.archived ||
-		(repo.description && existing.description !== repo.description);
+	let changed = false;
+
+	if (repo.archived && existing.category !== 'archived') {
+		existing.category = 'archived';
+		changed = true;
+	}
+
+	if (!repo.archived && existing.category === 'archived') {
+		existing.category = 'misc';
+		changed = true;
+	}
+
+	if (repo.description && existing.description !== repo.description) {
+		existing.description = repo.description;
+		changed = true;
+	}
 
 	if (changed) {
-		existing.archived = repo.archived;
-		existing.description = repo.description
-			? repo.description
-			: existing.description;
-
 		const { path, ...project } = existing;
 		await writeFile(path, JSON.stringify(project, null, 2));
 	}

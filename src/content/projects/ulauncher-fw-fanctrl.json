@@ -1,6 +1,6 @@
 {
 	"name": "ULauncher Framework Fan Control",
+	"description": "A ulauncher extension that wraps fw-fanctrl",
 	"url": "https://github.com/ghostdevv/ulauncher-fw-fanctrl",
-	"archived": false,
-	"description": "A ulauncher extension that wraps fw-fanctrl"
+	"category": "extension"
 }

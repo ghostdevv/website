@@ -1,6 +1,6 @@
 {
 	"name": "BackBlaze CLI",
+	"description": "A simple backblaze cli",
 	"url": "https://github.com/ghostdevv/backblaze-cli",
-	"archived": true,
-	"description": "A simple backblaze cli"
+	"category": "archived"
 }

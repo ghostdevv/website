@@ -1,6 +1,6 @@
 {
 	"name": "Wordle Solver",
-	"url": "https://github.com/ghostdevv/gwordle",
 	"description": "A wordle solver written in Rust for the funsies",
-	"archived": true
+	"url": "https://github.com/ghostdevv/gwordle",
+	"category": "archived"
 }

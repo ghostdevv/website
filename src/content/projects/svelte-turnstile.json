@@ -1,7 +1,6 @@
 {
 	"name": "Svelte Turnstile",
+	"description": "A lightweight Svelte component for Cloudflare Turnstile",
 	"url": "https://github.com/ghostdevv/svelte-turnstile",
-	"star": true,
-	"archived": false,
-	"description": "A lightweight Svelte component for Cloudflare Turnstile"
+	"category": "library"
 }

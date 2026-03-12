@@ -1,6 +1,6 @@
 {
 	"name": "stql",
+	"description": "A Simple Tag Query Language for building user friendly enhanced search boxes",
 	"url": "https://github.com/ghostdevv/stql",
-	"archived": false,
-	"description": "A Simple Tag Query Language for building user friendly enhanced search boxes"
+	"category": "library"
 }

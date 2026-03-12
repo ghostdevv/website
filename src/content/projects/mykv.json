@@ -1,6 +1,6 @@
 {
 	"name": "MyKV",
+	"description": "MyKV is a SQL Key - Value wrapper with some extra features.",
 	"url": "https://github.com/ghostdevv/MyKV",
-	"archived": true,
-	"description": "MyKV is a SQL Key - Value wrapper with some extra features."
+	"category": "archived"
 }

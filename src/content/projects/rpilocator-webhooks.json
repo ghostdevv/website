@@ -1,6 +1,6 @@
 {
 	"name": "rpilocator webhooks",
+	"description": "Cloudflare Worker that sends a webhook whenever a new raspberry pi is found by rpilocator",
 	"url": "https://github.com/ghostdevv/rpilocator-webhooks",
-	"archived": false,
-	"description": "Cloudflare Worker that sends a webhook whenever a new raspberry pi is found by rpilocator"
+	"category": "worker"
 }

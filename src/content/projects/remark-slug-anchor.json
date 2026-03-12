@@ -1,6 +1,6 @@
 {
 	"name": "remark-slug-anchor",
+	"description": "Package to work with remark-slug to generate clickable anchor icons",
 	"url": "https://github.com/ghostdevv/remark-slug-anchor",
-	"archived": false,
-	"description": "Package to work with remark-slug to generate clickable anchor icons"
+	"category": "library"
 }

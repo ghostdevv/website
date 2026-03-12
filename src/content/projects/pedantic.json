@@ -1,6 +1,6 @@
 {
 	"name": "@rlly/pedantic",
+	"description": "A collection of really pedantic oxlint rules",
 	"url": "https://github.com/ghostdevv/pedantic",
-	"archived": false,
-	"description": "A collection of really pedantic oxlint rules"
+	"category": "library"
 }

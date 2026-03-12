@@ -1,6 +1,6 @@
 {
 	"name": "Tasks",
-	"url": "https://github.com/ghostdevv/tasks",
 	"description": "Simple tasks manager",
-	"archived": true
+	"url": "https://github.com/ghostdevv/tasks",
+	"category": "archived"
 }

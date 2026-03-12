@@ -1,6 +1,6 @@
 {
 	"name": "Svelte Copy",
+	"description": "A svelte action to copy text on click!",
 	"url": "https://github.com/ghostdevv/svelte-copy",
-	"archived": false,
-	"description": "A svelte action to copy text on click!"
+	"category": "library"
 }

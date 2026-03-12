@@ -1,6 +1,6 @@
 {
 	"name": "Spongebob Imagine Generator",
+	"description": "Dynamically generate and cache spongebob imagine gifs on the edge (blazingly fast ⚡️)",
 	"url": "https://github.com/ghostdevv/imagine",
-	"archived": false,
-	"description": "Dynamically generate and cache spongebob imagine gifs on the edge (blazingly fast ⚡️)"
+	"category": "worker"
 }

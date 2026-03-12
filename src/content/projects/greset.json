@@ -1,6 +1,6 @@
 {
 	"name": "greset",
+	"description": "A opinionated css reset based on the most popular resets to date",
 	"url": "https://github.com/ghostdevv/greset",
-	"archived": false,
-	"description": "A opinionated css reset based on the most popular resets to date"
+	"category": "misc"
 }

@@ -1,6 +1,6 @@
 {
 	"name": "cloudflare-pages-cleanup",
+	"description": "Script to cleanup old Cloudflare Pages deployments",
 	"url": "https://github.com/ghostdevv/cloudflare-pages-cleanup",
-	"archived": false,
-	"description": "Script to cleanup old Cloudflare Pages deployments"
+	"category": "misc"
 }

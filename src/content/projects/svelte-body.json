@@ -1,6 +1,6 @@
 {
 	"name": "Svelte Body",
+	"description": "Apply styles to the body in routes! Designed to work with Svelte Kit and Routify",
 	"url": "https://github.com/ghostdevv/svelte-body",
-	"archived": false,
-	"description": "Apply styles to the body in routes! Designed to work with Svelte Kit and Routify"
+	"category": "library"
 }

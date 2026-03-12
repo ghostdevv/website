@@ -1,6 +1,6 @@
 {
 	"name": "Coin Flip",
+	"description": "Cloudflare worker that uses random.org to flip a coin",
 	"url": "https://github.com/ghostdevv/coin-flip",
-	"archived": false,
-	"description": "Cloudflare worker that uses random.org to flip a coin"
+	"category": "worker"
 }

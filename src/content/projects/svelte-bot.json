@@ -1,6 +1,6 @@
 {
 	"name": "Svelte Discord Bot",
+	"description": "The official Svelte Discord Bot",
 	"url": "https://github.com/sveltejs/discord-bot",
-	"archived": false,
-	"description": "The official Svelte Discord Bot"
+	"category": "library"
 }

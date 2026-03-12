@@ -1,6 +1,6 @@
 {
 	"name": "Train Tools",
+	"description": "A collection of tools for train nerdery in the UK",
 	"url": "https://github.com/ghostdevv/trains",
-	"archived": false,
-	"description": "A collection of tools for train nerdery in the UK"
+	"category": "misc"
 }

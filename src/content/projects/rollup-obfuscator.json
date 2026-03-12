@@ -1,6 +1,6 @@
 {
 	"name": "rollup-obfuscator",
+	"description": "A plugin to obfuscate javascript for rollup based on https://www.npmjs.com/javascript-obfuscator",
 	"url": "https://github.com/ghostdevv/rollup-obfuscator",
-	"archived": false,
-	"description": "A plugin to obfuscate javascript for rollup based on https://www.npmjs.com/javascript-obfuscator"
+	"category": "library"
 }

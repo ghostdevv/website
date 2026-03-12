@@ -1,6 +1,6 @@
 {
 	"name": "wtv",
+	"description": "Experimental TV UI for launching apps",
 	"url": "https://github.com/ghostdevv/wtv",
-	"archived": false,
-	"description": "Experimental TV UI for launching apps"
+	"category": "wip"
 }

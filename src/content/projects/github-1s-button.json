@@ -1,6 +1,6 @@
 {
 	"name": "Github 1s Button",
+	"description": "This is a simple extension that makes it easy to jump back and forth between github1s and github.",
 	"url": "https://github.com/ghostdevv/github1s-button",
-	"archived": false,
-	"description": "This is a simple extension that makes it easy to jump back and forth between github1s and github."
+	"category": "extension"
 }

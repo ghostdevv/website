@@ -1,6 +1,6 @@
 {
-	"name": "Sourcebin JavaScript SDK",
+	"name": "Sourcebin.js",
+	"description": "Fast and simple package to get and create bins from https://sourceb.in/",
 	"url": "https://github.com/ghostdevv/sourcebin",
-	"archived": false,
-	"description": "Fast and simple package to get and create bins from https://sourceb.in/"
+	"category": "library"
 }

@@ -1,6 +1,6 @@
 {
 	"name": "DashArgs",
+	"description": "Simple package for parsing command line style arguments",
 	"url": "https://github.com/ghostdevv/dashargs",
-	"archived": true,
-	"description": "Simple package for parsing command line style arguments"
+	"category": "archived"
 }

@@ -1,6 +1,6 @@
 {
 	"name": "Zed Svelte MCP",
+	"description": "Zed extension to automatically setup the official Svelte MCP server",
 	"url": "https://github.com/ghostdevv/zed-svelte-mcp",
-	"archived": false,
-	"description": "Zed extension to automatically setup the official Svelte MCP server"
+	"category": "misc"
 }

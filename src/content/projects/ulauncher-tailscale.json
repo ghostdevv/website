@@ -1,6 +1,6 @@
 {
 	"name": "ULauncher Tailscale",
+	"description": "A ULauncher extension that lightly wraps Tailscale to expose node IPs and turning Tailscale on/off",
 	"url": "https://github.com/ghostdevv/ulauncher-tailscale",
-	"archived": false,
-	"description": "A ULauncher extension that lightly wraps Tailscale to expose node IPs and turning Tailscale on/off"
+	"category": "extension"
 }

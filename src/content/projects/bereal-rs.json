@@ -1,6 +1,6 @@
 {
 	"name": "bereal-rs",
+	"description": "A library that wraps the bereal.devin.fun API for getting bereal moment data",
 	"url": "https://github.com/ghostdevv/bereal-rs",
-	"archived": false,
-	"description": "A library that wraps the bereal.devin.fun API for getting bereal moment data"
+	"category": "wip"
 }

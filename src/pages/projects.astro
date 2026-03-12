@@ -1,15 +1,17 @@
 ---
-import Projects from '$lib/components/projects/Projects.svelte';
+import Project from '$lib/components/projects/Project.svelte';
 import { getCollection } from 'astro:content';
 import Page from '$lib/layouts/Page.astro';
-import shuffle from 'just-shuffle';
 
-const allProjects = await getCollection('projects').then((data) =>
-	shuffle(data.map((p) => p.data)),
+const collection = await getCollection('projects');
+
+const groups = Object.groupBy(
+	collection.map((p) => p.data),
+	(project) => project.category,
 );
 
-const active = allProjects.filter((p) => !p.archived);
-const archived = allProjects.filter((p) => p.archived);
+const { featured, misc, tooling, wip, archived, extension, library, worker } =
+	groups;
 ---
 
 <Page>
@@ -17,23 +19,16 @@ const archived = allProjects.filter((p) => p.archived);
 		<h1>Projects</h1>
 
 		<p>
-			This list contains all of my projects, and isn't sorted very
-			meaningfully yet. At the very least I've highlighted my current
-			favourites in blue!
+			This is a list of all the projects I'm creating and/or maintaining.
 		</p>
 	</section>
 
-	<section class="row wrap center g16">
-		<Projects projects={active} />
-	</section>
-
-	<section>
-		<details>
-			<summary>Archived</summary>
-
-			<section class="row wrap center g16">
-				<Projects projects={archived} />
-			</section>
-		</details>
-	</section>
+	{featured && <Project category="featured" projects={featured} />}
+	{library && <Project category="library" projects={library} />}
+	{tooling && <Project category="tooling" projects={tooling} />}
+	{extension && <Project category="extension" projects={extension} />}
+	{worker && <Project category="worker" projects={worker} />}
+	{wip && <Project category="wip" projects={wip} />}
+	{misc && <Project category="misc" projects={misc} />}
+	{archived && <Project category="archived" projects={archived} />}
 </Page>

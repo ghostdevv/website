@@ -1,6 +1,6 @@
 {
 	"name": "ulauncher-toggle-gnome-shell-extension",
+	"description": "A GNOME extension to toggle the ULauncher service on/off from the quick settings menu",
 	"url": "https://github.com/ghostdevv/ulauncher-toggle-gnome-shell-extension",
-	"archived": false,
-	"description": "A GNOME extension to toggle the ULauncher service on/off from the quick settings menu"
+	"category": "extension"
 }

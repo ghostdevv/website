@@ -53,8 +53,16 @@ export const collections = {
 				name: z.string().trim().min(1),
 				url: z.url().trim().min(1),
 				description: z.string().trim().min(1),
-				star: z.boolean().optional().default(false),
-				archived: z.boolean(),
+				category: z.union([
+					z.literal('featured'),
+					z.literal('library'),
+					z.literal('worker'),
+					z.literal('extension'),
+					z.literal('tooling'),
+					z.literal('misc'),
+					z.literal('wip'),
+					z.literal('archived'),
+				]),
 			}),
 	}),
 

@@ -1,6 +1,6 @@
 {
 	"name": "ULauncher Deno Scripts",
+	"description": "Work in progress Deno script runner for ulauncher",
 	"url": "https://github.com/ghostdevv/ulauncher-deno-scripts",
-	"archived": false,
-	"description": "Work in progress Deno script runner for ulauncher"
+	"category": "extension"
 }

@@ -1,7 +1,6 @@
 {
 	"name": "Station Quest",
+	"description": "An app for exploring and tracking train station visits",
 	"url": "https://github.com/ghostdevv/station-quest",
-	"star": true,
-	"archived": false,
-	"description": "An app for exploring and tracking train station visits"
+	"category": "misc"
 }

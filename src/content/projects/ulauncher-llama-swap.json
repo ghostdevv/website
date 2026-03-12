@@ -1,6 +1,6 @@
 {
 	"name": "ulauncher-llama-swap",
+	"description": "Start/stop your Llama Swap models with ulauncher",
 	"url": "https://github.com/ghostdevv/ulauncher-llama-swap",
-	"archived": false,
-	"description": "Start/stop your Llama Swap models with ulauncher"
+	"category": "extension"
 }

@@ -1,6 +1,6 @@
 {
 	"name": "linode-bucket-delete",
+	"description": "A cli tool to help you upload to delete a linode object storage bucket",
 	"url": "https://github.com/ghostdevv/linode-bucket-delete",
-	"archived": true,
-	"description": "A cli tool to help you upload to delete a linode object storage bucket"
+	"category": "archived"
 }

@@ -1,6 +1,6 @@
 {
 	"name": "Svelte Reduced Motion",
+	"description": "A collection of utilities for working with reduced motion in svelte!",
 	"url": "https://github.com/ghostdevv/svelte-reduced-motion",
-	"archived": false,
-	"description": "A collection of utilities for working with reduced motion in svelte!"
+	"category": "library"
 }

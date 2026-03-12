@@ -1,6 +1,6 @@
 {
 	"name": "ip/cc microservice",
+	"description": "A Cloudflare Worker that returns your IP address and/or IP country code.",
 	"url": "https://github.com/ghostdevv/ip-worker",
-	"archived": false,
-	"description": "A Cloudflare Worker that returns your IP address and/or IP country code."
+	"category": "worker"
 }
