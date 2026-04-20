@@ -12,12 +12,12 @@ interface Frontmatter {
 const frontmatter: Frontmatter = Astro.props.frontmatter || {};
 
 const title = frontmatter.title
-	? `${frontmatter.title} - GHOST`
-	: 'GHOST - Developer';
+	? `${frontmatter.title} - Willow (GHOST)`
+	: 'Willow (GHOST) - Developer';
 
 const description =
 	frontmatter.excerpt ||
-	'Hi I am GHOST! Welcome to my site, here you can look at my posts, find out more about what I do, follow me on socials, and donate!';
+	'Hey, I am Willow (GHOST)! Welcome to my website, mostly junk propped up with a healthy amount of open source work and events :p';
 
 const image_path = frontmatter.image ? frontmatter.image.src : '/banner.png';
 
