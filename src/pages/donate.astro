@@ -1,125 +1,96 @@
 ---
-import Donator from '$lib/components/Donator.astro';
 import IconPatreon from '~icons/custom/patreon';
 import IconGitHub from '~icons/lucide/github';
-import { getCollection } from 'astro:content';
 import Page from '$lib/layouts/Page.astro';
-
-const current = await getCollection('supporters', (s) => s.data.active);
-const past = await getCollection('supporters', (s) => !s.data.active);
 ---
 
 <Page>
-	<section class="header">
-		<h1>Sponsors 💙</h1>
+	<h1>Sponsors 💙</h1>
 
-		<p>
-			Hey, I'm Willow (also sometimes known as GHOST) and I'm working on
-			Open Source projects and community events. Your support helps me
-			fund this work, and the events. 💙
-		</p>
+	<p>
+		Hey, I'm Willow (also sometimes known as GHOST) and I'm working on Open
+		Source projects and community events. Your support helps me fund this
+		work, and the events. 💙
+	</p>
 
-		<p>
-			I'm part of the npmx core team, working to build a better frontend
-			and all around npm experience. We have a massive community of people
-			who love npm and want to make it better. I help work on the project
-			direction, with a focus on code review and the underlying npm data
-			itself.
-		</p>
+	<p>
+		I'm part of the npmx core team, working to build a better frontend and
+		all around npm experience. We have a massive community of people who
+		love npm and want to make it better. I help work on the project
+		direction, with a focus on code review and the underlying npm data
+		itself.
+	</p>
 
-		<p>
-			I work on e18e, helping with the upcoming data project as well as
-			the module replacements. e18e is a community group focusing on
-			improving the performance of the javascript ecosystem at large.
-			Opening PRs to popular packages and projects to help improve
-			performance, and remove unnecessary dependencies as well as giving
-			people the tools to be more mindful about the code they're
-			consuming.
-		</p>
+	<p>
+		I work on e18e, helping with the upcoming data project as well as the
+		module replacements. e18e is a community group focusing on improving the
+		performance of the javascript ecosystem at large. Opening PRs to popular
+		packages and projects to help improve performance, and remove
+		unnecessary dependencies as well as giving people the tools to be more
+		mindful about the code they're consuming.
+	</p>
 
-		<p>
-			I help organise the Svelte community, being an ambassador as well as
-			moderator of the Discord and maintainer of the Discord bot. I help
-			organise Svelte London, which is the most active in person Svelte
-			meetup, happening nearly every month. I also attend multiple other
-			meetups in London, as well as multiple conferences, helping grow the
-			communities and share the projects we're working on.
-		</p>
+	<p>
+		I help organise the Svelte community, being an ambassador as well as
+		moderator of the Discord and maintainer of the Discord bot. I help
+		organise Svelte London, which is the most active in person Svelte
+		meetup, happening nearly every month. I also attend multiple other
+		meetups in London, as well as multiple conferences, helping grow the
+		communities and share the projects we're working on.
+	</p>
 
-		<p>
-			Your sponsorship will help me devote as much time to working on
-			code, with communities, and paying for travel to and for organising
-			community events. However, that being said you don't have to sponsor
-			me directly. You can sponsor collectives such as the
-			<a href="https://opencollective.com/antfu">Anthony Fu Fund</a>. You
-			can also give your time to contribute to projects (code or
-			otherwise), help organise, attend events. Everything we do together
-			helps support and grow this thing we love 💙
-		</p>
+	<p>
+		Your sponsorship will help me devote as much time to working on code,
+		with communities, and paying for travel to and for organising community
+		events. However, that being said you don't have to sponsor me directly.
+		You can sponsor collectives such as the
+		<a href="https://opencollective.com/antfu">Anthony Fu Fund</a>. You can
+		also give your time to contribute to projects (code or otherwise), help
+		organise, attend events. Everything we do together helps support and
+		grow this thing we love 💙
+	</p>
 
-		<a
-			title="GitHub Sponsors"
-			aria-label="GitHub Sponsors"
-			href="https://github.com/sponsors/ghostdevv"
-			target="_blank"
-			class="button icon"
-		>
-			<IconGitHub /> GitHub Sponsors
-		</a>
+	<a
+		title="GitHub Sponsors"
+		aria-label="GitHub Sponsors"
+		href="https://github.com/sponsors/ghostdevv"
+		target="_blank"
+		class="button icon"
+	>
+		<IconGitHub /> GitHub Sponsors
+	</a>
 
-		<a
-			title="Patreon"
-			aria-label="Patreon"
-			href="https://www.patreon.com/onlyspaceghost"
-			target="_blank"
-			class="button icon"
-		>
-			<IconPatreon /> Patreon
-		</a>
+	<a
+		title="Patreon"
+		aria-label="Patreon"
+		href="https://www.patreon.com/onlyspaceghost"
+		target="_blank"
+		class="button icon"
+	>
+		<IconPatreon /> Patreon
+	</a>
 
-		<hr />
-
-		<section class="column g16">
-			<h3 style="font-size: calc(1.275rem + .3vw);">
-				Current Supporters
-			</h3>
-
-			<div class="row wrap">
-				{
-					current
-						.sort((a, b) => a.data.name.localeCompare(b.data.name))
-						.map((p) => (
-							<Donator name={p.data.name} src={p.data.pfp} />
-						))
-				}
-			</div>
-
-			<h3 style="font-size: calc(1.275rem + .3vw);">Past Supporters</h3>
-
-			<div class="row wrap">
-				{
-					past
-
-						.sort((a, b) => a.data.name.localeCompare(b.data.name))
-						.map((p) => (
-							<Donator name={p.data.name} src={p.data.pfp} slim />
-						))
-				}
-			</div>
-		</section>
-	</section>
-
-	<style>
-		.header {
-			h1 {
-				margin-bottom: 22px;
-			}
-
-			p {
-				max-width: 800px;
-				font-size: 17px;
-				margin: 14px 0px;
-			}
-		}
-	</style>
+	<object
+		type="image/svg+xml"
+		data="https://cdn.jsdelivr.net/gh/ghostdevv/ghostdevv/sponsors.svg"
+	></object>
 </Page>
+
+<style>
+	h1 {
+		margin-bottom: 22px;
+	}
+
+	p {
+		max-width: 800px;
+		font-size: 17px;
+		margin: 14px 0px;
+	}
+
+	object {
+		display: block;
+		margin-top: 12px;
+		border: 2px solid var(--background-tertiary);
+		border-radius: 12px;
+	}
+</style>

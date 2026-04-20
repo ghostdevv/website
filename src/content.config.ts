@@ -33,19 +33,6 @@ export const collections = {
 			}),
 	}),
 
-	supporters: defineCollection({
-		loader: glob({
-			pattern: '**/*.json',
-			base: './src/content/supporters',
-		}),
-		schema: ({ image }) =>
-			z.object({
-				name: z.string().trim().min(1),
-				active: z.boolean().optional().default(false),
-				pfp: image(),
-			}),
-	}),
-
 	projects: defineCollection({
 		loader: glob({ pattern: '**/*.json', base: './src/content/projects' }),
 		schema: () =>
