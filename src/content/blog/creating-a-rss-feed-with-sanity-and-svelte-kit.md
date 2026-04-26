@@ -5,6 +5,7 @@ excerpt: Read this post to learn how to leverage Svelte Kit endpoints, along wit
 image: $assets/posts/rss-sanity-sveltekit.webp
 postedAt: 1643897820000
 atUri: 'at://did:plc:dfkjiu36xs6ogt7pux7i7o2b/site.standard.document/3mgeb32gulv22'
+archived: true
 ---
 
 > This post has been updated for SvelteKit 1.0 and Sanity js 6

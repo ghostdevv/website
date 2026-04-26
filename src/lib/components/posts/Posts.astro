@@ -5,9 +5,14 @@ import PostCard from './PostCard.astro';
 
 interface Props {
 	filter?: Tag;
+	hideArchived?: boolean;
 }
 
 let posts = await getPosts();
+
+if (Astro.props.hideArchived) {
+	posts = posts.filter((post) => !post.archived);
+}
 
 if (tags.includes(Astro.props.filter!)) {
 	posts = posts.filter((post) => post.tag == Astro.props.filter);

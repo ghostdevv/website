@@ -21,13 +21,16 @@ const img = await getImage({ src: post.image, width: 800, format: 'webp' });
 	href={href}
 	target={target}
 	class="postcard"
-	class:list={{ embedded }}
+	class:list={{ embedded, archived: post.archived }}
 	title={post.title}
 >
 	<div class="image" style={`background-image: url(${img.src});`}></div>
 
 	<div class="details">
-		<Tag name={post.tag} />
+		<div class="row">
+			<Tag name={post.tag} />
+			{post.archived && <Tag name="archived" />}
+		</div>
 
 		<h2 class="title">{post.title}</h2>
 
@@ -92,6 +95,8 @@ const img = await getImage({ src: post.image, width: 800, format: 'webp' });
 				-2px 1px 10px #000a inset,
 				-2px 3px 20px #0006 inset,
 				-7px 3px 3px #fff6 inset;
+
+			transition: filter 0.3s ease;
 		}
 
 		.details {
@@ -107,6 +112,13 @@ const img = await getImage({ src: post.image, width: 800, format: 'webp' });
 			.description {
 				color: rgba(var(--text-rgb), 0.5);
 			}
+
+			.row {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				gap: 8px;
+			}
 		}
 
 		&.embedded {
@@ -117,6 +129,16 @@ const img = await getImage({ src: post.image, width: 800, format: 'webp' });
 					-2px 1px 10px #1d1d1daa inset,
 					-2px 3px 20px #1d1d1daa inset,
 					-7px 3px 3px #fff6 inset;
+			}
+		}
+
+		&.archived {
+			.image {
+				filter: grayscale(100%);
+			}
+
+			&:hover .image {
+				filter: grayscale(0%);
 			}
 		}
 	}

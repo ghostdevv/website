@@ -17,6 +17,7 @@ export const collections = {
 				lastEdited: z.number().optional(),
 				attribution: z.string().optional(),
 				atUri: z.string().startsWith('at://'),
+				archived: z.boolean().optional().default(false),
 			}),
 	}),
 
@@ -30,6 +31,7 @@ export const collections = {
 				image: image(),
 				link: z.url().trim().min(1),
 				postedAt: z.number(),
+				archived: z.boolean().optional().default(false),
 			}),
 	}),
 
