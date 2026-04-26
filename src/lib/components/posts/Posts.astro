@@ -24,8 +24,6 @@ if (tags.includes(Astro.props.filter!)) {
 </div>
 
 <style lang="scss">
-	@use 'include-media' as *;
-
 	.posts {
 		display: grid;
 		grid-auto-rows: max-content;
@@ -36,7 +34,7 @@ if (tags.includes(Astro.props.filter!)) {
 		width: 100%;
 		margin: 12px 0px;
 
-		@include media('<850px') {
+		@media (max-width: 849px) {
 			grid-template-columns: 1fr;
 		}
 	}

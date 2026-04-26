@@ -87,8 +87,6 @@ const { Content, headings } = await render(post);
 </Page>
 
 <style lang="scss">
-	@use 'include-media' as *;
-
 	article {
 		width: 100%;
 		max-width: 100%;
@@ -111,7 +109,7 @@ const { Content, headings } = await render(post);
 				margin: 4px 0px;
 			}
 
-			@include media('>800px') {
+			@media (min-width: 800px) {
 				grid-template-columns: 1fr max-content;
 				grid-template-rows: max-content;
 
@@ -140,7 +138,7 @@ const { Content, headings } = await render(post);
 
 			position: relative;
 
-			@include media('<900px') {
+			@media (max-width: 899px) {
 				display: block;
 			}
 		}
@@ -171,7 +169,7 @@ const { Content, headings } = await render(post);
 			position: sticky;
 			top: 150px;
 
-			@include media('<900px') {
+			@media (max-width: 899px) {
 				display: none;
 			}
 

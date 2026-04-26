@@ -105,11 +105,6 @@
 </div>
 
 <style lang="scss">
-	@use 'include-media' as *;
-
-	$mobile: '<750px';
-	$desktop: '>750px';
-
 	.wrapper {
 		position: fixed;
 		z-index: 300;
@@ -152,7 +147,7 @@
 
 		transition: padding 0.2s ease-in-out;
 
-		@include media($mobile) {
+		@media (max-width: 749px) {
 			display: grid;
 			grid-template-columns: 1fr max-content;
 			grid-template-areas: max-content 1fr;
@@ -163,7 +158,7 @@
 		&.scroll {
 			padding: 20px 24px;
 
-			@include media($mobile) {
+			@media (max-width: 749px) {
 				padding: 16px 24px;
 			}
 		}
@@ -172,7 +167,7 @@
 			grid-area: hamburger;
 			display: none;
 
-			@include media($mobile) {
+			@media (max-width: 749px) {
 				display: block;
 			}
 		}
@@ -188,7 +183,7 @@
 			align-items: center;
 			gap: 12px;
 
-			@include media($mobile) {
+			@media (max-width: 749px) {
 				flex-direction: column;
 
 				&.desktop {
@@ -238,14 +233,14 @@
 			height 0.2s ease-in-out,
 			width 0.2s ease-in-out;
 
-		@include media($desktop) {
+		@media (min-width: 750px) {
 			&.scroll {
 				width: 40px;
 				height: 40px;
 			}
 		}
 
-		@include media($mobile) {
+		@media (max-width: 749px) {
 			width: 50px;
 			height: 50px;
 		}

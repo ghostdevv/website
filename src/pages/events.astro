@@ -52,8 +52,6 @@ export const prerender = false;
 </Page>
 
 <style lang="scss">
-	@use 'include-media' as *;
-
 	.event-grid {
 		display: grid;
 		grid-auto-rows: max-content;
@@ -64,7 +62,7 @@ export const prerender = false;
 		width: 100%;
 		margin: 12px 0px;
 
-		@include media('<850px') {
+		@media (max-width: 849px) {
 			grid-template-columns: 1fr;
 		}
 	}

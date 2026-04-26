@@ -64,8 +64,6 @@ const img = await getImage({
 </a>
 
 <style lang="scss">
-	@use 'include-media' as *;
-
 	.event {
 		display: flex;
 		flex-direction: column;
@@ -81,7 +79,7 @@ const img = await getImage({
 
 		transition: box-shadow 0.2s ease-in-out;
 
-		@include media('<400px') {
+		@media (max-width: 399px) {
 			min-width: 200px;
 			flex-shrink: 0;
 			width: 100%;

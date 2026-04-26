@@ -47,9 +47,6 @@ importers:
       ghostsui:
         specifier: 2.0.0-beta.8
         version: 2.0.0-beta.8
-      include-media:
-        specifier: ^2.0.0
-        version: 2.0.0
       just-shuffle:
         specifier: ^4.2.0
         version: 4.2.0
@@ -1857,9 +1854,6 @@ packages:
 
   immutable@5.1.5:
     resolution: {integrity: sha512-t7xcm2siw+hlUM68I+UEOK+z84RzmN59as9DZ7P1l0994DKUWV7UXBMQZVxaoMSRQ+PBZbHCOoBt7a2wxOMt+A==}
-
-  include-media@2.0.0:
-    resolution: {integrity: sha512-LSJcffPYIZ/Kln0rIi5UhqQbZxElDCMYA4dPC5MI1rkwwjptgEiOicHnzB0MMhMNJver0+4zULb4MKlgDyapZg==}
 
   inline-style-parser@0.2.7:
     resolution: {integrity: sha512-Nb2ctOyNR8DqQoR0OwRG95uNWIC0C1lCgf5Naz5H6Ji72KZ8OcFZLz2P5sNgwlyoJ8Yif11oMuYs5pBQa86csA==}
@@ -5020,8 +5014,6 @@ snapshots:
   http-cache-semantics@4.2.0: {}
 
   immutable@5.1.5: {}
-
-  include-media@2.0.0: {}
 
   inline-style-parser@0.2.7: {}
 

@@ -12,8 +12,6 @@ import Global from './Global.astro';
 </Global>
 
 <style lang="scss">
-	@use 'include-media' as *;
-
 	.wrapper {
 		max-width: 1300px;
 		margin: 0px auto;
@@ -24,7 +22,7 @@ import Global from './Global.astro';
 
 		width: 100%;
 
-		@include media('<750px') {
+		@media (max-width: 749px) {
 			padding-top: 130px;
 		}
 	}

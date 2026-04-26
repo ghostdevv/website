@@ -62,8 +62,6 @@ import IconMail from '~icons/lucide/mail';
 </Page>
 
 <style lang="scss">
-	@use 'include-media' as *;
-
 	.devlounge {
 		position: fixed;
 		bottom: 32px;
@@ -82,7 +80,7 @@ import IconMail from '~icons/lucide/mail';
 
 			margin: 0 auto;
 
-			@include media('<500px') {
+			@media (max-width: 499px) {
 				flex-direction: column;
 				text-align: center;
 

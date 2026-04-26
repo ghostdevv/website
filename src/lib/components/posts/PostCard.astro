@@ -41,8 +41,6 @@ const img = await getImage({ src: post.image, width: 800, format: 'webp' });
 </a>
 
 <style lang="scss">
-	@use 'include-media' as *;
-
 	.postcard {
 		display: flex;
 		flex-direction: column;
@@ -58,7 +56,7 @@ const img = await getImage({ src: post.image, width: 800, format: 'webp' });
 
 		transition: box-shadow 0.2s ease-in-out;
 
-		@include media('<400px') {
+		@media (max-width: 399px) {
 			min-width: 200px;
 			flex-shrink: 0;
 			width: 100%;
