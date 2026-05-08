@@ -108,6 +108,8 @@ importers:
         specifier: ^4.90.0
         version: 4.90.0
 
+  legacy: {}
+
 packages:
 
   '@antfu/install-pkg@1.1.0':

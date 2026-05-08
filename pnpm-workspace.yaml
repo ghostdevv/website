@@ -1,0 +1,6 @@
+packages:
+    - .
+    - ./legacy
+
+catalog:
+    wrangler: ^4.90.0
