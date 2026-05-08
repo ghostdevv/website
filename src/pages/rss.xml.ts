@@ -7,11 +7,11 @@ export const GET = async () => {
 	return rss({
 		title: "Willow (GHOST)'s Blog",
 		description: 'Occasional posts about stuff I find interesting!',
-		site: 'https://ghostdev.xyz',
+		site: 'https://willow.sh',
 		items: posts.map((post) => {
 			const link =
 				post.type == 'BLOG'
-					? `https://ghostdev.xyz/posts/${post.slug}`
+					? `https://willow.sh/posts/${post.slug}`
 					: post.link;
 
 			return {

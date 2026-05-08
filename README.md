@@ -1,3 +1,3 @@
 # Website
 
-My personal website, available at https://ghostdev.xyz
+My personal website, available at https://willow.sh

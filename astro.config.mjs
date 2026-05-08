@@ -82,7 +82,7 @@ export default defineConfig({
 		mdx(),
 	],
 
-	site: 'https://ghostdev.xyz/',
+	site: 'https://willow.sh/',
 
 	adapter: cloudflare({ imageService: 'compile' }),
 	output: 'static',

@@ -43,8 +43,8 @@ Now we have our endpoint file, we need to create our feed, there are many option
 ```js
 const feed = new RSS({
 	title: 'GHOSTDev blog', // The title of our rss feed
-	site_url: 'https://ghostdev.xyz', // Our base site url
-	feed_url: 'https://ghostdev.xyz/rss.xml', // This links to our endpoint
+	site_url: 'https://willow.sh', // Our base site url
+	feed_url: 'https://willow.sh/rss.xml', // This links to our endpoint
 });
 ```
 
@@ -81,7 +81,7 @@ for (const post of posts)
 		title: post.title,
 		description: post.excerpt,
 		date: post.timestamp,
-		url: `https://ghostdev.xyz/posts/${post.slug}`,
+		url: `https://willow.sh/posts/${post.slug}`,
 	});
 ```
 
@@ -115,8 +115,8 @@ const sanity = createClient({
 export async function GET() {
 	const feed = new RSS({
 		title: 'GHOSTDev blog', // The title of our rss feed
-		site_url: 'https://ghostdev.xyz', // Our base site url
-		feed_url: 'https://ghostdev.xyz/rss.xml', // This links to our endpoint
+		site_url: 'https://willow.sh', // Our base site url
+		feed_url: 'https://willow.sh/rss.xml', // This links to our endpoint
 	});
 
 	const query = groq`
@@ -137,7 +137,7 @@ export async function GET() {
 			title: post.title,
 			description: post.excerpt,
 			date: post.timestamp,
-			url: `https://ghostdev.xyz/posts/${post.slug}`,
+			url: `https://willow.sh/posts/${post.slug}`,
 		});
 
 	return new Response(feed.xml({ indent: true }), {
