@@ -83,6 +83,9 @@ export default defineConfig({
 	],
 
 	site: 'https://willow.sh/',
+	experimental: {
+		advancedRouting: true,
+	},
 
 	adapter: cloudflare({ imageService: 'compile' }),
 	output: 'static',
