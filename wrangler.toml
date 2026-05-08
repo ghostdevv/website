@@ -8,10 +8,6 @@ workers_dev = false
 
 [[routes]]
 custom_domain = true
-pattern = "ghostdev.xyz"
-
-[[routes]]
-custom_domain = true
 pattern = "willow.sh"
 
 [assets]
