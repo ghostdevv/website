@@ -20,7 +20,7 @@ export default {
 			return await fetch('https://willow.sh/rss.xml');
 		}
 
-		return new Response(notice(state.url.pathname), {
+		return new Response(notice(url.pathname), {
 			headers: { 'Content-Type': 'text/html' },
 		});
 	},
