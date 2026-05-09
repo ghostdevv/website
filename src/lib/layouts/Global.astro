@@ -12,8 +12,8 @@ interface Frontmatter {
 const frontmatter: Frontmatter = Astro.props.frontmatter || {};
 
 const title = frontmatter.title
-	? `${frontmatter.title} - Willow (GHOST)`
-	: 'Willow (GHOST) - Developer';
+	? `${frontmatter.title} ~ Willow (GHOST)`
+	: 'Willow (GHOST)';
 
 const description =
 	frontmatter.excerpt ||
