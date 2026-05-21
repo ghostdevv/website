@@ -1,8 +1,0 @@
-{
-	"recommendations": [
-		"esbenp.prettier-vscode",
-		"astro-build.astro-vscode",
-		"svelte.svelte-vscode",
-		"unifiedjs.vscode-mdx"
-	]
-}
