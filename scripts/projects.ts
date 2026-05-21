@@ -16,8 +16,21 @@ const IGNORED_REPOS = ['.github'];
 
 const args = parseArgs({
 	args: process.argv.slice(2),
-	options: { 'update-only': { type: 'boolean', default: false } },
+	options: {
+		'update-only': { type: 'boolean', default: false },
+		help: { type: 'boolean', default: false },
+	},
 });
+
+if (args.values.help) {
+	console.log(
+		'pnpm sync-projects [args]\n',
+		'\n--update-only\tOnly update existing projects instead of both updating and adding new ones',
+		'\n--help       \tShow this help message',
+	);
+
+	process.exit(0);
+}
 
 interface Repository {
 	id: number;
