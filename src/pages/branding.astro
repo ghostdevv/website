@@ -2,22 +2,29 @@
 import ColourGroup from '$lib/components/branding/ColourGroup.astro';
 import inlineFavicon from '$lib/components/branding/inlineFavicon';
 import CopyableInput from '$lib/components/CopyableInput.svelte';
-import LogoRainbow from '$lib/components/LogoRainbow.svelte';
 import Logo from '$lib/components/branding/Logo.svelte';
-import RegularLogo from '$lib/components/Logo.svelte';
 import IconDownload from '~icons/lucide/download';
 import Page from '$lib/layouts/Page.astro';
 import { colours } from '$lib/colours';
 
-function getLogos(type: 'main' | 'rainbow') {
-	// prettier-ignore
-	return [
-        { name: 'SVG', url: `/logos/${type}/ghost-logo-${type}.svg` },
-        { name: 'WEBP 500x', url: `/logos/${type}/ghost-logo-${type}.webp` },
-        { name: 'PNG 500x', url: `/logos/${type}/ghost-logo-${type}-500.png` },
-        { name: 'PNG 1000x', url: `/logos/${type}/ghost-logo-${type}-1000.png` },
-        { name: 'PNG Padded 500x', url: `/logos/${type}/ghost-logo-${type}-padded.png` },
-    ];
+function getLogos(type: 'main' | 'rainbow' | 'halloween') {
+	const logos = [
+		{ name: 'WEBP 500x', url: `/logos/${type}/ghost-logo-${type}.webp` },
+		{ name: 'PNG 500x', url: `/logos/${type}/ghost-logo-${type}-500.png` },
+		// prettier-ignore
+		{ name: 'PNG 1000x', url: `/logos/${type}/ghost-logo-${type}-1000.png` },
+		// prettier-ignore
+		{ name: 'PNG Padded 500x', url: `/logos/${type}/ghost-logo-${type}-padded.png` },
+	];
+
+	if (type !== 'halloween') {
+		logos.unshift({
+			name: 'SVG',
+			url: `/logos/${type}/ghost-logo-${type}.svg`,
+		});
+	}
+
+	return logos;
 }
 ---
 
@@ -41,13 +48,9 @@ function getLogos(type: 'main' | 'rainbow') {
 		<hr />
 
 		<div class="logos">
-			<Logo name="Main" formats={getLogos('main')}>
-				<RegularLogo />
-			</Logo>
-
-			<Logo name="Rainbow" formats={getLogos('rainbow')}>
-				<LogoRainbow />
-			</Logo>
+			<Logo name="Main" formats={getLogos('main')} />
+			<Logo name="Rainbow" formats={getLogos('rainbow')} />
+			<Logo name="Halloween" formats={getLogos('halloween')} />
 		</div>
 	</section>
 

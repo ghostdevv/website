@@ -1,6 +1,5 @@
 <script lang="ts">
 	import IconDownload from '~icons/lucide/download';
-	import type { Snippet } from 'svelte';
 
 	interface Format {
 		name: string;
@@ -8,17 +7,16 @@
 	}
 
 	interface Props {
-		name: String;
+		name: string;
 		formats: Format[];
-		children: Snippet;
 	}
 
-	let { name, formats, children }: Props = $props();
+	const { name, formats }: Props = $props();
 </script>
 
 <div class="container">
 	<div class="logo">
-		{@render children()}
+		<img src={formats[0]?.url} alt="{name} logo" />
 	</div>
 
 	<h4>{name}</h4>
@@ -32,8 +30,10 @@
 </div>
 
 <style lang="scss">
-	.logo {
+	.logo img {
 		width: 140px;
+		height: auto;
+		aspect-ratio: 1 / 1;
 	}
 
 	.container {
