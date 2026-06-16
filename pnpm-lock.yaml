@@ -9,52 +9,52 @@ importers:
   .:
     devDependencies:
       '@astrojs/check':
-        specifier: ^0.9.9
+        specifier: 0.9.9
         version: 0.9.9(prettier-plugin-astro@0.14.1)(prettier@3.8.3)(typescript@6.0.3)
       '@astrojs/cloudflare':
-        specifier: ^13.6.0
+        specifier: 13.6.0
         version: 13.6.0(@types/node@24.12.4)(astro@6.4.2(@types/node@24.12.4)(rollup@4.60.4)(sass@1.100.0)(yaml@2.9.0))(sass@1.100.0)(workerd@1.20260526.1)(wrangler@4.95.0)(yaml@2.9.0)
       '@astrojs/markdown-satteri':
-        specifier: ^0.2.1
+        specifier: 0.2.1
         version: 0.2.1
       '@astrojs/mdx':
-        specifier: ^6.0.1
+        specifier: 6.0.1
         version: 6.0.1(@astrojs/markdown-satteri@0.2.1)(astro@6.4.2(@types/node@24.12.4)(rollup@4.60.4)(sass@1.100.0)(yaml@2.9.0))
       '@astrojs/rss':
-        specifier: ^4.0.18
+        specifier: 4.0.18
         version: 4.0.18
       '@astrojs/sitemap':
-        specifier: ^3.7.3
+        specifier: 3.7.3
         version: 3.7.3
       '@astrojs/svelte':
         specifier: 8.1.2
         version: 8.1.2(@types/node@24.12.4)(astro@6.4.2(@types/node@24.12.4)(rollup@4.60.4)(sass@1.100.0)(yaml@2.9.0))(sass@1.100.0)(svelte@5.55.10)(typescript@6.0.3)(yaml@2.9.0)
       '@babylonjs/core':
-        specifier: ^9.10.1
+        specifier: 9.10.1
         version: 9.10.1
       '@expressive-code/plugin-collapsible-sections':
-        specifier: ^0.42.0
+        specifier: 0.42.0
         version: 0.42.0
       '@ghostsui/svelte':
         specifier: 1.0.0-beta.3
         version: 1.0.0-beta.3(@floating-ui/dom@1.7.5)(ghostsui@2.0.0-beta.8)(svelte@5.55.10)
       '@iconify-json/lucide':
-        specifier: ^1.2.110
+        specifier: 1.2.110
         version: 1.2.110
       astro:
-        specifier: ^6.4.2
+        specifier: 6.4.2
         version: 6.4.2(@types/node@24.12.4)(rollup@4.60.4)(sass@1.100.0)(yaml@2.9.0)
       astro-expressive-code:
-        specifier: ^0.42.0
+        specifier: 0.42.0
         version: 0.42.0(astro@6.4.2(@types/node@24.12.4)(rollup@4.60.4)(sass@1.100.0)(yaml@2.9.0))
       date-fns:
-        specifier: ^4.3.0
+        specifier: 4.3.0
         version: 4.3.0
       ghostsui:
         specifier: 2.0.0-beta.8
         version: 2.0.0-beta.8
       just-shuffle:
-        specifier: ^4.2.0
+        specifier: 4.2.0
         version: 4.2.0
       prettier:
         specifier: ^3.8.3
@@ -66,52 +66,52 @@ importers:
         specifier: ^4.0.1
         version: 4.0.1(prettier@3.8.3)(svelte@5.55.10)
       rehype-github-alerts:
-        specifier: ^4.2.0
+        specifier: 4.2.0
         version: 4.2.0
       rehype-wrap-all:
-        specifier: ^1.1.0
+        specifier: 1.1.0
         version: 1.1.0
       sass:
-        specifier: ^1.100.0
+        specifier: 1.100.0
         version: 1.100.0
       sequoia-cli:
-        specifier: ^0.5.6
+        specifier: 0.5.6
         version: 0.5.6(typescript@6.0.3)
       sharp:
-        specifier: ^0.34.5
+        specifier: 0.34.5
         version: 0.34.5
       shiki:
-        specifier: ^4.1.0
+        specifier: 4.1.0
         version: 4.1.0
       svelte:
-        specifier: ^5.55.10
+        specifier: 5.55.10
         version: 5.55.10
       svelte-check:
         specifier: ^4.4.8
         version: 4.4.8(picomatch@4.0.4)(svelte@5.55.10)(typescript@6.0.3)
       svelte-copy:
-        specifier: ^2.0.0
+        specifier: 2.0.0
         version: 2.0.0(svelte@5.55.10)
       svelte-hamburgers:
-        specifier: ^5.0.0
+        specifier: 5.0.0
         version: 5.0.0(svelte@5.55.10)
       svelte-local-storage-store:
-        specifier: ^0.6.4
+        specifier: 0.6.4
         version: 0.6.4(svelte@5.55.10)
       svelte-mount:
-        specifier: ^3.0.2
+        specifier: 3.0.2
         version: 3.0.2(svelte@5.55.10)
       svelte-reduced-motion:
-        specifier: ^2.0.0
+        specifier: 2.0.0
         version: 2.0.0(svelte@5.55.10)
       typescript:
-        specifier: ^6.0.3
+        specifier: 6.0.3
         version: 6.0.3
       unplugin-icons:
-        specifier: ^23.0.1
+        specifier: 23.0.1
         version: 23.0.1(svelte@5.55.10)
       wrangler:
-        specifier: ^4.95.0
+        specifier: 4.95.0
         version: 4.95.0
 
 packages:
