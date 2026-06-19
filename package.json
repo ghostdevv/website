@@ -29,7 +29,7 @@
 		"astro": "6.4.6",
 		"astro-expressive-code": "0.42.0",
 		"date-fns": "4.3.0",
-		"ghostsui": "2.0.0-beta.8",
+		"ghostsui": "2.0.0-beta.9",
 		"just-shuffle": "4.2.0",
 		"prettier": "3.8.3",
 		"prettier-plugin-astro": "0.14.1",

@@ -37,7 +37,7 @@ importers:
         version: 0.42.0
       '@ghostsui/svelte':
         specifier: 1.0.0-beta.3
-        version: 1.0.0-beta.3(@floating-ui/dom@1.7.5)(ghostsui@2.0.0-beta.8)(svelte@5.55.10)
+        version: 1.0.0-beta.3(@floating-ui/dom@1.7.5)(ghostsui@2.0.0-beta.9)(svelte@5.55.10)
       '@iconify-json/lucide':
         specifier: 1.2.110
         version: 1.2.110
@@ -51,8 +51,8 @@ importers:
         specifier: 4.3.0
         version: 4.3.0
       ghostsui:
-        specifier: 2.0.0-beta.8
-        version: 2.0.0-beta.8
+        specifier: 2.0.0-beta.9
+        version: 2.0.0-beta.9
       just-shuffle:
         specifier: 4.2.0
         version: 4.2.0
@@ -1811,8 +1811,8 @@ packages:
     resolution: {integrity: sha512-7nF7C9fIPFEMHgEMEfgIlO9wDdZ8CyHw27rWciFZfHvHDReIiPhsYuzPRXsfvBCqFy1l8RRyyWV7QLM+ZhUJsQ==}
     engines: {node: '>=20.20.0'}
 
-  ghostsui@2.0.0-beta.8:
-    resolution: {integrity: sha512-XGI29s8z+ERW0xCcG9PQ5R1ckawa87s7goiP3UPY/rVBMz3rU2Q1DNx/M3SkxhW8VIycHotas49xftsP3sL4lw==}
+  ghostsui@2.0.0-beta.9:
+    resolution: {integrity: sha512-9F8aBoE+T+Lsu2Y/6SPer7O/anfiW+dF7vlAoL5HEpf1NfUREmf6VggJwWYynVQAhFwPNlLXlyhtOTD8zW7zow==}
 
   github-slugger@2.0.0:
     resolution: {integrity: sha512-IaOQ9puYtjrkq7Y0Ygl9KDZnrf/aiUJYUpVf89y8kyaxbRG7Y1SrX/jaumrv81vc61+kiMempujsM3Yw7w5qcw==}
@@ -3854,9 +3854,9 @@ snapshots:
 
   '@floating-ui/utils@0.2.11': {}
 
-  '@ghostsui/svelte@1.0.0-beta.3(@floating-ui/dom@1.7.5)(ghostsui@2.0.0-beta.8)(svelte@5.55.10)':
+  '@ghostsui/svelte@1.0.0-beta.3(@floating-ui/dom@1.7.5)(ghostsui@2.0.0-beta.9)(svelte@5.55.10)':
     dependencies:
-      ghostsui: 2.0.0-beta.8
+      ghostsui: 2.0.0-beta.9
       melt: 0.44.0(@floating-ui/dom@1.7.5)(svelte@5.55.10)
       svelte: 5.55.10
     transitivePeerDependencies:
@@ -4903,7 +4903,7 @@ snapshots:
     dependencies:
       resolve-pkg-maps: 1.0.0
 
-  ghostsui@2.0.0-beta.8: {}
+  ghostsui@2.0.0-beta.9: {}
 
   github-slugger@2.0.0: {}
 
