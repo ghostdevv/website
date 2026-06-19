@@ -37,7 +37,7 @@
 		"rehype-github-alerts": "4.2.0",
 		"rehype-wrap-all": "1.1.0",
 		"sass": "1.100.0",
-		"sequoia-cli": "0.5.6",
+		"sequoia-cli": "0.5.7",
 		"sharp": "0.34.5",
 		"shiki": "4.1.0",
 		"svelte": "5.55.10",

@@ -75,8 +75,8 @@ importers:
         specifier: 1.100.0
         version: 1.100.0
       sequoia-cli:
-        specifier: 0.5.6
-        version: 0.5.6(typescript@6.0.3)
+        specifier: 0.5.7
+        version: 0.5.7(typescript@6.0.3)
       sharp:
         specifier: 0.34.5
         version: 0.34.5
@@ -2594,8 +2594,8 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
-  sequoia-cli@0.5.6:
-    resolution: {integrity: sha512-Onbp/n2f0C8SnOD4Pq4cUSZXfMBvlHaWm9OYFkMwcyg6JXdx2Bf78sJmaCHLh8O9lXvUKruZSr5/WU8yBgeUbQ==}
+  sequoia-cli@0.5.7:
+    resolution: {integrity: sha512-5gvVsS/cS9HNSujjLi+u0nDU3jtq4W6BtdtAwX0OpVaxxXsWJgJVEyFDYCbHm/RlddnQScGWFpcsD3EfguSi7g==}
     hasBin: true
     peerDependencies:
       typescript: ^5
@@ -6161,7 +6161,7 @@ snapshots:
 
   semver@7.8.1: {}
 
-  sequoia-cli@0.5.6(typescript@6.0.3):
+  sequoia-cli@0.5.7(typescript@6.0.3):
     dependencies:
       '@atproto/api': 0.18.21
       '@atproto/oauth-client-node': 0.3.17
