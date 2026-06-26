@@ -39,8 +39,8 @@ importers:
         specifier: 1.0.0-beta.3
         version: 1.0.0-beta.3(@floating-ui/dom@1.7.5)(ghostsui@2.0.0-beta.8)(svelte@5.55.10)
       '@iconify-json/lucide':
-        specifier: 1.2.110
-        version: 1.2.110
+        specifier: 1.2.114
+        version: 1.2.114
       astro:
         specifier: 6.4.6
         version: 6.4.6(@types/node@24.12.4)(rollup@4.60.4)(sass@1.100.0)(yaml@2.9.0)
@@ -761,8 +761,8 @@ packages:
       ghostsui: ^2.0.0-beta.9
       svelte: ^5.0.0
 
-  '@iconify-json/lucide@1.2.110':
-    resolution: {integrity: sha512-rLeHqnZZBxZbprbVwf6uY7HB5GkGVgvT9VujhjvaUEqFDLKZON6zR8K1f8uD1brBwf5TJ0TIvvW8mz5u2XJU+w==}
+  '@iconify-json/lucide@1.2.114':
+    resolution: {integrity: sha512-NbvH3B1BYo6wBtS7joLi7f2UVQOqK2dtZodMFf3kkBs+Tnh9TkRuy8oVHr1RM8UK6bUtvAXxfNlGAah0CuvPCw==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -3862,7 +3862,7 @@ snapshots:
     transitivePeerDependencies:
       - '@floating-ui/dom'
 
-  '@iconify-json/lucide@1.2.110':
+  '@iconify-json/lucide@1.2.114':
     dependencies:
       '@iconify/types': 2.0.0
 
