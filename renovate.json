@@ -1,4 +1,4 @@
 {
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
-	"extends": ["github>ghostdevv/renovate:personal"]
+	"extends": ["github>ghostdevv/renovate:maintenance"]
 }
