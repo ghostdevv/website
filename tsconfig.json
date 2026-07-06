@@ -17,10 +17,9 @@
 		"noUnusedParameters": true,
 		"noUncheckedIndexedAccess": true,
 		"exactOptionalPropertyTypes": false,
-		"baseUrl": ".",
 		"paths": {
-			"$lib/*": ["src/lib/*"],
-			"$assets/*": ["src/assets/*"]
+			"$lib/*": ["./src/lib/*"],
+			"$assets/*": ["./src/assets/*"]
 		}
 	}
 }

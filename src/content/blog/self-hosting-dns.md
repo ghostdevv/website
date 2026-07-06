@@ -147,8 +147,9 @@ When making a DoH/DoT/DoQ request, you have the luxury of being able to use a do
 
 You'll need to setup a certificate for your domains. I'll assume you're going to use `*.dns.example.com` (wildcard optional see [Client Id](#client-id)) and `dns.example.com`. In my setup I've opted to use [lego](https://github.com/go-acme/lego) to provision these using an [ACME challenge](https://letsencrypt.org/docs/challenge-types/#dns-01-challenge) and their Cloudflare DNS plugin. You'll need the following `docker-compose.yml`, `.env`, and `crt.sh` files. Once you edit the `--domains` flags in the compose file and the contents of the `.env`, you can run `chmod +x ./crt.sh && ./crt.sh` to generate the certificates.
 
-> [!NOTE]
-> If you're _not_ using a reverse proxy with SSL generation built-in, this certificate should also include the domain of the AdGuard Home panel.
+:::note
+If you're _not_ using a reverse proxy with SSL generation built-in, this certificate should also include the domain of the AdGuard Home panel.
+:::
 
 ```yaml
 services:

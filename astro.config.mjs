@@ -2,12 +2,12 @@
 import { pluginCollapsibleSections } from '@expressive-code/plugin-collapsible-sections';
 import { serendipity } from './src/lib/shiki/serendipity-shiki';
 import { FileSystemIconLoader } from 'unplugin-icons/loaders';
-import { rehypeGithubAlerts } from 'rehype-github-alerts';
+import { alerts, tableWrapper } from './src/markdown';
+import { satteri } from '@astrojs/markdown-satteri';
 import expressiveCode from 'astro-expressive-code';
 import cloudflare from '@astrojs/cloudflare';
 import { defineConfig } from 'astro/config';
 import { readFile } from 'node:fs/promises';
-import rehypeWrap from 'rehype-wrap-all';
 import icons from 'unplugin-icons/vite';
 import sitemap from '@astrojs/sitemap';
 import svelte from '@astrojs/svelte';
@@ -28,6 +28,11 @@ async function shikiLang(lang) {
 
 // https://astro.build/config
 export default defineConfig({
+	site: 'https://willow.sh/',
+	adapter: cloudflare({ imageService: 'compile' }),
+	output: 'static',
+	trailingSlash: 'never',
+	build: { format: 'file' },
 	integrations: [
 		svelte(),
 		sitemap(),
@@ -35,18 +40,10 @@ export default defineConfig({
 			plugins: [pluginCollapsibleSections()],
 			defaultProps: {
 				collapseStyle: 'collapsible-auto',
-				overridesByLang: {
-					'bash,sh': {
-						frame: 'code',
-					},
-				},
+				overridesByLang: { 'bash,sh': { frame: 'code' } },
 			},
-
 			themes: [serendipity],
-			shiki: {
-				langs: [await shikiLang('caddyfile')],
-			},
-
+			shiki: { langs: [await shikiLang('caddyfile')] },
 			useThemedScrollbars: false,
 			useStyleReset: true,
 			styleOverrides: {
@@ -81,34 +78,13 @@ export default defineConfig({
 		}),
 		mdx(),
 	],
-
-	site: 'https://willow.sh/',
-	experimental: {
-		advancedRouting: true,
-	},
-
-	adapter: cloudflare({ imageService: 'compile' }),
-	output: 'static',
-	trailingSlash: 'never',
-	build: {
-		format: 'file',
-	},
-
 	markdown: {
-		gfm: true,
-		syntaxHighlight: false,
-		rehypePlugins: [
-			rehypeGithubAlerts,
-			[
-				rehypeWrap,
-				{
-					wrapper: 'div.table-wrapper',
-					selector: 'table',
-				},
-			],
-		],
+		processor: satteri({
+			features: { directive: true },
+			mdastPlugins: [alerts],
+			hastPlugins: [tableWrapper],
+		}),
 	},
-
 	vite: {
 		plugins: [
 			icons({
