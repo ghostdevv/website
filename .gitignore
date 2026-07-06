@@ -5,3 +5,4 @@ pnpm-debug.log*
 .wrangler
 .sequoia-state.json
 .env
+/worker-configuration.d.ts

@@ -20,6 +20,7 @@
 		"paths": {
 			"$lib/*": ["./src/lib/*"],
 			"$assets/*": ["./src/assets/*"]
-		}
+		},
+		"types": ["unplugin-icons/types/svelte", "./.astro/types.d.ts"]
 	}
 }

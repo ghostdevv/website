@@ -12,7 +12,8 @@
 		"check": "astro check && svelte-check && prettier --check .",
 		"astro": "astro",
 		"fix": "prettier --write .",
-		"sync-projects": "node --env-file=.env scripts/projects.ts"
+		"sync-projects": "node --env-file=.env scripts/projects.ts",
+		"prepare": "wrangler types"
 	},
 	"devDependencies": {
 		"@astrojs/check": "0.9.9",
