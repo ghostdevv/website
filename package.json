@@ -36,7 +36,7 @@
 		"prettier-plugin-astro": "0.14.1",
 		"prettier-plugin-svelte": "4.1.1",
 		"sass": "1.101.0",
-		"satteri": "^0.9.4",
+		"satteri": "0.9.4",
 		"sequoia-cli": "0.5.7",
 		"sharp": "0.35.3",
 		"shiki": "4.3.1",
