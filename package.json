@@ -25,7 +25,7 @@
 		"@astrojs/svelte": "9.0.1",
 		"@babylonjs/core": "9.17.1",
 		"@expressive-code/plugin-collapsible-sections": "0.44.1",
-		"@ghostsui/svelte": "1.0.0-beta.3",
+		"@ghostsui/svelte": "1.0.0-beta.4",
 		"@iconify-json/lucide": "1.2.118",
 		"astro": "7.1.3",
 		"astro-expressive-code": "0.44.1",
