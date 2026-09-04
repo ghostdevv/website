@@ -28,7 +28,7 @@ importers:
         version: 3.7.3
       '@astrojs/svelte':
         specifier: 9.0.1
-        version: 9.0.1(@types/node@24.13.3)(astro@7.1.3(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@24.13.3)(sass@1.101.3)(yaml@2.9.0))(esbuild@0.28.1)(sass@1.101.3)(svelte@5.56.7)(typescript@6.0.3)(yaml@2.9.0)
+        version: 9.0.1(@types/node@24.13.3)(astro@7.1.3(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@24.13.3)(sass@1.101.3)(yaml@2.9.0))(esbuild@0.28.1)(sass@1.101.3)(svelte@5.57.0)(typescript@6.0.3)(yaml@2.9.0)
       '@babylonjs/core':
         specifier: 9.17.1
         version: 9.17.1
@@ -37,7 +37,7 @@ importers:
         version: 0.44.1
       '@ghostsui/svelte':
         specifier: 1.0.0-beta.3
-        version: 1.0.0-beta.3(@floating-ui/dom@1.7.5)(ghostsui@2.0.0-beta.8)(svelte@5.56.7)
+        version: 1.0.0-beta.3(@floating-ui/dom@1.7.5)(ghostsui@2.0.0-beta.8)(svelte@5.57.0)
       '@iconify-json/lucide':
         specifier: 1.2.118
         version: 1.2.118
@@ -64,7 +64,7 @@ importers:
         version: 0.14.1
       prettier-plugin-svelte:
         specifier: 4.1.1
-        version: 4.1.1(prettier@3.9.6)(svelte@5.56.7)
+        version: 4.1.1(prettier@3.9.6)(svelte@5.57.0)
       sass:
         specifier: 1.101.3
         version: 1.101.3
@@ -81,32 +81,32 @@ importers:
         specifier: 4.3.1
         version: 4.3.1
       svelte:
-        specifier: 5.56.7
-        version: 5.56.7
+        specifier: 5.57.0
+        version: 5.57.0
       svelte-check:
         specifier: 4.7.3
-        version: 4.7.3(picomatch@4.0.5)(svelte@5.56.7)(typescript@6.0.3)
+        version: 4.7.3(picomatch@4.0.5)(svelte@5.57.0)(typescript@6.0.3)
       svelte-copy:
         specifier: 2.0.0
-        version: 2.0.0(svelte@5.56.7)
+        version: 2.0.0(svelte@5.57.0)
       svelte-hamburgers:
         specifier: 5.0.0
-        version: 5.0.0(svelte@5.56.7)
+        version: 5.0.0(svelte@5.57.0)
       svelte-local-storage-store:
         specifier: 0.6.4
-        version: 0.6.4(svelte@5.56.7)
+        version: 0.6.4(svelte@5.57.0)
       svelte-mount:
         specifier: 3.0.2
-        version: 3.0.2(svelte@5.56.7)
+        version: 3.0.2(svelte@5.57.0)
       svelte-reduced-motion:
         specifier: 2.0.0
-        version: 2.0.0(svelte@5.56.7)
+        version: 2.0.0(svelte@5.57.0)
       typescript:
         specifier: 6.0.3
         version: 6.0.3
       unplugin-icons:
         specifier: 23.0.1
-        version: 23.0.1(svelte@5.56.7)
+        version: 23.0.1(svelte@5.57.0)
       wrangler:
         specifier: 4.113.0
         version: 4.113.0
@@ -1336,9 +1336,6 @@ packages:
 
   '@types/sax@1.2.7':
     resolution: {integrity: sha512-rO73L89PJxeYM3s3pPPjiPgVVcymqU490g0YO5n5By0k2Erzj6tay/4lr1CHAAU4JyOWd1rpQ8bCf6cZfHU96A==}
-
-  '@types/trusted-types@2.0.7':
-    resolution: {integrity: sha512-ScaPdn1dQczgbl0QFTeTOmVHFULt394XJgOQNoyVhZ6r2vLnMLJfBPd53SB52T/3G36VI1/g2MZaX0cwDuXsfw==}
 
   '@types/unist@2.0.11':
     resolution: {integrity: sha512-CmBKiL6NNo/OqgmMn95Fk9Whlp2mtvIv+KNpQKN2F4SjvrEesubTRWGYSg+BnWZOnlCaSTU1sMpsBOzgbYhnsA==}
@@ -2774,8 +2771,8 @@ packages:
       svelte: ^3.55 || ^4.0.0-next.0 || ^4.0 || ^5.0.0-next.0
       typescript: ^4.9.4 || ^5.0.0 || ^6.0.0
 
-  svelte@5.56.7:
-    resolution: {integrity: sha512-5qERUZX80oQj6XrDMUmD2Uhd/cIpCPDWWKBK3ZHmyRUC9apPyamWM8xMo31mbWsIQxwG2hVoSnOJ/EcnhVkkzQ==}
+  svelte@5.57.0:
+    resolution: {integrity: sha512-NdbDn7fl4be1ViUG0oq/lvG6OZy3oENolV2ONjiqqsfVoeAfzaQAKUcEX3MrQod/Bebv1PgwET9rfXhgn9s4Kg==}
     engines: {node: '>=18'}
 
   svgo@4.0.2:
@@ -3446,12 +3443,12 @@ snapshots:
       stream-replace-string: 2.0.0
       zod: 4.4.3
 
-  '@astrojs/svelte@9.0.1(@types/node@24.13.3)(astro@7.1.3(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@24.13.3)(sass@1.101.3)(yaml@2.9.0))(esbuild@0.28.1)(sass@1.101.3)(svelte@5.56.7)(typescript@6.0.3)(yaml@2.9.0)':
+  '@astrojs/svelte@9.0.1(@types/node@24.13.3)(astro@7.1.3(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@24.13.3)(sass@1.101.3)(yaml@2.9.0))(esbuild@0.28.1)(sass@1.101.3)(svelte@5.57.0)(typescript@6.0.3)(yaml@2.9.0)':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 7.2.0(svelte@5.56.7)(vite@8.1.5(@types/node@24.13.3)(esbuild@0.28.1)(sass@1.101.3)(yaml@2.9.0))
+      '@sveltejs/vite-plugin-svelte': 7.2.0(svelte@5.57.0)(vite@8.1.5(@types/node@24.13.3)(esbuild@0.28.1)(sass@1.101.3)(yaml@2.9.0))
       astro: 7.1.3(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@24.13.3)(sass@1.101.3)(yaml@2.9.0)
-      svelte: 5.56.7
-      svelte2tsx: 0.7.58(svelte@5.56.7)(typescript@6.0.3)
+      svelte: 5.57.0
+      svelte2tsx: 0.7.58(svelte@5.57.0)(typescript@6.0.3)
       typescript: 6.0.3
       vite: 8.1.5(@types/node@24.13.3)(esbuild@0.28.1)(sass@1.101.3)(yaml@2.9.0)
       vitefu: 1.1.3(vite@8.1.5(@types/node@24.13.3)(esbuild@0.28.1)(sass@1.101.3)(yaml@2.9.0))
@@ -3900,11 +3897,11 @@ snapshots:
 
   '@floating-ui/utils@0.2.12': {}
 
-  '@ghostsui/svelte@1.0.0-beta.3(@floating-ui/dom@1.7.5)(ghostsui@2.0.0-beta.8)(svelte@5.56.7)':
+  '@ghostsui/svelte@1.0.0-beta.3(@floating-ui/dom@1.7.5)(ghostsui@2.0.0-beta.8)(svelte@5.57.0)':
     dependencies:
       ghostsui: 2.0.0-beta.8
-      melt: 0.44.0(@floating-ui/dom@1.7.5)(svelte@5.56.7)
-      svelte: 5.56.7
+      melt: 0.44.0(@floating-ui/dom@1.7.5)(svelte@5.57.0)
+      svelte: 5.57.0
     transitivePeerDependencies:
       - '@floating-ui/dom'
 
@@ -4376,12 +4373,12 @@ snapshots:
 
   '@sveltejs/load-config@0.2.0': {}
 
-  '@sveltejs/vite-plugin-svelte@7.2.0(svelte@5.56.7)(vite@8.1.5(@types/node@24.13.3)(esbuild@0.28.1)(sass@1.101.3)(yaml@2.9.0))':
+  '@sveltejs/vite-plugin-svelte@7.2.0(svelte@5.57.0)(vite@8.1.5(@types/node@24.13.3)(esbuild@0.28.1)(sass@1.101.3)(yaml@2.9.0))':
     dependencies:
       deepmerge: 4.3.1
       magic-string: 0.30.21
       obug: 2.1.4
-      svelte: 5.56.7
+      svelte: 5.57.0
       vite: 8.1.5(@types/node@24.13.3)(esbuild@0.28.1)(sass@1.101.3)(yaml@2.9.0)
       vitefu: 1.1.3(vite@8.1.5(@types/node@24.13.3)(esbuild@0.28.1)(sass@1.101.3)(yaml@2.9.0))
 
@@ -4423,8 +4420,6 @@ snapshots:
   '@types/sax@1.2.7':
     dependencies:
       '@types/node': 24.13.3
-
-  '@types/trusted-types@2.0.7': {}
 
   '@types/unist@2.0.11': {}
 
@@ -5527,14 +5522,14 @@ snapshots:
 
   mdn-data@2.27.1: {}
 
-  melt@0.44.0(@floating-ui/dom@1.7.5)(svelte@5.56.7):
+  melt@0.44.0(@floating-ui/dom@1.7.5)(svelte@5.57.0):
     dependencies:
       '@floating-ui/dom': 1.7.5
       dequal: 2.0.3
       focus-trap: 7.8.0
       jest-axe: 9.0.0
-      runed: 0.23.4(svelte@5.56.7)
-      svelte: 5.56.7
+      runed: 0.23.4(svelte@5.57.0)
+      svelte: 5.57.0
 
   micromark-core-commonmark@2.0.3:
     dependencies:
@@ -5982,10 +5977,10 @@ snapshots:
       prettier: 3.9.6
       sass-formatter: 0.7.9
 
-  prettier-plugin-svelte@4.1.1(prettier@3.9.6)(svelte@5.56.7):
+  prettier-plugin-svelte@4.1.1(prettier@3.9.6)(svelte@5.57.0):
     dependencies:
       prettier: 3.9.6
-      svelte: 5.56.7
+      svelte: 5.57.0
 
   prettier@3.9.6: {}
 
@@ -6180,10 +6175,10 @@ snapshots:
 
   run-applescript@7.1.0: {}
 
-  runed@0.23.4(svelte@5.56.7):
+  runed@0.23.4(svelte@5.57.0):
     dependencies:
       esm-env: 1.2.2
-      svelte: 5.56.7
+      svelte: 5.57.0
 
   s.color@0.0.15: {}
 
@@ -6377,7 +6372,7 @@ snapshots:
     dependencies:
       has-flag: 4.0.0
 
-  svelte-check@4.7.3(picomatch@4.0.5)(svelte@5.56.7)(typescript@6.0.3):
+  svelte-check@4.7.3(picomatch@4.0.5)(svelte@5.57.0)(typescript@6.0.3):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.31
       '@sveltejs/load-config': 0.2.0
@@ -6385,45 +6380,44 @@ snapshots:
       fdir: 6.5.0(picomatch@4.0.5)
       picocolors: 1.1.1
       sade: 1.8.1
-      svelte: 5.56.7
+      svelte: 5.57.0
       typescript: 6.0.3
     transitivePeerDependencies:
       - picomatch
 
-  svelte-copy@2.0.0(svelte@5.56.7):
+  svelte-copy@2.0.0(svelte@5.57.0):
     dependencies:
-      svelte: 5.56.7
+      svelte: 5.57.0
 
-  svelte-hamburgers@5.0.0(svelte@5.56.7):
+  svelte-hamburgers@5.0.0(svelte@5.57.0):
     dependencies:
-      svelte: 5.56.7
+      svelte: 5.57.0
 
-  svelte-local-storage-store@0.6.4(svelte@5.56.7):
+  svelte-local-storage-store@0.6.4(svelte@5.57.0):
     dependencies:
-      svelte: 5.56.7
+      svelte: 5.57.0
 
-  svelte-mount@3.0.2(svelte@5.56.7):
+  svelte-mount@3.0.2(svelte@5.57.0):
     dependencies:
-      svelte: 5.56.7
+      svelte: 5.57.0
 
-  svelte-reduced-motion@2.0.0(svelte@5.56.7):
+  svelte-reduced-motion@2.0.0(svelte@5.57.0):
     dependencies:
-      svelte: 5.56.7
+      svelte: 5.57.0
 
-  svelte2tsx@0.7.58(svelte@5.56.7)(typescript@6.0.3):
+  svelte2tsx@0.7.58(svelte@5.57.0)(typescript@6.0.3):
     dependencies:
       dedent-js: 1.0.1
       scule: 1.3.0
-      svelte: 5.56.7
+      svelte: 5.57.0
       typescript: 6.0.3
 
-  svelte@5.56.7:
+  svelte@5.57.0:
     dependencies:
       '@jridgewell/remapping': 2.3.5
       '@jridgewell/sourcemap-codec': 1.5.5
       '@sveltejs/acorn-typescript': 1.0.11(acorn@8.17.0)
       '@types/estree': 1.0.9
-      '@types/trusted-types': 2.0.7
       acorn: 8.17.0
       aria-query: 5.3.1
       axobject-query: 4.1.0
@@ -6561,7 +6555,7 @@ snapshots:
       unist-util-is: 6.0.1
       unist-util-visit-parents: 6.0.2
 
-  unplugin-icons@23.0.1(svelte@5.56.7):
+  unplugin-icons@23.0.1(svelte@5.57.0):
     dependencies:
       '@antfu/install-pkg': 1.1.0
       '@iconify/utils': 3.1.4
@@ -6569,7 +6563,7 @@ snapshots:
       obug: 2.1.4
       unplugin: 2.3.11
     optionalDependencies:
-      svelte: 5.56.7
+      svelte: 5.57.0
 
   unplugin@2.3.11:
     dependencies:
