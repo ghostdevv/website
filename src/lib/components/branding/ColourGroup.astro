@@ -13,7 +13,9 @@ const { group } = Astro.props as Props;
 	<h3 class="title">{group.title}</h3>
 
 	<div class="colours">
-		{group.colours.map((colour) => <Colour colour={colour} client:load />)}
+		{group.colours.map((colour) => (
+			<Colour colour={colour} client:load />
+		))}
 	</div>
 </div>
 

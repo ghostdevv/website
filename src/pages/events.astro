@@ -14,39 +14,37 @@ export const prerender = false;
 		<p>An incomplete list of events I'm attending, or have attended.</p>
 	</section>
 
-	{
-		!!now.length && (
-			<section class="column g4">
-				<h2>Happening Now</h2>
+	{!!now.length && (
+		<section class="column g4">
+			<h2>Happening Now</h2>
 
-				<div class="event-grid">
-					{now.map((event) => (
-						<EventCard event={event} />
-					))}
-				</div>
-			</section>
-		)
-	}
+			<div class="event-grid">
+				{now.map((event) => (
+					<EventCard event={event} />
+				))}
+			</div>
+		</section>
+	)}
 
-	{
-		!!upcoming.length && (
-			<section class="column g4">
-				<h2>Upcoming Events</h2>
+	{!!upcoming.length && (
+		<section class="column g4">
+			<h2>Upcoming Events</h2>
 
-				<div class="event-grid">
-					{upcoming.map((event) => (
-						<EventCard event={event} />
-					))}
-				</div>
-			</section>
-		)
-	}
+			<div class="event-grid">
+				{upcoming.map((event) => (
+					<EventCard event={event} />
+				))}
+			</div>
+		</section>
+	)}
 
 	<section class="column g4">
 		<h2>Past Events</h2>
 
 		<div class="event-grid">
-			{past.map((event) => <EventCard event={event} />)}
+			{past.map((event) => (
+				<EventCard event={event} />
+			))}
 		</div>
 	</section>
 </Page>

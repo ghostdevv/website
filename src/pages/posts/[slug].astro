@@ -34,14 +34,11 @@ const { Content, headings } = await render(post);
 
 		<div class="split">
 			<div class="markdown" id="post-body">
-				{
-					post.data.archived && (
-						<div class="archive-warning">
-							This post is archived and the content is likely
-							stale.
-						</div>
-					)
-				}
+				{post.data.archived && (
+					<div class="archive-warning">
+						This post is archived and the content is likely stale.
+					</div>
+				)}
 
 				<Content />
 			</div>
@@ -64,11 +61,9 @@ const { Content, headings } = await render(post);
 		<hr style="margin-top: 16px;" />
 
 		<footer>
-			{
-				post.data.attribution && (
-					<p class="attribution">{post.data.attribution}</p>
-				)
-			}
+			{post.data.attribution && (
+				<p class="attribution">{post.data.attribution}</p>
+			)}
 
 			<div class="footer-buttons">
 				<a

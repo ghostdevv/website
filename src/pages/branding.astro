@@ -39,7 +39,9 @@ function getLogos(type: 'main' | 'rainbow' | 'halloween') {
 		<hr />
 
 		<div class="colours">
-			{colours.map((group) => <ColourGroup group={group} />)}
+			{colours.map((group) => (
+				<ColourGroup group={group} />
+			))}
 		</div>
 	</section>
 

@@ -20,7 +20,9 @@ if (tags.includes(Astro.props.filter!)) {
 ---
 
 <div class="posts">
-	{posts.map((post) => <PostCard {post} />)}
+	{posts.map((post) => (
+		<PostCard {post} />
+	))}
 </div>
 
 <style lang="scss">

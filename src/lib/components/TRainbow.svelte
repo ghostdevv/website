@@ -2,6 +2,7 @@
 	let hovering = $state(false);
 </script>
 
+<!-- svelte-ignore a11y_no_static_element_interactions -->
 <svg
 	xmlns="http://www.w3.org/2000/svg"
 	width="100%"
