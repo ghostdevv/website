@@ -26,7 +26,7 @@
 		"@babylonjs/core": "9.26.0",
 		"@expressive-code/plugin-collapsible-sections": "0.44.2",
 		"@ghostsui/svelte": "1.0.0-beta.4",
-		"@iconify-json/lucide": "1.2.131",
+		"@iconify-json/lucide": "1.2.132",
 		"astro": "7.3.2",
 		"astro-expressive-code": "0.44.2",
 		"date-fns": "4.4.0",
