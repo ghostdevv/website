@@ -18,6 +18,7 @@ export const collections = {
 				attribution: z.string().optional(),
 				atUri: z.string().startsWith('at://'),
 				archived: z.boolean().optional().default(false),
+				unlisted: z.boolean().optional().default(false),
 			}),
 	}),
 

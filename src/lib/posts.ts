@@ -19,11 +19,13 @@ export async function getPosts() {
 			...post.data,
 		})),
 
-		...blogPosts.map<Post>((post) => ({
-			slug: post.id,
-			type: 'BLOG',
-			...post.data,
-		})),
+		...blogPosts
+			.filter((post) => !post.data.unlisted)
+			.map<Post>((post) => ({
+				slug: post.id,
+				type: 'BLOG',
+				...post.data,
+			})),
 	];
 
 	return posts.sort((a, b) => b.postedAt - a.postedAt);
