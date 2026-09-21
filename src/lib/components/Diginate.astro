@@ -1,0 +1,58 @@
+---
+import { Image } from 'astro:assets';
+---
+
+<blockquote class="diginate">
+	<h4>Diginate</h4>
+
+	<p>
+		I'm not sponsored by{' '}
+		<a
+			aria-label="Buy Custom Stickers from Diginate"
+			href="https://diginate.com/"
+			target="_blank"
+		>
+			Diginate
+		</a>
+		, but{' '}
+		<a
+			href="https://bsky.app/profile/willow.sh/post/3mhjomok3q22w"
+			target="_blank"
+		>
+			they've been incredibly helpful
+		</a>{' '}
+		in my mission to give away as many stickers as possible, so I'm
+		eternally grateful. I can't recommend them enough if you want custom
+		stickers, posters, prints, and more 💙
+	</p>
+
+	<Image
+		width={75}
+		height={75}
+		src="/logos/diginate.png"
+		alt="The Diginate Logo"
+	/>
+</blockquote>
+
+<style lang="scss">
+	.diginate {
+		display: grid;
+		grid-template-columns: 1fr max-content;
+		grid-template-rows: repeat(2, max-content);
+		gap: 0px 12px;
+
+		border-color: #0183ff;
+
+		img {
+			grid-column: 2;
+			grid-row: 1 / span 2;
+			align-self: center;
+		}
+
+		h4,
+		p {
+			color: var(--text);
+			margin: 0px;
+		}
+	}
+</style>

@@ -6,7 +6,7 @@ import { z } from 'astro/zod';
 
 export const collections = {
 	blog: defineCollection({
-		loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
+		loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/blog' }),
 		schema: ({ image }) =>
 			z.object({
 				tag: z.enum(tags),
