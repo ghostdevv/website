@@ -30,8 +30,8 @@ importers:
         specifier: 9.0.1
         version: 9.0.1(@types/node@24.13.4)(astro@7.3.2(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.4)(sass@1.104.1)(yaml@2.9.1))(esbuild@0.28.2)(sass@1.104.1)(svelte@5.57.0)(typescript@6.0.3)(yaml@2.9.1)
       '@babylonjs/core':
-        specifier: 9.26.0
-        version: 9.26.0
+        specifier: 9.27.1
+        version: 9.27.1
       '@expressive-code/plugin-collapsible-sections':
         specifier: 0.44.2
         version: 0.44.2
@@ -348,8 +348,8 @@ packages:
     resolution: {integrity: sha512-Vj1jF3cPfxg7OAfoI7QnVKLoILlm2JF9pnVHrX8qx7AHMiYWT+NDAA7jChlNgRS4WTLc/fD1lXLmPixluj+3Gg==}
     engines: {node: '>=6.9.0'}
 
-  '@babylonjs/core@9.26.0':
-    resolution: {integrity: sha512-YJe7Zh9vj6Wg8NawJoAycoGFFhuzW9KLZykNm2nvlNrs2P43HTMv3SvgbfwHKkDpHcga4crdyVNlSf055LLkXg==}
+  '@babylonjs/core@9.27.1':
+    resolution: {integrity: sha512-bcHeB7YNrYRiD+pEhZjEfzm8tT/N4dC8oYhlENFVa9fnP/XiHEbmt7h2U6Es/vs8x/Aju+9vgpcmq2qnLv+3Hw==}
 
   '@bruits/satteri-darwin-arm64@0.10.5':
     resolution: {integrity: sha512-27KTVl4TJkVahMy/ohyA7qd4938G5UNneFUz/PsScYfpIhj0IVAS23mpcJXdPF44sa6nva198lmV/cKIb2YPyA==}
@@ -3307,7 +3307,7 @@ snapshots:
       '@babel/helper-string-parser': 7.29.7
       '@babel/helper-validator-identifier': 7.29.7
 
-  '@babylonjs/core@9.26.0': {}
+  '@babylonjs/core@9.27.1': {}
 
   '@bruits/satteri-darwin-arm64@0.10.5':
     optional: true
