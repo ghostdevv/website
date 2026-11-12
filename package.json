@@ -22,7 +22,7 @@
 		"@astrojs/mdx": "8.0.3",
 		"@astrojs/rss": "4.0.19",
 		"@astrojs/sitemap": "3.7.4",
-		"@astrojs/svelte": "9.0.1",
+		"@astrojs/svelte": "9.1.2",
 		"@babylonjs/core": "9.30.0",
 		"@expressive-code/plugin-collapsible-sections": "0.44.2",
 		"@ghostsui/svelte": "1.0.0-beta.4",
